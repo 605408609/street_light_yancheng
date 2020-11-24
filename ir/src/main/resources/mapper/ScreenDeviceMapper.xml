@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.ir.mapper.ScreenDeviceDao">
+
+    <resultMap id="BaseResultMap" type="com.exc.street.light.resource.entity.ir.ScreenDevice">
+        <id column="id" property="id"/>
+        <id column="ip" property="ip"/>
+        <id column="port" property="port"/>
+        <id column="width" property="width"/>
+        <id column="height" property="height"/>
+        <id column="bright" property="bright"/>
+        <id column="volume" property="volume"/>
+        <id column="factory" property="factory"/>
+        <id column="name" property="name"/>
+        <id column="num" property="num"/>
+        <id column="network_state" property="networkState"/>
+        <id column="create_time" property="createTime"/>
+        <id column="last_online_time" property="lastOnlineTime"/>
+        <id column="lamp_post_id" property="lampPostId"/>
+        <id column="model" property="model"/>
+        <id column="switch_state" property="switchState"/>
+        <id column="is_play_program" property="isPlayProgram"/>
+        <id column="is_play_subtitle" property="isPlaySubtitle"/>
+    </resultMap>
+    <resultMap id="DetailBaseResultMap" type="com.exc.street.light.resource.vo.resp.IrRespScreenDeviceVO">
+        <id column="id" property="id"/>
+        <id column="ip" property="ip"/>
+        <id column="port" property="port"/>
+        <id column="width" property="width"/>
+        <id column="height" property="height"/>
+        <id column="bright" property="bright"/>
+        <id column="volume" property="volume"/>
+        <id column="factory" property="factory"/>
+        <id column="name" property="name"/>
+        <id column="num" property="num"/>
+        <id column="network_state" property="networkState"/>
+        <id column="create_time" property="createTime"/>
+        <id column="last_online_time" property="lastOnlineTime"/>
+        <id column="lamp_post_id" property="lampPostId"/>
+        <id column="model" property="model"/>
+        <id column="switch_state" property="switchState"/>
+        <id column="is_play_program" property="isPlayProgram"/>
+        <id column="is_play_subtitle" property="isPlaySubtitle"/>
+        <id column="lamp_post_name" property="lampPostName"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+		id, ip, port, width, height, bright, volume, factory, name, num, network_state, create_time, last_online_time, lamp_post_id, model, switch_state,is_play_program ,is_play_subtitle
+	</sql>
+    <select id="query" resultType="com.exc.street.light.resource.entity.ir.ScreenDevice">
+        SELECT
+			sd.id,
+			sd.ip,
+			sd.`port`,
+			sd.width,
+			sd.height,
+			sd.bright,
+			sd.volume,
+			sd.factory,
+			sd.`name`,
+			sd.num,
+			sd.model,
+			sd.network_state,
+			sd.create_time,
+			sd.last_online_time,
+			sd.lamp_post_id,
+			sd.switch_state,
+			sd.is_play_program,
+			sd.is_play_subtitle 
+		FROM
+			screen_device AS sd
+			LEFT JOIN sl_lamp_post slp ON slp.id = sd.lamp_post_id
+			LEFT JOIN location_site ls ON ls.id = slp.site_id
+			LEFT JOIN location_street lst ON lst.id = ls.street_id
+			LEFT JOIN location_area la ON la.id = lst.area_id
+        <where>
+            <if test="irScreenDeviceQuery.name != null and irScreenDeviceQuery.name != ''">
+                AND sd.`name` LIKE CONCAT('%', #{irScreenDeviceQuery.name}, '%')
+            </if>
+            <if test="irScreenDeviceQuery.networkState != null">
+                AND sd.network_state = #{irScreenDeviceQuery.networkState}
+            </if>
+            <if test="irScreenDeviceQuery.areaId != null">
+                AND la.id = #{irScreenDeviceQuery.areaId}
+            </if>
+        </where>
+        ORDER BY create_time DESC
+    </select>
+    <select id="detail" parameterType="java.lang.Integer"  resultType="com.exc.street.light.resource.vo.resp.IrRespScreenDeviceVO">
+        SELECT sd.*, slp.`name` lamp_post_name
+        FROM screen_device sd LEFT JOIN sl_lamp_post slp ON sd.lamp_post_id = slp.id WHERE sd.id = #{id}
+    </select>
+
+    <select id="getScreenshots" parameterType="java.lang.Integer" resultType="com.exc.street.light.resource.entity.ir.ScreenDevice">
+        SELECT 
+          num AS "num" 
+        FROM screen_device WHERE id = #{id} 
+    </select>
+
+    <select id="selectEmDeviceByLampPostId" parameterType="java.lang.Integer" resultType="com.exc.street.light.resource.entity.em.MeteorologicalDevice">
+        SELECT id, model, ip, port, factory, `name`, num, network_state networkState, create_time createTime, last_online_time lastOnlineTime, lamp_post_id lampPostId
+        FROM meteorological_device WHERE lamp_post_id = #{reqEmLampPostId}
+    </select>
+
+    
+
+
+
+
+
+
+</mapper>

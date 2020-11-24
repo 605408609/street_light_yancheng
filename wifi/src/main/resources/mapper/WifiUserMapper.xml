@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.wifi.mapper.WifiUserDao">
+
+	<resultMap id="BaseResultMap" type="com.exc.street.light.resource.entity.wifi.WifiUser">
+		<id column="id" property="id" />
+		<id column="user_mac" property="userMac" />
+		<id column="phone" property="phone" />
+		<id column="terminal" property="terminal" />
+		<id column="certif_time" property="certifTime" />
+		<id column="certif_result" property="certifResult" />
+		<id column="logout_time" property="logoutTime" />
+		<id column="internet_time" property="internetTime" />
+		<id column="internet_traffic" property="internetTraffic" />
+		<id column="device_id" property="deviceId" />
+		<id column="create_time" property="createTime" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, user_mac, phone, terminal, certif_time, certif_result, logout_time, internet_time, internet_traffic, device_id, create_time
+	</sql>
+
+    <select id="getList" resultType="com.exc.street.light.resource.vo.resp.WifiRespUserVO">
+		select wu.id, wu.user_mac, wu.phone, wu.terminal, wu.certif_time, certif_result, wu.logout_time,
+		wu.internet_time, wu.internet_traffic, slp.location
+	  	from wifi_user wu
+		left join wifi_ap_device wad on wad.id = wu.device_id
+		left join sl_lamp_post slp on wad.lamp_post_id = slp.id
+		left join location_site ls on ls.id = slp.site_id
+		left join location_street lst on lst.id = ls.street_id
+		left join location_area la on la.id = lst.area_id
+		<where>
+			<if test="queryObject.phone != null and queryObject.phone != '' ">
+				AND wu.phone LIKE concat('%',#{queryObject.phone},'%')
+			</if>
+			<if test="queryObject.userMac != null and queryObject.userMac != '' ">
+				AND wu.user_mac LIKE concat('%',#{queryObject.userMac},'%')
+			</if>
+			<if test="queryObject.areaId != null ">
+				AND la.id = #{queryObject.areaId}
+			</if>
+		</where>
+		order by wu.id desc
+	</select>
+    <select id="selectDayConnCount" resultType="java.lang.Integer">
+		select count(1) from wifi_user wu where wu.certif_result = 1 and DATE_FORMAT(wu.certif_time,"%Y-%m-%d")= #{currentDate} and wu.device_id = #{deviceId}
+	</select>
+    <select id="selectSumUserFlow" resultType="java.lang.Integer">
+        select IFNULL(sum(wu.internet_traffic),0) from wifi_user wu where wu.certif_result = 1 and DATE_FORMAT(wu.certif_time,"%Y-%m-%d")= #{currentDate} and wu.device_id = #{deviceId}
+    </select>
+
+</mapper>

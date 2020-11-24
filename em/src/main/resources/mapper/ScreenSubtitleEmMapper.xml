@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.em.mapper.ScreenSubtitleEmMapper">
+
+	<resultMap id="BaseResultMap" type="com.exc.street.light.resource.entity.em.ScreenSubtitleEm">
+		<id column="id" property="id" />
+		<id column="area_id" property="areaId" />
+		<id column="area_name" property="areaName" />
+		<id column="resolving_power" property="resolvingPower" />
+		<id column="em_device_id" property="emDeviceId" />
+		<id column="em_data_field" property="emDataField" />
+		<id column="num" property="num" />
+		<id column="html" property="html" />
+		<id column="step_interval" property="stepInterval" />
+		<id column="step" property="step" />
+		<id column="direction" property="direction" />
+		<id column="align" property="align" />
+		<id column="typeface_size" property="typefaceSize" />
+		<id column="typeface_color" property="typefaceColor" />
+		<id column="background_color" property="backgroundColor" />
+		<id column="end_time" property="endTime" />
+		<id column="create_time" property="createTime" />
+		<id column="creator" property="creator" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, area_id, area_name, resolving_power, em_device_id, em_data_field, num, html, step_interval, step, direction, align, typeface_size, typeface_color, background_color, end_time, create_time, creator
+	</sql>
+	
+</mapper>

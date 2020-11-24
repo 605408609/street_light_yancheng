@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.ed.mapper.EdAshcanMapper">
+
+	<resultMap id="BaseResultMap" type="com.exc.street.light.resource.entity.ed.EdAshcan">
+		<id column="id" property="id" />
+		<id column="name" property="name" />
+		<id column="num" property="num" />
+		<id column="longitude" property="longitude" />
+		<id column="latitude" property="latitude" />
+		<id column="limit_upper" property="limitUpper" />
+		<id column="real_data" property="realData" />
+		<id column="armed_status" property="armedStatus" />
+		<id column="location_site_id" property="locationSiteId" />
+		<id column="device_version" property="deviceVersion" />
+		<id column="upload_cycle" property="uploadCycle" />
+		<id column="creator" property="creator" />
+		<id column="create_time" property="createTime" />
+		<id column="send_id" property="sendId" />
+	</resultMap>
+
+	<resultMap id="EdRespAshcanResultMap" type="com.exc.street.light.resource.vo.resp.EdRespAshcanVO">
+		<id column="id" property="id" />
+		<result column="name" property="name" />
+		<result column="num" property="num" />
+		<result column="longitude" property="longitude" />
+		<result column="latitude" property="latitude" />
+		<result column="limit_upper" property="limitUpper" />
+		<result column="real_data" property="realData" />
+		<result column="locationSiteId" property="locationSiteId" />
+		<result column="locationSiteName" property="locationSiteName" />
+		<result column="locationStreetId" property="locationStreetId" />
+		<result column="locationStreetName" property="locationStreetName" />
+		<result column="locationAreaId" property="locationAreaId" />
+		<result column="locationAreaName" property="locationAreaName" />
+		<result column="status" property="status" />
+		<result column="device_version" property="deviceVersion" />
+		<result column="upload_cycle" property="uploadCycle" />
+		<result column="creator" property="creator" />
+		<result column="create_time" property="createTime" />
+		<result column="armed_status" property="armedStatus" />
+	</resultMap>
+
+	<sql id="Base_Column_List">
+		id, name, num, longitude, latitude, limit_upper, real_data, armed_status, location_site_id, device_version, upload_cycle, creator, create_time
+	</sql>
+
+	<select id="getPage" resultMap="EdRespAshcanResultMap">
+		SELECT ea.*,ls.id locationSiteId,ls.`name` locationSiteName,lst.id locationStreetId,lst.`name` locationStreetName,la.id locationAreaId,la.`name` locationAreaName FROM ed_ashcan ea
+		LEFT JOIN location_site ls ON ls.id = ea.location_site_id
+		LEFT JOIN location_street lst ON lst.id = ls.street_id
+		LEFT JOIN location_area la ON la.id = lst.area_id
+		<where>
+			<if test="edReqAshcanPageVO.name != null and edReqAshcanPageVO.name != ''">
+				AND ea.`name` like CONCAT('%', #{edReqAshcanPageVO.name}, '%')
+			</if>
+			<if test="edReqAshcanPageVO.status != null">
+				AND ea.status = #{edReqAshcanPageVO.status}
+			</if>
+			<if test="edReqAshcanPageVO.locationAreaId != null">
+				AND la.id = #{edReqAshcanPageVO.locationAreaId}
+			</if>
+		</where>
+		ORDER BY ea.create_time DESC
+	</select>
+
+	<update id="updateStatus" parameterType="com.exc.street.light.resource.entity.ed.EdAshcan">
+			update ed_ashcan set status=#{status} where send_id = #{sendId}
+	</update>
+
+	<select id="selectEdAshcanAlarm" resultType="com.exc.street.light.resource.vo.resp.EdRespAlarmVO">
+		SELECT ea.id deviceId,ea.name,ea.num,ls.id location_site_id,ls.name location_site_name,lst.id location_street_id,lst.name location_street_name FROM ed_ashcan ea
+		LEFT JOIN location_site ls ON ea.location_site_id = ls.id
+		LEFT JOIN location_street lst ON ls.street_id = lst.id
+		WHERE ea.num = #{num}
+	</select>
+</mapper>

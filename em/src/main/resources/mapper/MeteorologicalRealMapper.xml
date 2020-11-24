@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.em.mapper.MeteorologicalRealDao">
+
+	<resultMap id="BaseResultMap" type="com.exc.street.light.resource.entity.em.MeteorologicalReal">
+		<id column="id" property="id" />
+		<id column="temperature" property="temperature" />
+		<id column="humidity" property="humidity" />
+		<id column="air_pressure" property="airPressure" />
+		<id column="pm25" property="pm25" />
+		<id column="pm10" property="pm10" />
+		<id column="noise_max" property="noiseMax" />
+		<id column="noise_average" property="noiseAverage" />
+		<id column="noise_min" property="noiseMin" />
+		<id column="wind_speed_max" property="windSpeedMax" />
+		<id column="wind_speed_average" property="windSpeedAverage" />
+		<id column="wind_speed_min" property="windSpeedMin" />
+		<id column="wind_direction_max" property="windDirectionMax" />
+		<id column="wind_direction_average" property="windDirectionAverage" />
+		<id column="wind_direction_min" property="windDirectionMin" />
+		<id column="create_time" property="createTime" />
+		<id column="device_id" property="deviceId" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, temperature, humidity, air_pressure, pm25, pm10, noise_max, noise_average, noise_min, wind_speed_max, wind_speed_average, wind_speed_min, wind_direction_max, wind_direction_average, wind_direction_min, create_time, device_id
+	</sql>
+	
+</mapper>

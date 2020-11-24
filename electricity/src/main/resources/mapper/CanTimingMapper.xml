@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.electricity.mapper.CanTimingMapper">
+    <resultMap id="BaseResultMap" type="com.exc.street.light.resource.entity.electricity.CanTiming">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="nid" jdbcType="INTEGER" property="nid"/>
+        <result column="pid" jdbcType="INTEGER" property="pid"/>
+        <result column="is_execute" jdbcType="INTEGER" property="isExecute"/>
+        <result column="input_time" jdbcType="TIMESTAMP" property="inputTime"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="tag_id" jdbcType="INTEGER" property="tagId"/>
+        <result column="tag_type" jdbcType="INTEGER" property="tagType"/>
+        <result column="tag_value" jdbcType="DOUBLE" property="tagValue"/>
+        <result column="type" jdbcType="INTEGER" property="type"/>
+        <result column="cycle_type" jdbcType="INTEGER" property="cycleType"/>
+        <result column="execute_value" jdbcType="INTEGER" property="executeType"/>
+        <result column="time" jdbcType="VARCHAR" property="time"/>
+        <result column="minute_value" jdbcType="INTEGER" property="minuteValue"/>
+        <result column="start_date" jdbcType="TIMESTAMP" property="startDate"/>
+        <result column="end_date" jdbcType="TIMESTAMP" property="endDate"/>
+        <association property="canScene" javaType="com.exc.street.light.resource.entity.electricity.CanScene">
+            <id column="s_id" jdbcType="INTEGER" property="id"/>
+            <result column="s_name" jdbcType="VARCHAR" property="name"/>
+        </association>
+    </resultMap>
+    <delete id="deleteBySidAndNid">
+        DELETE FROM can_timing WHERE tag_id = #{sid} AND nid = #{nid}
+    </delete>
+    <delete id="deleteByNameAndSid">
+        DELETE FROM can_timing WHERE tag_id = #{sid} AND name = #{name}
+    </delete>
+
+    <delete id="deleteByName">
+        DELETE FROM can_timing WHERE name = #{name}
+    </delete>
+    <select id="selectBySidAndNid" resultMap="BaseResultMap">
+        SELECT * FROM can_timing
+        WHERE tag_id = #{sid} AND nid = #{nid}
+    </select>
+    <select id="selectByTypeAndNid" resultMap="BaseResultMap">
+        SELECT * FROM can_timing
+        WHERE type = #{type} AND nid = #{nid}
+    </select>
+    <select id="countTimingNumByNid" resultType="int">
+        SELECT count(*) FROM can_timing
+        WHERE type = 1 AND nid = #{nid}
+    </select>
+    <select id="countCycleNumByNid" resultType="int">
+        SELECT count(*) FROM can_timing
+        WHERE type = 2 AND nid = #{nid}
+    </select>
+    <select id="findByNid" resultMap="BaseResultMap">
+        SELECT t.*,s.id AS s_id,s.name AS s_name
+        FROM can_timing t
+        LEFT JOIN can_scene s ON t.tag_id = s.scene_id
+        WHERE t.nid = #{nid} AND s.nid = #{nid} AND t.tag_id
+    </select>
+    <select id="selectByNameAndSid" resultMap="BaseResultMap">
+        SELECT * FROM can_timing
+        WHERE tag_id = #{sid} AND name = #{name}
+    </select>
+    <select id="selectByName" resultMap="BaseResultMap">
+        SELECT * FROM can_timing WHERE name = #{name}
+    </select>
+<!--    <select id="selectByNidAndDate" resultMap="BaseResultMap">-->
+<!--        SELECT * FROM can_timing WHERE nid=#{nid} AND date &lt; #{date} AND type=1-->
+<!--    </select>-->
+<!--    <select id="selectByDate" resultMap="BaseResultMap">-->
+<!--        SELECT * FROM can_timing WHERE date &lt; #{date} AND type=1-->
+<!--    </select>-->
+
+    <delete id="deleteCanTiming" parameterType="java.lang.Integer">
+        DELETE FROM can_timing WHERE id = #{id} AND type = 1
+    </delete>
+    <delete id="deleteByNid">
+        DELETE FROM can_timing WHERE nid = #{nid}
+    </delete>
+
+    <select id="selectByTypeAndName" resultMap="BaseResultMap">
+        SELECT * FROM can_timing WHERE nid = #{elId}
+        <if test="sceneName!=null and sceneName!=''">
+            AND tag_id = (SELECT scene_id FROM can_scene WHERE nid = #{elId} AND `name`=#{sceneName})
+        </if>
+        <if test="cycleType!=null">
+            AND cycle_type = #{cycleType}
+        </if>
+        <if test="type!=null">
+            AND type = #{type}
+        </if>
+    </select>
+
+    <select id="selectByPidAndNid" resultMap="BaseResultMap">
+        SELECT * FROM can_timing WHERE pid = #{pid} AND nid = #{nid}
+    </select>
+
+    <select id="selectByPid" resultMap="BaseResultMap">
+        SELECT * FROM can_timing WHERE pid = #{pid}
+    </select>
+
+</mapper>

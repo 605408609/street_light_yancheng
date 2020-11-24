@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.occ.mapper.AhPlayDao">
+
+	<resultMap id="BaseResultMap" type="com.exc.street.light.resource.entity.occ.AhPlay">
+		<id column="id" property="id" />
+		<id column="status" property="status" />
+		<id column="create_time" property="createTime" />
+		<id column="device_num" property="deviceNum" />
+		<id column="lamp_id" property="lampId" />
+		<id column="content" property="content" />
+		<id column="have_read" property="haveRead" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, status, create_time, device_num,lamp_id,content,have_read
+	</sql>
+	
+	<select id="selectPage" parameterType="com.exc.street.light.resource.vo.OccAhPlayVO" resultType="com.exc.street.light.resource.vo.OccAhPlayVO">
+		SELECT ap.id, ap.`status`, ap.create_time,
+		ad.`name` AS deviceName,
+		slp.`name` AS lampPostName,
+		slp.`location` AS location,
+		lse.`name` AS siteName,
+		lst.`name` AS streetName,
+		la.`name` AS areaName
+		FROM ah_play AS ap  
+		LEFT JOIN ah_device AS ad ON ad.num = ap.device_num
+		LEFT JOIN sl_lamp_post AS slp ON slp.id = ad.lamp_post_id
+		LEFT JOIN location_site AS lse ON lse.id = slp.site_id
+		LEFT JOIN location_street AS lst ON lst.id = lse.street_id
+		LEFT JOIN location_area AS la ON la.id = lst.area_id
+		WHERE 1=1 
+		<if test="queryObject.lampPostName != null and queryObject.lampPostName != ''">AND slp.`name` LIKE concat('%',#{queryObject.lampPostName,jdbcType=VARCHAR},'%')</if>
+		<if test="queryObject.beginTime != null">AND ap.create_time <![CDATA[>=]]> #{queryObject.beginTime} </if>
+		<if test="queryObject.endTime != null">AND ap.create_time <![CDATA[<=]]> #{queryObject.endTime} </if> 
+		<if test="queryObject.areaId != null">
+                AND la.id = #{queryObject.areaId}
+            </if>
+		order by ap.create_time desc
+	</select>
+	
+	<select id="selectPageByWorkbench" parameterType="java.lang.Long" resultMap="BaseResultMap">
+		SELECT
+			ah_play.`status`, 
+			ah_play.create_time
+		FROM
+			ah_device
+			INNER JOIN
+			ah_play
+			ON 
+				ah_device.num = ah_play.device_num
+		WHERE
+			ah_device.id = #{id}
+	</select>
+	
+	
+	
+	<select id="selectByDeviceNum" parameterType="java.lang.String" resultType="com.exc.street.light.resource.vo.OccAhPlayVO">
+		SELECT
+			slp.id AS lamp_id, 
+			slp.`name` AS lampPostName, 
+			location_area.`name` AS areaName,
+			location_street.`name` AS streetName, 
+			location_site.`name` AS siteName
+		FROM
+			ah_device AS ahd
+			LEFT JOIN
+			sl_lamp_post AS slp
+			ON 
+				ahd.lamp_post_id = slp.id
+			INNER JOIN
+			location_site
+			ON 
+				slp.site_id = location_site.id
+			INNER JOIN
+			location_street
+			ON 
+				location_site.street_id = location_street.id
+			INNER JOIN
+			location_area
+			ON 
+				location_street.area_id = location_area.id
+		WHERE
+			ahd.num =  #{num,jdbcType=VARCHAR}
+	</select>
+	
+	<select id="getById" parameterType="java.lang.Long" resultType="com.exc.street.light.resource.vo.OccAhPlayVO">
+		SELECT
+		ah_play.id ,
+			sl_lamp_post.`name` AS lampPostName, 
+			ah_device.`name` AS deviceName, 
+			ah_play.content
+		FROM
+			ah_play
+			INNER JOIN
+			ah_device
+			ON 
+				ah_play.device_num = ah_device.num
+			INNER JOIN
+			sl_lamp_post
+			ON 
+				ah_play.lamp_id = sl_lamp_post.id
+		WHERE
+			ah_play.id =  #{id}
+	</select>
+	
+	
+</mapper>

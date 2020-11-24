@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.sl.mapper.LampBrightDao">
+
+	<resultMap id="BaseResultMap" type="com.exc.street.light.resource.entity.sl.LampBright">
+		<id column="id" property="id" />
+		<id column="bright" property="bright" />
+		<id column="device_id" property="deviceId" />
+		<id column="create_time" property="createTime" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, bright, device_id, create_time
+	</sql>
+	
+</mapper>

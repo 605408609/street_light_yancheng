@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.dlm.mapper.SlLampPostMapper">
+
+    <resultMap id="BaseResultMap" type="com.exc.street.light.resource.entity.dlm.SlLampPost">
+        <id column="id" property="id"/>
+        <id column="name" property="name"/>
+        <id column="num" property="num"/>
+        <id column="model" property="model"/>
+        <id column="longitude" property="longitude"/>
+        <id column="latitude" property="latitude"/>
+        <id column="manufacturer" property="manufacturer"/>
+        <id column="location" property="location"/>
+        <id column="group_id" property="groupId"/>
+        <id column="site_id" property="siteId"/>
+        <id column="create_time" property="createTime"/>
+        <id column="default_camera_id" property="defaultCameraId"/>
+        
+    </resultMap>
+    <resultMap id="BaseRespLampPostMap" type="com.exc.street.light.resource.vo.resp.DlmRespLocationLampPostVO">
+        <id column="id" property="id"/>
+        <id column="name" property="name"/>
+        <id column="partId" property="partId"/>
+        <id column="lampPostNum" property="lampPostNum"/>
+        <id column="lampPostModel" property="lampPostModel"/>
+        <id column="lampPostLongitude" property="lampPostLongitude"/>
+        <id column="lampPostLatitude" property="lampPostLatitude"/>
+        <id column="lampPostManufacturer" property="lampPostManufacturer"/>
+        <id column="lampPostLocation" property="lampPostLocation"/>
+        <id column="createTime" property="createTime"/>
+        <id column="deviceNumber" property="deviceNumber"/>
+        <id column="superId" property="superId"/>
+        <id column="superName" property="superName"/>
+        <id column="areaId" property="areaId"/>
+        <id column="areaName" property="areaName"/>
+        <id column="streetId" property="streetId"/>
+        <id column="streetName" property="streetName"/>
+        <id column="ids" property="ids"/>
+        <id column="names" property="names"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+		id, name, num, model, longitude, latitude, manufacturer, location, group_id, site_id, create_time,default_camera_id
+	</sql>
+    <update id="updateToNoGroup">
+        UPDATE sl_lamp_post SET group_id = null WHERE group_id = #{groupId}
+    </update>
+    <update id="cancelDeviceSl">
+        UPDATE lamp_device SET lamp_post_id = NULL WHERE lamp_post_id IN
+        <foreach collection="list" item="num" open="(" close=")" separator=",">
+            #{num}
+        </foreach>
+    </update>
+    <update id="cancelDeviceWifi">
+        UPDATE wifi_ap_device SET lamp_post_id = NULL WHERE lamp_post_id IN
+        <foreach collection="list" item="num" open="(" close=")" separator=",">
+            #{num}
+        </foreach>
+    </update>
+    <update id="cancelDevicePb">
+        UPDATE radio_device SET lamp_post_id = NULL WHERE lamp_post_id IN
+        <foreach collection="list" item="num" open="(" close=")" separator=",">
+            #{num}
+        </foreach>
+    </update>
+    <update id="cancelDeviceSs">
+        UPDATE ss_device SET lamp_post_id = NULL WHERE lamp_post_id IN
+        <foreach collection="list" item="num" open="(" close=")" separator=",">
+            #{num}
+        </foreach>
+    </update>
+    <update id="cancelDeviceIr">
+        UPDATE screen_device SET lamp_post_id = NULL WHERE lamp_post_id IN
+        <foreach collection="list" item="num" open="(" close=")" separator=",">
+            #{num}
+        </foreach>
+    </update>
+    <update id="cancelDeviceOcc">
+        UPDATE ah_device SET lamp_post_id = NULL WHERE lamp_post_id IN
+        <foreach collection="list" item="num" open="(" close=")" separator=",">
+            #{num}
+        </foreach>
+    </update>
+    <update id="cancelDeviceEm">
+        UPDATE meteorological_device SET lamp_post_id = NULL WHERE lamp_post_id IN
+        <foreach collection="list" item="num" open="(" close=")" separator=",">
+            #{num}
+        </foreach>
+    </update>
+    <select id="query" resultType="com.exc.street.light.resource.vo.resp.DlmRespLampPostVO"
+            parameterType="com.exc.street.light.resource.qo.DlmLampPostQuery">
+        SELECT slp.id lampPostId,slp.num lampPostNum ,slp.name lampPostName,area.name areaName,
+        street.name streetName,site.name siteName
+        FROM sl_lamp_post slp
+        LEFT JOIN location_site site ON site.id = slp.site_id
+        LEFT JOIN location_street street ON street.id = site.street_id
+        LEFT JOIN location_area area ON area.id = street.area_id
+        <where>
+            <if test="dlmLampPostQuery.areaId != null">
+                AND area.id = #{dlmLampPostQuery.areaId}
+            </if>
+            <if test="dlmLampPostQuery.areaName != null and  dlmLampPostQuery.areaName != ''">
+                AND area.`name` like CONCAT('%', #{dlmLampPostQuery.areaName}, '%')
+            </if>
+            <if test="dlmLampPostQuery.streetId != null">
+                AND street.id = #{dlmLampPostQuery.streetId}
+            </if>
+            <if test="dlmLampPostQuery.streetName != null and dlmLampPostQuery.streetName != ''">
+                AND street.`name` like CONCAT('%', #{dlmLampPostQuery.streetName}, '%')
+            </if>
+            <if test="dlmLampPostQuery.siteId != null">
+                AND site.id = #{dlmLampPostQuery.siteId}
+            </if>
+            <if test="dlmLampPostQuery.siteName != null and dlmLampPostQuery.siteName != ''">
+                AND site.`name` like CONCAT('%', #{dlmLampPostQuery.siteName}, '%')
+            </if>
+            <if test="dlmLampPostQuery.lampPostNameOrNum != null and dlmLampPostQuery.lampPostNameOrNum != ''">
+                AND (slp.`name` like CONCAT('%', #{dlmLampPostQuery.lampPostNameOrNum}, '%')
+                OR slp.num like CONCAT('%', #{dlmLampPostQuery.lampPostNameOrNum}, '%'))
+            </if>
+        </where>
+        ORDER BY slp.id DESC
+    </select>
+
+    <select id="getSlLampPostName" resultType="java.lang.String">
+        SELECT
+        name
+        FROM sl_lamp_post
+    </select>
+    <select id="queryList" resultType="com.exc.street.light.resource.vo.resp.DlmRespLampPostVO"
+            parameterType="com.exc.street.light.resource.qo.DlmLampPostQuery">
+        SELECT slp.id lampPostId,slp.num lampPostNum ,slp.name lampPostName,area.name areaName,
+        street.name streetName,site.name siteName
+        FROM sl_lamp_post slp
+        LEFT JOIN location_site site ON site.id = slp.site_id
+        LEFT JOIN location_street street ON street.id = site.street_id
+        LEFT JOIN location_area area ON area.id = street.area_id
+        <where>
+            <if test="dlmLampPostQuery.areaId != null">
+                AND area.id = #{dlmLampPostQuery.areaId}
+            </if>
+            <if test="dlmLampPostQuery.areaName != null and  dlmLampPostQuery.areaName != ''">
+                AND area.`name` like CONCAT('%', #{dlmLampPostQuery.areaName}, '%')
+            </if>
+            <if test="dlmLampPostQuery.streetId != null">
+                AND street.id = #{dlmLampPostQuery.streetId}
+            </if>
+            <if test="dlmLampPostQuery.streetName != null and dlmLampPostQuery.streetName != ''">
+                AND street.`name` like CONCAT('%', #{dlmLampPostQuery.streetName}, '%')
+            </if>
+            <if test="dlmLampPostQuery.siteId != null">
+                AND site.id = #{dlmLampPostQuery.siteId}
+            </if>
+            <if test="dlmLampPostQuery.siteName != null and dlmLampPostQuery.siteName != ''">
+                AND site.`name` like CONCAT('%', #{dlmLampPostQuery.siteName}, '%')
+            </if>
+            <if test="dlmLampPostQuery.lampPostNameOrNum != null and dlmLampPostQuery.lampPostNameOrNum != ''">
+                AND (slp.`name` like CONCAT('%', #{dlmLampPostQuery.lampPostNameOrNum}, '%')
+                OR slp.num like CONCAT('%', #{dlmLampPostQuery.lampPostNameOrNum}, '%'))
+            </if>
+        </where>
+        ORDER BY slp.id DESC
+    </select>
+    <select id="listByAreaId" resultMap="BaseRespLampPostMap">
+        SELECT slp.id id, slp.`name` `name`, concat("lampPost",slp.id) partId, slp.num lampPostNum, slp.model lampPostModel,
+        slp.longitude lampPostLongitude, slp.latitude lampPostLatitude, slp.manufacturer lampPostManufacturer,
+        slp.location lampPostLocation, slp.create_time createTime, lsite.id superId, lsite.`name` superName, la.id areaId,
+        la.`name` areaName, lstreet.id streetId, lstreet.`name` streetName, concat(la.id,",",lstreet.id,",",lsite.id) ids,
+        concat(la.`name`,",",lstreet.`name`,",",lsite.`name`) names
+        FROM sl_lamp_post slp
+        LEFT JOIN location_site lsite ON slp.site_id = lsite.id
+        LEFT JOIN location_street lstreet ON lsite.street_id = lstreet.id
+        LEFT JOIN location_area la ON lstreet.area_id = la.id
+        <where>
+            <if test="dlmLampByAreaIdVO.areaId != null">
+                AND lstreet.area_id = #{dlmLampByAreaIdVO.areaId}
+            </if>
+            <if test="dlmLampByAreaIdVO.lampPostIdList != null">
+                AND slp.id IN
+                <foreach collection="dlmLampByAreaIdVO.lampPostIdList" item="num" open="(" close=")" separator=",">
+                    #{num}
+                </foreach>
+            </if>
+            <if test="dlmLampByAreaIdVO.siteIdList != null">
+                AND lsite.id IN
+                <foreach collection="dlmLampByAreaIdVO.siteIdList" item="num" open="(" close=")" separator=",">
+                    #{num}
+                </foreach>
+            </if>
+            <if test="dlmLampByAreaIdVO.streetIdList != null">
+                AND lstreet.id IN
+                <foreach collection="dlmLampByAreaIdVO.streetIdList" item="num" open="(" close=")" separator=",">
+                    #{num}
+                </foreach>
+            </if>
+        </where>
+        ORDER BY slp.id DESC
+    </select>
+</mapper>

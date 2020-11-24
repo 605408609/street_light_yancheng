@@ -1,0 +1,124 @@
+08:46:23.882 WARN  s.d.s.w.r.p.ParameterDataTypeReader[line:86] - Trying to infer dataType java.lang.Integer[]
+09:54:36.036 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:69] - 心跳时间:Mon Oct 26 09:54:36 CST 2020
+09:54:51.171 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:69] - 心跳时间:Mon Oct 26 09:54:36 CST 2020
+09:55:12.978 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:69] - 心跳时间:Mon Oct 26 09:55:12 CST 2020
+09:55:34.695 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:69] - 心跳时间:Mon Oct 26 09:55:34 CST 2020
+09:56:09.296 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:69] - 心跳时间:Mon Oct 26 09:56:09 CST 2020
+09:56:43.912 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:69] - 心跳时间:Mon Oct 26 09:56:43 CST 2020
+09:57:23.518 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:69] - 心跳时间:Mon Oct 26 09:57:23 CST 2020
+09:57:59.926 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:69] - 心跳时间:Mon Oct 26 09:57:59 CST 2020
+09:58:28.734 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:69] - 心跳时间:Mon Oct 26 09:58:28 CST 2020
+09:59:03.328 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:69] - 心跳时间:Mon Oct 26 09:59:03 CST 2020
+09:59:37.848 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:69] - 心跳时间:Mon Oct 26 09:59:37 CST 2020
+10:00:12.500 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:69] - 心跳时间:Mon Oct 26 10:00:12 CST 2020
+10:00:47.106 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:69] - 心跳时间:Mon Oct 26 10:00:47 CST 2020
+10:01:21.671 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:69] - 心跳时间:Mon Oct 26 10:01:21 CST 2020
+10:54:04.837 WARN  s.d.s.w.r.p.ParameterDataTypeReader[line:86] - Trying to infer dataType java.lang.Integer[]
+11:00:27.754 WARN  s.d.s.w.r.p.ParameterDataTypeReader[line:86] - Trying to infer dataType java.lang.Integer[]
+11:12:19.537 WARN  s.d.s.w.r.p.ParameterDataTypeReader[line:86] - Trying to infer dataType java.lang.Integer[]
+11:17:01.813 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.0.1,port:8652
+11:17:04.824 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.0.1,port:8652
+11:17:20.973 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.172,port:9999
+11:17:20.976 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 31 70 C4 45 00 03 42 08 FF A0 69 0D 
+11:17:20.979 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 31 70 C4 45 00 00 00 08 A3 0D 
+11:17:23.458 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.172,port:9999
+11:17:23.461 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 31 70 C4 45 00 03 42 08 00 E0 29 0D 
+11:17:23.463 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 31 70 C4 45 00 00 00 08 A3 0D 
+13:24:29.159 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:24:39.219 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:24:49.333 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:24:59.424 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:25:09.524 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:25:19.626 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:25:29.734 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:25:39.928 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:25:50.229 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:26:00.827 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:26:11.927 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:26:24.026 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:26:38.217 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:26:56.532 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:27:23.031 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:27:34.520 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:27:44.639 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:27:54.724 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:28:03.129 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:28:04.822 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:28:14.931 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:28:25.023 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:28:35.137 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:28:43.223 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:28:45.324 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:28:55.626 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:29:06.227 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:29:17.333 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:29:23.325 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:29:29.428 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:29:43.639 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:30:01.919 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:30:03.421 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:30:28.321 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:30:43.531 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:31:08.432 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:31:23.628 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:31:48.515 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:32:03.728 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:32:28.625 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:32:43.826 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:33:08.722 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:33:23.920 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:33:48.823 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:34:04.016 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:34:28.920 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:34:44.120 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:35:09.018 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:35:24.222 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:35:49.131 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:36:04.324 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:36:29.238 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:36:44.415 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:37:09.328 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:37:24.522 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:37:49.432 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:38:04.628 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:38:29.528 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:38:44.721 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:39:09.629 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:39:24.825 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:39:49.727 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:40:04.927 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:40:29.818 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:45:29.019 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:45:39.122 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:45:49.230 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:45:59.322 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:46:09.423 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:46:19.527 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:46:29.617 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:46:39.821 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:46:50.121 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:47:00.731 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:47:11.811 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:47:23.927 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:47:38.125 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:47:56.425 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:48:22.920 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:49:03.029 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+13:49:43.121 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+14:05:23.794 WARN  s.d.s.w.r.p.ParameterDataTypeReader[line:86] - Trying to infer dataType java.lang.Integer[]
+16:56:11.495 WARN  s.d.s.w.r.p.ParameterDataTypeReader[line:86] - Trying to infer dataType java.util.List<com.exc.street.light.resource.vo.req.PbReqPlayRemoveBindVO>
+17:08:07.118 WARN  s.d.s.w.r.p.ParameterDataTypeReader[line:86] - Trying to infer dataType java.util.List<com.exc.street.light.resource.vo.req.PbReqPlayRemoveBindVO>
+17:19:40.001 WARN  s.d.s.w.r.p.ParameterDataTypeReader[line:86] - Trying to infer dataType java.util.List<com.exc.street.light.resource.vo.req.PbReqPlayRemoveBindVO>
+17:28:35.968 WARN  s.d.s.w.r.p.ParameterDataTypeReader[line:86] - Trying to infer dataType java.util.List<com.exc.street.light.resource.vo.req.PbReqPlayRemoveBindVO>
+17:29:52.738 WARN  s.d.s.w.r.p.ParameterDataTypeReader[line:86] - Trying to infer dataType java.util.List<com.exc.street.light.resource.vo.req.PbReqPlayRemoveBindVO>
+17:30:11.950 WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext[line:558] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'radioTimer' defined in file [D:\Work\IDEA-workspace\street_light\pb\target\classes\com\exc\street\light\pb\timer\RadioTimer.class]: Initialization of bean failed; nested exception is java.lang.IllegalStateException: Need to invoke method 'updateDeviceStatus' declared on target class 'RadioTimer', but not found in any interface(s) of the exposed proxy type. Either pull the method up to an interface or switch to CGLIB proxies by enforcing proxy-target-class mode in your configuration.
+17:30:56.977 WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext[line:558] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'radioTimer' defined in file [D:\Work\IDEA-workspace\street_light\pb\target\classes\com\exc\street\light\pb\timer\RadioTimer.class]: Initialization of bean failed; nested exception is java.lang.IllegalStateException: Need to invoke method 'updateDeviceStatus' declared on target class 'RadioTimer', but not found in any interface(s) of the exposed proxy type. Either pull the method up to an interface or switch to CGLIB proxies by enforcing proxy-target-class mode in your configuration.
+17:31:37.996 WARN  s.d.s.w.r.p.ParameterDataTypeReader[line:86] - Trying to infer dataType java.util.List<com.exc.street.light.resource.vo.req.PbReqPlayRemoveBindVO>
+17:32:10.939 WARN  s.d.s.w.r.p.ParameterDataTypeReader[line:86] - Trying to infer dataType java.util.List<com.exc.street.light.resource.vo.req.PbReqPlayRemoveBindVO>
+17:32:41.510 WARN  s.d.s.w.r.p.ParameterDataTypeReader[line:86] - Trying to infer dataType java.util.List<com.exc.street.light.resource.vo.req.PbReqPlayRemoveBindVO>
+17:33:48.904 WARN  s.d.s.w.r.p.ParameterDataTypeReader[line:86] - Trying to infer dataType java.util.List<com.exc.street.light.resource.vo.req.PbReqPlayRemoveBindVO>
+17:40:24.215 WARN  s.d.s.w.r.p.ParameterDataTypeReader[line:86] - Trying to infer dataType java.util.List<com.exc.street.light.resource.vo.req.PbReqPlayRemoveBindVO>
+18:06:23.366 WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext[line:558] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'pbApplication': Unsatisfied dependency expressed through field 'radioPlayService'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'radioPlayServiceImpl': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'pb.http.url' in value "${pb.http.url}"
+18:06:49.585 WARN  s.d.s.w.r.p.ParameterDataTypeReader[line:86] - Trying to infer dataType java.util.List<com.exc.street.light.resource.vo.req.PbReqPlayRemoveBindVO>
+18:10:32.607 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver[line:199] - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'PUT' not supported]
+18:16:39.026 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver[line:199] - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Integer'; nested exception is java.lang.NumberFormatException: For input string: "removeBind"]

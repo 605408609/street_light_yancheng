@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+    com.exc.street.light.log_api.SystemLogConfiguration,\
+    com.exc.street.light.log_api.util.SpringContextHolder

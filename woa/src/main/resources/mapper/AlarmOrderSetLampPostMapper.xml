@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.woa.mapper.AlarmOrderSetLampPostMapper">
+
+	<resultMap id="BaseResultMap" type="com.exc.street.light.resource.entity.woa.AlarmOrderSetLampPost">
+		<id column="id" property="id" />
+		<id column="set_id" property="setId" />
+		<id column="lamp_post_id" property="lampPostId" />
+		<id column="create_time" property="createTime" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, set_id, lamp_post_id, create_time
+	</sql>
+	
+</mapper>

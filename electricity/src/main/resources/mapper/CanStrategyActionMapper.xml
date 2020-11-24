@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.electricity.mapper.CanStrategyActionMapper">
+
+	<resultMap id="BaseResultMap" type="com.exc.street.light.resource.entity.electricity.CanStrategyAction">
+		<id column="id" property="id" />
+		<id column="strategy_id" property="strategyId" />
+		<id column="is_open" property="isOpen" />
+		<id column="start_date" property="startDate" />
+		<id column="end_date" property="endDate" />
+		<id column="execution_time" property="executionTime" />
+		<id column="create_time" property="createTime" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, strategy_id, is_open, start_date, end_date, execution_time, create_time
+	</sql>
+	
+</mapper>

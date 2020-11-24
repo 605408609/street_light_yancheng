@@ -1,0 +1,738 @@
+15:42:49.694 INFO  c.exc.street.light.em.EmApplication[line:55] - Starting EmApplication on DESKTOP-78VVBBB with PID 10736 (D:\Work\IDEA-workspace\street_light\em\target\classes started by EXC in D:\Work\IDEA-workspace\street_light)
+15:42:49.724 INFO  c.exc.street.light.em.EmApplication[line:655] - The following profiles are active: dev
+15:42:53.350 INFO  o.s.b.w.e.tomcat.TomcatWebServer[line:92] - Tomcat initialized with port(s): 60026 (http)
+15:42:53.364 INFO  o.a.coyote.http11.Http11NioProtocol[line:173] - Initializing ProtocolHandler ["http-nio-60026"]
+15:42:53.365 INFO  o.a.catalina.core.StandardService[line:173] - Starting service [Tomcat]
+15:42:53.365 INFO  o.a.catalina.core.StandardEngine[line:173] - Starting Servlet engine: [Apache Tomcat/9.0.33]
+15:42:53.508 INFO  o.a.c.c.C.[Tomcat].[localhost].[/][line:173] - Initializing Spring embedded WebApplicationContext
+15:42:53.509 INFO  o.s.web.context.ContextLoader[line:284] - Root WebApplicationContext: initialization completed in 3693 ms
+15:42:54.291 INFO  c.alibaba.druid.pool.DruidDataSource[line:1003] - {dataSource-1} inited
+15:42:56.353 INFO  o.s.b.a.e.web.EndpointLinksResolver[line:58] - Exposing 2 endpoint(s) beneath base path '/actuator'
+15:42:56.453 INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping[line:69] - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+15:42:56.490 INFO  o.s.s.c.ThreadPoolTaskExecutor[line:181] - Initializing ExecutorService 'applicationTaskExecutor'
+15:42:56.882 INFO  c.e.s.l.em.netty.MessageRecvExecutor[line:112] - [author xujiahao] Netty EXC Server start success port:63338
+
+15:42:57.273 INFO  org.quartz.impl.StdSchedulerFactory[line:1208] - Using default implementation for ThreadExecutor
+15:42:57.289 INFO  o.quartz.core.SchedulerSignalerImpl[line:61] - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+15:42:57.290 INFO  org.quartz.core.QuartzScheduler[line:229] - Quartz Scheduler v.2.3.0 created.
+15:42:57.291 INFO  org.quartz.simpl.RAMJobStore[line:155] - RAMJobStore initialized.
+15:42:57.292 INFO  org.quartz.core.QuartzScheduler[line:294] - Scheduler meta-data: Quartz Scheduler (v2.3.0) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+15:42:57.292 INFO  org.quartz.impl.StdSchedulerFactory[line:1362] - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+15:42:57.292 INFO  org.quartz.impl.StdSchedulerFactory[line:1366] - Quartz scheduler version: 2.3.0
+15:42:57.292 INFO  org.quartz.core.QuartzScheduler[line:2287] - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@5614ae05
+15:42:57.307 INFO  o.s.s.c.ThreadPoolTaskScheduler[line:181] - Initializing ExecutorService 'taskScheduler'
+15:42:57.367 INFO  s.d.s.w.p.DocumentationPluginsBootstrapper[line:147] - Context refreshed
+15:42:57.392 INFO  s.d.s.w.p.DocumentationPluginsBootstrapper[line:150] - Found 1 custom documentation plugin(s)
+15:42:57.472 INFO  s.d.s.w.s.ApiListingReferenceScanner[line:41] - Scanning for api listing references
+15:42:57.803 INFO  o.s.s.quartz.SchedulerFactoryBean[line:727] - Starting Quartz Scheduler now
+15:42:57.804 INFO  org.quartz.core.QuartzScheduler[line:547] - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+15:42:57.820 INFO  o.a.coyote.http11.Http11NioProtocol[line:173] - Starting ProtocolHandler ["http-nio-60026"]
+15:42:57.841 INFO  o.s.b.w.e.tomcat.TomcatWebServer[line:204] - Tomcat started on port(s): 60026 (http) with context path ''
+15:42:57.845 INFO  c.exc.street.light.em.EmApplication[line:61] - Started EmApplication in 9.234 seconds (JVM running for 11.217)
+15:43:02.146 INFO  o.a.k.c.producer.ProducerConfig[line:347] - ProducerConfig values: 
+	acks = 1
+	batch.size = 16384
+	bootstrap.servers = [192.168.111.148:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = default
+	client.id = 
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = false
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 1
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 1
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class com.exc.street.light.em.serializer.PersonSerializer
+
+15:43:02.176 INFO  c.e.s.l.e.s.PersonSerializer[line:29] - 自定义的序列化组件--configure
+15:43:02.497 INFO  o.a.kafka.common.utils.AppInfoParser[line:117] - Kafka version: 2.3.1
+15:43:02.498 INFO  o.a.kafka.common.utils.AppInfoParser[line:118] - Kafka commitId: 18a913733fb71c01
+15:43:02.498 INFO  o.a.kafka.common.utils.AppInfoParser[line:119] - Kafka startTimeMs: 1604475782488
+15:43:02.686 INFO  org.apache.kafka.clients.Metadata[line:261] - [Producer clientId=producer-1] Cluster ID: F8Wk7ZhUQg2_Nm8yifCqZA
+15:43:02.689 INFO  c.e.s.l.e.s.PersonSerializer[line:34] - 自定义的序列化组件--serialize
+15:43:05.085 INFO  c.e.s.l.e.s.i.KafkaMessageServiceImpl[line:48] - kafka sendMessage success topic = websocket1, data = KafkaMessage(type=2, Message={"user":"1"}, userIds=[], is2All=0)
+15:43:05.841 INFO  o.a.c.c.C.[Tomcat].[localhost].[/][line:173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+15:43:05.842 INFO  o.s.web.servlet.DispatcherServlet[line:525] - Initializing Servlet 'dispatcherServlet'
+15:43:05.856 INFO  o.s.web.servlet.DispatcherServlet[line:547] - Completed initialization in 14 ms
+15:45:27.669 INFO  org.quartz.core.QuartzScheduler[line:585] - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+15:45:27.671 INFO  o.s.s.c.ThreadPoolTaskScheduler[line:218] - Shutting down ExecutorService 'taskScheduler'
+15:45:27.671 INFO  o.s.s.quartz.SchedulerFactoryBean[line:845] - Shutting down Quartz Scheduler
+15:45:27.671 INFO  org.quartz.core.QuartzScheduler[line:666] - Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+15:45:27.671 INFO  org.quartz.core.QuartzScheduler[line:585] - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+15:45:27.672 INFO  org.quartz.core.QuartzScheduler[line:740] - Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+15:45:27.674 INFO  o.s.s.c.ThreadPoolTaskExecutor[line:218] - Shutting down ExecutorService 'applicationTaskExecutor'
+15:45:27.677 INFO  o.a.k.clients.producer.KafkaProducer[line:1153] - [Producer clientId=producer-1] Closing the Kafka producer with timeoutMillis = 30000 ms.
+15:45:27.682 INFO  c.e.s.l.e.s.PersonSerializer[line:40] - 自定义的序列化组件--close
+15:45:27.683 INFO  c.alibaba.druid.pool.DruidDataSource[line:1948] - {dataSource-1} closing ...
+15:45:27.690 INFO  c.alibaba.druid.pool.DruidDataSource[line:2020] - {dataSource-1} closed
+15:45:37.482 INFO  c.exc.street.light.em.EmApplication[line:55] - Starting EmApplication on DESKTOP-78VVBBB with PID 6740 (D:\Work\IDEA-workspace\street_light\em\target\classes started by EXC in D:\Work\IDEA-workspace\street_light)
+15:45:37.487 INFO  c.exc.street.light.em.EmApplication[line:655] - The following profiles are active: dev
+15:45:40.989 INFO  o.s.b.w.e.tomcat.TomcatWebServer[line:92] - Tomcat initialized with port(s): 60026 (http)
+15:45:41.003 INFO  o.a.coyote.http11.Http11NioProtocol[line:173] - Initializing ProtocolHandler ["http-nio-60026"]
+15:45:41.005 INFO  o.a.catalina.core.StandardService[line:173] - Starting service [Tomcat]
+15:45:41.005 INFO  o.a.catalina.core.StandardEngine[line:173] - Starting Servlet engine: [Apache Tomcat/9.0.33]
+15:45:41.157 INFO  o.a.c.c.C.[Tomcat].[localhost].[/][line:173] - Initializing Spring embedded WebApplicationContext
+15:45:41.158 INFO  o.s.web.context.ContextLoader[line:284] - Root WebApplicationContext: initialization completed in 3600 ms
+15:45:41.980 INFO  c.alibaba.druid.pool.DruidDataSource[line:1003] - {dataSource-1} inited
+15:45:44.391 INFO  o.s.b.a.e.web.EndpointLinksResolver[line:58] - Exposing 2 endpoint(s) beneath base path '/actuator'
+15:45:44.500 INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping[line:69] - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+15:45:44.542 INFO  o.s.s.c.ThreadPoolTaskExecutor[line:181] - Initializing ExecutorService 'applicationTaskExecutor'
+15:45:45.155 INFO  c.e.s.l.em.netty.MessageRecvExecutor[line:112] - [author xujiahao] Netty EXC Server start success port:63338
+
+15:45:45.395 INFO  org.quartz.impl.StdSchedulerFactory[line:1208] - Using default implementation for ThreadExecutor
+15:45:45.411 INFO  o.quartz.core.SchedulerSignalerImpl[line:61] - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+15:45:45.411 INFO  org.quartz.core.QuartzScheduler[line:229] - Quartz Scheduler v.2.3.0 created.
+15:45:45.412 INFO  org.quartz.simpl.RAMJobStore[line:155] - RAMJobStore initialized.
+15:45:45.414 INFO  org.quartz.core.QuartzScheduler[line:294] - Scheduler meta-data: Quartz Scheduler (v2.3.0) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+15:45:45.414 INFO  org.quartz.impl.StdSchedulerFactory[line:1362] - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+15:45:45.414 INFO  org.quartz.impl.StdSchedulerFactory[line:1366] - Quartz scheduler version: 2.3.0
+15:45:45.414 INFO  org.quartz.core.QuartzScheduler[line:2287] - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@3a589eed
+15:45:45.430 INFO  o.s.s.c.ThreadPoolTaskScheduler[line:181] - Initializing ExecutorService 'taskScheduler'
+15:45:45.493 INFO  s.d.s.w.p.DocumentationPluginsBootstrapper[line:147] - Context refreshed
+15:45:45.517 INFO  s.d.s.w.p.DocumentationPluginsBootstrapper[line:150] - Found 1 custom documentation plugin(s)
+15:45:45.596 INFO  s.d.s.w.s.ApiListingReferenceScanner[line:41] - Scanning for api listing references
+15:45:45.895 INFO  o.s.s.quartz.SchedulerFactoryBean[line:727] - Starting Quartz Scheduler now
+15:45:45.895 INFO  org.quartz.core.QuartzScheduler[line:547] - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+15:45:45.914 INFO  o.a.coyote.http11.Http11NioProtocol[line:173] - Starting ProtocolHandler ["http-nio-60026"]
+15:45:45.936 INFO  o.s.b.w.e.tomcat.TomcatWebServer[line:204] - Tomcat started on port(s): 60026 (http) with context path ''
+15:45:45.941 INFO  c.exc.street.light.em.EmApplication[line:61] - Started EmApplication in 9.315 seconds (JVM running for 11.194)
+15:46:19.432 INFO  o.a.k.c.producer.ProducerConfig[line:347] - ProducerConfig values: 
+	acks = 1
+	batch.size = 16384
+	bootstrap.servers = [192.168.111.148:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = default
+	client.id = 
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = false
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 1
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 1
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class com.exc.street.light.em.serializer.PersonSerializer
+
+15:46:19.457 INFO  c.e.s.l.e.s.PersonSerializer[line:29] - 自定义的序列化组件--configure
+15:46:19.795 INFO  o.a.kafka.common.utils.AppInfoParser[line:117] - Kafka version: 2.3.1
+15:46:19.796 INFO  o.a.kafka.common.utils.AppInfoParser[line:118] - Kafka commitId: 18a913733fb71c01
+15:46:19.796 INFO  o.a.kafka.common.utils.AppInfoParser[line:119] - Kafka startTimeMs: 1604475979787
+15:46:21.002 INFO  org.apache.kafka.clients.Metadata[line:261] - [Producer clientId=producer-1] Cluster ID: F8Wk7ZhUQg2_Nm8yifCqZA
+15:46:21.006 INFO  c.e.s.l.e.s.PersonSerializer[line:34] - 自定义的序列化组件--serialize
+15:46:28.317 INFO  c.e.s.l.e.s.i.KafkaMessageServiceImpl[line:48] - kafka sendMessage success topic = websocket1, data = KafkaMessage(type=1, Message={"user":1}, userIds=null, is2All=2)
+15:46:28.921 INFO  o.a.c.c.C.[Tomcat].[localhost].[/][line:173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+15:46:28.922 INFO  o.s.web.servlet.DispatcherServlet[line:525] - Initializing Servlet 'dispatcherServlet'
+15:46:28.935 INFO  o.s.web.servlet.DispatcherServlet[line:547] - Completed initialization in 13 ms
+15:49:57.745 INFO  org.quartz.core.QuartzScheduler[line:585] - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+15:49:57.747 INFO  o.s.s.c.ThreadPoolTaskScheduler[line:218] - Shutting down ExecutorService 'taskScheduler'
+15:49:57.747 INFO  o.s.s.quartz.SchedulerFactoryBean[line:845] - Shutting down Quartz Scheduler
+15:49:57.749 INFO  org.quartz.core.QuartzScheduler[line:666] - Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+15:49:57.749 INFO  org.quartz.core.QuartzScheduler[line:585] - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+15:49:57.750 INFO  org.quartz.core.QuartzScheduler[line:740] - Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+15:49:57.752 INFO  o.s.s.c.ThreadPoolTaskExecutor[line:218] - Shutting down ExecutorService 'applicationTaskExecutor'
+15:49:57.755 INFO  o.a.k.clients.producer.KafkaProducer[line:1153] - [Producer clientId=producer-1] Closing the Kafka producer with timeoutMillis = 30000 ms.
+15:49:57.759 INFO  c.e.s.l.e.s.PersonSerializer[line:40] - 自定义的序列化组件--close
+15:49:57.760 INFO  c.alibaba.druid.pool.DruidDataSource[line:1948] - {dataSource-1} closing ...
+15:49:57.769 INFO  c.alibaba.druid.pool.DruidDataSource[line:2020] - {dataSource-1} closed
+15:50:06.921 INFO  c.exc.street.light.em.EmApplication[line:55] - Starting EmApplication on DESKTOP-78VVBBB with PID 11316 (D:\Work\IDEA-workspace\street_light\em\target\classes started by EXC in D:\Work\IDEA-workspace\street_light)
+15:50:06.927 INFO  c.exc.street.light.em.EmApplication[line:655] - The following profiles are active: dev
+15:50:09.956 INFO  o.s.b.w.e.tomcat.TomcatWebServer[line:92] - Tomcat initialized with port(s): 60026 (http)
+15:50:09.969 INFO  o.a.coyote.http11.Http11NioProtocol[line:173] - Initializing ProtocolHandler ["http-nio-60026"]
+15:50:09.970 INFO  o.a.catalina.core.StandardService[line:173] - Starting service [Tomcat]
+15:50:09.970 INFO  o.a.catalina.core.StandardEngine[line:173] - Starting Servlet engine: [Apache Tomcat/9.0.33]
+15:50:10.111 INFO  o.a.c.c.C.[Tomcat].[localhost].[/][line:173] - Initializing Spring embedded WebApplicationContext
+15:50:10.112 INFO  o.s.web.context.ContextLoader[line:284] - Root WebApplicationContext: initialization completed in 3105 ms
+15:50:10.936 INFO  c.alibaba.druid.pool.DruidDataSource[line:1003] - {dataSource-1} inited
+15:50:13.322 INFO  o.s.b.a.e.web.EndpointLinksResolver[line:58] - Exposing 2 endpoint(s) beneath base path '/actuator'
+15:50:13.424 INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping[line:69] - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+15:50:13.463 INFO  o.s.s.c.ThreadPoolTaskExecutor[line:181] - Initializing ExecutorService 'applicationTaskExecutor'
+15:50:14.067 INFO  c.e.s.l.em.netty.MessageRecvExecutor[line:112] - [author xujiahao] Netty EXC Server start success port:63338
+
+15:50:14.269 INFO  org.quartz.impl.StdSchedulerFactory[line:1208] - Using default implementation for ThreadExecutor
+15:50:14.287 INFO  o.quartz.core.SchedulerSignalerImpl[line:61] - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+15:50:14.288 INFO  org.quartz.core.QuartzScheduler[line:229] - Quartz Scheduler v.2.3.0 created.
+15:50:14.289 INFO  org.quartz.simpl.RAMJobStore[line:155] - RAMJobStore initialized.
+15:50:14.290 INFO  org.quartz.core.QuartzScheduler[line:294] - Scheduler meta-data: Quartz Scheduler (v2.3.0) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+15:50:14.291 INFO  org.quartz.impl.StdSchedulerFactory[line:1362] - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+15:50:14.291 INFO  org.quartz.impl.StdSchedulerFactory[line:1366] - Quartz scheduler version: 2.3.0
+15:50:14.291 INFO  org.quartz.core.QuartzScheduler[line:2287] - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@42cf5a6f
+15:50:14.306 INFO  o.s.s.c.ThreadPoolTaskScheduler[line:181] - Initializing ExecutorService 'taskScheduler'
+15:50:14.367 INFO  s.d.s.w.p.DocumentationPluginsBootstrapper[line:147] - Context refreshed
+15:50:14.390 INFO  s.d.s.w.p.DocumentationPluginsBootstrapper[line:150] - Found 1 custom documentation plugin(s)
+15:50:14.463 INFO  s.d.s.w.s.ApiListingReferenceScanner[line:41] - Scanning for api listing references
+15:50:14.765 INFO  o.s.s.quartz.SchedulerFactoryBean[line:727] - Starting Quartz Scheduler now
+15:50:14.765 INFO  org.quartz.core.QuartzScheduler[line:547] - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+15:50:14.781 INFO  o.a.coyote.http11.Http11NioProtocol[line:173] - Starting ProtocolHandler ["http-nio-60026"]
+15:50:14.801 INFO  o.s.b.w.e.tomcat.TomcatWebServer[line:204] - Tomcat started on port(s): 60026 (http) with context path ''
+15:50:14.806 INFO  c.exc.street.light.em.EmApplication[line:61] - Started EmApplication in 8.745 seconds (JVM running for 10.619)
+15:50:18.753 INFO  o.a.k.c.producer.ProducerConfig[line:347] - ProducerConfig values: 
+	acks = 1
+	batch.size = 16384
+	bootstrap.servers = [192.168.111.148:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = default
+	client.id = 
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = false
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 1
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 1
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class com.exc.street.light.em.serializer.PersonSerializer
+
+15:50:18.780 INFO  c.e.s.l.e.s.PersonSerializer[line:29] - 自定义的序列化组件--configure
+15:50:19.107 INFO  o.a.kafka.common.utils.AppInfoParser[line:117] - Kafka version: 2.3.1
+15:50:19.108 INFO  o.a.kafka.common.utils.AppInfoParser[line:118] - Kafka commitId: 18a913733fb71c01
+15:50:19.108 INFO  o.a.kafka.common.utils.AppInfoParser[line:119] - Kafka startTimeMs: 1604476219099
+15:50:20.365 INFO  org.apache.kafka.clients.Metadata[line:261] - [Producer clientId=producer-1] Cluster ID: F8Wk7ZhUQg2_Nm8yifCqZA
+15:50:20.474 INFO  c.e.s.l.e.s.PersonSerializer[line:34] - 自定义的序列化组件--serialize
+15:50:23.523 INFO  c.e.s.l.e.s.i.KafkaMessageServiceImpl[line:48] - kafka sendMessage success topic = topicGroupId, data = KafkaMessage(type=1, Message={"user":1}, userIds=null, is2All=2)
+15:50:23.555 INFO  o.a.c.c.C.[Tomcat].[localhost].[/][line:173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+15:50:23.556 INFO  o.s.web.servlet.DispatcherServlet[line:525] - Initializing Servlet 'dispatcherServlet'
+15:50:23.572 INFO  o.s.web.servlet.DispatcherServlet[line:547] - Completed initialization in 16 ms
+15:55:49.920 INFO  org.quartz.core.QuartzScheduler[line:585] - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+15:55:49.922 INFO  o.s.s.c.ThreadPoolTaskScheduler[line:218] - Shutting down ExecutorService 'taskScheduler'
+15:55:49.922 INFO  o.s.s.quartz.SchedulerFactoryBean[line:845] - Shutting down Quartz Scheduler
+15:55:49.922 INFO  org.quartz.core.QuartzScheduler[line:666] - Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+15:55:49.923 INFO  org.quartz.core.QuartzScheduler[line:585] - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+15:55:49.923 INFO  org.quartz.core.QuartzScheduler[line:740] - Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+15:55:49.926 INFO  o.s.s.c.ThreadPoolTaskExecutor[line:218] - Shutting down ExecutorService 'applicationTaskExecutor'
+15:55:49.929 INFO  o.a.k.clients.producer.KafkaProducer[line:1153] - [Producer clientId=producer-1] Closing the Kafka producer with timeoutMillis = 30000 ms.
+15:55:49.934 INFO  c.e.s.l.e.s.PersonSerializer[line:40] - 自定义的序列化组件--close
+15:55:49.935 INFO  c.alibaba.druid.pool.DruidDataSource[line:1948] - {dataSource-1} closing ...
+15:55:49.942 INFO  c.alibaba.druid.pool.DruidDataSource[line:2020] - {dataSource-1} closed
+15:55:57.009 INFO  c.exc.street.light.em.EmApplication[line:55] - Starting EmApplication on DESKTOP-78VVBBB with PID 2052 (D:\Work\IDEA-workspace\street_light\em\target\classes started by EXC in D:\Work\IDEA-workspace\street_light)
+15:55:57.014 INFO  c.exc.street.light.em.EmApplication[line:655] - The following profiles are active: dev
+15:55:59.639 INFO  o.s.b.w.e.tomcat.TomcatWebServer[line:92] - Tomcat initialized with port(s): 60026 (http)
+15:55:59.679 INFO  o.a.coyote.http11.Http11NioProtocol[line:173] - Initializing ProtocolHandler ["http-nio-60026"]
+15:55:59.687 INFO  o.a.catalina.core.StandardService[line:173] - Starting service [Tomcat]
+15:55:59.689 INFO  o.a.catalina.core.StandardEngine[line:173] - Starting Servlet engine: [Apache Tomcat/9.0.33]
+15:55:59.872 INFO  o.a.c.c.C.[Tomcat].[localhost].[/][line:173] - Initializing Spring embedded WebApplicationContext
+15:55:59.872 INFO  o.s.web.context.ContextLoader[line:284] - Root WebApplicationContext: initialization completed in 2791 ms
+15:56:00.783 INFO  c.alibaba.druid.pool.DruidDataSource[line:1003] - {dataSource-1} inited
+15:56:03.225 INFO  o.s.b.a.e.web.EndpointLinksResolver[line:58] - Exposing 2 endpoint(s) beneath base path '/actuator'
+15:56:03.352 INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping[line:69] - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+15:56:03.400 INFO  o.s.s.c.ThreadPoolTaskExecutor[line:181] - Initializing ExecutorService 'applicationTaskExecutor'
+15:56:04.762 INFO  c.e.s.l.em.netty.MessageRecvExecutor[line:112] - [author xujiahao] Netty EXC Server start success port:63338
+
+15:56:04.809 INFO  org.quartz.impl.StdSchedulerFactory[line:1208] - Using default implementation for ThreadExecutor
+15:56:04.825 INFO  o.quartz.core.SchedulerSignalerImpl[line:61] - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+15:56:04.825 INFO  org.quartz.core.QuartzScheduler[line:229] - Quartz Scheduler v.2.3.0 created.
+15:56:04.827 INFO  org.quartz.simpl.RAMJobStore[line:155] - RAMJobStore initialized.
+15:56:04.828 INFO  org.quartz.core.QuartzScheduler[line:294] - Scheduler meta-data: Quartz Scheduler (v2.3.0) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+15:56:04.828 INFO  org.quartz.impl.StdSchedulerFactory[line:1362] - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+15:56:04.828 INFO  org.quartz.impl.StdSchedulerFactory[line:1366] - Quartz scheduler version: 2.3.0
+15:56:04.829 INFO  org.quartz.core.QuartzScheduler[line:2287] - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@6f67ece5
+15:56:04.845 INFO  o.s.s.c.ThreadPoolTaskScheduler[line:181] - Initializing ExecutorService 'taskScheduler'
+15:56:04.905 INFO  s.d.s.w.p.DocumentationPluginsBootstrapper[line:147] - Context refreshed
+15:56:04.928 INFO  s.d.s.w.p.DocumentationPluginsBootstrapper[line:150] - Found 1 custom documentation plugin(s)
+15:56:05.004 INFO  s.d.s.w.s.ApiListingReferenceScanner[line:41] - Scanning for api listing references
+15:56:05.294 INFO  o.s.s.quartz.SchedulerFactoryBean[line:727] - Starting Quartz Scheduler now
+15:56:05.294 INFO  org.quartz.core.QuartzScheduler[line:547] - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+15:56:05.311 INFO  o.a.coyote.http11.Http11NioProtocol[line:173] - Starting ProtocolHandler ["http-nio-60026"]
+15:56:05.334 INFO  o.s.b.w.e.tomcat.TomcatWebServer[line:204] - Tomcat started on port(s): 60026 (http) with context path ''
+15:56:05.338 INFO  c.exc.street.light.em.EmApplication[line:61] - Started EmApplication in 9.35 seconds (JVM running for 13.244)
+15:56:05.370 INFO  o.a.k.c.producer.ProducerConfig[line:347] - ProducerConfig values: 
+	acks = 1
+	batch.size = 16384
+	bootstrap.servers = [192.168.111.148:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = default
+	client.id = 
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = false
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 1
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 1
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class com.exc.street.light.em.serializer.PersonSerializer
+
+15:56:05.525 INFO  c.e.s.l.e.s.PersonSerializer[line:29] - 自定义的序列化组件--configure
+15:56:05.574 INFO  o.a.kafka.common.utils.AppInfoParser[line:117] - Kafka version: 2.3.1
+15:56:05.575 INFO  o.a.kafka.common.utils.AppInfoParser[line:118] - Kafka commitId: 18a913733fb71c01
+15:56:05.575 INFO  o.a.kafka.common.utils.AppInfoParser[line:119] - Kafka startTimeMs: 1604476565572
+15:56:05.767 INFO  org.apache.kafka.clients.Metadata[line:261] - [Producer clientId=producer-1] Cluster ID: F8Wk7ZhUQg2_Nm8yifCqZA
+15:56:05.768 INFO  c.e.s.l.e.s.PersonSerializer[line:34] - 自定义的序列化组件--serialize
+15:56:05.812 INFO  c.e.s.l.e.s.i.KafkaMessageServiceImpl[line:48] - kafka sendMessage success topic = topicGroupId, data = KafkaMessage(type=1, Message={"user":1}, userIds=null, is2All=2)
+15:56:06.324 INFO  o.a.c.c.C.[Tomcat].[localhost].[/][line:173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+15:56:06.324 INFO  o.s.web.servlet.DispatcherServlet[line:525] - Initializing Servlet 'dispatcherServlet'
+15:56:06.334 INFO  o.s.web.servlet.DispatcherServlet[line:547] - Completed initialization in 9 ms
+15:57:56.872 INFO  org.quartz.core.QuartzScheduler[line:585] - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+15:57:56.873 INFO  o.s.s.c.ThreadPoolTaskScheduler[line:218] - Shutting down ExecutorService 'taskScheduler'
+15:57:56.874 INFO  o.s.s.quartz.SchedulerFactoryBean[line:845] - Shutting down Quartz Scheduler
+15:57:56.874 INFO  org.quartz.core.QuartzScheduler[line:666] - Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+15:57:56.874 INFO  org.quartz.core.QuartzScheduler[line:585] - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+15:57:56.875 INFO  org.quartz.core.QuartzScheduler[line:740] - Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+15:57:56.878 INFO  o.s.s.c.ThreadPoolTaskExecutor[line:218] - Shutting down ExecutorService 'applicationTaskExecutor'
+15:57:56.881 INFO  o.a.k.clients.producer.KafkaProducer[line:1153] - [Producer clientId=producer-1] Closing the Kafka producer with timeoutMillis = 30000 ms.
+15:57:56.885 INFO  c.e.s.l.e.s.PersonSerializer[line:40] - 自定义的序列化组件--close
+15:57:56.887 INFO  c.alibaba.druid.pool.DruidDataSource[line:1948] - {dataSource-1} closing ...
+15:57:56.894 INFO  c.alibaba.druid.pool.DruidDataSource[line:2020] - {dataSource-1} closed
+15:58:05.741 INFO  c.exc.street.light.em.EmApplication[line:55] - Starting EmApplication on DESKTOP-78VVBBB with PID 304 (D:\Work\IDEA-workspace\street_light\em\target\classes started by EXC in D:\Work\IDEA-workspace\street_light)
+15:58:05.747 INFO  c.exc.street.light.em.EmApplication[line:655] - The following profiles are active: dev
+15:58:08.994 INFO  o.s.b.w.e.tomcat.TomcatWebServer[line:92] - Tomcat initialized with port(s): 60026 (http)
+15:58:09.008 INFO  o.a.coyote.http11.Http11NioProtocol[line:173] - Initializing ProtocolHandler ["http-nio-60026"]
+15:58:09.009 INFO  o.a.catalina.core.StandardService[line:173] - Starting service [Tomcat]
+15:58:09.009 INFO  o.a.catalina.core.StandardEngine[line:173] - Starting Servlet engine: [Apache Tomcat/9.0.33]
+15:58:09.166 INFO  o.a.c.c.C.[Tomcat].[localhost].[/][line:173] - Initializing Spring embedded WebApplicationContext
+15:58:09.167 INFO  o.s.web.context.ContextLoader[line:284] - Root WebApplicationContext: initialization completed in 3346 ms
+15:58:10.014 INFO  c.alibaba.druid.pool.DruidDataSource[line:1003] - {dataSource-1} inited
+15:58:11.524 INFO  o.s.b.a.e.web.EndpointLinksResolver[line:58] - Exposing 2 endpoint(s) beneath base path '/actuator'
+15:58:12.102 INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping[line:69] - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+15:58:12.252 INFO  o.s.s.c.ThreadPoolTaskExecutor[line:181] - Initializing ExecutorService 'applicationTaskExecutor'
+15:58:13.544 INFO  c.e.s.l.em.netty.MessageRecvExecutor[line:112] - [author xujiahao] Netty EXC Server start success port:63338
+
+15:58:13.665 INFO  org.quartz.impl.StdSchedulerFactory[line:1208] - Using default implementation for ThreadExecutor
+15:58:13.693 INFO  o.quartz.core.SchedulerSignalerImpl[line:61] - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+15:58:13.694 INFO  org.quartz.core.QuartzScheduler[line:229] - Quartz Scheduler v.2.3.0 created.
+15:58:13.698 INFO  org.quartz.simpl.RAMJobStore[line:155] - RAMJobStore initialized.
+15:58:13.700 INFO  org.quartz.core.QuartzScheduler[line:294] - Scheduler meta-data: Quartz Scheduler (v2.3.0) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+15:58:13.700 INFO  org.quartz.impl.StdSchedulerFactory[line:1362] - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+15:58:13.701 INFO  org.quartz.impl.StdSchedulerFactory[line:1366] - Quartz scheduler version: 2.3.0
+15:58:13.702 INFO  org.quartz.core.QuartzScheduler[line:2287] - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@70819ba8
+15:58:13.745 INFO  o.s.s.c.ThreadPoolTaskScheduler[line:181] - Initializing ExecutorService 'taskScheduler'
+15:58:13.833 INFO  s.d.s.w.p.DocumentationPluginsBootstrapper[line:147] - Context refreshed
+15:58:13.876 INFO  s.d.s.w.p.DocumentationPluginsBootstrapper[line:150] - Found 1 custom documentation plugin(s)
+15:58:14.036 INFO  s.d.s.w.s.ApiListingReferenceScanner[line:41] - Scanning for api listing references
+15:58:14.574 INFO  o.s.s.quartz.SchedulerFactoryBean[line:727] - Starting Quartz Scheduler now
+15:58:14.575 INFO  org.quartz.core.QuartzScheduler[line:547] - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+15:58:14.614 INFO  o.a.coyote.http11.Http11NioProtocol[line:173] - Starting ProtocolHandler ["http-nio-60026"]
+15:58:14.650 INFO  o.s.b.w.e.tomcat.TomcatWebServer[line:204] - Tomcat started on port(s): 60026 (http) with context path ''
+15:58:14.658 INFO  c.exc.street.light.em.EmApplication[line:61] - Started EmApplication in 9.816 seconds (JVM running for 11.587)
+15:58:14.724 INFO  o.a.k.c.producer.ProducerConfig[line:347] - ProducerConfig values: 
+	acks = 1
+	batch.size = 16384
+	bootstrap.servers = [192.168.111.148:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = default
+	client.id = 
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = false
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 1
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 1
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class com.exc.street.light.em.serializer.PersonSerializer
+
+15:58:14.755 INFO  c.e.s.l.e.s.PersonSerializer[line:29] - 自定义的序列化组件--configure
+15:58:14.999 INFO  o.a.kafka.common.utils.AppInfoParser[line:117] - Kafka version: 2.3.1
+15:58:14.999 INFO  o.a.kafka.common.utils.AppInfoParser[line:118] - Kafka commitId: 18a913733fb71c01
+15:58:14.999 INFO  o.a.kafka.common.utils.AppInfoParser[line:119] - Kafka startTimeMs: 1604476694997
+15:58:15.248 INFO  org.apache.kafka.clients.Metadata[line:261] - [Producer clientId=producer-1] Cluster ID: F8Wk7ZhUQg2_Nm8yifCqZA
+15:58:15.249 INFO  c.e.s.l.e.s.PersonSerializer[line:34] - 自定义的序列化组件--serialize
+15:58:15.304 INFO  c.e.s.l.e.s.i.KafkaMessageServiceImpl[line:48] - kafka sendMessage success topic = websocket1, data = KafkaMessage(type=1, Message={"user":1}, userIds=null, is2All=2)
+15:58:16.899 INFO  o.a.c.c.C.[Tomcat].[localhost].[/][line:173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+15:58:16.900 INFO  o.s.web.servlet.DispatcherServlet[line:525] - Initializing Servlet 'dispatcherServlet'
+15:58:16.914 INFO  o.s.web.servlet.DispatcherServlet[line:547] - Completed initialization in 14 ms
+16:01:42.295 INFO  org.quartz.core.QuartzScheduler[line:585] - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+16:01:42.297 INFO  o.s.s.c.ThreadPoolTaskScheduler[line:218] - Shutting down ExecutorService 'taskScheduler'
+16:01:42.297 INFO  o.s.s.quartz.SchedulerFactoryBean[line:845] - Shutting down Quartz Scheduler
+16:01:42.298 INFO  org.quartz.core.QuartzScheduler[line:666] - Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+16:01:42.298 INFO  org.quartz.core.QuartzScheduler[line:585] - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+16:01:42.299 INFO  org.quartz.core.QuartzScheduler[line:740] - Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+16:01:42.301 INFO  o.s.s.c.ThreadPoolTaskExecutor[line:218] - Shutting down ExecutorService 'applicationTaskExecutor'
+16:01:42.304 INFO  o.a.k.clients.producer.KafkaProducer[line:1153] - [Producer clientId=producer-1] Closing the Kafka producer with timeoutMillis = 30000 ms.
+16:01:42.309 INFO  c.e.s.l.e.s.PersonSerializer[line:40] - 自定义的序列化组件--close
+16:01:42.310 INFO  c.alibaba.druid.pool.DruidDataSource[line:1948] - {dataSource-1} closing ...
+16:01:42.318 INFO  c.alibaba.druid.pool.DruidDataSource[line:2020] - {dataSource-1} closed
+16:01:50.951 INFO  c.exc.street.light.em.EmApplication[line:55] - Starting EmApplication on DESKTOP-78VVBBB with PID 19244 (D:\Work\IDEA-workspace\street_light\em\target\classes started by EXC in D:\Work\IDEA-workspace\street_light)
+16:01:50.955 INFO  c.exc.street.light.em.EmApplication[line:655] - The following profiles are active: dev
+16:01:54.094 INFO  o.s.b.w.e.tomcat.TomcatWebServer[line:92] - Tomcat initialized with port(s): 60026 (http)
+16:01:54.109 INFO  o.a.coyote.http11.Http11NioProtocol[line:173] - Initializing ProtocolHandler ["http-nio-60026"]
+16:01:54.110 INFO  o.a.catalina.core.StandardService[line:173] - Starting service [Tomcat]
+16:01:54.110 INFO  o.a.catalina.core.StandardEngine[line:173] - Starting Servlet engine: [Apache Tomcat/9.0.33]
+16:01:54.261 INFO  o.a.c.c.C.[Tomcat].[localhost].[/][line:173] - Initializing Spring embedded WebApplicationContext
+16:01:54.262 INFO  o.s.web.context.ContextLoader[line:284] - Root WebApplicationContext: initialization completed in 3232 ms
+16:01:55.065 INFO  c.alibaba.druid.pool.DruidDataSource[line:1003] - {dataSource-1} inited
+16:01:56.456 INFO  o.s.b.a.e.web.EndpointLinksResolver[line:58] - Exposing 2 endpoint(s) beneath base path '/actuator'
+16:01:56.568 INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping[line:69] - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+16:01:56.612 INFO  o.s.s.c.ThreadPoolTaskExecutor[line:181] - Initializing ExecutorService 'applicationTaskExecutor'
+16:01:57.242 INFO  c.e.s.l.em.netty.MessageRecvExecutor[line:112] - [author xujiahao] Netty EXC Server start success port:63338
+
+16:01:57.475 INFO  org.quartz.impl.StdSchedulerFactory[line:1208] - Using default implementation for ThreadExecutor
+16:01:57.494 INFO  o.quartz.core.SchedulerSignalerImpl[line:61] - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+16:01:57.495 INFO  org.quartz.core.QuartzScheduler[line:229] - Quartz Scheduler v.2.3.0 created.
+16:01:57.496 INFO  org.quartz.simpl.RAMJobStore[line:155] - RAMJobStore initialized.
+16:01:57.498 INFO  org.quartz.core.QuartzScheduler[line:294] - Scheduler meta-data: Quartz Scheduler (v2.3.0) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+16:01:57.499 INFO  org.quartz.impl.StdSchedulerFactory[line:1362] - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+16:01:57.499 INFO  org.quartz.impl.StdSchedulerFactory[line:1366] - Quartz scheduler version: 2.3.0
+16:01:57.500 INFO  org.quartz.core.QuartzScheduler[line:2287] - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@76104df5
+16:01:57.518 INFO  o.s.s.c.ThreadPoolTaskScheduler[line:181] - Initializing ExecutorService 'taskScheduler'
+16:01:57.580 INFO  s.d.s.w.p.DocumentationPluginsBootstrapper[line:147] - Context refreshed
+16:01:57.602 INFO  s.d.s.w.p.DocumentationPluginsBootstrapper[line:150] - Found 1 custom documentation plugin(s)
+16:01:57.680 INFO  s.d.s.w.s.ApiListingReferenceScanner[line:41] - Scanning for api listing references
+16:01:57.966 INFO  o.s.s.quartz.SchedulerFactoryBean[line:727] - Starting Quartz Scheduler now
+16:01:57.966 INFO  org.quartz.core.QuartzScheduler[line:547] - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+16:01:57.983 INFO  o.a.coyote.http11.Http11NioProtocol[line:173] - Starting ProtocolHandler ["http-nio-60026"]
+16:01:58.005 INFO  o.s.b.w.e.tomcat.TomcatWebServer[line:204] - Tomcat started on port(s): 60026 (http) with context path ''
+16:01:58.011 INFO  c.exc.street.light.em.EmApplication[line:61] - Started EmApplication in 8.023 seconds (JVM running for 9.864)
+16:01:58.040 INFO  o.a.k.c.producer.ProducerConfig[line:347] - ProducerConfig values: 
+	acks = 1
+	batch.size = 16384
+	bootstrap.servers = [192.168.111.148:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = default
+	client.id = 
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = false
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 1
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 1
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class com.exc.street.light.em.serializer.PersonSerializer
+
+16:01:58.048 INFO  c.e.s.l.e.s.PersonSerializer[line:29] - 自定义的序列化组件--configure
+16:01:58.249 INFO  o.a.kafka.common.utils.AppInfoParser[line:117] - Kafka version: 2.3.1
+16:01:58.249 INFO  o.a.kafka.common.utils.AppInfoParser[line:118] - Kafka commitId: 18a913733fb71c01
+16:01:58.249 INFO  o.a.kafka.common.utils.AppInfoParser[line:119] - Kafka startTimeMs: 1604476918247
+16:01:58.442 INFO  org.apache.kafka.clients.Metadata[line:261] - [Producer clientId=producer-1] Cluster ID: F8Wk7ZhUQg2_Nm8yifCqZA
+16:01:58.443 INFO  c.e.s.l.e.s.PersonSerializer[line:34] - 自定义的序列化组件--serialize
+16:01:58.488 INFO  c.e.s.l.e.s.i.KafkaMessageServiceImpl[line:48] - kafka sendMessage success topic = websocket1, data = KafkaMessage(type=1, Message={"user":1}, userIds=null, is2All=1)
+16:02:00.260 INFO  o.a.c.c.C.[Tomcat].[localhost].[/][line:173] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+16:02:00.260 INFO  o.s.web.servlet.DispatcherServlet[line:525] - Initializing Servlet 'dispatcherServlet'
+16:02:00.273 INFO  o.s.web.servlet.DispatcherServlet[line:547] - Completed initialization in 12 ms
+16:03:23.467 INFO  org.quartz.core.QuartzScheduler[line:585] - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+16:03:23.468 INFO  o.s.s.c.ThreadPoolTaskScheduler[line:218] - Shutting down ExecutorService 'taskScheduler'
+16:03:23.469 INFO  o.s.s.quartz.SchedulerFactoryBean[line:845] - Shutting down Quartz Scheduler
+16:03:23.469 INFO  org.quartz.core.QuartzScheduler[line:666] - Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+16:03:23.469 INFO  org.quartz.core.QuartzScheduler[line:585] - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+16:03:23.470 INFO  org.quartz.core.QuartzScheduler[line:740] - Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+16:03:23.473 INFO  o.s.s.c.ThreadPoolTaskExecutor[line:218] - Shutting down ExecutorService 'applicationTaskExecutor'
+16:03:23.476 INFO  o.a.k.clients.producer.KafkaProducer[line:1153] - [Producer clientId=producer-1] Closing the Kafka producer with timeoutMillis = 30000 ms.
+16:03:23.481 INFO  c.e.s.l.e.s.PersonSerializer[line:40] - 自定义的序列化组件--close
+16:03:23.482 INFO  c.alibaba.druid.pool.DruidDataSource[line:1948] - {dataSource-1} closing ...
+16:03:23.489 INFO  c.alibaba.druid.pool.DruidDataSource[line:2020] - {dataSource-1} closed

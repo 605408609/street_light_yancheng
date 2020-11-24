@@ -1,0 +1,73 @@
+15:44:42.863 INFO  cn.test.Test1[line:55] - Starting Test1 on DESKTOP-78VVBBB with PID 8336 (started by EXC in D:\Work\IDEA-workspace\street_light\electricity)
+15:44:42.870 INFO  cn.test.Test1[line:655] - The following profiles are active: dev
+15:44:45.879 INFO  o.s.d.r.c.RepositoryConfigurationDelegate[line:249] - Multiple Spring Data modules found, entering strict repository configuration mode!
+15:44:45.883 INFO  o.s.d.r.c.RepositoryConfigurationDelegate[line:127] - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+15:44:46.027 INFO  o.s.d.r.c.RepositoryConfigurationDelegate[line:187] - Finished Spring Data repository scanning in 123ms. Found 0 Redis repository interfaces.
+15:44:50.093 INFO  o.s.b.w.e.tomcat.TomcatWebServer[line:92] - Tomcat initialized with port(s): 0 (http)
+15:44:50.123 INFO  o.a.coyote.http11.Http11NioProtocol[line:173] - Initializing ProtocolHandler ["http-nio-auto-1"]
+15:44:50.133 INFO  o.a.catalina.core.StandardService[line:173] - Starting service [Tomcat]
+15:44:50.143 INFO  o.a.catalina.core.StandardEngine[line:173] - Starting Servlet engine: [Apache Tomcat/9.0.33]
+15:44:50.492 INFO  o.a.c.c.C.[Tomcat].[localhost].[/][line:173] - Initializing Spring embedded WebApplicationContext
+15:44:50.493 INFO  o.s.web.context.ContextLoader[line:284] - Root WebApplicationContext: initialization completed in 7535 ms
+15:44:53.618 INFO  c.alibaba.druid.pool.DruidDataSource[line:1003] - {dataSource-1} inited
+15:44:58.134 INFO  o.s.b.a.e.web.EndpointLinksResolver[line:58] - Exposing 2 endpoint(s) beneath base path '/actuator'
+15:44:58.683 INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping[line:69] - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+15:45:01.006 INFO  o.s.s.c.ThreadPoolTaskExecutor[line:181] - Initializing ExecutorService 'applicationTaskExecutor'
+15:45:03.836 INFO  org.quartz.impl.StdSchedulerFactory[line:1208] - Using default implementation for ThreadExecutor
+15:45:03.902 INFO  o.quartz.core.SchedulerSignalerImpl[line:61] - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+15:45:03.933 INFO  org.quartz.core.QuartzScheduler[line:229] - Quartz Scheduler v.2.3.0 created.
+15:45:03.935 INFO  org.quartz.simpl.RAMJobStore[line:155] - RAMJobStore initialized.
+15:45:04.005 INFO  org.quartz.core.QuartzScheduler[line:294] - Scheduler meta-data: Quartz Scheduler (v2.3.0) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+15:45:04.007 INFO  org.quartz.impl.StdSchedulerFactory[line:1362] - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+15:45:04.011 INFO  org.quartz.impl.StdSchedulerFactory[line:1366] - Quartz scheduler version: 2.3.0
+15:45:04.012 INFO  org.quartz.core.QuartzScheduler[line:2287] - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@1f365a26
+15:45:04.224 INFO  o.s.s.c.ThreadPoolTaskScheduler[line:181] - Initializing ExecutorService 'taskScheduler'
+15:45:04.607 INFO  s.d.s.w.p.DocumentationPluginsBootstrapper[line:147] - Context refreshed
+15:45:04.798 INFO  s.d.s.w.p.DocumentationPluginsBootstrapper[line:150] - Found 1 custom documentation plugin(s)
+15:45:05.368 INFO  s.d.s.w.s.ApiListingReferenceScanner[line:41] - Scanning for api listing references
+15:45:05.887 INFO  s.d.s.w.r.o.CachingOperationNameGenerator[line:40] - Generating unique operation named: listUsingGET_1
+15:45:05.918 INFO  s.d.s.w.r.o.CachingOperationNameGenerator[line:40] - Generating unique operation named: listUsingGET_2
+15:45:05.926 INFO  s.d.s.w.r.o.CachingOperationNameGenerator[line:40] - Generating unique operation named: updateUsingPUT_1
+15:45:05.930 INFO  s.d.s.w.r.o.CachingOperationNameGenerator[line:40] - Generating unique operation named: listUsingGET_3
+15:45:05.932 INFO  s.d.s.w.r.o.CachingOperationNameGenerator[line:40] - Generating unique operation named: listUsingGET_4
+15:45:05.943 INFO  s.d.s.w.r.o.CachingOperationNameGenerator[line:40] - Generating unique operation named: addUsingPOST_1
+15:45:05.965 INFO  s.d.s.w.r.o.CachingOperationNameGenerator[line:40] - Generating unique operation named: deleteUsingDELETE_1
+15:45:05.969 INFO  s.d.s.w.r.o.CachingOperationNameGenerator[line:40] - Generating unique operation named: listUsingGET_5
+15:45:05.975 INFO  s.d.s.w.r.o.CachingOperationNameGenerator[line:40] - Generating unique operation named: listUsingGET_6
+15:45:05.984 INFO  s.d.s.w.r.o.CachingOperationNameGenerator[line:40] - Generating unique operation named: updateUsingPUT_2
+15:45:05.986 INFO  s.d.s.w.r.o.CachingOperationNameGenerator[line:40] - Generating unique operation named: listUsingGET_7
+15:45:06.002 INFO  s.d.s.w.r.o.CachingOperationNameGenerator[line:40] - Generating unique operation named: addUsingPOST_2
+15:45:06.012 INFO  s.d.s.w.r.o.CachingOperationNameGenerator[line:40] - Generating unique operation named: addSiteUsingPOST_1
+15:45:06.024 INFO  s.d.s.w.r.o.CachingOperationNameGenerator[line:40] - Generating unique operation named: deleteUsingDELETE_2
+15:45:06.028 INFO  s.d.s.w.r.o.CachingOperationNameGenerator[line:40] - Generating unique operation named: listUsingGET_8
+15:45:06.069 INFO  s.d.s.w.r.o.CachingOperationNameGenerator[line:40] - Generating unique operation named: addUsingPOST_3
+15:45:06.072 INFO  s.d.s.w.r.o.CachingOperationNameGenerator[line:40] - Generating unique operation named: deleteUsingDELETE_3
+15:45:06.078 INFO  s.d.s.w.r.o.CachingOperationNameGenerator[line:40] - Generating unique operation named: listUsingGET_9
+15:45:06.081 INFO  s.d.s.w.r.o.CachingOperationNameGenerator[line:40] - Generating unique operation named: updateUsingPUT_3
+15:45:06.088 INFO  s.d.s.w.r.o.CachingOperationNameGenerator[line:40] - Generating unique operation named: addUsingPOST_4
+15:45:06.093 INFO  s.d.s.w.r.o.CachingOperationNameGenerator[line:40] - Generating unique operation named: batchImportUsingPOST_1
+15:45:06.097 INFO  s.d.s.w.r.o.CachingOperationNameGenerator[line:40] - Generating unique operation named: deleteUsingDELETE_4
+15:45:06.100 INFO  s.d.s.w.r.o.CachingOperationNameGenerator[line:40] - Generating unique operation named: detailUsingGET_1
+15:45:06.119 INFO  s.d.s.w.r.o.CachingOperationNameGenerator[line:40] - Generating unique operation named: listUsingGET_10
+15:45:06.140 INFO  s.d.s.w.r.o.CachingOperationNameGenerator[line:40] - Generating unique operation named: updateUsingPUT_4
+15:45:06.158 INFO  o.s.s.quartz.SchedulerFactoryBean[line:727] - Starting Quartz Scheduler now
+15:45:06.159 INFO  org.quartz.core.QuartzScheduler[line:547] - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+15:45:06.178 INFO  o.a.coyote.http11.Http11NioProtocol[line:173] - Starting ProtocolHandler ["http-nio-auto-1"]
+15:45:06.218 INFO  o.s.b.w.e.tomcat.TomcatWebServer[line:204] - Tomcat started on port(s): 53448 (http) with context path ''
+15:45:06.221 INFO  cn.test.Test1[line:61] - Started Test1 in 24.581 seconds (JVM running for 27.143)
+15:45:08.031 INFO  org.quartz.core.QuartzScheduler[line:585] - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+15:45:08.034 INFO  o.s.s.c.ThreadPoolTaskScheduler[line:218] - Shutting down ExecutorService 'taskScheduler'
+15:45:08.035 INFO  o.s.s.quartz.SchedulerFactoryBean[line:845] - Shutting down Quartz Scheduler
+15:45:08.035 INFO  org.quartz.core.QuartzScheduler[line:666] - Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+15:45:08.037 INFO  org.quartz.core.QuartzScheduler[line:585] - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+15:45:08.038 INFO  org.quartz.core.QuartzScheduler[line:740] - Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+15:45:08.044 INFO  o.s.s.c.ThreadPoolTaskExecutor[line:218] - Shutting down ExecutorService 'applicationTaskExecutor'
+15:45:08.091 INFO  c.alibaba.druid.pool.DruidDataSource[line:1948] - {dataSource-1} closing ...
+15:45:08.118 INFO  c.alibaba.druid.pool.DruidDataSource[line:2020] - {dataSource-1} closed

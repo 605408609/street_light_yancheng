@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.dlm.mapper.LocationDistributeCabinetMapper">
+
+    <resultMap id="BaseResultMap" type="com.exc.street.light.resource.entity.dlm.LocationDistributeCabinet">
+        <id column="id" property="id"/>
+        <id column="name" property="name"/>
+        <id column="num" property="num"/>
+        <id column="state" property="state"/>
+        <id column="area_id" property="areaId"/>
+        <id column="street_id" property="streetId"/>
+        <id column="longitude" property="longitude"/>
+        <id column="latitude" property="latitude"/>
+        <id column="location" property="location"/>
+        <id column="creator" property="creator"/>
+        <id column="create_time" property="createTime"/>
+        <id column="description" property="description"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+		id, name, num, state, area_id, street_id, longitude, latitude, location, creator, create_time, description
+	</sql>
+
+    <resultMap id="selectDistributeCabinetByCabinetIdResultMap"
+               type="com.exc.street.light.resource.vo.resp.DlmRespDistributeCabinetVO">
+        <id column="cabinet_id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="num" property="num"/>
+        <result column="state" property="state"/>
+        <result column="area_id" property="areaId"/>
+        <result column="area_name" property="areaName"/>
+        <result column="street_id" property="streetId"/>
+        <result column="street_name" property="streetName"/>
+        <result column="longitude" property="longitude"/>
+        <result column="latitude" property="latitude"/>
+        <result column="location" property="location"/>
+        <result column="create_time" property="createTime"/>
+        <result column="description" property="description"/>
+        <collection property="controlOfCabinetVOList"
+                    ofType="com.exc.street.light.resource.vo.resp.DlmRespLocationControlOfCabinetVO">
+            <id column="control_id" property="controlId"/>
+            <result column="control_name" property="controlName"/>
+            <result column="control_location" property="location"/>
+            <result column="control_type_id" property="controlTypeId"/>
+            <result column="control_type_name" property="controlTypeName"/>
+        </collection>
+    </resultMap>
+
+    <select id="selectDistributeCabinetByCabinetId" resultMap="selectDistributeCabinetByCabinetIdResultMap">
+		select ldc.id as cabinet_id, ldc.name, ldc.num, ldc.state, ldc.area_id, ldc.street_id,
+		ldc.longitude, ldc.latitude, ldc.location, ldc.create_time, ldc.description,
+		la.name as area_name, lc.id as control_id, lc.name as control_name, lc.location as control_location, lc.cabinet_id,
+		lc.type_id as control_type_id, lct.type as control_type_name, ls.name as street_name
+		from location_distribute_cabinet ldc
+		left join location_area la on la.id = ldc.area_id
+		left join location_street ls on ls.id = ldc.street_id
+		left join location_control lc on lc.cabinet_id = ldc.id
+		left join location_control_type lct on lct.id = lc.type_id
+		where ldc.id = #{cabinetId}
+	</select>
+
+    <select id="selectDistributeCabinetWithPageByCabinetQuery"
+            resultType="com.exc.street.light.resource.vo.resp.DlmRespDistributeCabinetVO">
+        select ldc.id, ldc.name, ldc.num, ldc.state, ldc.area_id, ldc.street_id, ldc.create_time, ldc.longitude,
+        ldc.latitude, la.name as areaName, ls.name as streetName
+        from location_distribute_cabinet ldc
+        left join location_area la on la.id = ldc.area_id
+        left join location_street ls on ls.id = ldc.street_id
+        <where>
+            <if test="cabinetQuery.name != null and cabinetQuery.name != ''">
+                and ldc.name like concat ("%", #{cabinetQuery.name}, "%")
+            </if>
+            <if test="cabinetQuery.state != null">
+                and ldc.state = #{cabinetQuery.state}
+            </if>
+            <if test="cabinetQuery.areaId != null">
+                and la.id = #{cabinetQuery.areaId}
+            </if>
+            <if test="cabinetQuery.streetId != null">
+                and ls.id = #{cabinetQuery.streetId}
+            </if>
+        </where>
+        order by ldc.create_time desc
+    </select>
+    <select id="selectDistributeCabinetListByCabinetQuery"
+            resultType="com.exc.street.light.resource.vo.resp.DlmRespDistributeCabinetVO">
+        select ldc.id, ldc.name, ldc.num, ldc.state, ldc.area_id, ldc.street_id, ldc.create_time, ldc.longitude,
+        ldc.latitude, la.name as areaName, ls.name as streetName
+        from location_distribute_cabinet ldc
+        left join location_area la on la.id = ldc.area_id
+        left join location_street ls on ls.id = ldc.street_id
+        <where>
+            <if test="cabinetQuery.name != null and cabinetQuery.name != ''">
+                AND (ldc.name LIKE concat ("%", #{cabinetQuery.name}, "%")
+                OR ldc.num LIKE concat('%',#{cabinetQuery.name},'%'))
+            </if>
+            <if test="cabinetQuery.areaId != null">
+                and la.id = #{cabinetQuery.areaId}
+            </if>
+            <if test="cabinetQuery.streetId != null">
+                and ls.id = #{cabinetQuery.streetId}
+            </if>
+        </where>
+        order by ldc.create_time desc
+    </select>
+
+</mapper>

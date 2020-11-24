@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.electricity.mapper.CanChannelMapper">
+    <resultMap id="BaseResultMap" type="com.exc.street.light.resource.entity.electricity.CanChannel">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="device_address" jdbcType="INTEGER" property="deviceAddress"/>
+        <result column="phase_position" jdbcType="INTEGER" property="phasePosition"/>
+        <result column="bind_address" jdbcType="INTEGER" property="bindAddress"/>
+        <result column="electricity_update_time" jdbcType="TIMESTAMP" property="electricityUpdateTime"/>
+        <result column="bind_channel_control_id" jdbcType="INTEGER" property="bindChannelControlId"/>
+        <result column="control_id" jdbcType="INTEGER" property="controlId"/>
+        <result column="tag_id" jdbcType="INTEGER" property="tagId"/>
+        <result column="address" jdbcType="INTEGER" property="address"/>
+        <result column="upper_value" jdbcType="DOUBLE" property="upperValue"/>
+        <result column="lower_value" jdbcType="DOUBLE" property="lowerValue"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="electricity_value" jdbcType="DOUBLE" property="electricityValue"/>
+        <result column="value" jdbcType="DOUBLE" property="value"/>
+        <result column="can_index" jdbcType="INTEGER" property="canIndex"/>
+        <result column="can_channel_type_id" jdbcType="INTEGER" property="canChannelTypeId"/>
+        <result column="sid" jdbcType="INTEGER" property="sid"/>
+        <result column="dsn" jdbcType="INTEGER" property="dsn"/>
+        <result column="did" jdbcType="INTEGER" property="did"/>
+        <result column="nid" jdbcType="INTEGER" property="nid"/>
+        <association property="canDevice" javaType="com.exc.street.light.resource.entity.electricity.CanDevice">
+            <id column="d_id" jdbcType="INTEGER" property="id"/>
+            <result column="d_name" jdbcType="VARCHAR" property="name"/>
+        </association>
+        <association property="canScene" javaType="com.exc.street.light.resource.entity.electricity.CanScene">
+            <id column="s_id" jdbcType="INTEGER" property="id"/>
+            <result column="s_name" jdbcType="VARCHAR" property="name"/>
+        </association>
+        <association property="electricityNode"
+                     javaType="com.exc.street.light.resource.entity.electricity.ElectricityNode">
+            <id column="n_id" jdbcType="INTEGER" property="id"/>
+            <result column="n_name" jdbcType="VARCHAR" property="name"/>
+            <result column="n_buildingId" jdbcType="INTEGER" property="buildingId"/>
+        </association>
+    </resultMap>
+    <resultMap id="BaseResultMap2" type="com.exc.street.light.resource.entity.electricity.CanChannel">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="device_address" jdbcType="INTEGER" property="deviceAddress"/>
+        <result column="phase_position" jdbcType="INTEGER" property="phasePosition"/>
+        <result column="bind_address" jdbcType="INTEGER" property="bindAddress"/>
+        <result column="electricity_update_time" jdbcType="TIMESTAMP" property="electricityUpdateTime"/>
+        <result column="bind_channel_control_id" jdbcType="INTEGER" property="bindChannelControlId"/>
+        <result column="control_id" jdbcType="INTEGER" property="controlId"/>
+        <result column="tag_id" jdbcType="INTEGER" property="tagId"/>
+        <result column="address" jdbcType="INTEGER" property="address"/>
+        <result column="upper_value" jdbcType="DOUBLE" property="upperValue"/>
+        <result column="lower_value" jdbcType="DOUBLE" property="lowerValue"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="value" jdbcType="DOUBLE" property="value"/>
+        <result column="electricity_value" jdbcType="DOUBLE" property="electricityValue"/>
+        <result column="can_index" jdbcType="INTEGER" property="canIndex"/>
+        <result column="can_channel_type_id" jdbcType="INTEGER" property="canChannelTypeId"/>
+        <result column="sid" jdbcType="INTEGER" property="sid"/>
+        <result column="dsn" jdbcType="INTEGER" property="dsn"/>
+        <result column="did" jdbcType="INTEGER" property="did"/>
+        <result column="nid" jdbcType="INTEGER" property="nid"/>
+    </resultMap>
+
+    <resultMap id="PageResultMap" type="com.exc.street.light.resource.vo.electricity.CanChannelListVO">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="device_address" jdbcType="INTEGER" property="deviceAddress"/>
+        <result column="control_id" jdbcType="INTEGER" property="controlId"/>
+        <result column="tag_id" jdbcType="INTEGER" property="tagId"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="value" jdbcType="DOUBLE" property="value"/>
+        <result column="d_name" property="canDeviceName"/>
+        <result column="electricity_update_time" property="electricityUpdateTime"/>
+        <result column="can_channel_type_id" jdbcType="INTEGER" property="canChannelTypeId"/>
+        <result column="sid" jdbcType="INTEGER" property="sid"/>
+        <result column="dsn" jdbcType="INTEGER" property="dsn"/>
+        <result column="did" jdbcType="INTEGER" property="did"/>
+        <result column="nid" jdbcType="INTEGER" property="nid"/>
+        <result column="n_name" property="nodeName"/>
+        <result column="n_num" property="nodeNum"/>
+        <result column="node_is_offline" property="nodeStatus"/>
+        <result column="area_id" property="areaId"/>
+        <result column="area_name" property="areaName"/>
+        <result column="strategy_id" property="strategyId"/>
+    </resultMap>
+
+    <update id="updateByTagIdAndDid">
+        UPDATE can_channel
+        SET value = #{value}
+        WHERE tag_id = #{tagId}
+          AND did = #{did}
+    </update>
+
+    <select id="getByNid" resultMap="BaseResultMap">
+        SELECT c.id,
+               c.tag_id,
+               c.name,
+               c.value,
+               c.can_channel_type_id,
+               c.sid,
+               c.dsn,
+               c.did,
+               c.nid,
+               d.id   AS d_id,
+               d.name AS d_name,
+               n.id   AS n_id,
+               n.name AS n_name
+        FROM can_channel c
+                     LEFT JOIN can_device d ON c.did = d.id
+                     LEFT JOIN electricity_node n ON d.nid = n.id
+        WHERE n.id = #{nid}
+    </select>
+
+    <select id="getByTagIdAndNid" resultMap="BaseResultMap">
+        SELECT c.*
+        FROM can_channel c
+                     LEFT JOIN can_device d ON c.did = d.id
+                     LEFT JOIN electricity_node n ON n.id = d.nid
+        WHERE c.tag_id = #{tagId}
+          AND n.id = #{nid}
+    </select>
+
+    <select id="querySceneChannelByNid" resultMap="BaseResultMap">
+        SELECT d.id, d.tag_id, s.id AS s_id, s.name AS s_name
+        FROM (SELECT c.id, c.tag_id
+              FROM can_channel c
+                           LEFT JOIN can_device d ON c.did = d.id
+              WHERE d.nid = #{nid}
+                AND d.mid = 1) d
+                     LEFT JOIN (SELECT id, name, scene_id FROM can_scene WHERE nid = #{nid}) s on d.tag_id = s.scene_id
+    </select>
+
+    <select id="query" resultMap="BaseResultMap">
+        SELECT DISTINCT c.id,
+                        c.tag_id,
+                        c.name,
+                        c.control_id,
+                        c.device_address,
+                        c.value,
+                        c.can_channel_type_id,
+                        c.sid,
+                        c.dsn,
+                        c.did,
+                        c.nid,
+                        d.id   AS d_id,
+                        d.name AS d_name,
+                        n.id   AS n_id,
+                        n.name AS n_name
+        FROM can_channel c
+                     LEFT JOIN can_device d ON c.did = d.id
+                     LEFT JOIN electricity_node n ON d.nid = n.id
+                WHERE c.sid = 4
+        <if test="channelTypeId != null">
+            and c.can_channel_type_id = #{channelTypeId}
+        </if>
+        <if test="nid != null">
+            and c.nid = #{nid}
+        </if>
+    </select>
+
+    <select id="selectByTagIdAndNid" resultMap="BaseResultMap">
+        SELECT *
+        FROM can_channel
+        WHERE tag_id = #{tagId}
+          AND nid = #{nid}
+    </select>
+
+    <select id="listAll" resultMap="BaseResultMap">
+        SELECT c.id,
+               c.tag_id,
+               c.device_address,
+               c.control_id,
+               c.name,
+               c.value,
+               c.can_channel_type_id,
+               c.sid,
+               c.dsn,
+               c.did,
+               c.nid,
+               c.electricity_update_time,
+               d.id          AS d_id,
+               d.name        AS d_name,
+               n.id          AS n_id,
+               n.name        AS n_name,
+               n.building_id AS n_buildingId
+        FROM can_channel c
+                     LEFT JOIN can_device d ON c.did = d.id
+                     LEFT JOIN electricity_node n ON d.nid = n.id
+        <!--LEFT JOIN building b ON b.id = n.building_id
+        LEFT JOIN building_site bs ON bs.building_id = b.id-->
+        WHERE c.sid = 4
+          AND c.can_channel_type_id NOT IN (8)
+        <if test="channelTypeId != null">
+            and c.can_channel_type_id = #{channelTypeId}
+        </if>
+        <if test="nid != null">
+            and c.nid = #{nid}
+        </if>
+        <if test="status != null">
+            and c.value = #{status}
+        </if>
+        <!--<if test="siteId != null">
+            and bs.site_id = #{siteId}
+        </if>-->
+        <!--<if test="buildingId != null">
+            and n.building_id = #{buildingId}
+        </if>-->
+        <if test="offline != null">
+            and n.is_offline = #{offline}
+        </if>
+        <!--<if test="partitionId != null">
+            and b.partition_id = #{partitionId}
+        </if>
+        <if test="buildingName != null and buildingName != ''">
+            AND b.name LIKE CONCAT('%', #{buildingName}, '%')
+        </if>-->
+        GROUP BY c.id
+    </select>
+
+    <select id="selectControlByNid" parameterType="java.lang.Integer"
+            resultType="com.exc.street.light.resource.dto.electricity.ControlObject">
+        SELECT tag_id tagId, device_address deviceAddress, control_id controlId
+        FROM can_channel
+        WHERE nid = #{nid}
+          AND sid = 4
+    </select>
+
+    <select id="selectSceneByNid" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        SELECT *
+        FROM can_channel
+        WHERE nid = #{nid}
+          AND sid = 11
+        ORDER BY tag_id
+        LIMIT 2
+    </select>
+
+    <select id="selectInfoByNidAndTagId"
+            resultType="com.exc.street.light.resource.dto.electricity.ControlChannelTagIdInfo">
+        SELECT device_address AS deviceAddress, control_id AS controlId
+        FROM can_channel c
+        WHERE tag_id = #{tagId}
+          AND nid = #{nid};
+    </select>
+
+
+    <select id="selectByTagIdAndNidAndAddress" resultMap="BaseResultMap2">
+        SELECT *
+        FROM can_channel
+        WHERE control_id = #{controlId}
+          AND nid = #{nid}
+          AND address = #{address}
+    </select>
+    <select id="selectPhasePositionById" resultType="java.lang.Integer">
+        SELECT phase_position
+        from can_channel
+        where id = #{id}
+    </select>
+
+    <select id="querySceneChannelByNidList" resultMap="BaseResultMap">
+        SELECT d.id, d.nid, d.tag_id, s.id AS s_id, s.name AS s_name
+                FROM (SELECT c.id, c.tag_id, c.nid
+                      FROM can_channel c
+                                   LEFT JOIN can_device d ON c.did = d.id
+        <where>
+            d.mid = 1
+            <if test="nidList != null and nidList.size() != 0">
+                and d.nid in
+                <foreach collection="nidList" item="nid" open="(" close=")" separator=",">
+                    #{nid}
+                </foreach>
+            </if>
+        </where>
+        ) d
+                LEFT JOIN (SELECT id, name, scene_id
+                           FROM can_scene
+        <where>
+            <if test="nidList != null and nidList.size() != 0">
+                and nid in
+                <foreach collection="nidList" item="nid" open="(" close=")" separator=",">
+                    #{nid}
+                </foreach>
+            </if>
+        </where>
+        ) s on d.tag_id = s.scene_id
+    </select>
+
+    <select id="getPageList" resultMap="PageResultMap">
+        SELECT DISTINCT c.id,
+        c.tag_id,
+        c.name,
+        c.control_id,
+        c.device_address,
+        c.value,
+        c.can_channel_type_id,
+        c.strategy_id,
+        c.sid,
+        c.dsn,
+        c.did,
+        c.nid,
+        d.id   AS d_id,
+        d.name AS d_name,
+        n.id   AS n_id,
+        n.name AS n_name,
+        n.num as n_num,
+        n.is_offline as node_is_offline,
+        la.id as area_id,
+        la.name as area_name
+        FROM can_channel c
+        LEFT JOIN can_device d ON c.did = d.id
+        LEFT JOIN electricity_node n ON d.nid = n.id
+        left join `user` usr on usr.id = n.creator
+        left join location_area la on usr.area_id = la.id
+        WHERE c.sid = 4
+        <if test="qo.name != null and qo.name != ''">
+            and c.name like concat('%',#{qo.name},'%')
+        </if>
+        <if test="qo.nodeName != null and qo.nodeName != ''">
+            and n.name like concat('%',#{qo.nodeName},'%')
+        </if>
+        <if test="qo.channelTypeId != null">
+            and c.can_channel_type_id = #{qo.channelTypeId}
+        </if>
+        <if test="qo.nid != null">
+            and c.nid = #{qo.nid}
+        </if>
+        <if test="qo.offline != null">
+            and n.is_offline = #{qo.offline}
+        </if>
+        <if test="qo.areaId != null">
+            and la.id = #{qo.areaId}
+        </if>
+    </select>
+
+    <select id="getPageAllList" resultMap="PageResultMap">
+        SELECT c.id,
+        c.tag_id,
+        c.device_address,
+        c.control_id,
+        c.name,
+        c.value,
+        c.can_channel_type_id,
+        c.sid,
+        c.dsn,
+        c.did,
+        c.nid,
+        c.electricity_update_time,
+        d.id          AS d_id,
+        d.name        AS d_name,
+        n.id          AS n_id,
+        n.name        AS n_name,
+        n.building_id AS n_buildingId,
+        la.id as area_id,
+        la.name as area_name
+        FROM can_channel c
+        LEFT JOIN can_device d ON c.did = d.id
+        LEFT JOIN electricity_node n ON d.nid = n.id
+        left join `user` usr on usr.id = n.creator
+        left join location_area la on usr.area_id = la.id
+        WHERE c.sid = 4
+        AND c.can_channel_type_id NOT IN (8)
+        <if test="qo.channelTypeId != null">
+            and c.can_channel_type_id = #{qo.channelTypeId}
+        </if>
+        <if test="qo.nid != null">
+            and c.nid = #{qo.nid}
+        </if>
+        <if test="qo.status != null">
+            and c.value = #{qo.status}
+        </if>
+        <if test="qo.offline != null">
+            and n.is_offline = #{qo.offline}
+        </if>
+        <if test="qo.areaId != null">
+            and la.id = #{qo.areaId}
+        </if>
+        GROUP BY c.id
+    </select>
+</mapper>

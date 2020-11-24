@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.sl.mapper.LocationControlMapper">
+
+	<resultMap id="BaseResultMap" type="com.exc.street.light.resource.entity.dlm.LocationControl">
+		<id column="id" property="id" />
+		<id column="name" property="name" />
+		<id column="num" property="num" />
+		<id column="location" property="location" />
+		<id column="type_id" property="typeId" />
+		<id column="is_online" property="isOnline" />
+		<id column="creator" property="creator" />
+		<id column="create_time" property="createTime" />
+		<id column="last_online_time" property="lastOnlineTime" />
+		<id column="description" property="description" />
+		<id column="cabinet_id" property="cabinetId" />
+		<id column="ip" property="ip" />
+		<id column="port" property="port" />
+		<id column="mac" property="mac" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, name, num, location, type_id, is_online, creator, create_time, last_online_time, description, cabinet_id, ip, port, mac
+	</sql>
+	
+</mapper>

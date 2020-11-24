@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.ir.mapper.ScreenMaterialMapper">
+
+	<resultMap id="BaseResultMap" type="com.exc.street.light.resource.entity.ir.ScreenMaterial">
+		<id column="id" property="id" />
+		<id column="name" property="name" />
+		<id column="type" property="type" />
+		<id column="creator" property="creator" />
+		<id column="create_time" property="createTime" />
+		<id column="max_play_time" property="maxPlayTime" />
+		<id column="mime" property="mime" />
+		<id column="size" property="size" />
+		<id column="file_name" property="fileName" />
+		<id column="oldfile_path" property="oldfilePath" />
+		<id column="file_ext" property="fileExt" />
+		<id column="width" property="width" />
+		<id column="height" property="height" />
+		<id column="background_color" property="backgroundColor" />
+		<id column="speed" property="speed" />
+		<id column="line_height" property="lineHeight" />
+		<id column="center" property="center" />
+		<id column="html" property="html" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, name, type, creator, create_time, max_play_time, mime, size, file_name, oldfile_path, file_ext, width, height, background_color, speed, line_height, center, html
+	</sql>
+    <select id="query" resultType="com.exc.street.light.resource.vo.resp.IrRespScreenMaterialVO">
+		SELECT
+			sm.id, sm.`name`, sm.`type`, sm.creator, sm.create_time createTime, sm.max_play_time maxPlayTime, sm.mime, sm.`size`,
+			sm.file_name fileName, sm.oldfile_path oldfilePath, sm.file_ext fileExt, sm.width, sm.height, sm.background_color backgroundColor,
+			sm.speed, sm.line_height lineHeight, sm.center, sm.html,
+			u.`name` creatorName 
+		FROM
+			screen_material sm
+			LEFT JOIN `user` u ON sm.creator = u.id
+			LEFT JOIN location_area AS la ON la.id = u.area_id 
+		WHERE
+			1 = 1
+		<if test="irMaterialQueryObject.name != null and irMaterialQueryObject.name != ''">
+			AND sm.`name` LIKE CONCAT('%', #{irMaterialQueryObject.name}, '%')
+		</if>
+		<if test="irMaterialQueryObject.type != null and irMaterialQueryObject.type!=''">
+			AND sm.type = #{irMaterialQueryObject.type}
+		</if>
+		<if test="irMaterialQueryObject.creatorName != null and irMaterialQueryObject.creatorName != ''">
+			AND u.`name` LIKE CONCAT('%', #{irMaterialQueryObject.creatorName}, '%')
+		</if>
+		<if test="irMaterialQueryObject.startTime != null">
+			AND sm.create_time &gt;= #{irMaterialQueryObject.startTime}
+		</if>
+		<if test="irMaterialQueryObject.endTime != null">
+			AND sm.create_time &lt;= #{irMaterialQueryObject.endTime}
+		</if>
+		<if test="irMaterialQueryObject.areaId != null">
+                AND la.id = #{irMaterialQueryObject.areaId}
+        </if>
+		ORDER BY sm.id DESC
+	</select>
+    <select id="getIrMaterialVO" resultType="com.exc.street.light.resource.vo.IrMaterialVO">
+		SELECT sm.id, sm.`name`, sm.`type`, sm.creator, sm.create_time createTime, sm.max_play_time maxPlayTime, sm.mime, sm.`size`,
+		sm.file_name fileName, sm.oldfile_path oldfilePath, sm.file_ext fileExt, sm.width, sm.height, sm.background_color backgroundColor,
+		sm.speed, sm.line_height lineHeight, sm.center, sm.html FROM screen_material sm WHERE sm.id IN
+		<foreach collection="list" item="num" open="(" close=")" separator=",">
+			#{num}
+		</foreach>
+	</select>
+
+</mapper>

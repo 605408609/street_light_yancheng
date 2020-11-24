@@ -1,0 +1,62 @@
+socket-io:
+  #绑定地址
+  host: 192.168.111.11
+  #绑定端口
+  port: 60031
+  #最大帧对立数据长度
+  max-frame-payload-length: 1048576
+  #http交互最大数据长度
+  max-http-content-length: 1048576
+  #socket连接数大小
+  boss-count: 1
+  work-count: 100
+  allow-custom-requests: true
+  # 协议升级超时时间  http升级ws
+  upgrade-timeout: 1000000
+  # ping消息超时时间，超过该时间未收到心跳，服务器端会触发超时事件
+  ping-timeout: 60000
+  # ping消息间隔，客户端发起心跳间隔
+  ping-interval: 25000
+
+spring:
+  kafka:
+    bootstrap-servers: 192.168.111.165:9092
+
+    #生产者
+    producer:
+      #失败重试次数
+      retries: 1
+      #缓存大小，默认16k,配合properties中的linger使用
+      batch-size: 16384
+      #缓存消息的缓冲区大小，默认32，多分区使用时适当加大
+      buffer-memory: 33554432
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+#      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: com.exc.street.light.wsi.serializer.PersonSerializer
+      properties:
+        linger.ms: 1
+      acks: 1
+    #消费者
+    consumer:
+      #偏移量提交方式: false 手动 true 自动，但是此处是交给spring自动处理的意思
+      enable-auto-commit: false
+      #偏移量自动提交间隔 commit为false时无效，spring处理有效
+      auto-commit-interval: 100ms
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-serializer: com.exc.street.light.wsi.serializer.PersonDeSerializer
+      properties:
+        session.timeout.ms: 15000
+    listener: #批量监听每次数量为500
+      type: batch
+      concurrency: 3
+      poll-timeout: 2000
+
+
+kafka:
+  topic:
+    group-id: topicGroupId
+  topic1:
+    topic-name: websocket1
+
+

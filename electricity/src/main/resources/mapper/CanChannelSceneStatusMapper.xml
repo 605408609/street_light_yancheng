@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.electricity.mapper.CanChannelSceneStatusMapper">
+
+	<resultMap id="sceneStatusResultMap" type="com.exc.street.light.resource.dto.electricity.CanChannelSceneStatusDTO">
+		<id property="id" column="id"/>
+		<result property="addCloseStatus" column="add_close_status"/>
+		<result property="addOpenStatus" column="add_open_status"/>
+		<result property="ip" column="ip"/>
+		<result property="port" column="port"/>
+		<result property="controlId" column="control_id"/>
+	</resultMap>
+
+	<select id="findSceneStatusList" resultMap="sceneStatusResultMap">
+		SELECT ccss.id,
+		ccss.add_close_status,
+		ccss.add_open_status,
+		en.ip,
+		en.`port`,
+		cc.control_id
+		FROM can_channel_scene_status ccss
+		LEFT JOIN electricity_node en ON en.id = ccss.nid
+		LEFT JOIN can_channel cc ON cc.id = ccss.channel_id
+		WHERE (ccss.add_close_status = 0 OR ccss.add_open_status = 0)
+		AND en.mac = #{mac}
+	</select>
+</mapper>

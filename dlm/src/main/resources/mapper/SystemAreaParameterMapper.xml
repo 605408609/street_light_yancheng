@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.dlm.mapper.SystemAreaParameterMapper">
+
+    <resultMap id="BaseResultMap" type="com.exc.street.light.resource.entity.dlm.SystemAreaParameter">
+        <id column="id" property="id"/>
+        <id column="area_id" property="areaId"/>
+        <id column="filed" property="filed"/>
+        <id column="unit" property="unit"/>
+        <id column="name" property="name"/>
+        <id column="value" property="value"/>
+        <id column="remarks" property="remarks"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+		id, area_id, filed, unit, name, value, remarks
+	</sql>
+
+    <resultMap id="selectParameterListResultMap" type="com.exc.street.light.resource.entity.dlm.SystemAreaParameter">
+        <id column="id" property="id"/>
+        <result column="area_id" property="areaId"/>
+        <result column="filed" property="filed"/>
+        <result column="unit" property="unit"/>
+        <result column="name" property="name"/>
+        <result column="value" property="value"/>
+        <result column="remarks" property="remarks"/>
+        <association property="systemDeviceType" javaType="com.exc.street.light.resource.entity.sl.SystemDeviceType">
+            <id column="id" property="id"/>
+            <result column="name" property="name"/>
+            <result column="edition" property="edition"/>
+            <result column="protocol" property="protocol"/>
+            <result column="socket" property="socket"/>
+            <result column="factory_id" property="factoryId"/>
+            <result column="description" property="description"/>
+            <result column="num_length" property="numLength"/>
+            <result column="loop_type" property="loopType"/>
+        </association>
+    </resultMap>
+
+    <select id="selectParameterList" resultMap="selectParameterListResultMap">
+        select sap.*, sdt.* from system_area_parameter sap
+        left join system_device_type sdt on sdt.id = sap.value and sap.filed = 'device_type'
+        <where>
+            <if test="areaId != null">
+                and sap.area_id = #{areaId}
+            </if>
+        </where>
+        order by sap.id asc
+    </select>
+
+</mapper>

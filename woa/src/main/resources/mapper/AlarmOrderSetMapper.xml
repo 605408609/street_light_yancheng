@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.woa.mapper.AlarmOrderSetMapper">
+
+    <resultMap id="BaseResultMap" type="com.exc.street.light.resource.entity.woa.AlarmOrderSet">
+        <id column="id" property="id"/>
+        <id column="status" property="status"/>
+        <id column="handle_duration" property="handleDuration"/>
+        <id column="auto_duration" property="autoDuration"/>
+        <id column="creator" property="creator"/>
+        <id column="create_time" property="createTime"/>
+        <id column="processor" property="processor"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+		id, status, handle_duration, auto_duration, creator, create_time, processor
+	</sql>
+    <select id="getLampPostById" parameterType="java.lang.Integer"
+            resultType="com.exc.street.light.resource.entity.dlm.SlLampPost">
+        SELECT * FROM sl_lamp_post WHERE id = #{lampPostId}
+    </select>
+    <select id="query" resultType="com.exc.street.light.resource.vo.resp.WoaRespAlarmOrderSetVO">
+        SELECT aos.id id, group_concat(slp.`name` separator '，') lampPostNames,
+        CASE aos.processor WHEN 0 THEN "系统自动生成" ELSE u.`name` END processor,
+        aos.create_time createTime, aos.`status` `status`
+        FROM alarm_order_set aos
+        LEFT JOIN alarm_order_set_lamp_post aoslp ON aos.id = aoslp.set_id
+        LEFT JOIN sl_lamp_post slp ON slp.id = aoslp.lamp_post_id
+        LEFT JOIN location_site ls ON ls.id = slp.site_id
+        LEFT JOIN location_street lst ON lst.id = ls.street_id
+        LEFT JOIN location_area la ON la.id = lst.area_id
+        LEFT JOIN `user` u ON u.id = aos.processor
+        <where>
+            <if test="woaAlarmOrderSetQuery.status != null and woaAlarmOrderSetQuery.status != ''">
+                AND aos.status = #{woaAlarmOrderSetQuery.status}
+            </if>
+            <if test="woaAlarmOrderSetQuery.areaId != null">
+                AND la.id = #{woaAlarmOrderSetQuery.areaId}
+            </if>
+        </where>
+        GROUP BY aos.id
+    </select>
+
+</mapper>

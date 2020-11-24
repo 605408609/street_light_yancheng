@@ -1,0 +1,9 @@
+07:39:17.915 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+07:39:28.003 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+07:39:38.102 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+07:39:48.217 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+07:40:21.017 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+07:40:53.710 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+07:41:03.795 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+07:41:13.899 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379
+08:12:10.109 WARN  i.l.core.protocol.ConnectionWatchdog[line:151] - Cannot reconnect to [192.168.111.165:6379]: connection timed out: /192.168.111.165:6379

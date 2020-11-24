@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.dlm.mapper.DeviceOnlineDao">
+
+	<resultMap id="BaseResultMap" type="com.exc.street.light.resource.entity.dlm.DeviceOnline">
+		<id column="id" property="id" />
+		<id column="type" property="type" />
+		<id column="device_id" property="deviceId" />
+		<id column="dataTime" property="datetime" />
+		<id column="lamp_post_id" property="lampPostId"/>
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, type, device_id, dataTime, lamp_post_id
+	</sql>
+	<select id="typeGroup" resultType="com.exc.street.light.resource.vo.DeviceTypeGroupVO">
+		select type,count(*) count from device_online
+		<where>
+			<if test="dateTime != null">
+				AND datetime > #{dateTime}
+			</if>
+			<if test="list != null and list.size() > 0">
+				AND lamp_post_id IN
+				<foreach collection="list" item="num" open="(" close=")" separator=",">
+					#{num}
+				</foreach>
+			</if>
+		</where>
+		group by type
+	</select>
+	<select id="deviceAll" resultType="com.exc.street.light.resource.vo.DeviceAllVo">
+		select * from (
+			select id,1 type,lamp_post_id lampPostId, CASE WHEN network_state = 1 AND last_online_time IS NULL THEN now() ELSE last_online_time END datetime from lamp_device UNION All
+			select id,2 type,lamp_post_id lampPostId, CASE WHEN network_state = 1 AND last_online_time IS NULL THEN now() ELSE last_online_time END datetime from wifi_ap_device UNION All
+			select id,3 type,lamp_post_id lampPostId, CASE WHEN network_state = 1 AND last_online_time IS NULL THEN now() ELSE last_online_time END datetime from radio_device UNION All
+			select id,4 type,lamp_post_id lampPostId, CASE WHEN network_state = 1 AND last_online_time IS NULL THEN now() ELSE last_online_time END datetime from ss_device UNION All
+			select id,5 type,lamp_post_id lampPostId, CASE WHEN network_state = 1 AND last_online_time IS NULL THEN now() ELSE last_online_time END datetime from screen_device UNION All
+			select id,6 type,lamp_post_id lampPostId, CASE WHEN network_state = 1 AND last_online_time IS NULL THEN now() ELSE last_online_time END datetime from ah_device UNION All
+			select id,7 type,lamp_post_id lampPostId, CASE WHEN network_state = 1 AND last_online_time IS NULL THEN now() ELSE last_online_time END datetime from meteorological_device
+		) devaiceall where  to_days(datetime) = to_days(now())
+	</select>
+	<select id="deviceExist" resultMap="BaseResultMap">
+		select * from device_online where device_id = #{id} and	type = #{type} and DATE_FORMAT(datetime,'%Y-%m-%d') = #{format}
+	</select>
+</mapper>

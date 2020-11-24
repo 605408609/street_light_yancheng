@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.electricity.mapper.CanChannelTypeMapper">
+    <resultMap id="BaseResultMap" type="com.exc.street.light.resource.entity.electricity.CanChannelType">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="parent_id" jdbcType="INTEGER" property="parentId"/>
+    </resultMap>
+    <select id="getRelayType" resultMap="BaseResultMap">
+        SELECT id, name, parent_id
+        FROM can_channel_type
+        WHERE parent_id = 2
+    </select>
+    <select id="find" resultMap="BaseResultMap">
+        SELECT id, name, parent_id
+        FROM can_channel_type
+        WHERE parent_id = 2
+          AND id != 8
+    </select>
+</mapper>

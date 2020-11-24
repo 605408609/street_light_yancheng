@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.electricity.mapper.CanChannelStrategyHistoryMapper">
+
+	<resultMap id="BaseResultMap" type="com.exc.street.light.resource.entity.electricity.CanChannelStrategyHistory">
+		<id column="id" property="id" />
+		<id column="channel_id" property="channelId" />
+		<id column="strategy_id" property="strategyId" />
+		<id column="create_time" property="createTime" />
+		<id column="is_success" property="isSuccess" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, channel_id, strategy_id, create_time, is_success
+	</sql>
+	
+</mapper>

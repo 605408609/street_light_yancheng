@@ -1,0 +1,132 @@
+# 配置端口
+server:
+  port: 60022
+  #全局配置接口地址前缀
+  #servlet:
+    #context-path: /api/pb
+spring:
+  # 配置数据源
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.111.89:3306/street_light_3.0?useUnicode=true&characterEncoding=UTF-8&generateSimpleParameterMetadata=true&serverTimezone=Asia/Shanghai
+    username: root
+    password: Exc_led1
+    type: com.alibaba.druid.pool.DruidDataSource
+# mybatis-plus相关配置
+mybatis-plus:
+  # xml扫描，多个目录用逗号或者分号分隔（告诉 Mapper 所对应的 XML 文件位置）
+  mapper-locations: classpath:mapper/*.xml
+  # 以下配置均有默认值,可以不设置
+  global-config:
+    #去掉控制台打印版本号
+    banner: false
+    db-config:
+      #主键类型 AUTO:"数据库ID自增" INPUT:"用户输入ID",ID_WORKER:"全局唯一ID (数字类型唯一ID)", UUID:"全局唯一ID UUID";
+      id-type: auto
+      #字段策略 IGNORED:"忽略判断"  NOT_NULL:"非 NULL 判断")  NOT_EMPTY:"非空判断"
+      field-strategy: NOT_EMPTY
+  configuration:
+    # 是否开启自动驼峰命名规则映射:从数据库列名到Java属性驼峰命名的类似映射
+    map-underscore-to-camel-case: true
+    # 如果查询结果中包含空值的列，则 MyBatis 在映射的时候，不会映射这个字段
+    call-setters-on-nulls: true
+    # 这个配置会将执行的sql打印出来，在开发或测试的时候可以用
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+logging:
+ # 指定需要使用的日志配置文件名称
+ config: classpath:logback-dev.xml
+
+
+#广播设备定时
+timer:
+    #每过五分钟登录一次并获取雷拓IP广播平台身份验证JSESSIONID
+    login: 0 0/5 * * * ?
+    #每过3分钟获取一次广播设备状态
+    updateDeviceStatus: 0 * * * * ?
+    #每过1分钟更新一次广播定时任务状态
+    updateTaskStatus: 0 * * * * ?
+
+upload:
+  path: D:/import/mp3/
+  device:
+    picture:
+      path: D:/import/
+
+http:
+  # 智慧照明
+  sl:
+    url: http://192.168.0.29:60020
+    deviceAll: /api/sl/lamp/device/all
+    deviceById: /api/sl/lamp/device/
+  # 公共WIFI
+  wifi:
+    url: http://192.168.0.252:60021
+    deviceAll: /api/wifi/wifi/ap/device/all
+    deviceById: /api/wifi/wifi/ap/device/
+  # 公共广播
+  pd:
+    url: http://192.168.0.170:60022
+    deviceAll: /api/pd/radio/device/all
+    deviceById: /api/pd/radio/device/
+  # 智能安防
+  ss:
+    url: http://192.168.0.104:60023
+    deviceAll: /api/ss/ss/device/all
+    deviceById: /api/ss/ss/device/
+  # 信息发布
+  ir:
+    url: http://192.168.0.29:60024
+    deviceAll: /api/ir/screen/device/all
+    deviceById: /api/ir/screen/device/
+  # 一键呼叫
+  occ:
+    url: http://192.168.0.104:60025
+    deviceAll: /api/occ/ah/device/all
+    deviceById: /api/occ/ah/device/
+  # 环境监测
+  em:
+    url: http://192.168.111.170:60026
+    deviceAll: /api/sl/lamp/device/all
+    deviceById: /api/sl/lamp/device/
+
+  # 设备位置管理
+  dlm:
+    url: http://192.168.112.252:60027
+    deviceAll: /api/dlm/sl/lamp/post/all
+    deviceById: /api/dlm/sl/lamp/post/device/
+    lampPostById: /api/dlm/sl/lamp/post/
+    lampPostByIdList: /api/dlm/sl/lamp/post/get/list
+
+  # 用户信息
+  ua:
+    url: http://192.168.112.252:60029
+    selectName: /api/ua/user/name/by/ids
+
+#雷拓接口调用配置
+#公共广播调用http接口URL
+pb:
+  http:
+    url: http://192.168.112.158:9089/
+  #登录名
+  user:
+    name: admin
+  #登录密码
+  password: admin
+  #ip网络广播系统的模式  debug:定时任务只能添加三条
+  ipcast: debug
+
+#认证中心
+security:
+  authe:
+    url: http://192.168.112.252:60029/api/ua/authe
+  authc:
+    url: http://192.168.112.252:60029/api/ua/authc
+
+#不需要认证
+exclude:
+  authe:
+    url: /api/test,/mp3/**,/error,/swagger-resources/**,/v2/api-docs,/doc.html,/webjars/**
+  #不需要鉴权
+  authc:
+    url: /api/test,/mp3/**,/error,/swagger-resources/**,/v2/api-docs,/doc.html,/webjars/**

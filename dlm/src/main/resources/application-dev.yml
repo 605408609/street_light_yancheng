@@ -1,0 +1,185 @@
+# 配置端口
+server:
+  port: 60027
+  #全局配置接口地址前缀
+#  servlet:
+#    context-path: /api/dlm
+# netty参数
+netty:
+  port: 60066
+# 资源路径
+path:
+  file: D:/import/static
+  upload: D:/import/static/projectPicture
+spring:
+  # 配置数据源
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.111.89:3306/street_light_3.0?useUnicode=true&characterEncoding=UTF-8&generateSimpleParameterMetadata=true&serverTimezone=Asia/Shanghai
+    username: root
+    password: Exc_led1
+    type: com.alibaba.druid.pool.DruidDataSource
+  # 配置redis
+  redis:
+    database: 0
+    host: 192.168.111.165
+    port: 6379
+    password: "@exc123led123"
+    timeout: 3000
+    lettuce:
+      pool:
+        max-active: 8
+        max-wait: -1ms
+        max-idle: 8
+        min-idle: 0
+# mybatis-plus相关配置
+mybatis-plus:
+  # xml扫描，多个目录用逗号或者分号分隔（告诉 Mapper 所对应的 XML 文件位置）
+  mapper-locations: classpath:mapper/*.xml
+  # 以下配置均有默认值,可以不设置
+  global-config:
+    #去掉控制台打印版本号
+    banner: false
+    db-config:
+      #主键类型 AUTO:"数据库ID自增" INPUT:"用户输入ID",ID_WORKER:"全局唯一ID (数字类型唯一ID)", UUID:"全局唯一ID UUID";
+      id-type: auto
+      #字段策略 IGNORED:"忽略判断"  NOT_NULL:"非 NULL 判断")  NOT_EMPTY:"非空判断"
+      field-strategy: NOT_EMPTY
+  configuration:
+    # 是否开启自动驼峰命名规则映射:从数据库列名到Java属性驼峰命名的类似映射
+    map-underscore-to-camel-case: true
+    # 如果查询结果中包含空值的列，则 MyBatis 在映射的时候，不会映射这个字段
+    call-setters-on-nulls: true
+    # 这个配置会将执行的sql打印出来，在开发或测试的时候可以用
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+logging:
+  # 指定需要使用的日志配置文件名称
+  config: classpath:logback-dev.xml
+http:
+  # 智慧照明
+  sl:
+#    url: http://192.168.0.29:60020
+    url: http://192.168.112.17:60020
+    deviceAll: /api/sl/lamp/device/all
+    devicePage: /api/sl/lamp/device/page
+    deviceById: /api/sl/lamp/device/
+    pulldownByLampPostIdList: /api/sl/lamp/device/pulldown/by/lamp/post
+    control: /api/sl/lamp/device/control
+    loopControl: /api/sl/lamp/ht/message/setLampPostOutput
+    loopScene: /api/sl/lamp/ht/message/setLampPostOutputTimer
+    getDeviceListByIdList: /api/sl/system/device/by/idList
+    register: /api/sl/system/device/register
+    relieveRegister: /api/sl/system/device/relieveRegister
+  # 公共WIFI
+  wifi:
+    url: http://192.168.112.252:60021
+    deviceAll: /api/wifi/wifi/ap/device/all
+    devicePage: /api/wifi/wifi/ap/device/list
+    deviceById: /api/wifi/wifi/ap/device/get/
+    pulldownByLampPostIdList: /api/wifi/wifi/ap/device/pulldown/by/lamp/post
+  # 公共广播
+  pb:
+    url: http://192.168.0.58:60022
+    deviceAll: /api/pb/radio/device/all
+    devicePage: /api/pb/radio/device/getList
+    deviceById: /api/pb/radio/device/
+    pulldownByLampPostIdList: /api/pb/radio/device/pulldown/by/lamp/post
+  # 智能安防
+  ss:
+#    url: http://192.168.111.89:60023
+    url: http://192.168.0.11:60023
+    deviceAll: /api/ss/ss/device/all
+    devicePage: /api/ss/ss/device/page
+    deviceById: /api/ss/ss/device/
+    pulldownByLampPostIdList: /api/ss/ss/device/pulldown/by/lamp/post
+  # 信息发布
+  ir:
+    url: http://192.168.0.29:60024
+    deviceAll: /api/ir/screen/device/all
+    devicePage: /api/ir/screen/device/query
+    deviceById: /api/ir/screen/device/
+    pulldownByLampPostIdList: /api/ir/screen/device/pulldown/by/lamp/post
+  # 一键呼叫
+  occ:
+#    url: http://192.168.111.84:60025
+    url: http://192.168.0.11:60025
+    deviceAll: /api/occ/ah/device/all
+    devicePage: /api/occ/ah/device/page
+    deviceById: /api/occ/ah/device/
+    pulldownByLampPostIdList: /api/occ/ah/device/pulldown/by/lamp/post
+  # 环境监测
+  em:
+    url: http://192.168.0.58:60026
+    deviceAll: /api/em/meteorological/device/all
+    devicePage: /api/em/meteorological/device/getList
+    deviceById: /api/em/meteorological/device/
+    pulldownByLampPostIdList: /api/em/meteorological/device/pulldown/by/lamp/post
+  # 运维管理
+  woa:
+    url: http://192.168.112.252:60029
+    modifyByArea: /api/ua/user/modify/by/area
+    user: /api/ua/user
+
+lora:
+  token: RXgXJUO7uhQD4ODmowFS1+Jcxg0c8QVYCzQolkU+yhw=
+  sendUrl: https://cloud.iotsquare.xyz/openapi/device/downlink/create
+  sendMcUrl: https://cloud.iotsquare.xyz/openapi/mcdownlink/create
+  createNode: https://cloud.iotsquare.xyz/openapi/device/create
+  createNodeMc: https://cloud.iotsquare.xyz/openapi/mcdevice/create
+  deleteNode: https://cloud.iotsquare.xyz/openapi/device/delete
+  deleteNodeMc: https://cloud.iotsquare.xyz/openapi/mcdevice/delete
+  loraMcId: 51221C37663DCDD0
+  appId: 792
+  appSKey: 2B7E151628AED2A6ABF7158809CF4F3C
+  nwkSKey: 2B7E151628AED2A6ABF7158809CF4F3C
+  num: "0000006E"
+  sendId: "0000000110"
+
+loranew:
+  sendMessage: http://47.110.127.110:8080/api2/v1/lorawan/downlink
+  createNode: http://47.110.127.110:8080/api/v1/lorawan/devices/addABP
+  deleteNode: http://47.110.127.110:8080/api/v1/lorawan/devices/batchDelete
+  appsKey: 2B7E151628AED2A6ABF7158809CF4F3C
+  nwksKey: 2B7E151628AED2A6ABF7158809CF4F3C
+  projectId: 5efbff2c7979c40001cf56ec
+  username: "dvk018"
+  password: "888888"
+  login: http://47.110.127.110:8080/api/v1/auth/login
+  sendSignToken: "FBF3DFD48DA2E20C"
+  sendSecretKey: "401715867A419F6903D02B2EC7AEDC96"
+  pushSignToken: "F22927F3B3A26F8A"
+  pushSecretKey: "6C294B6E2EBFEB2FA4BC4D98BBA7507C"
+
+ctwing:
+  secret: up3ocEh2Nh
+  application: EDtPyTjW5pg
+  masterKey: 00a7debf285d4f4e8f4dfe135c880057
+  productId: "10093258"
+  sendMessage: http://ag-api.ctwing.cn/aep_device_command/command
+  createNode: http://ag-api.ctwing.cn/aep_device_management/device
+  batchCreateDevice: http://ag-api.ctwing.cn/aep_nb_device_management/batchNBDevice
+  deleteNode: http://ag-api.ctwing.cn/aep_device_management/device
+  getTime: https://ag-api.ctwing.cn/echo
+  outTime: "7200"
+  # 策略分批下发间隔时间（毫秒）
+  intervalTime: "5000"
+  # 重发机制间隔时间（秒）
+  retransmissionTime: "30"
+
+# EXC集控状态
+timer:
+  controlStatus: 0 0/3 * * * ?
+
+#认证中心
+security:
+  authe:
+    url: http://192.168.112.252:60029/api/ua/authe
+  authc:
+    url: http://192.168.112.252:60029/api/ua/authc
+exclude:
+  #不需要认证
+  authe:
+    url: /api/test,/swagger-resources/**,/v2/api-docs,/doc.html,/webjars/**,/favicon.ico,/static/**,/error
+  #不需要鉴权
+  authc:
+    url: /api/test,/swagger-resources/**,/v2/api-docs,/doc.html,/webjars/**,/favicon.ico,/static/**,/error

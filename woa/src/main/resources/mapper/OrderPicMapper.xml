@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.woa.mapper.OrderPicMapper">
+
+    <resultMap id="BaseResultMap" type="com.exc.street.light.resource.entity.woa.OrderPic">
+        <id column="id" property="id"/>
+        <id column="name" property="name"/>
+        <id column="process_id" property="processId"/>
+        <id column="order_id" property="orderId"/>
+        <id column="create_time" property="createTime"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+		id, name, process_id, order_id, create_time
+	</sql>
+    <update id="relationOrderImg">
+        UPDATE order_pic SET order_id = #{id},process_id = #{processId} WHERE id IN
+        <foreach collection="list" item="num" open="(" close=")" separator=",">
+            #{num}
+        </foreach>
+    </update>
+    <select id="getWoaRespOrderPicVO" parameterType="java.lang.Integer"
+            resultType="com.exc.street.light.resource.vo.resp.WoaRespOrderPicVO">
+        SELECT op.id orderPicId, op.`name` orderPicName, op.process_id processId, ops.status_id statusId,
+        op.create_time createTime
+        FROM order_pic op LEFT JOIN order_process ops ON op.process_id = ops.id
+        <where>
+            <if test="id != null">
+                AND op.order_id = #{id}
+            </if>
+        </where>
+    </select>
+
+</mapper>

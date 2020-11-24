@@ -1,0 +1,583 @@
+15:50:30.086 WARN  c.e.s.l.d.s.i.HeartbeatAnalysisServiceImpl[line:71] - 心跳时间:Thu Nov 12 15:50:30 CST 2020
+15:51:28.066 WARN  c.e.s.l.d.s.i.HeartbeatAnalysisServiceImpl[line:71] - 心跳时间:Thu Nov 12 15:51:28 CST 2020
+15:52:34.360 WARN  c.e.s.l.d.s.i.HeartbeatAnalysisServiceImpl[line:71] - 心跳时间:Thu Nov 12 15:52:34 CST 2020
+15:53:43.458 WARN  c.e.s.l.d.s.i.HeartbeatAnalysisServiceImpl[line:71] - 心跳时间:Thu Nov 12 15:53:43 CST 2020
+16:00:00.059 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.177,port:9999
+16:00:00.062 WARN  c.e.s.light.dlm.utils.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 93 AF 0D 
+16:00:00.066 WARN  c.e.s.light.dlm.utils.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 5E 02 03 43 16 66 66 43 16 66 66 00 00 00 00 00 00 00 05 00 00 00 00 43 5F 6D 5D 00 00 00 00 00 00 00 00 3E FA 5E 35 00 00 00 00 00 00 00 00 3D A9 1A 77 BD 90 F5 1C 3D DE B8 53 3F 42 5F 20 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 0F A9 0D 
+16:00:00.239 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.1.1.1,port:80086
+16:00:00.241 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+16:00:00.243 WARN  c.e.s.light.dlm.utils.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 2A 00 00 92 53 0D 
+16:00:00.245 WARN  c.e.s.light.dlm.utils.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 2A 00 00 00 D2 AD 0D 
+17:00:00.050 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.177,port:9999
+17:00:00.052 WARN  c.e.s.light.dlm.utils.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 93 AF 0D 
+17:00:00.056 WARN  c.e.s.light.dlm.utils.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 5E 02 03 43 16 80 00 43 16 80 00 00 00 00 00 00 00 00 3A 00 00 00 00 43 5E 32 D1 00 00 00 00 00 00 00 00 3E F9 DB 22 00 00 00 00 00 00 00 00 3D A6 B5 0B BD 91 19 CF 3D DC FF EC 3F 41 1B E7 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 FA 30 0D 
+17:00:00.234 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.1.1.1,port:80086
+17:31:43.695 WARN  s.d.s.w.r.p.ParameterDataTypeReader[line:86] - Trying to infer dataType java.lang.Integer[]
+18:00:00.041 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.177,port:9999
+18:00:00.043 WARN  c.e.s.light.dlm.utils.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 93 AF 0D 
+18:00:00.047 WARN  c.e.s.light.dlm.utils.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 5E 02 03 43 16 99 9A 43 16 99 9A 00 00 00 00 00 00 00 3E 00 00 00 00 43 5F 73 74 00 00 00 00 00 00 00 00 3E FB 64 5A 00 00 00 00 00 00 00 00 3D A9 44 67 BD 93 5A 86 3D E0 6B 7B 3F 41 16 12 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 19 E8 0D 
+18:00:00.260 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.1.1.1,port:80086
+18:00:00.261 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+18:00:00.264 WARN  c.e.s.light.dlm.utils.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 2A 00 00 92 53 0D 
+18:00:00.266 WARN  c.e.s.light.dlm.utils.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 2A 00 00 00 D2 AD 0D 
+19:00:00.082 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.177,port:9999
+19:00:00.084 WARN  c.e.s.light.dlm.utils.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 93 AF 0D 
+19:00:00.088 WARN  c.e.s.light.dlm.utils.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 5E 02 03 43 16 B3 33 43 16 B3 33 00 00 00 00 00 00 00 12 00 00 00 00 43 61 DE 0E 00 00 00 00 00 00 00 00 3E FB E7 6C 00 00 00 00 00 00 00 00 3D A9 98 4B BD 98 79 3E 3D E4 0B 79 3F 3E 62 89 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 53 E7 0D 
+19:00:00.280 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.1.1.1,port:80086
+19:00:00.281 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+19:00:00.282 WARN  c.e.s.light.dlm.utils.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 2A 00 00 92 53 0D 
+19:00:00.285 WARN  c.e.s.light.dlm.utils.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 2A 00 00 00 D2 AD 0D 
+19:00:00.286 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+19:00:00.287 WARN  c.e.s.light.dlm.utils.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 2A 00 00 92 53 0D 
+19:00:00.291 WARN  c.e.s.light.dlm.utils.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 2A 00 00 00 D2 AD 0D 
+20:00:00.045 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.177,port:9999
+20:00:00.047 WARN  c.e.s.light.dlm.utils.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 93 AF 0D 
+20:00:00.050 WARN  c.e.s.light.dlm.utils.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 5E 02 03 43 16 CC CD 43 16 CC CD 00 00 00 00 00 00 00 36 00 00 00 00 43 63 32 F8 00 00 00 00 00 00 00 00 3E FD 70 A3 00 00 00 00 00 00 00 00 3D A9 44 67 BD 9B FF 05 3D E6 2C BB 3F 3C 42 31 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 48 A4 0D 
+20:00:00.251 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.1.1.1,port:80086
+20:00:00.252 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+20:00:00.253 WARN  c.e.s.light.dlm.utils.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 2A 00 00 92 53 0D 
+20:00:00.254 WARN  c.e.s.light.dlm.utils.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 2A 00 00 00 D2 AD 0D 
+20:00:00.255 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+20:00:00.256 WARN  c.e.s.light.dlm.utils.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 2A 00 00 92 53 0D 
+20:00:00.267 WARN  c.e.s.light.dlm.utils.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 2A 00 00 00 D2 AD 0D 
+21:00:00.066 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.177,port:9999
+21:00:00.068 WARN  c.e.s.light.dlm.utils.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 93 AF 0D 
+21:00:00.072 WARN  c.e.s.light.dlm.utils.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 5E 02 03 43 16 E6 66 43 16 E6 66 00 00 00 00 00 00 00 09 00 00 00 00 43 65 0C CC 00 00 00 00 00 00 00 00 3E FD 70 A3 00 00 00 00 00 00 00 00 3D AA B3 68 BD 9D 97 F7 3D E8 4D FE 3F 3C 1C C5 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 CF 32 0D 
+21:00:00.278 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.1.1.1,port:80086
+21:00:00.279 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+21:00:00.280 WARN  c.e.s.light.dlm.utils.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 2A 00 00 92 53 0D 
+21:00:00.282 WARN  c.e.s.light.dlm.utils.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 2A 00 00 00 D2 AD 0D 
+21:00:00.283 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+21:00:00.284 WARN  c.e.s.light.dlm.utils.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 2A 00 00 92 53 0D 
+21:00:00.290 WARN  c.e.s.light.dlm.utils.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 2A 00 00 00 D2 AD 0D 
+22:00:00.058 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.177,port:9999
+22:00:00.060 WARN  c.e.s.light.dlm.utils.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 93 AF 0D 
+22:00:00.064 WARN  c.e.s.light.dlm.utils.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 5E 02 03 43 16 E6 66 43 16 E6 66 00 00 00 00 00 00 00 09 00 00 00 00 43 67 8A C7 00 00 00 00 00 00 00 00 3F 00 00 00 00 00 00 00 00 00 00 00 3D A8 F5 C4 BD A3 D7 0A 3D EB 55 F0 3F 37 CB C5 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 46 97 0D 
+22:00:00.282 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.1.1.1,port:80086
+22:00:00.283 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+22:00:00.284 WARN  c.e.s.light.dlm.utils.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 2A 00 00 92 53 0D 
+22:00:00.286 WARN  c.e.s.light.dlm.utils.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 2A 00 00 00 D2 AD 0D 
+22:00:00.287 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+22:00:00.288 WARN  c.e.s.light.dlm.utils.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 2A 00 00 92 53 0D 
+22:00:00.300 WARN  c.e.s.light.dlm.utils.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 2A 00 00 00 D2 AD 0D 
+23:00:00.075 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.177,port:9999
+23:00:00.077 WARN  c.e.s.light.dlm.utils.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 93 AF 0D 
+23:00:00.080 WARN  c.e.s.light.dlm.utils.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 5E 02 03 43 17 00 00 43 17 00 00 00 00 00 00 00 00 00 0D 00 00 00 00 43 68 CF A4 00 00 00 00 00 00 00 00 3F 02 D0 E5 00 00 00 00 00 00 00 00 3D AC 27 A7 BD AC 27 A7 3D F3 72 1E 3F 35 08 5F 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 98 D5 0D 
+23:00:00.258 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.1.1.1,port:80086
+23:00:00.259 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+23:00:00.260 WARN  c.e.s.light.dlm.utils.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 2A 00 00 92 53 0D 
+23:00:00.261 WARN  c.e.s.light.dlm.utils.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 2A 00 00 00 D2 AD 0D 
+23:00:00.261 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+23:00:00.262 WARN  c.e.s.light.dlm.utils.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 2A 00 00 92 53 0D 
+23:00:00.269 WARN  c.e.s.light.dlm.utils.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 2A 00 00 00 D2 AD 0D 
+00:00:00.072 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.177,port:9999
+00:00:00.077 WARN  c.e.s.light.dlm.utils.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 93 AF 0D 
+00:00:00.079 WARN  c.e.s.light.dlm.utils.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 5E 02 03 43 17 19 9A 43 17 19 9A 00 00 00 00 00 00 00 06 00 00 00 00 43 67 9F 34 00 00 00 00 00 00 00 00 3F 02 8F 5C 00 00 00 00 00 00 00 00 3D AB 85 20 BD AB D3 C4 3D F2 C5 1B 3F 34 DD F8 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 EF C1 0D 
+00:00:00.261 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.1.1.1,port:80086
+00:00:00.264 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+00:00:00.266 WARN  c.e.s.light.dlm.utils.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 2A 00 00 92 53 0D 
+00:00:00.268 WARN  c.e.s.light.dlm.utils.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 2A 00 00 00 D2 AD 0D 
+00:00:00.269 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+00:00:00.270 WARN  c.e.s.light.dlm.utils.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 2A 00 00 92 53 0D 
+00:00:00.272 WARN  c.e.s.light.dlm.utils.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 2A 00 00 00 D2 AD 0D 
+01:00:00.056 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.177,port:9999
+01:00:00.058 WARN  c.e.s.light.dlm.utils.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 93 AF 0D 
+01:00:00.062 WARN  c.e.s.light.dlm.utils.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 5E 02 03 43 17 33 33 43 17 33 33 00 00 00 00 00 00 00 07 00 00 00 00 43 68 AB B9 00 00 00 00 00 00 00 00 3F 03 12 6E 00 00 00 00 00 00 00 00 3D AC 51 99 BD AE 39 2F 3D F5 0B 10 3F 34 06 07 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 CA A8 0D 
+01:00:00.221 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.1.1.1,port:80086
+01:00:00.222 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+01:00:00.223 WARN  c.e.s.light.dlm.utils.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 2A 00 00 92 53 0D 
+01:00:00.225 WARN  c.e.s.light.dlm.utils.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 2A 00 00 00 D2 AD 0D 
+01:00:00.225 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+01:00:00.226 WARN  c.e.s.light.dlm.utils.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 2A 00 00 92 53 0D 
+01:00:00.237 WARN  c.e.s.light.dlm.utils.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 2A 00 00 00 D2 AD 0D 
+02:00:00.025 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.177,port:9999
+02:00:00.027 WARN  c.e.s.light.dlm.utils.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 93 AF 0D 
+02:00:00.031 WARN  c.e.s.light.dlm.utils.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 5E 02 03 43 17 4C CD 43 17 4C CD 00 00 00 00 00 00 00 02 00 00 00 00 43 67 32 75 00 00 00 00 00 00 00 00 3F 03 12 6E 00 00 00 00 00 00 00 00 3D A8 24 0C BD AB 5B 2E 3D F0 11 0B 3F 33 4C E4 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 BB C7 0D 
+02:00:00.210 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.1.1.1,port:80086
+02:00:00.211 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+02:00:00.212 WARN  c.e.s.light.dlm.utils.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 2A 00 00 92 53 0D 
+02:00:00.214 WARN  c.e.s.light.dlm.utils.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 2A 00 00 00 D2 AD 0D 
+02:00:00.215 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+02:00:00.217 WARN  c.e.s.light.dlm.utils.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 2A 00 00 92 53 0D 
+02:00:00.229 WARN  c.e.s.light.dlm.utils.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 2A 00 00 00 D2 AD 0D 
+03:00:00.059 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.177,port:9999
+03:00:00.062 WARN  c.e.s.light.dlm.utils.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 93 AF 0D 
+03:00:00.065 WARN  c.e.s.light.dlm.utils.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 5E 02 03 43 17 66 66 43 17 66 66 00 00 00 00 00 00 00 1E 00 00 00 00 43 67 EC 29 00 00 00 00 00 00 00 00 3F 03 95 81 00 00 00 00 00 00 00 00 3D A9 6E 59 BD AD 42 C5 3D F2 51 C3 3F 32 FF 19 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 D1 AC 0D 
+03:00:00.214 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.1.1.1,port:80086
+03:00:00.215 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+03:00:00.217 WARN  c.e.s.light.dlm.utils.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 2A 00 00 92 53 0D 
+03:00:00.219 WARN  c.e.s.light.dlm.utils.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 2A 00 00 00 D2 AD 0D 
+03:00:00.220 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+03:00:00.221 WARN  c.e.s.light.dlm.utils.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 2A 00 00 92 53 0D 
+03:00:00.232 WARN  c.e.s.light.dlm.utils.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 2A 00 00 00 D2 AD 0D 
+04:00:00.054 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.177,port:9999
+04:00:00.057 WARN  c.e.s.light.dlm.utils.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 93 AF 0D 
+04:00:00.061 WARN  c.e.s.light.dlm.utils.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 5E 02 03 43 17 66 66 43 17 66 66 00 00 00 00 00 00 00 1E 00 00 00 00 43 67 BA E1 00 00 00 00 00 00 00 00 3F 03 95 81 00 00 00 00 00 00 00 00 3D AB A9 D3 BD AD C0 99 3D F4 3E 97 3F 33 EC EE 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 25 C8 0D 
+04:00:00.239 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.1.1.1,port:80086
+04:00:00.240 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+04:00:00.241 WARN  c.e.s.light.dlm.utils.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 2A 00 00 92 53 0D 
+04:00:00.243 WARN  c.e.s.light.dlm.utils.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 2A 00 00 00 D2 AD 0D 
+04:00:00.244 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+04:00:00.245 WARN  c.e.s.light.dlm.utils.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 2A 00 00 92 53 0D 
+04:00:00.254 WARN  c.e.s.light.dlm.utils.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 2A 00 00 00 D2 AD 0D 
+05:00:00.045 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.177,port:9999
+05:00:00.047 WARN  c.e.s.light.dlm.utils.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 93 AF 0D 
+05:00:00.055 WARN  c.e.s.light.dlm.utils.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 5E 02 03 43 17 80 00 43 17 80 00 00 00 00 00 00 00 00 3B 00 00 00 00 43 67 D9 F5 00 00 00 00 00 00 00 00 3F 03 53 F8 00 00 00 00 00 00 00 00 3D AB A9 D3 BD AF 2F 99 3D F5 44 BB 3F 33 2C 95 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 A6 A4 0D 
+05:00:00.228 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.1.1.1,port:80086
+05:00:00.229 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+05:00:00.230 WARN  c.e.s.light.dlm.utils.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 2A 00 00 92 53 0D 
+05:00:00.232 WARN  c.e.s.light.dlm.utils.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 2A 00 00 00 D2 AD 0D 
+05:00:00.232 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+05:00:00.234 WARN  c.e.s.light.dlm.utils.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 2A 00 00 92 53 0D 
+05:00:00.242 WARN  c.e.s.light.dlm.utils.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 2A 00 00 00 D2 AD 0D 
+06:00:00.040 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.177,port:9999
+06:00:00.042 WARN  c.e.s.light.dlm.utils.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 93 AF 0D 
+06:00:00.045 WARN  c.e.s.light.dlm.utils.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 5E 02 03 43 17 99 9A 43 17 99 9A 00 00 00 00 00 00 00 31 00 00 00 00 43 68 96 32 00 00 00 00 00 00 00 00 3F 03 D7 0A 00 00 00 00 00 00 00 00 3D AB 31 3C BD AE 8D 11 3D F4 78 43 3F 33 44 2C 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 7C CB 0D 
+06:00:00.253 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.1.1.1,port:80086
+06:00:00.254 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+06:00:00.255 WARN  c.e.s.light.dlm.utils.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 2A 00 00 92 53 0D 
+06:00:00.258 WARN  c.e.s.light.dlm.utils.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 2A 00 00 00 D2 AD 0D 
+06:00:00.259 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+06:00:00.260 WARN  c.e.s.light.dlm.utils.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 2A 00 00 92 53 0D 
+06:00:00.264 WARN  c.e.s.light.dlm.utils.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 2A 00 00 00 D2 AD 0D 
+07:00:00.055 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.177,port:9999
+07:00:00.058 WARN  c.e.s.light.dlm.utils.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 93 AF 0D 
+07:00:00.061 WARN  c.e.s.light.dlm.utils.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 5E 02 03 43 17 B3 33 43 17 B3 33 00 00 00 00 00 00 00 0B 00 00 00 00 43 67 C9 51 00 00 00 00 00 00 00 00 3F 02 D0 E5 00 00 00 00 00 00 00 00 3D A9 98 4B BD AC A0 3C 3D F1 FD DF 3F 33 69 87 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 75 78 0D 
+07:00:00.215 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.1.1.1,port:80086
+07:00:00.216 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+07:00:00.217 WARN  c.e.s.light.dlm.utils.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 2A 00 00 92 53 0D 
+07:00:00.220 WARN  c.e.s.light.dlm.utils.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 2A 00 00 00 D2 AD 0D 
+07:00:00.221 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+07:00:00.222 WARN  c.e.s.light.dlm.utils.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 2A 00 00 92 53 0D 
+07:00:00.230 WARN  c.e.s.light.dlm.utils.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 2A 00 00 00 D2 AD 0D 
+08:00:00.046 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.177,port:9999
+08:00:00.048 WARN  c.e.s.light.dlm.utils.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 93 AF 0D 
+08:00:00.052 WARN  c.e.s.light.dlm.utils.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 5E 02 03 43 17 CC CD 43 17 CC CD 00 00 00 00 00 00 00 18 00 00 00 00 43 62 81 F8 00 00 00 00 00 00 00 00 3F 00 41 89 00 00 00 00 00 00 00 00 3D A7 81 84 BD 9F A9 7F 3D E7 67 4E 3F 39 4F 7B 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 87 AC 0D 
+08:00:00.216 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.1.1.1,port:80086
+08:00:00.217 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+08:00:00.218 WARN  c.e.s.light.dlm.utils.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 2A 00 00 92 53 0D 
+08:00:00.219 WARN  c.e.s.light.dlm.utils.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 2A 00 00 00 D2 AD 0D 
+08:00:00.220 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+08:00:00.221 WARN  c.e.s.light.dlm.utils.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 2A 00 00 92 53 0D 
+08:00:00.223 WARN  c.e.s.light.dlm.utils.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 2A 00 00 00 D2 AD 0D 
+09:00:00.061 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.177,port:9999
+09:00:00.062 WARN  c.e.s.light.dlm.utils.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 93 AF 0D 
+09:00:00.067 WARN  c.e.s.light.dlm.utils.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 5E 02 03 43 17 E6 66 43 17 E6 66 00 00 00 00 00 00 00 12 00 00 00 00 43 60 0B 22 00 00 00 00 00 00 00 00 3E FC 6A 7F 00 00 00 00 00 00 00 00 3D A9 1A 77 BD 96 13 D4 3D E2 14 28 3F 3F 7B E1 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 BC 62 0D 
+09:00:00.272 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.1.1.1,port:80086
+09:00:00.273 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+09:00:00.274 WARN  c.e.s.light.dlm.utils.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 2A 00 00 92 53 0D 
+09:00:00.276 WARN  c.e.s.light.dlm.utils.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 2A 00 00 00 D2 AD 0D 
+09:00:00.277 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+09:00:00.278 WARN  c.e.s.light.dlm.utils.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 2A 00 00 92 53 0D 
+09:00:00.290 WARN  c.e.s.light.dlm.utils.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 2A 00 00 00 D2 AD 0D 
+10:00:00.074 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.177,port:9999
+10:00:00.076 WARN  c.e.s.light.dlm.utils.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 93 AF 0D 
+10:00:00.080 WARN  c.e.s.light.dlm.utils.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 5E 02 03 43 17 E6 66 43 17 E6 66 00 00 00 00 00 00 00 12 00 00 00 00 43 5E BB 36 00 00 00 00 00 00 00 00 3E FC ED 91 00 00 00 00 00 00 00 00 3D A7 57 93 BD 95 95 FF 3D E0 70 B9 3F 3E DF 72 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 03 BA 0D 
+10:00:00.244 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.1.1.1,port:80086
+10:00:00.244 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+10:00:00.246 WARN  c.e.s.light.dlm.utils.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 2A 00 00 92 53 0D 
+10:00:00.249 WARN  c.e.s.light.dlm.utils.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 2A 00 00 00 D2 AD 0D 
+10:00:00.249 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+10:00:00.251 WARN  c.e.s.light.dlm.utils.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 2A 00 00 92 53 0D 
+10:00:00.263 WARN  c.e.s.light.dlm.utils.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 2A 00 00 00 D2 AD 0D 
+11:40:29.829 WARN  s.d.s.w.r.p.ParameterDataTypeReader[line:86] - Trying to infer dataType java.lang.Integer[]
+16:41:09.270 WARN  s.d.s.w.r.p.ParameterDataTypeReader[line:86] - Trying to infer dataType java.lang.Integer[]
+16:42:36.219 WARN  s.d.s.w.r.p.ParameterDataTypeReader[line:86] - Trying to infer dataType java.lang.Integer[]
+16:48:52.814 WARN  s.d.s.w.r.p.ParameterDataTypeReader[line:86] - Trying to infer dataType java.lang.Integer[]
+16:53:38.337 WARN  s.d.s.w.r.p.ParameterDataTypeReader[line:86] - Trying to infer dataType java.lang.Integer[]
+16:55:21.065 WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext[line:558] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'tomcatServletWebServerFactory' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/ServletWebServerFactoryConfiguration$EmbeddedTomcat.class]: Initialization of bean failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'servletWebServerFactoryCustomizer' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/ServletWebServerFactoryAutoConfiguration.class]: Unsatisfied dependency expressed through method 'servletWebServerFactoryCustomizer' parameter 0; nested exception is org.springframework.boot.context.properties.ConfigurationPropertiesBindException: Error creating bean with name 'server-org.springframework.boot.autoconfigure.web.ServerProperties': Could not bind properties to 'ServerProperties' : prefix=server, ignoreInvalidFields=false, ignoreUnknownFields=true; nested exception is org.springframework.boot.context.properties.bind.BindException: Failed to bind properties under 'server.servlet' to org.springframework.boot.autoconfigure.web.ServerProperties$Servlet
+16:55:48.726 WARN  s.d.s.w.r.p.ParameterDataTypeReader[line:86] - Trying to infer dataType java.lang.Integer[]
+17:04:19.905 WARN  s.d.s.w.r.p.ParameterDataTypeReader[line:86] - Trying to infer dataType java.lang.Integer[]
+17:14:43.301 WARN  s.d.s.w.r.p.ParameterDataTypeReader[line:86] - Trying to infer dataType java.lang.Integer[]
+17:17:11.328 WARN  s.d.s.w.r.p.ParameterDataTypeReader[line:86] - Trying to infer dataType java.lang.Integer[]
+17:19:54.574 WARN  s.d.s.w.r.p.ParameterDataTypeReader[line:86] - Trying to infer dataType java.lang.Integer[]
+17:21:47.002 WARN  s.d.s.w.r.p.ParameterDataTypeReader[line:86] - Trying to infer dataType java.lang.Integer[]
+17:25:17.645 WARN  s.d.s.w.r.p.ParameterDataTypeReader[line:86] - Trying to infer dataType java.lang.Integer[]
+17:28:06.750 WARN  s.d.s.w.r.p.ParameterDataTypeReader[line:86] - Trying to infer dataType java.lang.Integer[]
+17:41:09.235 WARN  s.d.s.w.r.p.ParameterDataTypeReader[line:86] - Trying to infer dataType java.lang.Integer[]
+17:42:37.507 WARN  s.d.s.w.r.p.ParameterDataTypeReader[line:86] - Trying to infer dataType java.lang.Integer[]
+17:59:50.197 WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext[line:558] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to process import candidates for configuration class [springfox.documentation.swagger2.configuration.Swagger2DocumentationConfiguration]; nested exception is java.lang.IllegalArgumentException: Unresolvable class definition for class [springfox.documentation.spring.web.OnServletBasedWebApplication]
+18:02:53.901 WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext[line:558] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to process import candidates for configuration class [springfox.documentation.swagger2.configuration.Swagger2DocumentationConfiguration]; nested exception is java.lang.IllegalArgumentException: Unresolvable class definition for class [springfox.documentation.spring.web.OnServletBasedWebApplication]
+11:46:10.884 WARN  org.jaudiotagger.tag.id3[line:356] - 6e1db9b4288711eb820ab42e99098342.mp3:No space to find another frame:
+11:46:10.905 WARN  org.jaudiotagger.tag.id3[line:621] - 6e1db9b4288711eb820ab42e99098342.mp3:Invalid Frame:6e1db9b4288711eb820ab42e99098342.mp3:No space to find another frame
+11:46:22.567 WARN  org.jaudiotagger.tag.id3[line:356] - 758c3c5c288711eb820ab42e99098342.mp3:No space to find another frame:
+11:46:22.569 WARN  org.jaudiotagger.tag.id3[line:926] - 758c3c5c288711eb820ab42e99098342.mp3:Invalid Frame:758c3c5c288711eb820ab42e99098342.mp3:No space to find another frame
+14:09:54.187 WARN  s.d.s.w.r.p.ParameterDataTypeReader[line:86] - Trying to infer dataType java.lang.Integer[]
+14:32:55.866 WARN  org.jaudiotagger.tag.id3[line:356] - b9fd3956289e11eb820ab42e99098342.mp3:No space to find another frame:
+14:32:55.867 WARN  org.jaudiotagger.tag.id3[line:926] - b9fd3956289e11eb820ab42e99098342.mp3:Invalid Frame:b9fd3956289e11eb820ab42e99098342.mp3:No space to find another frame
+14:51:45.504 WARN  org.jaudiotagger.tag.id3[line:356] - 5b32789828a111eb820ab42e99098342.mp3:No space to find another frame:
+14:51:45.504 WARN  org.jaudiotagger.tag.id3[line:926] - 5b32789828a111eb820ab42e99098342.mp3:Invalid Frame:5b32789828a111eb820ab42e99098342.mp3:No space to find another frame
+15:45:08.909 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver[line:199] - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' not supported]
+14:58:23.620 WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext[line:558] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'canChangeDataServiceImpl': Unsatisfied dependency expressed through field 'canChannelService'; nested exception is org.springframework.beans.factory.BeanCurrentlyInCreationException: Error creating bean with name 'canChannelServiceImpl': Bean with name 'canChannelServiceImpl' has been injected into other beans [canChannelSceneStatusServiceImpl] in its raw version as part of a circular reference, but has eventually been wrapped. This means that said other beans do not use the final version of the bean. This is often the result of over-eager type matching - consider using 'getBeanNamesOfType' with the 'allowEagerInit' flag turned off, for example.
+15:02:25.232 WARN  s.d.s.w.r.p.ParameterDataTypeReader[line:86] - Trying to infer dataType java.lang.Integer[]
+15:18:49.676 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 15:18:49 CST 2020
+15:19:58.529 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 15:19:58 CST 2020
+15:21:07.266 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 15:21:07 CST 2020
+15:22:16.176 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 15:22:16 CST 2020
+15:23:25.002 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 15:23:25 CST 2020
+15:24:33.872 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 15:24:33 CST 2020
+15:25:42.709 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 15:25:42 CST 2020
+15:26:51.558 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 15:26:51 CST 2020
+15:29:51.400 WARN  s.d.s.w.r.p.ParameterDataTypeReader[line:86] - Trying to infer dataType java.lang.Integer[]
+15:30:18.048 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 15:30:18 CST 2020
+15:31:26.930 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 15:31:26 CST 2020
+15:33:25.995 WARN  s.d.s.w.r.p.ParameterDataTypeReader[line:86] - Trying to infer dataType java.lang.Integer[]
+15:33:44.724 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 15:33:44 CST 2020
+15:34:53.288 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 15:34:53 CST 2020
+15:36:18.347 WARN  s.d.s.w.r.p.ParameterDataTypeReader[line:86] - Trying to infer dataType java.lang.Integer[]
+15:37:11.151 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 15:37:11 CST 2020
+15:38:19.757 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 15:38:19 CST 2020
+15:39:28.614 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 15:39:28 CST 2020
+15:40:37.434 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 15:40:37 CST 2020
+15:41:46.260 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 15:41:46 CST 2020
+15:42:55.115 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 15:42:55 CST 2020
+15:44:03.964 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 15:44:03 CST 2020
+15:45:12.752 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 15:45:12 CST 2020
+15:46:22.596 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 15:46:22 CST 2020
+15:47:31.440 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 15:47:31 CST 2020
+15:52:42.520 WARN  s.d.s.w.r.p.ParameterDataTypeReader[line:86] - Trying to infer dataType java.lang.Integer[]
+15:54:29.339 WARN  s.d.s.w.r.p.ParameterDataTypeReader[line:86] - Trying to infer dataType java.lang.Integer[]
+16:03:47.131 WARN  s.d.s.w.r.p.ParameterDataTypeReader[line:86] - Trying to infer dataType java.lang.Integer[]
+16:10:08.066 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 16:10:08 CST 2020
+16:10:20.330 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.172,port:9999
+16:10:20.334 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 31 70 C4 06 00 0C 04 01 01 42 00 00 01 00 00 00 01 2C 43 D9 0D 
+16:10:20.495 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 31 70 C4 06 00 00 00 1D 27 0D 
+16:10:34.371 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.172,port:9999
+16:10:34.372 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 31 70 C4 06 00 0C 03 01 01 42 01 00 00 00 00 00 01 2C 76 0F 0D 
+16:10:34.730 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 31 70 C4 06 00 00 00 1D 27 0D 
+16:10:34.734 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.172,port:9999
+16:10:34.735 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 31 70 C4 06 00 0C 06 01 01 42 00 00 02 00 00 00 01 2C BA 2D 0D 
+16:10:34.900 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 31 70 C4 06 00 00 00 1D 27 0D 
+16:10:34.900 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.172,port:9999
+16:10:34.902 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 31 70 C4 06 00 0C 05 01 01 42 02 00 00 00 00 00 01 2C 3E 12 0D 
+16:10:35.010 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 31 70 C4 06 00 00 00 1D 27 0D 
+16:10:35.013 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.172,port:9999
+16:10:35.014 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 31 70 C4 06 00 0C 08 01 01 42 00 00 04 00 00 00 01 2C 53 9C 0D 
+16:10:35.123 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 31 70 C4 06 00 00 00 1D 27 0D 
+16:10:35.124 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.172,port:9999
+16:10:35.125 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 31 70 C4 06 00 0C 07 01 01 42 04 00 00 00 00 00 01 2C 47 FF 0D 
+16:10:35.431 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 31 70 C4 06 00 00 00 1D 27 0D 
+16:10:35.443 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.172,port:9999
+16:10:35.446 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 31 70 C4 06 00 0C 0A 01 01 42 00 00 08 00 00 00 01 2C AA 97 0D 
+16:10:35.591 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 31 70 C4 06 00 00 00 1D 27 0D 
+16:10:35.592 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.172,port:9999
+16:10:35.594 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 31 70 C4 06 00 0C 09 01 01 42 08 00 00 00 00 00 01 2C AE 7D 0D 
+16:10:35.723 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 31 70 C4 06 00 00 00 1D 27 0D 
+16:11:09.006 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 16:11:09 CST 2020
+16:12:17.892 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 16:12:17 CST 2020
+16:12:17.898 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.172,port:9999
+16:12:17.900 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 31 70 C4 06 00 0C 04 01 01 42 00 00 01 00 00 00 01 2C 43 D9 0D 
+16:12:18.051 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 31 70 C4 06 00 00 00 1D 27 0D 
+16:12:18.051 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.172,port:9999
+16:12:18.052 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 31 70 C4 06 00 0C 03 01 01 42 01 00 00 00 00 00 01 2C 76 0F 0D 
+16:12:18.161 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 31 70 C4 06 00 00 00 1D 27 0D 
+16:12:18.165 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.172,port:9999
+16:12:18.166 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 31 70 C4 06 00 0C 06 01 01 42 00 00 02 00 00 00 01 2C BA 2D 0D 
+16:12:18.275 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 31 70 C4 06 00 00 00 1D 27 0D 
+16:12:18.275 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.172,port:9999
+16:12:18.276 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 31 70 C4 06 00 0C 05 01 01 42 02 00 00 00 00 00 01 2C 3E 12 0D 
+16:12:18.575 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 31 70 C4 06 00 00 00 1D 27 0D 
+16:12:18.575 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.172,port:9999
+16:12:18.577 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 31 70 C4 06 00 0C 08 01 01 42 00 00 04 00 00 00 01 2C 53 9C 0D 
+16:12:18.724 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 31 70 C4 06 00 00 00 1D 27 0D 
+16:12:18.725 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.172,port:9999
+16:12:18.726 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 31 70 C4 06 00 0C 07 01 01 42 04 00 00 00 00 00 01 2C 47 FF 0D 
+16:12:18.833 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 31 70 C4 06 00 00 00 1D 27 0D 
+16:12:18.834 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.172,port:9999
+16:12:18.835 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 31 70 C4 06 00 0C 0A 01 01 42 00 00 08 00 00 00 01 2C AA 97 0D 
+16:12:18.966 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 31 70 C4 06 00 00 00 1D 27 0D 
+16:12:18.969 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.172,port:9999
+16:12:18.970 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 31 70 C4 06 00 0C 09 01 01 42 08 00 00 00 00 00 01 2C AE 7D 0D 
+16:12:19.095 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 31 70 C4 06 00 00 00 1D 27 0D 
+16:13:42.655 WARN  s.d.s.w.r.p.ParameterDataTypeReader[line:86] - Trying to infer dataType java.lang.Integer[]
+16:14:35.811 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 16:14:35 CST 2020
+16:15:41.360 WARN  s.d.s.w.r.p.ParameterDataTypeReader[line:86] - Trying to infer dataType java.lang.Integer[]
+16:15:44.781 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 16:15:44 CST 2020
+16:16:53.450 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 16:16:53 CST 2020
+16:18:02.364 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 16:18:02 CST 2020
+16:19:11.261 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 16:19:11 CST 2020
+16:20:20.100 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 16:20:20 CST 2020
+16:21:28.970 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 16:21:28 CST 2020
+16:22:37.851 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 16:22:37 CST 2020
+16:23:46.749 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 16:23:46 CST 2020
+16:24:55.612 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 16:24:55 CST 2020
+16:26:04.488 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 16:26:04 CST 2020
+16:27:13.682 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 16:27:13 CST 2020
+16:27:37.254 WARN  s.d.s.w.r.p.ParameterDataTypeReader[line:86] - Trying to infer dataType java.lang.Integer[]
+16:28:22.339 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 16:28:22 CST 2020
+16:29:31.456 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 16:29:31 CST 2020
+16:29:55.447 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.172,port:9999
+16:29:55.449 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 31 70 C4 45 00 03 42 02 FF A6 C9 0D 
+16:29:55.452 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 31 70 C4 45 00 00 00 08 A3 0D 
+16:29:56.753 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.172,port:9999
+16:29:56.755 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 31 70 C4 45 00 03 42 02 00 E6 89 0D 
+16:29:56.758 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 31 70 C4 45 00 00 00 08 A3 0D 
+16:30:40.065 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 16:30:40 CST 2020
+16:31:30.838 WARN  s.d.s.w.r.p.ParameterDataTypeReader[line:86] - Trying to infer dataType java.lang.Integer[]
+16:31:49.475 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 16:31:49 CST 2020
+16:32:57.817 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 16:32:57 CST 2020
+16:34:06.922 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 16:34:06 CST 2020
+16:35:15.576 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 16:35:15 CST 2020
+16:36:25.456 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 16:36:25 CST 2020
+16:37:34.365 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 16:37:34 CST 2020
+16:38:43.231 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 16:38:43 CST 2020
+16:39:52.159 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 16:39:52 CST 2020
+16:41:01.057 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 16:41:01 CST 2020
+16:42:09.887 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 16:42:09 CST 2020
+16:43:18.745 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 16:43:18 CST 2020
+16:44:27.635 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 16:44:27 CST 2020
+16:45:36.509 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 16:45:36 CST 2020
+16:46:45.344 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 16:46:45 CST 2020
+16:47:54.248 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 16:47:54 CST 2020
+16:49:03.125 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 16:49:03 CST 2020
+16:50:12.004 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 16:50:11 CST 2020
+16:51:38.884 WARN  s.d.s.w.r.p.ParameterDataTypeReader[line:86] - Trying to infer dataType java.lang.Integer[]
+16:52:30.879 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 16:52:30 CST 2020
+16:53:40.588 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 16:53:40 CST 2020
+16:54:49.452 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 16:54:49 CST 2020
+16:55:58.287 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 16:55:58 CST 2020
+16:57:07.171 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 16:57:07 CST 2020
+16:58:16.076 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 16:58:16 CST 2020
+16:59:24.973 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 16:59:24 CST 2020
+17:00:33.847 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 17:00:33 CST 2020
+17:01:42.681 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 17:01:42 CST 2020
+17:02:51.577 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 17:02:51 CST 2020
+17:04:00.429 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 17:04:00 CST 2020
+17:05:09.309 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 17:05:09 CST 2020
+17:06:18.519 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 17:06:18 CST 2020
+17:07:27.093 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 17:07:27 CST 2020
+17:07:31.749 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.1.1,port:222
+17:07:33.836 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.1.1,port:222
+17:07:35.970 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.1.1,port:222
+17:07:38.120 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.1.1,port:222
+17:07:40.227 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.1.1,port:222
+17:07:42.308 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.1.1,port:222
+17:07:44.435 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.1.1,port:222
+17:07:46.542 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.1.1,port:222
+17:07:48.659 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.172,port:9999
+17:07:48.661 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 31 70 C4 45 00 03 42 01 FF A6 39 0D 
+17:07:48.664 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 31 70 C4 45 00 00 00 08 A3 0D 
+17:07:48.742 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.172,port:9999
+17:07:48.743 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 31 70 C4 45 00 03 42 02 FF A6 C9 0D 
+17:07:48.745 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 31 70 C4 45 00 00 00 08 A3 0D 
+17:07:48.806 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.172,port:9999
+17:07:48.807 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 31 70 C4 45 00 03 42 03 FF A7 59 0D 
+17:07:48.812 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 31 70 C4 45 00 00 00 08 A3 0D 
+17:07:48.884 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.172,port:9999
+17:07:48.885 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 31 70 C4 45 00 03 42 04 FF A5 69 0D 
+17:07:48.887 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 31 70 C4 45 00 00 00 08 A3 0D 
+17:08:35.975 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 17:08:35 CST 2020
+17:09:45.863 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 17:09:45 CST 2020
+17:10:54.860 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 17:10:54 CST 2020
+17:12:04.647 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 17:12:04 CST 2020
+17:13:13.555 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 17:13:13 CST 2020
+17:14:22.453 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 17:14:22 CST 2020
+17:15:31.344 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 17:15:31 CST 2020
+17:16:40.246 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 17:16:40 CST 2020
+17:17:49.166 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 17:17:49 CST 2020
+17:18:58.059 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 17:18:58 CST 2020
+17:20:06.923 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 17:20:06 CST 2020
+17:21:15.789 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 17:21:15 CST 2020
+17:22:24.676 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 17:22:24 CST 2020
+17:23:33.553 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 17:23:33 CST 2020
+17:24:42.472 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 17:24:42 CST 2020
+17:25:51.410 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 17:25:51 CST 2020
+17:27:00.330 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 17:27:00 CST 2020
+17:28:09.515 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 17:28:09 CST 2020
+17:29:18.235 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 17:29:18 CST 2020
+17:30:27.115 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 17:30:27 CST 2020
+17:31:36.056 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 17:31:36 CST 2020
+17:33:07.330 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 17:33:07 CST 2020
+17:33:54.082 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 17:33:54 CST 2020
+17:35:03.003 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 17:35:02 CST 2020
+17:36:11.920 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 17:36:11 CST 2020
+17:37:20.849 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 17:37:20 CST 2020
+17:38:29.761 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 17:38:29 CST 2020
+17:39:38.677 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 17:39:38 CST 2020
+17:40:47.617 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 17:40:47 CST 2020
+17:41:56.541 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 17:41:56 CST 2020
+17:43:05.492 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 17:43:05 CST 2020
+17:44:15.378 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 17:44:15 CST 2020
+17:45:24.335 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 17:45:24 CST 2020
+17:46:33.337 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 17:46:33 CST 2020
+17:47:42.134 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 17:47:42 CST 2020
+17:48:51.076 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 17:48:51 CST 2020
+17:49:59.975 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 17:49:59 CST 2020
+17:51:08.892 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 17:51:08 CST 2020
+17:52:17.810 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 17:52:17 CST 2020
+17:53:26.682 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 17:53:26 CST 2020
+17:54:35.596 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 17:54:35 CST 2020
+17:55:44.894 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 17:55:44 CST 2020
+17:56:53.384 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 17:56:53 CST 2020
+17:58:02.335 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 17:58:02 CST 2020
+17:59:11.193 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 17:59:11 CST 2020
+18:01:03.100 WARN  s.d.s.w.r.p.ParameterDataTypeReader[line:86] - Trying to infer dataType java.lang.Integer[]
+18:01:29.060 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 18:01:29 CST 2020
+18:02:37.898 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 18:02:37 CST 2020
+18:03:46.841 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 18:03:46 CST 2020
+18:04:55.738 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 18:04:55 CST 2020
+18:06:04.597 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 18:06:04 CST 2020
+18:07:13.535 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 18:07:13 CST 2020
+18:08:22.458 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 18:08:22 CST 2020
+18:09:31.369 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 18:09:31 CST 2020
+18:10:40.272 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 18:10:40 CST 2020
+18:11:49.169 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 18:11:49 CST 2020
+18:12:58.259 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 18:12:58 CST 2020
+18:14:07.004 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 18:14:07 CST 2020
+18:15:15.891 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 18:15:15 CST 2020
+18:16:25.296 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 18:16:25 CST 2020
+18:17:33.655 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 18:17:33 CST 2020
+18:18:42.563 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 18:18:42 CST 2020
+18:19:51.500 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 18:19:51 CST 2020
+18:21:01.684 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 18:21:01 CST 2020
+18:22:10.256 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 18:22:10 CST 2020
+18:23:19.182 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 18:23:19 CST 2020
+18:24:28.104 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 18:24:28 CST 2020
+18:25:38.060 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 18:25:38 CST 2020
+18:26:46.906 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 18:26:46 CST 2020
+18:27:55.828 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 18:27:55 CST 2020
+18:29:04.822 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 18:29:04 CST 2020
+18:30:13.677 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 18:30:13 CST 2020
+18:31:22.575 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 18:31:22 CST 2020
+18:32:32.512 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 18:32:32 CST 2020
+18:33:42.709 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 18:33:42 CST 2020
+18:34:53.741 WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext[line:558] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'canChangeDataServiceImpl': Unsatisfied dependency expressed through field 'electricityNodeService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'electricityNodeServiceImpl': Unsatisfied dependency expressed through field 'canChannelSceneStatusService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'canChannelSceneStatusServiceImpl': Unsatisfied dependency expressed through field 'canChannelService'; nested exception is org.springframework.beans.factory.BeanCurrentlyInCreationException: Error creating bean with name 'canChannelServiceImpl': Bean with name 'canChannelServiceImpl' has been injected into other beans [canChannelServiceImpl] in its raw version as part of a circular reference, but has eventually been wrapped. This means that said other beans do not use the final version of the bean. This is often the result of over-eager type matching - consider using 'getBeanNamesOfType' with the 'allowEagerInit' flag turned off, for example.
+18:35:42.280 WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext[line:558] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'canChangeDataServiceImpl': Unsatisfied dependency expressed through field 'electricityNodeService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'electricityNodeServiceImpl': Unsatisfied dependency expressed through field 'canChannelSceneStatusService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'canChannelSceneStatusServiceImpl': Unsatisfied dependency expressed through field 'canChannelService'; nested exception is org.springframework.beans.factory.BeanCurrentlyInCreationException: Error creating bean with name 'canChannelServiceImpl': Bean with name 'canChannelServiceImpl' has been injected into other beans [canChannelServiceImpl] in its raw version as part of a circular reference, but has eventually been wrapped. This means that said other beans do not use the final version of the bean. This is often the result of over-eager type matching - consider using 'getBeanNamesOfType' with the 'allowEagerInit' flag turned off, for example.
+18:36:18.581 WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext[line:558] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCurrentlyInCreationException: Error creating bean with name 'canChannelServiceImpl': Bean with name 'canChannelServiceImpl' has been injected into other beans [canChannelServiceImpl] in its raw version as part of a circular reference, but has eventually been wrapped. This means that said other beans do not use the final version of the bean. This is often the result of over-eager type matching - consider using 'getBeanNamesOfType' with the 'allowEagerInit' flag turned off, for example.
+18:37:13.635 WARN  s.d.s.w.r.p.ParameterDataTypeReader[line:86] - Trying to infer dataType java.lang.Integer[]
+18:38:18.121 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 18:38:18 CST 2020
+18:39:24.502 WARN  s.d.s.w.r.p.ParameterDataTypeReader[line:86] - Trying to infer dataType java.lang.Integer[]
+18:39:27.139 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 18:39:27 CST 2020
+18:40:36.879 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 18:40:36 CST 2020
+18:42:03.712 WARN  s.d.s.w.r.p.ParameterDataTypeReader[line:86] - Trying to infer dataType java.lang.Integer[]
+18:42:54.754 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 18:42:54 CST 2020
+18:44:02.349 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.1.1,port:222
+18:44:03.550 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 18:44:03 CST 2020
+18:44:04.531 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.1.1,port:222
+18:44:13.361 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.1.1,port:222
+18:44:15.441 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.1.1,port:222
+18:44:20.089 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.172,port:9999
+18:44:20.091 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 31 70 C4 45 00 03 42 01 00 E6 79 0D 
+18:44:20.094 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 31 70 C4 45 00 00 00 08 A3 0D 
+18:44:21.322 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.172,port:9999
+18:44:21.324 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 31 70 C4 45 00 03 42 01 FF A6 39 0D 
+18:44:21.328 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 31 70 C4 45 00 00 00 08 A3 0D 
+18:45:13.484 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 18:45:13 CST 2020
+18:46:22.394 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 18:46:22 CST 2020
+18:47:31.280 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 18:47:31 CST 2020
+18:48:40.177 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 18:48:40 CST 2020
+18:49:49.132 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 18:49:49 CST 2020
+18:50:58.008 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 18:50:58 CST 2020
+18:52:07.847 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 18:52:07 CST 2020
+18:53:16.807 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 18:53:16 CST 2020
+18:54:25.699 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 18:54:25 CST 2020
+18:55:34.617 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 18:55:34 CST 2020
+18:56:43.517 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 18:56:43 CST 2020
+18:57:53.406 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 18:57:53 CST 2020
+18:59:02.263 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 18:59:02 CST 2020
+19:00:11.169 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 19:00:11 CST 2020
+19:01:20.026 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 19:01:20 CST 2020
+19:02:28.916 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 19:02:28 CST 2020
+19:03:37.798 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 19:03:37 CST 2020
+19:04:46.683 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 19:04:46 CST 2020
+19:05:55.571 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 19:05:55 CST 2020
+19:07:04.444 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 19:07:04 CST 2020
+19:08:13.349 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 19:08:13 CST 2020
+19:09:22.206 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 19:09:22 CST 2020
+19:10:31.118 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 19:10:31 CST 2020
+19:11:39.973 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 19:11:39 CST 2020
+19:12:48.871 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 19:12:48 CST 2020
+19:13:57.699 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 19:13:57 CST 2020
+19:15:06.602 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 19:15:06 CST 2020
+19:16:15.506 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 19:16:15 CST 2020
+19:17:24.382 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 19:17:24 CST 2020
+19:18:33.223 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 19:18:33 CST 2020
+19:19:42.121 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 19:19:42 CST 2020
+19:20:50.977 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 19:20:50 CST 2020
+19:21:59.836 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 19:21:59 CST 2020
+19:23:08.713 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 19:23:08 CST 2020
+19:24:17.590 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 19:24:17 CST 2020
+19:25:26.480 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 19:25:26 CST 2020
+19:26:35.313 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 19:26:35 CST 2020
+19:27:44.205 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 19:27:44 CST 2020
+19:28:53.141 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 19:28:53 CST 2020
+19:30:03.058 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 19:30:03 CST 2020
+19:31:11.961 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 19:31:11 CST 2020
+19:32:20.979 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 19:32:20 CST 2020
+19:33:29.799 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 19:33:29 CST 2020
+19:34:38.630 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 19:34:38 CST 2020
+19:35:47.644 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 19:35:47 CST 2020
+19:36:56.417 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 19:36:56 CST 2020
+19:38:05.346 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 19:38:05 CST 2020
+19:39:14.211 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 19:39:14 CST 2020
+19:40:23.102 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 19:40:23 CST 2020
+19:41:31.995 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 19:41:31 CST 2020
+19:42:43.842 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 19:42:43 CST 2020
+19:43:52.778 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 19:43:52 CST 2020
+19:45:02.660 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 19:45:02 CST 2020
+19:46:11.557 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 19:46:11 CST 2020
+19:47:20.403 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 19:47:20 CST 2020
+19:48:29.321 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 19:48:29 CST 2020
+19:49:38.202 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 19:49:38 CST 2020
+19:50:47.099 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 19:50:47 CST 2020
+19:51:55.974 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 19:51:55 CST 2020
+19:53:04.891 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 19:53:04 CST 2020
+19:54:13.774 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 19:54:13 CST 2020
+19:55:22.651 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 19:55:22 CST 2020
+19:56:31.530 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 19:56:31 CST 2020
+19:57:40.619 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 19:57:40 CST 2020
+19:58:49.294 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 19:58:49 CST 2020
+19:59:59.198 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 19:59:59 CST 2020
+20:01:08.205 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 20:01:08 CST 2020
+20:02:16.958 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 20:02:16 CST 2020
+20:03:25.887 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 20:03:25 CST 2020
+20:04:34.807 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 20:04:34 CST 2020
+20:05:43.707 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 20:05:43 CST 2020
+20:07:16.044 WARN  s.d.s.w.r.p.ParameterDataTypeReader[line:86] - Trying to infer dataType java.lang.Integer[]
+20:08:01.589 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 20:08:01 CST 2020
+20:09:10.386 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 20:09:10 CST 2020
+20:10:05.041 WARN  s.d.s.w.r.p.ParameterDataTypeReader[line:86] - Trying to infer dataType java.lang.Integer[]
+20:10:19.508 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 20:10:19 CST 2020
+20:11:28.174 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 20:11:28 CST 2020
+20:12:38.057 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 20:12:38 CST 2020
+20:13:46.952 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 20:13:46 CST 2020
+20:14:55.861 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 20:14:55 CST 2020
+20:16:04.740 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 20:16:04 CST 2020
+20:17:13.611 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 20:17:13 CST 2020
+20:18:22.513 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 20:18:22 CST 2020
+20:19:31.380 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 20:19:31 CST 2020
+20:20:40.454 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 20:20:40 CST 2020
+20:21:49.164 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 20:21:49 CST 2020
+20:22:58.033 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 20:22:58 CST 2020
+20:24:06.907 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 20:24:06 CST 2020
+20:25:15.912 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 20:25:15 CST 2020
+20:26:24.698 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 20:26:24 CST 2020
+20:27:33.617 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 20:27:33 CST 2020
+20:28:42.511 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 20:28:42 CST 2020
+20:31:03.335 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 20:31:03 CST 2020
+20:32:12.198 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 20:32:12 CST 2020
+20:33:21.141 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 20:33:21 CST 2020
+20:34:30.169 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 20:34:30 CST 2020
+20:35:38.908 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 20:35:38 CST 2020
+20:36:47.786 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 20:36:47 CST 2020
+20:37:56.665 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 20:37:56 CST 2020
+20:39:05.591 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 20:39:05 CST 2020
+20:40:14.501 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 20:40:14 CST 2020
+20:41:23.382 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 20:41:23 CST 2020
+20:42:32.267 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 20:42:32 CST 2020
+20:43:41.399 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 20:43:41 CST 2020
+20:45:43.574 WARN  s.d.s.w.r.p.ParameterDataTypeReader[line:86] - Trying to infer dataType java.lang.Integer[]
+20:45:59.133 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 20:45:59 CST 2020
+20:47:07.841 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 20:47:07 CST 2020
+20:48:16.709 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 20:48:16 CST 2020
+20:49:25.570 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 20:49:25 CST 2020
+20:50:34.458 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 20:50:34 CST 2020
+20:51:43.341 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 20:51:43 CST 2020
+20:52:53.207 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 20:52:53 CST 2020
+20:54:03.054 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 20:54:03 CST 2020
+20:55:11.972 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 20:55:11 CST 2020
+20:56:20.856 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 20:56:20 CST 2020
+20:57:29.738 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 20:57:29 CST 2020
+20:58:38.641 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 20:58:38 CST 2020
+20:59:47.532 WARN  c.e.s.l.e.s.i.HeartbeatAnalysisServiceImpl[line:70] - 心跳时间:Wed Nov 18 20:59:47 CST 2020

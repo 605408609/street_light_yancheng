@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.log_api.mapper.LogExceptionMapper">
+
+	<resultMap id="BaseResultMap" type="com.exc.street.light.resource.entity.log.LogException">
+		<id column="id" property="id" />
+		<id column="modul" property="modul" />
+		<id column="log_type" property="logType" />
+		<id column="description" property="description" />
+		<id column="requ_param" property="requParam" />
+		<id column="user_id" property="userId" />
+		<id column="user_name" property="userName" />
+		<id column="method" property="method" />
+		<id column="uri" property="uri" />
+		<id column="requ_ip" property="requIp" />
+		<id column="create_time" property="createTime" />
+		<id column="reason" property="reason" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, modul, log_type, description, requ_param, user_id, user_name, method, uri, requ_ip, create_time, reason
+	</sql>
+
+	<select id="findPage" resultType="com.exc.street.light.resource.vo.resp.LogRespExceDataVO"
+			parameterType="com.exc.street.light.resource.qo.LogExceDataQueryObject">
+		SELECT le.id id, le.modul modul, le.log_type logType, le.description description, le.requ_param requParam,
+		le.user_id userId, le.user_name userName, le.method method,
+		le.uri uri, le.requ_ip requIp, le.create_time createTime, le.reason reason
+		FROM log_exception le
+		<where>
+			<if test="logExceDataQueryObject.modul != null and logExceDataQueryObject.modul != ''">
+				le.modul like CONCAT('%',#{logExceDataQueryObject.modul},'%')
+			</if>
+
+			<if test="logExceDataQueryObject.logType != null and logExceDataQueryObject.logType != ''">
+				AND le.log_type like CONCAT('%',#{logExceDataQueryObject.logType},'%')
+			</if>
+
+			<if test="logExceDataQueryObject.userName != null and logExceDataQueryObject.userName != ''">
+				AND le.user_name like CONCAT('%',#{logExceDataQueryObject.userName},'%')
+			</if>
+
+			<if test="logExceDataQueryObject.method != null and logExceDataQueryObject.method != ''">
+				AND le.method = #{logExceDataQueryObject.method}
+			</if>
+
+			<if test="logExceDataQueryObject.uri != null and logExceDataQueryObject.uri != ''">
+				AND le.uri like CONCAT('%',#{logExceDataQueryObject.uri},'%')
+			</if>
+
+			<if test="logExceDataQueryObject.requIp != null and logExceDataQueryObject.requIp != ''">
+				AND le.requ_ip like CONCAT('%',#{logExceDataQueryObject.requIp},'%')
+			</if>
+
+			<if test="logExceDataQueryObject.beginTime != null and logExceDataQueryObject.beginTime != '' ">
+				AND DATE_FORMAT(ln.create_time,"%Y-%m-%d") &gt;= #{logExceDataQueryObject.beginTime}
+			</if>
+
+			<if test="logExceDataQueryObject.endTime != null and logExceDataQueryObject.endTime != '' ">
+				AND DATE_FORMAT(ln.create_time,"%Y-%m-%d") &lt;= #{logExceDataQueryObject.endTime}
+			</if>
+		</where>
+		ORDER BY le.create_time DESC
+	</select>
+	
+</mapper>

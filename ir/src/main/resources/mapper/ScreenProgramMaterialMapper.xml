@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.ir.mapper.ScreenProgramMaterialMapper">
+
+	<resultMap id="BaseResultMap" type="com.exc.street.light.resource.entity.ir.ScreenProgramMaterial">
+		<id column="id" property="id" />
+		<id column="program_id" property="programId" />
+		<id column="material_id" property="materialId" />
+		<id column="create_time" property="createTime" />
+		<id column="play_time" property="playTime" />
+		<id column="time_span" property="timeSpan" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, program_id, material_id, create_time, play_time, time_span
+	</sql>
+    <select id="getIrProgramMaterialVO" parameterType="java.lang.Integer" resultType="com.exc.street.light.resource.vo.IrProgramMaterialVO">
+		SELECT * FROM screen_program_material WHERE program_id = #{programId}
+	</select>
+
+</mapper>

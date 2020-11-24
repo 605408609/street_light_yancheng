@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.sl.mapper.DeviceStrategyHistoryMapper">
+
+    <resultMap id="BaseResultMap" type="com.exc.street.light.resource.entity.sl.DeviceStrategyHistory">
+        <id column="id" property="id"/>
+        <id column="device_id" property="deviceId"/>
+        <id column="strategy_id" property="strategyId"/>
+        <id column="create_time" property="createTime"/>
+        <id column="is_success" property="isSuccess"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+		id, device_id, strategy_id, create_time, is_success
+	</sql>
+    <select id="selectNewOne" resultType="com.exc.street.light.resource.entity.sl.DeviceStrategyHistory">
+		SELECT * FROM device_strategy_history
+		WHERE device_id = #{deviceId} and strategy_id = #{strategyId}
+		ORDER BY create_time DESC LIMIT 1
+	</select>
+    <select id="selectLastList" resultType="com.exc.street.light.resource.entity.sl.DeviceStrategyHistory">
+        SELECT
+            *
+        FROM
+            device_strategy_history dsh2
+        <where>
+            dsh2.id IN ( SELECT max( dsh.id ) FROM `device_strategy_history` dsh GROUP BY dsh.device_id )
+            <if test="deviceIdList != null and deviceIdList.size() > 0">
+                AND dsh2.device_id IN
+                <foreach collection="deviceIdList" item="deviceId" open="(" close=")" separator=",">
+                    #{deviceId}
+                </foreach>
+            </if>
+        </where>
+    </select>
+    <select id="selectHistoryStrategyList"
+            resultType="com.exc.street.light.resource.vo.resp.SlRespDeviceStrategyHistoryVO">
+		select dsh.id, dsh.device_id, dsh.strategy_id, dsh.create_time, dsh.is_success, ls.name as name,
+		ls.strategy_type_id as strategyTypeId, lst.name as strategyTypeName, ls.creator as creator, u.name as creatorName
+		from device_strategy_history dsh
+		left join lamp_strategy ls on ls.id = dsh.strategy_id
+		left join user u on u.id = ls.creator
+        left join lamp_strategy_type lst on lst.id = ls.strategy_type_id
+        where dsh.device_id = #{deviceId}
+        order by dsh.create_time desc
+	</select>
+    <select id="selectHistoryStrategyWithPage"
+            resultType="com.exc.street.light.resource.vo.resp.SlRespDeviceStrategyHistoryVO">
+        select dsh.id, dsh.strategy_id, dsh.create_time, ls.name as name, ls.strategy_type_id as strategyTypeId,
+        lst.name as strategyTypeName, ls.creator as creator, u.name as creatorName
+        from device_strategy_history dsh
+        left join lamp_strategy ls on ls.id = dsh.strategy_id
+        left join user u on u.id = ls.creator
+        left join lamp_strategy_type lst on lst.id = ls.strategy_type_id
+        <where>
+            <if test="strategyHistoryQuery.name != null and strategyHistoryQuery.name != ''">
+                and ls.name like concat("%", #{strategyHistoryQuery.name}, "%")
+            </if>
+            <if test="strategyHistoryQuery.areaId != null">
+                and u.area_id = #{strategyHistoryQuery.areaId}
+            </if>
+        </where>
+        group by dsh.create_time order by dsh.create_time desc
+    </select>
+    <select id="selectHistoryDeviceList"
+            resultType="com.exc.street.light.resource.vo.resp.SlRespLampDeviceHistoryVO">
+        select dsh.id, dsh.strategy_id, dsh.device_id, dsh.create_time, dsh.is_success,
+        sd.name as deviceName, sd.num as deviceNum, slp.id as lampPostId, slp.name as lampPostName
+        from device_strategy_history dsh
+        left join system_device sd on sd.id = dsh.device_id
+        left join sl_lamp_post slp on slp.id = sd.lamp_post_id
+        where dsh.strategy_id = #{deviceHistoryQuery.strategyId} and dsh.create_time = #{deviceHistoryQuery.createTime}
+        <if test="deviceHistoryQuery.isSuccess != null and deviceHistoryQuery.isSuccess == 0 ">
+            and (dsh.is_success &lt;= 50)
+        </if>
+        <if test="deviceHistoryQuery.isSuccess != null and deviceHistoryQuery.isSuccess == 1 ">
+            and (dsh.is_success &gt; 50 and dsh.is_success &lt; 100)
+        </if>
+        <if test="deviceHistoryQuery.isSuccess != null and deviceHistoryQuery.isSuccess > 1 ">
+            and dsh.is_success = #{deviceHistoryQuery.isSuccess}
+        </if>
+        order by dsh.create_time desc
+    </select>
+</mapper>

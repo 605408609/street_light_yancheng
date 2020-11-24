@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.dlm.mapper.ControlEnergyDayMapper">
+
+	<resultMap id="BaseResultMap" type="com.exc.street.light.resource.entity.dlm.ControlEnergyDay">
+		<id column="id" property="id" />
+		<id column="energy" property="energy" />
+		<id column="control_id" property="controlId" />
+		<id column="control_type_id" property="controlTypeId" />
+		<id column="create_time" property="createTime" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, energy, control_id, control_type_id, create_time
+	</sql>
+    <select id="selectOneByDayTime" resultType="com.exc.street.light.resource.entity.dlm.ControlEnergyDay">
+		SELECT id, energy, control_id, control_type_id, create_time
+		FROM control_energy_day WHERE DATE_FORMAT(create_time,'%Y-%m-%d') = #{formatDay}
+		AND control_id = #{controlId}
+	</select>
+	<select id="selectControlEnergyDayList"
+			resultType="com.exc.street.light.resource.entity.dlm.ControlEnergyDay">
+		SELECT ced.id, ced.energy, ced.control_id, ced.control_type_id, ced.create_time, ldc.area_id
+		FROM control_energy_day ced
+		left join location_control lc on lc.id = ced.control_id
+		left join location_distribute_cabinet ldc on ldc.id = lc.cabinet_id
+		<where>
+			<if test="energyStatisticVO.areaId != null">
+				and ldc.area_id = #{energyStatisticVO.areaId}
+			</if>
+			<if test="energyStatisticVO.startDate != null and energyStatisticVO.startDate != ''">
+				and DATE_FORMAT(ced.create_time,'%Y-%m-%d') &gt;= #{energyStatisticVO.startDate}
+			</if>
+			<if test="energyStatisticVO.endDate != null and energyStatisticVO.endDate != ''">
+				and DATE_FORMAT(ced.create_time,'%Y-%m-%d') &lt;= #{energyStatisticVO.endDate}
+			</if>
+			<if test="energyStatisticVO.controlIdList != null and energyStatisticVO.controlIdList.size() > 0">
+				and ced.control_id in
+				<foreach collection="energyStatisticVO.controlIdList" open="(" close=")" item="item" separator=",">
+					${item}
+				</foreach>
+			</if>
+		</where>
+	</select>
+
+</mapper>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.dlm.mapper.ElectricityNodeMapper">
+
+	<resultMap id="BaseResultMap" type="com.exc.street.light.resource.entity.electricity.ElectricityNode">
+		<id column="id" property="id" />
+		<id column="mac" property="mac" />
+		<id column="install_addr" property="installAddr" />
+		<id column="ip" property="ip" />
+		<id column="port" property="port" />
+		<id column="construction_units" property="constructionUnits" />
+		<id column="num" property="num" />
+		<id column="province" property="province" />
+		<id column="city" property="city" />
+		<id column="district" property="district" />
+		<id column="addr" property="addr" />
+		<id column="name" property="name" />
+		<id column="version" property="version" />
+		<id column="building_id" property="buildingId" />
+		<id column="is_open" property="isOpen" />
+		<id column="open_direction" property="openDirection" />
+		<id column="network_type" property="networkType" />
+		<id column="is_offline" property="isOffline" />
+		<id column="offline_time" property="offlineTime" />
+		<id column="lamp_post_id" property="lampPostId" />
+		<id column="longitude" property="longitude" />
+		<id column="latitude" property="latitude" />
+		<id column="start_time" property="startTime" />
+		<id column="router_offline_time" property="routerOfflineTime" />
+		<id column="router_is_offline" property="routerIsOffline" />
+		<id column="router_id" property="routerId" />
+		<id column="creator" property="creator" />
+		<id column="create_time" property="createTime" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, mac, install_addr, ip, port, construction_units, num, province, city, district, addr, name, version, building_id, is_open, open_direction, network_type, is_offline, offline_time, lamp_post_id, longitude, latitude, start_time, router_offline_time, router_is_offline, router_id, creator, create_time
+	</sql>
+	
+</mapper>

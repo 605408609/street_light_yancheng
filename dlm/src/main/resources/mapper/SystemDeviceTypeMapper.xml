@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.dlm.mapper.SystemDeviceTypeMapper">
+
+	<resultMap id="BaseResultMap" type="com.exc.street.light.resource.entity.sl.SystemDeviceType">
+		<id column="id" property="id" />
+		<id column="name" property="name" />
+		<id column="edition" property="edition" />
+		<id column="protocol" property="protocol" />
+		<id column="socket" property="socket" />
+		<id column="factory_id" property="factoryId" />
+		<id column="loop_type" property="loopType" />
+		<id column="description" property="description" />
+		<id column="num_length" property="numLength" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, name, edition, protocol, socket, factory_id, loop_type, description, num_length
+	</sql>
+	
+</mapper>

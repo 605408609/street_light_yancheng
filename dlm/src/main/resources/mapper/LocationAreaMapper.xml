@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.dlm.mapper.LocationAreaMapper">
+
+    <resultMap id="BaseResultMap" type="com.exc.street.light.resource.entity.dlm.LocationArea">
+        <id column="id" property="id"/>
+        <id column="name" property="name"/>
+        <id column="description" property="description"/>
+        <id column="create_time" property="createTime"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+		id, name, describe, create_time
+	</sql>
+    <select id="selectUserArea" resultType="java.lang.Integer">
+		SELECT area_id FROM `user` WHERE id = #{userId}
+	</select>
+
+    <resultMap id="selectControlLoopDeviceListResultMap"
+               type="com.exc.street.light.resource.vo.resp.DlmRespLocationAreaByLoopVO">
+        <id column="area_id" property="id"/>
+        <id column="area_part_id" property="partId"/>
+        <result column="area_name" property="name"/>
+        <collection property="childrenList"
+                    ofType="com.exc.street.light.resource.vo.resp.DlmRespLocationStreetByLoopVO">
+            <id column="street_id" property="id"/>
+            <id column="street_part_id" property="partId"/>
+            <result column="street_name" property="name"/>
+            <collection property="childrenList"
+                        ofType="com.exc.street.light.resource.vo.resp.DlmRespLocationSiteByLoopVO">
+                <id column="site_id" property="id"/>
+                <id column="site_part_id" property="partId"/>
+                <result column="site_name" property="name"/>
+                <collection property="childrenList"
+                            ofType="com.exc.street.light.resource.vo.resp.DlmRespLocationLampPostByLoopVO">
+                    <id column="post_id" property="id"/>
+                    <id column="post_part_id" property="partId"/>
+                    <result column="post_name" property="name"/>
+                    <collection property="childrenList"
+                                ofType="com.exc.street.light.resource.vo.resp.DlmRespDeviceByLoopVO">
+                        <id column="device_id" property="id"/>
+                        <id column="device_part_id" property="partId"/>
+                        <result column="device_name" property="name"/>
+                    </collection>
+                </collection>
+            </collection>
+        </collection>
+    </resultMap>
+
+    <select id="selectControlLoopDeviceList"
+            resultMap="selectControlLoopDeviceListResultMap">
+        select
+        la.id as area_id,
+        CAST(la.id AS CHAR) as area_part_id,
+        la.name as area_name,
+        ls.id as street_id,
+        CAST(ls.id AS CHAR) as street_part_id,
+        ls.name as street_name,
+        lst.id as site_id,
+        CAST(lst.id AS CHAR) as site_part_id,
+        lst.name as site_name,
+        slp.id as post_id,
+        CAST(slp.id AS CHAR) as post_part_id,
+        slp.name as post_name,
+        sd.id as device_id,
+        CAST(sd.id AS CHAR) as device_part_id,
+        sd.name as device_name
+        from location_area la
+        left join location_street ls on ls.area_id = la.id
+        left join location_site lst on lst.street_id = ls.id
+        left join sl_lamp_post slp on slp.site_id = lst.id
+        left join system_device sd on sd.lamp_post_id = slp.id
+        where sd.id is not null
+        <if test="loopQuery.areaId != null">
+            and la.id = #{loopQuery.areaId}
+        </if>
+        <if test="loopQuery.deviceIdList != null and loopQuery.deviceIdList.size() > 0">
+            and sd.id not in
+            <foreach collection="loopQuery.deviceIdList" separator="," item="item" index="index" open="(" close=")">
+                #{item}
+            </foreach>
+        </if>
+        order by sd.id desc
+    </select>
+
+    <select id="getDeviceIdByUpgradeLog" resultType="java.lang.Integer">
+        SELECT duls.device_id FROM device_upgrade_log_status duls
+        LEFT JOIN device_upgrade_log dul
+        ON duls.log_id = dul.id
+        WHERE dul.id = #{logId} AND duls.is_success = #{isSuccess}
+    </select>
+
+</mapper>

@@ -1,0 +1,73 @@
+logging:
+  # 指定需要使用的日志配置文件名称
+  config: classpath:logback-dev.xml
+# 配置端口
+server:
+  port: 60029
+socket:
+  port: 9098
+spring:
+  # 配置数据源
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.111.89:3306/street_light_3.0?useUnicode=true&characterEncoding=UTF-8&generateSimpleParameterMetadata=true&serverTimezone=Asia/Shanghai
+    username: root
+    password: Exc_led1
+    type: com.alibaba.druid.pool.DruidDataSource
+  # REDIS (RedisProperties)
+  redis:
+    # redis数据库索引(默认为0)，我们使用索引为3的数据库，避免和其他数据库冲突
+    database: 1
+    # redis服务器地址（默认为localhost）
+    host: 192.168.111.165
+    # redis端口（默认为6379）
+    port: 6379
+    # redis访问密码（默认为空）为什么不能用 @exc123led123
+    password: "@exc123led123"
+    # redis连接超时时间（单位毫秒）
+    timeout: 3000
+    # redis连接池配置
+    pool:
+      # 最大可用连接数（默认为8，负数表示无限）
+      max-active: 8
+      # 从连接池中获取连接最大等待时间（默认为-1，单位为毫秒，负数表示无限）
+      max-wait: -1
+      # 最大空闲连接数（默认为8，负数表示无限）
+      max-idle: 8
+      # 最小空闲连接数（默认为0，该值只有为正数才有用）
+      min-idle: 0
+
+# mybatis-plus相关配置
+mybatis-plus:
+  # xml扫描，多个目录用逗号或者分号分隔（告诉 Mapper 所对应的 XML 文件位置）
+  mapper-locations: classpath:mapper/*.xml
+  # 以下配置均有默认值,可以不设置
+  global-config:
+    #去掉控制台打印版本号
+    banner: false
+    db-config:
+      #主键类型 AUTO:"数据库ID自增" INPUT:"用户输入ID",ID_WORKER:"全局唯一ID (数字类型唯一ID)", UUID:"全局唯一ID UUID";
+      id-type: auto
+      #字段策略 IGNORED:"忽略判断"  NOT_NULL:"非 NULL 判断")  NOT_EMPTY:"非空判断"
+      field-strategy: NOT_EMPTY
+  configuration:
+    # 是否开启自动驼峰命名规则映射:从数据库列名到Java属性驼峰命名的类似映射
+    map-underscore-to-camel-case: true
+    # 如果查询结果中包含空值的列，则 MyBatis 在映射的时候，不会映射这个字段
+    call-setters-on-nulls: true
+    # 这个配置会将执行的sql打印出来，在开发或测试的时候可以用
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+upload:
+  path: D:/import/projectPicture/
+  device:
+    picture:
+      path: D:/import/
+
+#授权证书配置
+license:
+  licensePath: D:/lic-repo/ua.lic
+  publicAlias: publicCert
+  publicKeysStorePath: D:/lic-repo/publicCerts.keystore
+  storePass: public_password_exc_lednsq2019
+  subject: ua

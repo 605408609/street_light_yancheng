@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.electricity.mapper.CanSceneMapper">
+    <resultMap id="BaseResultMap" type="com.exc.street.light.resource.entity.electricity.CanScene">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="scene_id" jdbcType="INTEGER" property="sceneId"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="nid" jdbcType="INTEGER" property="nid"/>
+        <result column="site_scene_id" jdbcType="INTEGER" property="siteSceneId"/>
+        <result column="input_time" jdbcType="TIMESTAMP" property="inputTime"/>
+        <result column="status" jdbcType="INTEGER" property="status"/>
+        <association property="electricityNode" javaType="com.exc.street.light.resource.entity.electricity.ElectricityNode">
+            <id column="n_id" jdbcType="INTEGER" property="id"/>
+            <result column="n_name" jdbcType="VARCHAR" property="name"/>
+            <association property="partition" javaType="com.exc.street.light.resource.entity.electricity.Partition">
+                <id column="p_id" jdbcType="INTEGER" property="id"/>
+                <result column="p_name" jdbcType="VARCHAR" property="name"/>
+            </association>
+            <collection property="canTimings" ofType="com.exc.street.light.resource.entity.electricity.CanTiming">
+                <id column="t_id" jdbcType="INTEGER" property="id"/>
+                <result column="t_type" jdbcType="VARCHAR" property="type"/>
+            </collection>
+        </association>
+        <collection property="controlObjectList" ofType="com.exc.street.light.resource.entity.electricity.CanControlObject">
+            <id column="c_id" jdbcType="INTEGER" property="id"/>
+            <result column="c_tagId" jdbcType="VARCHAR" property="tagId"/>
+            <result column="c_tagValue" jdbcType="VARCHAR" property="tagValue"/>
+        </collection>
+    </resultMap>
+
+    <select id="selectBySidAndNid" resultMap="BaseResultMap">
+        SELECT s.id, s.scene_id, s.name, s.nid, s.input_time, s.status, s.site_scene_id,
+        c.id AS c_id,c.tag_id AS c_tagId,c.tag_value AS c_tagValue
+        FROM can_scene s
+        LEFT JOIN can_control_object c ON c.sid = s.id
+        WHERE s.scene_id = #{sid} AND s.nid = #{nid}
+    </select>
+
+    <select id="query" resultMap="BaseResultMap">
+        SELECT DISTINCT s.name FROM can_scene s
+        LEFT JOIN electricity_node n ON s.nid = n.id
+        <!--LEFT JOIN building b ON b.id = n.building_id-->
+        WHERE s.scene_id
+        <if test="name != null and name != ''">
+            AND s.name LIKE CONCAT('%', #{name}, '%')
+        </if>
+        <!--<if test="partitionId != null">
+            AND b.partition_id = #{partitionId}
+        </if>-->
+    </select>
+
+
+    <select id="countByName" resultType="java.lang.Integer">
+        SELECT COUNT(*) FROM can_scene s
+        LEFT JOIN electricity_node n ON s.nid = n.id
+        <!--LEFT JOIN building b ON b.id = n.building_id-->
+        WHERE s.name = #{name}
+        <!--<if test="partitionId != null">
+            AND b.partition_id = #{partitionId}
+        </if>-->
+    </select>
+    <select id="selectByName" resultMap="BaseResultMap">
+        SELECT DISTINCT s.id,s.name,s.scene_id,
+        n.id AS n_id,n.name AS n_name,
+        <!--p.id AS p_id,p.name AS p_name,-->
+        t.id AS t_id, t.type AS t_type
+        FROM can_scene s
+        LEFT JOIN electricity_node n ON s.nid = n.id
+        LEFT JOIN can_timing t ON t.nid = n.id
+        <!--LEFT JOIN building b ON b.id = n.building_id
+        LEFT JOIN building_site bs ON bs.building_id = b.id
+        LEFT JOIN tb_partition p ON p.id = b.partition_id-->
+        <where>
+            <!--<if test="partitionId != null">
+                AND b.partition_id = #{partitionId}
+            </if>
+            <if test="buildingTypeSn != null">
+                AND b.building_type_sn = #{buildingTypeSn}
+            </if>
+            <if test="siteId != null">
+                AND bs.site_id = #{siteId}
+            </if>
+            <if test="buildingName != null">
+                AND b.name LIKE CONCAT('%', #{buildingName}, '%')
+            </if>-->
+            <if test="name != null">
+                AND s.name LIKE CONCAT('%', #{name}, '%')
+            </if>
+        </where>
+    </select>
+    <select id="findByNid" resultType="java.lang.Integer">
+        SELECT scene_id FROM  can_scene  WHERE  nid = #{nid}
+    </select>
+    <select id="selectByNid" resultMap="BaseResultMap">
+        SELECT s.id, s.scene_id, s.name, s.nid, s.input_time, s.status, s.site_scene_id,
+               c.id AS c_id,c.tag_id AS c_tagId,c.tag_value AS c_tagValue
+        FROM can_scene s
+                 LEFT JOIN can_control_object c ON c.sid = s.id
+        WHERE s.nid = #{nid}
+    </select>
+    <select id="selectByNameAndNid" resultMap="BaseResultMap">
+        SELECT s.id, s.scene_id, s.name, s.nid, s.input_time, s.status, s.site_scene_id,
+        c.id AS c_id,c.tag_id AS c_tagId,c.tag_value AS c_tagValue
+        FROM can_scene s
+        LEFT JOIN can_control_object c ON c.sid = s.id
+        WHERE s.name = #{name} AND s.nid = #{nid}
+    </select>
+    <select id="selectByAreaId" parameterType="java.lang.Integer" resultType="java.lang.Integer">
+        SELECT en.id FROM electricity_node en
+        left join `user` usr on usr.id = en.creator
+        left join location_area la on usr.area_id = la.id
+        <where>
+            <if test="areaId != null">
+                and la.id = #{areaId}
+            </if>
+        </where>
+    </select>
+
+    <select id="getPageList" resultType="com.exc.street.light.resource.vo.electricity.CanSceneNodeVO">
+        SELECT s.name,count(n.id) nodeCount
+        FROM can_scene s
+        LEFT JOIN electricity_node n ON s.nid = n.id
+        left join `user` usr on usr.id = n.creator
+        <where>
+        <if test="qo.name != null and qo.name != ''">
+            AND s.name LIKE CONCAT('%', #{qo.name}, '%')
+        </if>
+        <if test="qo.areaId != null">
+            AND usr.area_id = #{qo.areaId}
+        </if>
+        </where>
+        GROUP BY s.`name`
+        order by s.`name`
+    </select>
+
+    <resultMap id="getNodeListBySceneNameResultMap" type="com.exc.street.light.resource.vo.electricity.CanSceneNameVO">
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="scene_id" jdbcType="VARCHAR" property="tagId"/>
+        <result column="n_id" jdbcType="INTEGER" property="nid"/>
+        <result column="n_name" jdbcType="VARCHAR" property="nodeName"/>
+        <result column="area_id" jdbcType="INTEGER" property="areaId"/>
+        <result column="area_name" jdbcType="VARCHAR" property="areaName"/>
+        <collection property="canTimings" ofType="com.exc.street.light.resource.entity.electricity.CanTiming">
+            <id column="t_id" jdbcType="INTEGER" property="id"/>
+            <result column="t_type" jdbcType="VARCHAR" property="type"/>
+        </collection>
+    </resultMap>
+
+    <select id="getNodeListBySceneName" resultMap="getNodeListBySceneNameResultMap">
+        SELECT DISTINCT s.id as id,
+        s.name,
+        s.scene_id,
+        n.id AS n_id,
+        n.name AS n_name,
+        t.id AS t_id,
+        t.type AS t_type,
+        la.id area_id,
+        la.name area_name
+        FROM can_scene s
+        LEFT JOIN electricity_node n ON s.nid = n.id
+        LEFT JOIN can_timing t ON t.nid = n.id
+        left join `user` usr on usr.id = n.creator
+        left join location_area la on la.id = usr.area_id
+        <where>
+            <if test="qo.name != null and qo.name != ''">
+                AND s.name LIKE CONCAT('%', #{qo.name}, '%')
+            </if>
+            <if test="qo.areaId != null">
+                AND usr.area_id = #{qo.areaId}
+            </if>
+        </where>
+    </select>
+</mapper>

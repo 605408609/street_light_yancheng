@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.wifi.mapper.WifiApDao">
+
+	<resultMap id="BaseResultMap" type="com.exc.street.light.resource.entity.wifi.WifiAp">
+		<id column="id" property="id" />
+		<id column="count" property="count" />
+		<id column="population" property="population" />
+		<id column="current_population" property="currentPopulation" />
+		<id column="probability" property="probability" />
+		<id column="day_conn" property="dayConn" />
+		<id column="avg_flow" property="avgFlow" />
+		<id column="online_time" property="onlineTime" />
+		<id column="up_flow" property="upFlow" />
+		<id column="down_flow" property="downFlow" />
+		<id column="netflow" property="netflow" />
+		<id column="device_id" property="deviceId" />
+		<id column="create_time" property="createTime" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, `count`, population, probability, day_conn, avg_flow, online_time, netflow, device_id, create_time
+	</sql>
+    <select id="getPageList" resultType="com.exc.street.light.resource.vo.resp.WifiRespApVO">
+		select wa.id, wa.count, wa.population, wa.probability, wa.online_time, wa.netflow,
+		wad.name, wad.mac, slp.location
+		from wifi_ap wa
+		left join wifi_ap_device wad on wa.device_id = wad.id
+		left join sl_lamp_post slp on wad.lamp_post_id = slp.id
+		left join location_site ls on ls.id = slp.site_id
+		left join location_street lst on lst.id = ls.street_id
+		left join location_area la on la.id = lst.area_id
+		<where>
+			<if test="name != null and name != '' ">
+				AND wad.name LIKE concat('%',#{name},'%')
+			</if>
+			<if test="areaId != null">
+				AND la.id = #{areaId}
+			</if>
+		</where>
+		order by wa.id desc
+	</select>
+
+</mapper>

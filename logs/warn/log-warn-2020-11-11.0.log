@@ -1,0 +1,88 @@
+00:00:00.068 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.177,port:9999
+00:00:00.071 WARN  c.e.s.light.dlm.utils.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 93 AF 0D 
+00:00:00.074 WARN  c.e.s.light.dlm.utils.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 5C 43 13 00 00 43 13 00 00 00 00 00 00 00 00 00 08 00 00 00 00 43 66 E3 81 00 00 00 00 00 00 00 00 3F 05 1E B8 00 00 00 00 00 00 00 00 3D B2 3C CA BD AB 85 20 3D F7 5B 82 3F 38 77 03 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 CD 95 0D 
+00:00:00.077 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.1.1.1,port:80086
+00:00:00.079 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+01:00:00.048 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.177,port:9999
+01:00:00.051 WARN  c.e.s.light.dlm.utils.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 93 AF 0D 
+01:00:00.055 WARN  c.e.s.light.dlm.utils.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 5C 43 13 19 9A 43 13 19 9A 00 00 00 00 00 00 00 24 00 00 00 00 43 68 56 0A 00 00 00 00 00 00 00 00 3F 06 66 66 00 00 00 00 00 00 00 00 3D B2 8B 6F BD AD EA 8A 3D F9 3D DA 3F 37 62 C7 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 E6 26 0D 
+01:00:00.059 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.1.1.1,port:80086
+01:00:00.060 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+02:00:00.034 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.177,port:9999
+02:00:00.036 WARN  c.e.s.light.dlm.utils.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 93 AF 0D 
+02:00:00.041 WARN  c.e.s.light.dlm.utils.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 5C 43 13 33 33 43 13 33 33 00 00 00 00 00 00 00 03 00 00 00 00 43 68 00 41 00 00 00 00 00 00 00 00 3F 06 66 66 00 00 00 00 00 00 00 00 3D AF AD 6E BD AE 63 20 3D F7 85 74 3F 35 B1 EA 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 DF 35 0D 
+02:00:00.042 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.1.1.1,port:80086
+02:00:00.043 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+03:00:00.041 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.177,port:9999
+03:00:00.043 WARN  c.e.s.light.dlm.utils.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 93 AF 0D 
+03:00:00.048 WARN  c.e.s.light.dlm.utils.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 5C 43 13 4C CD 43 13 4C CD 00 00 00 00 00 00 00 41 00 00 00 00 43 67 FE E6 00 00 00 00 00 00 00 00 3F 05 60 41 00 00 00 00 00 00 00 00 3D B0 4F F5 BD AD 96 A7 3D F7 6B 3C 3F 36 6D 59 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 BE 97 0D 
+03:00:00.049 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.1.1.1,port:80086
+03:00:00.050 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+04:00:00.050 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.177,port:9999
+04:00:00.064 WARN  c.e.s.light.dlm.utils.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 93 AF 0D 
+04:00:00.078 WARN  c.e.s.light.dlm.utils.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 5C 43 13 4C CD 43 13 4C CD 00 00 00 00 00 00 00 41 00 00 00 00 43 67 EA DA 00 00 00 00 00 00 00 00 3F 06 24 DD 00 00 00 00 00 00 00 00 3D B1 46 5F BD AD EA 8A 3D F8 57 2A 3F 36 BE 16 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 3B F7 0D 
+04:00:00.080 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.1.1.1,port:80086
+04:00:00.082 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+05:00:00.040 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.177,port:9999
+05:00:00.042 WARN  c.e.s.light.dlm.utils.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 93 AF 0D 
+05:00:00.047 WARN  c.e.s.light.dlm.utils.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 5C 43 13 66 66 43 13 66 66 00 00 00 00 00 00 00 3D 00 00 00 00 43 68 D7 24 00 00 00 00 00 00 00 00 3F 07 2B 02 00 00 00 00 00 00 00 00 3D B1 1C 6E BD B0 26 03 3D F9 C6 2B 3F 35 86 87 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 6B 79 0D 
+05:00:00.050 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.1.1.1,port:80086
+05:00:00.051 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+06:00:00.032 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.177,port:9999
+06:00:00.044 WARN  c.e.s.light.dlm.utils.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 93 AF 0D 
+06:00:00.057 WARN  c.e.s.light.dlm.utils.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 5C 43 13 80 00 43 13 80 00 00 00 00 00 00 00 00 2E 00 00 00 00 43 68 C2 8F 00 00 00 00 00 00 00 00 3F 06 A7 EF 00 00 00 00 00 00 00 00 3D B3 AB CA BD B0 26 03 3D FB 98 C9 3F 36 D0 B3 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 28 18 0D 
+06:00:00.059 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.1.1.1,port:80086
+06:00:00.060 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+07:00:00.042 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.177,port:9999
+07:00:00.051 WARN  c.e.s.light.dlm.utils.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 93 AF 0D 
+07:00:00.061 WARN  c.e.s.light.dlm.utils.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 5C 43 13 99 9A 43 13 99 9A 00 00 00 00 00 00 00 2C 00 00 00 00 43 68 6C BF 00 00 00 00 00 00 00 00 3F 05 E3 54 00 00 00 00 00 00 00 00 3D B3 81 D8 BD AD 42 C5 3D F9 77 86 3F 38 35 48 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 35 50 0D 
+07:00:00.063 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.1.1.1,port:80086
+07:00:00.064 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+08:00:00.049 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.177,port:9999
+08:00:00.051 WARN  c.e.s.light.dlm.utils.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 93 AF 0D 
+08:00:00.055 WARN  c.e.s.light.dlm.utils.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 5C 43 13 B3 33 43 13 B3 33 00 00 00 00 00 00 00 17 00 00 00 00 43 69 5A CD 00 00 00 00 00 00 00 00 3F 04 18 93 00 00 00 00 00 00 00 00 3D B0 C8 8B BD A9 6E 59 3D F4 DB E0 3F 38 D3 AE 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 8C 78 0D 
+08:00:00.058 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.1.1.1,port:80086
+08:00:00.060 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+09:00:00.051 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.177,port:9999
+09:00:00.054 WARN  c.e.s.light.dlm.utils.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 93 AF 0D 
+09:00:00.057 WARN  c.e.s.light.dlm.utils.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 5C 43 13 CC CD 43 13 CC CD 00 00 00 00 00 00 00 33 00 00 00 00 43 65 23 95 00 00 00 00 00 00 00 00 3F 01 47 AE 00 00 00 00 00 00 00 00 3D B2 8B 6F BD 9C F5 70 3D ED B6 1D 3F 40 47 F5 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 A9 7A 0D 
+09:00:00.060 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.1.1.1,port:80086
+09:00:00.061 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+10:00:00.029 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.177,port:9999
+10:00:00.038 WARN  c.e.s.light.dlm.utils.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 93 AF 0D 
+10:00:00.051 WARN  c.e.s.light.dlm.utils.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 5C 43 13 E6 66 43 13 E6 66 00 00 00 00 00 00 00 1D 00 00 00 00 43 64 67 31 00 00 00 00 00 00 00 00 3F 01 06 25 00 00 00 00 00 00 00 00 3D AE B7 03 BD 9C 28 F6 3D EA 4F CB 3F 3E E2 FC 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 5B 4E 0D 
+10:00:00.052 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.1.1.1,port:80086
+10:00:00.053 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+10:00:00.055 WARN  c.e.s.light.dlm.utils.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 2A 00 00 92 53 0D 
+10:00:00.057 WARN  c.e.s.light.dlm.utils.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 2A 00 00 00 D2 AD 0D 
+11:00:00.037 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.177,port:9999
+11:00:00.039 WARN  c.e.s.light.dlm.utils.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 93 AF 0D 
+11:00:00.043 WARN  c.e.s.light.dlm.utils.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 5C 43 14 00 00 43 14 00 00 00 00 00 00 00 00 00 3C 00 00 00 00 43 63 1C AC 00 00 00 00 00 00 00 00 3F 01 89 37 00 00 00 00 00 00 00 00 3D B0 79 E6 BD 9B 81 30 3D EB 36 7B 3F 40 12 8C 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 87 D3 0D 
+11:00:00.044 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.1.1.1,port:80086
+11:00:00.045 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+11:00:00.046 WARN  c.e.s.light.dlm.utils.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 2A 00 00 92 53 0D 
+11:00:00.049 WARN  c.e.s.light.dlm.utils.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 2A 00 00 00 D2 AD 0D 
+11:26:31.286 WARN  s.d.s.w.r.p.ParameterDataTypeReader[line:86] - Trying to infer dataType java.lang.Integer[]
+12:00:00.041 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.177,port:9999
+12:00:00.047 WARN  c.e.s.light.dlm.utils.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 93 AF 0D 
+12:00:00.051 WARN  c.e.s.light.dlm.utils.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 5C 43 14 00 00 43 14 00 00 00 00 00 00 00 00 00 3C 00 00 00 00 43 62 E3 61 00 00 00 00 00 00 00 00 3F 01 47 AE 00 00 00 00 00 00 00 00 3D B1 E8 E6 BD 9B 32 8C 3D EC 12 AE 3F 40 ED 4E 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 39 F4 0D 
+12:00:00.052 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.1.1.1,port:80086
+12:00:00.053 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+12:00:00.055 WARN  c.e.s.light.dlm.utils.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 2A 00 00 92 53 0D 
+12:00:00.057 WARN  c.e.s.light.dlm.utils.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 2A 00 00 00 D2 AD 0D 
+13:00:01.372 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.177,port:9999
+13:00:01.376 WARN  c.e.s.light.dlm.utils.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 93 AF 0D 
+13:00:01.381 WARN  c.e.s.light.dlm.utils.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 5C 43 14 19 9A 43 14 19 9A 00 00 00 00 00 00 00 21 00 00 00 00 43 66 28 24 00 00 00 00 00 00 00 00 3F 03 53 F8 00 00 00 00 00 00 00 00 3D B1 95 04 BD A2 8C BD 3D F0 BE 0E 3F 3C D6 2C 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 32 A1 0D 
+13:00:01.384 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.1.1.1,port:80086
+13:00:01.385 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+14:00:00.040 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.177,port:9999
+14:00:00.042 WARN  c.e.s.light.dlm.utils.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 93 AF 0D 
+14:00:00.046 WARN  c.e.s.light.dlm.utils.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 5C 43 14 33 33 43 14 33 33 00 00 00 00 00 00 00 03 00 00 00 00 43 65 52 61 00 00 00 00 00 00 00 00 3F 01 47 AE 00 00 00 00 00 00 00 00 3D B2 12 D8 BD 9C 28 F6 3D EC D4 AB 3F 40 7C A6 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 FB E7 0D 
+14:00:00.047 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.1.1.1,port:80086
+14:00:00.048 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+14:02:52.254 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+15:00:00.037 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.177,port:9999
+15:00:00.042 WARN  c.e.s.light.dlm.utils.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 93 AF 0D 
+15:00:00.046 WARN  c.e.s.light.dlm.utils.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 5C 43 14 4C CD 43 14 4C CD 00 00 00 00 00 00 00 05 00 00 00 00 43 65 18 24 00 00 00 00 00 00 00 00 3E FE 76 C8 00 00 00 00 00 00 00 00 3D B0 F2 7C BD 98 F1 D4 3D E9 E1 B1 3F 41 AE 60 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 BC 92 0D 
+15:00:00.048 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.1.1.1,port:80086
+15:00:00.049 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999

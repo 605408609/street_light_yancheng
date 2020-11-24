@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.dlm.mapper.LampDeviceParameterMapper">
+
+    <resultMap id="BaseResultMap" type="com.exc.street.light.resource.entity.sl.LampDeviceParameter">
+        <id column="id" property="id"/>
+        <result column="device_id" property="deviceId"/>
+        <result column="parameter_value" property="parameterValue"/>
+        <result column="parameter_id" property="parameterId"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+		id, device_id, parameter_value, parameter_id
+	</sql>
+
+
+    <select id="selectSystemDeviceIdByIndexAndLoopNum" resultType="java.lang.Integer">
+
+		SELECT
+			DISTINCT sd.id
+		FROM
+			system_device sd
+			LEFT JOIN lamp_device_parameter ldp ON ldp.device_id = sd.id
+			LEFT JOIN system_device_parameter sdp ON ldp.parameter_id = sdp.id
+			LEFT JOIN control_loop_device cld ON cld.device_id = sd.id
+			LEFT JOIN location_control lc ON lc.id = cld.control_id
+		WHERE
+			lc.type_id = 2 and lc.num = #{locationControlNum}
+			AND (
+					(sdp.filed = #{indexField} and ldp.parameter_value = #{index})
+					or (sdp.filed = #{loopNumField} and ldp.parameter_value = #{loopNum})
+			)	limit 1
+	</select>
+
+    <select id="updateParamValue" resultType="java.lang.Integer">
+		UPDATE lamp_device_parameter a
+		SET a.parameter_value = #{paramVal}
+		WHERE
+			a.device_id = #{deviceId}
+			AND a.parameter_id = #{paramId}
+	</select>
+
+    <select id="insertParamValue" resultType="java.lang.Integer">
+		INSERT INTO lamp_device_parameter(`device_id`, `parameter_value`, `parameter_id`)
+		VALUES (#{deviceId}, #{paramVal}, #{paramId})
+	</select>
+
+
+	<select id="select" resultType="java.lang.String">
+		SELECT ldp.parameter_value FROM lamp_device_parameter ldp
+		LEFT JOIN system_device_parameter sdp ON ldp.parameter_id = sdp.id
+		WHERE ldp.device_id = #{deviceId} AND sdp.name = #{name} AND sdp.device_type_id = #{deviceTypeId}
+	</select>
+
+	<select id="selectDeviceIdByLoopNum" resultType="java.lang.Integer">
+		SELECT sd.id FROM system_device sd
+		LEFT JOIN lamp_device_parameter ldp ON ldp.device_id = sd.id
+		LEFT JOIN system_device_parameter sdp ON ldp.parameter_id = sdp.id
+		WHERE ldp.parameter_value = #{loopNum} AND sdp.name = "支路数" AND sdp.device_type_id = #{deviceTypeId}
+		<if test="deviceTypeId == 9 or deviceTypeId == 10">
+			AND sd.reserve_one = #{num}
+		</if>
+		<if test="deviceTypeId != 9 and deviceTypeId != 10">
+			AND sd.sd.num = #{num}
+		</if>
+	</select>
+</mapper>

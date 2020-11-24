@@ -1,0 +1,6 @@
+17:32:42.193 WARN  o.apache.kafka.clients.NetworkClient[line:748] - [Consumer clientId=consumer-1, groupId=topicGroupId] Connection to node 2 (/192.168.111.148:9092) could not be established. Broker may not be available.
+17:32:42.193 WARN  o.apache.kafka.clients.NetworkClient[line:748] - [Consumer clientId=consumer-3, groupId=topicGroupId] Connection to node 2 (/192.168.111.148:9092) could not be established. Broker may not be available.
+17:32:42.193 WARN  o.apache.kafka.clients.NetworkClient[line:748] - [Consumer clientId=consumer-2, groupId=topicGroupId] Connection to node 2 (/192.168.111.148:9092) could not be established. Broker may not be available.
+17:33:03.327 WARN  o.apache.kafka.clients.NetworkClient[line:748] - [Consumer clientId=consumer-3, groupId=topicGroupId] Connection to node 2 (/192.168.111.148:9092) could not be established. Broker may not be available.
+17:33:03.391 WARN  o.apache.kafka.clients.NetworkClient[line:748] - [Consumer clientId=consumer-2, groupId=topicGroupId] Connection to node 2 (/192.168.111.148:9092) could not be established. Broker may not be available.
+17:33:03.391 WARN  o.apache.kafka.clients.NetworkClient[line:748] - [Consumer clientId=consumer-1, groupId=topicGroupId] Connection to node 2 (/192.168.111.148:9092) could not be established. Broker may not be available.

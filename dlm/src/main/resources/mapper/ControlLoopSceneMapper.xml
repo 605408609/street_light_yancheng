@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.dlm.mapper.ControlLoopSceneMapper">
+
+	<resultMap id="BaseResultMap" type="com.exc.street.light.resource.entity.dlm.ControlLoopScene">
+		<id column="id" property="id" />
+		<id column="execution_time" property="executionTime" />
+		<id column="is_open" property="isOpen" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, execution_time, is_open
+	</sql>
+	
+</mapper>

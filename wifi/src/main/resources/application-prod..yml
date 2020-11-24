@@ -1,0 +1,74 @@
+logging:
+  # 指定需要使用的日志配置文件名称
+  config: classpath:logback-dev.xml
+# 配置端口
+server:
+  port: 60021
+  #全局配置接口地址前缀
+  servlet:
+    context-path: /api/wifi
+spring:
+  # 配置数据源
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.111.89:3306/street_light?useUnicode=true&characterEncoding=UTF-8&generateSimpleParameterMetadata=true&serverTimezone=Asia/Shanghai
+    username: root
+    password: Exc_led1
+    type: com.alibaba.druid.pool.DruidDataSource
+
+# mybatis-plus相关配置
+mybatis-plus:
+  # xml扫描，多个目录用逗号或者分号分隔（告诉 Mapper 所对应的 XML 文件位置）
+  mapper-locations: classpath:mapper/*.xml
+  # 以下配置均有默认值,可以不设置
+  global-config:
+    #去掉控制台打印版本号
+    banner: false
+    db-config:
+      #主键类型 AUTO:"数据库ID自增" INPUT:"用户输入ID",ID_WORKER:"全局唯一ID (数字类型唯一ID)", UUID:"全局唯一ID UUID";
+      id-type: auto
+      #字段策略 IGNORED:"忽略判断"  NOT_NULL:"非 NULL 判断")  NOT_EMPTY:"非空判断"
+      field-strategy: NOT_EMPTY
+  configuration:
+    # 是否开启自动驼峰命名规则映射:从数据库列名到Java属性驼峰命名的类似映射
+    map-underscore-to-camel-case: true
+    # 如果查询结果中包含空值的列，则 MyBatis 在映射的时候，不会映射这个字段
+    call-setters-on-nulls: true
+    # 这个配置会将执行的sql打印出来，在开发或测试的时候可以用
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+upload:
+  path: D:/import/
+  device:
+    picture:
+      path: D:/import/
+http:
+  # 智慧照明
+  dlm:
+    url: http://192.168.0.29:60027
+    areaById: /api/dlm/location/area
+    lampPostById: /api/dlm/sl/lamp/post
+    getStreetByAreaIdList: /api/dlm/location/street/by/area
+    getSiteByStreetIdList: /api/dlm/location/site/by/street
+
+#wifi设备定时
+timer:
+  #ap设备每个整点过一分执行一次,获取ap设备数据保存至历史数据
+  getInfo: 0 1 0/1 * * ?
+  #ap设备每分钟获取一次在线状态，并修改ap设备在线状态
+  getStatus: 0 0/1 * * * ?
+
+#认证中心
+security:
+  authe:
+    url: http://192.168.0.252:60029/api/ua/authe
+  authc:
+    url: http://192.168.0.252:60029/api/ua/authc
+
+exclude:
+  #不需要认证
+  authe:
+    url: /api/test,/swagger-ui.html,/swagger-resources,/v2/api-docs,/webjars/springfox-swagger-ui/**,/swagger-resources/configuration/ui,/error
+  #不需要鉴权
+  authc:
+    url: /api/test,/swagger-ui.html,/swagger-resources,/v2/api-docs,/webjars/springfox-swagger-ui/**,/swagger-resources/configuration/ui,/error

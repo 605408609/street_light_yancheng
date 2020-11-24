@@ -1,0 +1,315 @@
+# 配置端口
+server:
+  port: 60020
+# 资源路径
+path:
+  upload: D:/import/
+  file: D:/import/static
+mqtt:
+  username: admin
+  password: public
+  host: tcp://218.17.17.226:1883
+#  host: tcp://192.168.0.79:1883
+#  host: tcp://127.0.0.1:8000
+#  host: tcp://127.0.0.1:1883
+  #topic[0]: /a1679tBNru7/xiaoban/user/update
+  #topic[1]: /exc/cat1/user/update
+  topic[0]: /EXC/TL1/N110E/update
+  topic[1]: /EXC/TL1/C110E/update
+  qos[0]: 1
+  qos[1]: 1
+  clientId: testddfd
+  timeout: 10
+  keepAlive: 20
+
+socket-io:
+  #
+  host: 192.168.112.17
+  #
+  port: 9087
+  #
+  max-frame-payload-length: 1048576
+  #
+  max-http-content-length: 1048576
+  #
+  boss-count: 1
+  work-count: 100
+  allow-custom-requests: true
+  #
+  upgrade-timeout: 1000000
+  #
+  ping-timeout: 60000
+  #
+  ping-interval: 25000
+
+spring:
+  # 配置数据源
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.111.89:3306/street_light_3.0?useUnicode=true&characterEncoding=UTF-8&generateSimpleParameterMetadata=true&serverTimezone=Asia/Shanghai
+    username: root
+    password: Exc_led1
+    type: com.alibaba.druid.pool.DruidDataSource
+  kafka:
+    bootstrap-servers: 192.168.111.148:9092
+    #生产者
+    producer:
+      #失败重试次数
+      retries: 1
+      #缓存大小，默认16k,配合properties中的linger使用
+      batch-size: 16384
+      #缓存消息的缓冲区大小，默认32，多分区使用时适当加大
+      buffer-memory: 33554432
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+#      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: com.exc.street.light.sl.serializer.PersonSerializer
+      properties:
+        linger.ms: 1
+      acks: 1
+    #消费者
+    consumer:
+      #偏移量提交方式: false 手动 true 自动，但是此处是交给spring自动处理的意思
+      enable-auto-commit: false
+      #偏移量自动提交间隔 commit为false时无效，spring处理有效
+      auto-commit-interval: 100ms
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-serializer: com.exc.street.light.sl.serializer.PersonDeSerializer
+      properties:
+        session.timeout.ms: 15000
+    listener:
+      type: batch
+      concurrency: 3
+      poll-timeout: 2000
+      missingTopicsFatal: false
+  redis:
+    # redis数据库索引(默认为0)，我们使用索引为3的数据库，避免和其他数据库冲突
+    database: 0
+    # redis服务器地址（默认为localhost）
+    host: 192.168.111.165
+    # redis端口（默认为6379）
+    port: 6379
+    # redis访问密码（默认为空）为什么不能用 @exc123led123
+    password: "@exc123led123"
+    # redis连接超时时间（单位毫秒）
+    timeout: 3000
+
+kafka:
+  topic:
+    group-id: topicGroupId
+  topic1:
+    topic-name: websocket
+
+
+# mybatis-plus相关配置
+mybatis-plus:
+  # xml扫描，多个目录用逗号或者分号分隔（告诉 Mapper 所对应的 XML 文件位置）
+  mapper-locations: classpath:mapper/*.xml
+  # 以下配置均有默认值,可以不设置
+  global-config:
+    #去掉控制台打印版本号
+    banner: false
+    db-config:
+      #主键类型 AUTO:"数据库ID自增" INPUT:"用户输入ID",ID_WORKER:"全局唯一ID (数字类型唯一ID)", UUID:"全局唯一ID UUID";
+      id-type: auto
+      #字段策略 IGNORED:"忽略判断"  NOT_NULL:"非 NULL 判断")  NOT_EMPTY:"非空判断"
+      field-strategy: NOT_EMPTY
+  configuration:
+    # 是否开启自动驼峰命名规则映射:从数据库列名到Java属性驼峰命名的类似映射
+    map-underscore-to-camel-case: true
+    # 如果查询结果中包含空值的列，则 MyBatis 在映射的时候，不会映射这个字段
+    call-setters-on-nulls: true
+    # 这个配置会将执行的sql打印出来，在开发或测试的时候可以用
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+logging:
+  # 指定需要使用的日志配置文件名称
+  config: classpath:logback-dev.xml
+
+redis:
+    # redis数据库索引(默认为0)，我们使用索引为3的数据库，避免和其他数据库冲突
+    database: 0
+    # redis服务器地址（默认为localhost）
+    host: 192.168.111.165
+    # redis端口（默认为6379）
+    port: 6379
+    # redis访问密码（默认为空）为什么不能用 @exc123led123
+    password: "@exc123led123"
+    # redis连接超时时间（单位毫秒）
+    timeout: 3000
+
+#第三方路灯平台地址
+sl:
+  lamp:
+    address: http://39.107.231.159:8093
+    username: szak
+    password: 123456
+    loginUrl: /openapi/v2/sm/login
+    controlUrl: /openapi/v2/devcontrol/cmd
+    dataUrl: /openapi/v2/data/latestdevdata
+http:
+  # 位置管理
+  dlm:
+    url: http://192.168.112.17:60027
+    getLampPost: /api/dlm/sl/lamp/post
+    getStreetByAreaIdList: /api/dlm/location/street/by/area
+    getSiteByStreetIdList: /api/dlm/location/site/by/streetd
+    getLampPostBySiteIdList: /api/dlm/sl/lamp/post/by/site
+    getLampPostByGroupIdList: /api/dlm/sl/lamp/post/by/group
+    getControlLoopDeviceByLoopIdList: /api/dlm/control/loop/device/by/loop
+    getLocationControl: /api/dlm/location/control
+    getMixLocationControl: /api/dlm/location/control/mix
+    getControlLoopList: /api/dlm/control/loop/by/group
+    getListBycontrolLoopIdList: /api/dlm/control/loop/device/by/loop
+    addControlLoop: /api/dlm/control/loop
+    # 运维管理
+  ua:
+    url: http://192.168.112.17:60033
+    selectName: /api/ua/user/name/by/ids
+  sl:
+    url: http://192.168.112.17:60020
+    singleLampOutPlan: /api/sl/lamp/ht/message/setSingleLampOutPlan
+https:
+  #灯控参数及url
+  control:
+    selfcertpwd: IoM@1234
+    trustcapwd: Huawei@123
+    testPath: C:\Users\Gigabyte\Desktop\shunzhou\中国电信物联网开放平台应用服务器证书（ca）-北向接口调用认证(new)
+    selfcertpath: /outgoing.CertwithKey.pkcs12
+    trustcapath: /ca.jks
+    url: https://device.api.ct10649.com:8743
+    token: /iocm/app/sec/v1.1.0/login
+    select: /iocm/app/dm/v1.4.0/devices
+    issue: /iocm/app/cmd/v1.4.0/deviceCommands
+    batchIssue: /iocm/app/batchtask/v1.1.0/tasks
+    appKey: t25OhJADI_Q7tweHMxNenpf0Z7ga
+    secret: _CcJHkhOPvewN4JjbDHZcWBL_Dwa
+    callbackUrl: http://hjhhhh2.utools.club/api/sl/lamp/device/issue
+
+lora:
+  token: RXgXJUO7uhQD4ODmowFS1+Jcxg0c8QVYCzQolkU+yhw=
+  sendUrl: https://cloud.iotsquare.xyz/openapi/device/downlink/create
+  sendMcUrl: https://cloud.iotsquare.xyz/openapi/mcdownlink/create
+  createNode: https://cloud.iotsquare.xyz/openapi/device/create
+  createNodeMc: https://cloud.iotsquare.xyz/openapi/mcdevice/create
+  deleteNode: https://cloud.iotsquare.xyz/openapi/device/delete
+  deleteNodeMc: https://cloud.iotsquare.xyz/openapi/mcdevice/delete
+  loraMcId: 51221C37663DCDD0
+  appId: 792
+  appSKey: 2B7E151628AED2A6ABF7158809CF4F3C
+  nwkSKey: 2B7E151628AED2A6ABF7158809CF4F3C
+  num: "0000006E"
+  sendId: "0000000110"
+
+loranew:
+  sendMessage: http://47.110.127.110:8080/api2/v1/lorawan/downlink
+  createNode: http://47.110.127.110:8080/api/v1/lorawan/devices/addABP
+  deleteNode: http://47.110.127.110:8080/api/v1/lorawan/devices/batchDelete
+  appsKey: 2B7E151628AED2A6ABF7158809CF4F3C
+  nwksKey: 2B7E151628AED2A6ABF7158809CF4F3C
+  projectId: 5efbff2c7979c40001cf56ec
+  username: "dvk018"
+  password: "888888"
+  login: http://47.110.127.110:8080/api/v1/auth/login
+  sendSignToken: "FBF3DFD48DA2E20C"
+  sendSecretKey: "401715867A419F6903D02B2EC7AEDC96"
+  pushSignToken: "F22927F3B3A26F8A"
+  pushSecretKey: "6C294B6E2EBFEB2FA4BC4D98BBA7507C"
+
+ctwing:
+#  secret: JA5Lf9g7Kh
+#  application: fjI4ORmV7d7
+#  masterKey: b30d2e85500f4e2496f126438e2318f2
+#  productId: "10087620"
+#  sendMessage: http://ag-api.ctwing.cn/aep_device_command/command
+#  createNode: http://ag-api.ctwing.cn/aep_device_management/device
+#  deleteNode: http://ag-api.ctwing.cn/aep_device_management/device
+#  getTime: https://ag-api.ctwing.cn/echo
+  secret: up3ocEh2Nh
+  application: EDtPyTjW5pg
+  masterKey: 00a7debf285d4f4e8f4dfe135c880057
+  productId: "10093258"
+  sendMessage: http://ag-api.ctwing.cn/aep_device_command/command
+  createNode: http://ag-api.ctwing.cn/aep_device_management/device
+  batchCreateDevice: http://ag-api.ctwing.cn/aep_nb_device_management/batchNBDevice
+  deleteNode: http://ag-api.ctwing.cn/aep_device_management/device
+  getTime: https://ag-api.ctwing.cn/echo
+  outTime: "7200"
+  # 策略分批下发间隔时间（毫秒）
+  intervalTime: "5000"
+  # 重发机制间隔时间（秒）
+  retransmissionTime: "30"
+  #mqtt协议设备
+  mqtt-type:
+    #App Key
+    application: EDtPyTjW5pg
+    #App Secret
+    secret: up3ocEh2Nh
+    #产品id
+    productId: "10095537"
+    #Master-APIkey
+    masterKey: d63749aa23704ec298947a0a571fc4b6
+    #创建设备
+    createDevice:
+      api-version: "20181031202117"
+      http-url: http://ag-api.ctwing.cn/aep_device_management/device
+    #下发指令
+    sendMessage:
+      api-version: "20190712225145"
+      http-url: http://ag-api.ctwing.cn/aep_device_command/command
+    #删除设备
+    deleteDevice:
+      api-version: "20181031202131"
+      http-url: http://ag-api.ctwing.cn/aep_device_management/device
+    #获取时间
+    getTime:
+      https-url: https://ag-api.ctwing.cn/echo
+    #指令超时时间
+    outTime: "7200"
+
+#认证中心
+security:
+  authe:
+    url: http://192.168.112.252:60029/api/ua/authe
+  authc:
+    url: http://192.168.112.252:60029/api/ua/authc
+
+#不需要认证
+exclude:
+  authe:
+    url: /api/test,/api/sl/lamp/device/deviceInfoChanged,/api/sl/lamp/device/deviceDataChanged,/api/sl/lamp/device/issue,/error,/api/sl/lamp/single/lora/uplink,/api/sl/lamp/single/lora/json,/swagger-resources/**,/v2/api-docs,/doc.html,/webjars/**,/api/sl/lamp/device/test,/api/sl/lamp/device/CTWing/subscription,/api/sl/lamp/single/newLora/uplink,/api/sl/lamp/device/CTWing/subscription/catOne
+  #不需要鉴权
+  authc:
+    url: /api/test,/api/sl/lamp/device/deviceInfoChanged,/api/sl/lamp/device/deviceDataChanged,/api/sl/lamp/device/issue,/error,/api/sl/lamp/single/lora/uplink,/api/sl/lamp/single/lora/json,/swagger-resources/**,/v2/api-docs,/doc.html,/webjars/**,/api/sl/lamp/device/test,/api/sl/lamp/device/CTWing/subscription,/api/sl/lamp/single/newLora/uplink,/api/sl/lamp/device/CTWing/subscription/catOne
+
+#华体集中控制器配置
+htLamp:
+  #登录接口
+  loginUrl: http://127.0.0.1:8888/htserver/login
+  #用户名
+  username: admin
+  #密码
+  password: admin
+  #发送消息接口
+  sendUrl: http://server:port/htserver/lamp
+  #定时任务
+  timer:
+    #五分钟登录一次
+    login: 0 0/5 * * * ?
+
+#顺舟云盒
+shuncom:
+  #netty配置
+  netty:
+    #端口号
+    port: 50050
+    #读超时时间
+    readerIdleTime: 120
+    #写超时时间
+    writerIdleTime: 0
+    #所有类型超时时间
+    allIdleTime: 0
+
+#中科智联集中控制器
+zkzl:
+    netty:
+        port: 10005

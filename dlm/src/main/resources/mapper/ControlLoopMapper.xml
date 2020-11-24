@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.dlm.mapper.ControlLoopMapper">
+    <resultMap id="BaseResultMap" type="com.exc.street.light.resource.entity.dlm.ControlLoop">
+        <id column="id" property="id"/>
+        <id column="type_id" property="typeId"/>
+        <id column="name" property="name"/>
+        <id column="num" property="num"/>
+        <id column="type" property="type"/>
+        <id column="is_open" property="isOpen"/>
+        <id column="scene_id" property="sceneId"/>
+        <id column="scene_strategy_id" property="sceneStrategyId"/>
+        <id column="creator" property="creator"/>
+        <id column="create_time" property="createTime"/>
+        <id column="update_time" property="updateTime"/>
+        <id column="description" property="description"/>
+        <id column="control_id" property="controlId"/>
+        <id column="sn" property="sn"/>
+        <id column="orders" property="orders"/>
+        <id column="is_use" property="isUse"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        
+                
+                        id, type_id, name, num, type, is_open, scene_id, scene_strategy_id, creator, create_time, update_time, description, control_id, sn, orders, is_use
+        
+
+    </sql>
+    <select id="selectControlLoopWithPageByLoopQuery"
+            resultType="com.exc.street.light.resource.vo.resp.DlmRespControlLoopVO">
+        select cl.id, cl.name, cl.num, cl.type_id, cl.is_open, cl.scene_id, cl.scene_strategy_id, cl.creator,
+        cl.create_time, cl.description,
+        cl.control_id, cl.is_use, u.name as creatorName, lc.name as controlName, la.name as areaName, cl.orders, cl.sn
+        from control_loop cl
+        left join user u on u.id = cl.creator
+        left join location_control lc on lc.id = cl.control_id
+        left join location_distribute_cabinet ldc on ldc.id = lc.cabinet_id
+        left join location_area la on la.id = ldc.area_id
+        <where>
+            <if test="loopQuery.deviceName != null and loopQuery.deviceName != ''">
+                and lc.name LIKE concat('%',#{loopQuery.deviceName},'%')
+            </if>
+            <if test="loopQuery.loopName != null and loopQuery.loopName != ''">
+                and cl.name LIKE concat('%',#{loopQuery.loopName},'%')
+            </if>
+            <if test="loopQuery.sceneIsOpen != null">
+                and cl.is_use = #{loopQuery.sceneIsOpen}
+            </if>
+            <if test="loopQuery.loopIsOpen != null">
+                and cl.is_open = #{loopQuery.loopIsOpen}
+            </if>
+            <if test="loopQuery.areaId != null">
+                and ldc.area_id = #{loopQuery.areaId}
+            </if>
+            <if test="typeId != null">
+                and cl.type_id = #{typeId}
+            </if>
+        </where>
+        order by cl.create_time desc
+    </select>
+
+    <select id="selectControlLoopByIdList" resultType="com.exc.street.light.resource.dto.dlm.ControlLoopDTO">
+        select cl.id, cl.name, cl.num, cl.control_id, lc.name controlName, lc.ip, lc.port, lc.mac
+        from control_loop cl
+        left join location_control lc on lc.id = cl.control_id
+        where cl.id in
+        <foreach collection="loopIdList" item="item" open="(" close=")" separator=",">
+            #{item}
+        </foreach>
+    </select>
+</mapper>

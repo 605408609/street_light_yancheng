@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.dlm.mapper.MeteorologicalDeviceDao">
+	<resultMap id="DlmRespDeviceVOMap" type="com.exc.street.light.resource.vo.resp.DlmRespDevicePublicParVO">
+		<id column="DlmRespDeviceVOMapId" property="id"/>
+		<result column="partId" property="partId"/>
+		<result column="DlmRespDeviceVOMapName" property="name"/>
+		<result column="networkState" property="networkState"/>
+		<result column="lastOnlineTime" property="lastOnlineTime"/>
+		<result column="deviceType" property="deviceType"/>
+		<result column="superId" property="superId"/>
+		<result column="superName" property="superName"/>
+		<result column="deviceNum" property="num"/>
+		<result column="lampPostId" property="lampPostId"/>
+		<association property="dlmRespDevice" javaType="com.exc.street.light.resource.entity.em.MeteorologicalDevice">
+			<id column="id" property="id" />
+			<id column="model" property="model" />
+			<id column="ip" property="ip" />
+			<id column="port" property="port" />
+			<id column="factory" property="factory" />
+			<id column="name" property="name" />
+			<id column="num" property="num" />
+			<id column="network_state" property="networkState" />
+			<id column="create_time" property="createTime" />
+			<id column="last_online_time" property="lastOnlineTime" />
+			<id column="lamp_post_id" property="lampPostId" />
+		</association>
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, model, ip, port, factory, name, num, network_state, create_time, last_online_time, lamp_post_id
+	</sql>
+	<select id="getDlmRespDeviceVOList" resultMap="DlmRespDeviceVOMap">
+		SELECT md.*, md.id DlmRespDeviceVOMapId,md.`name` DlmRespDeviceVOMapName, md.network_state networkState,
+		md.last_online_time lastOnlineTime, concat("device",md.id) partId, concat(7) deviceType, md.lamp_post_id superId,
+		slp.`name` superName, md.lamp_post_id lampPostId, md.`num` deviceNum
+		FROM meteorological_device md
+		LEFT JOIN sl_lamp_post slp ON md.lamp_post_id = slp.id
+		<where>
+			<if test="list != null and list.size() > 0">
+				AND md.lamp_post_id IN
+				<foreach collection="list" item="num" open="(" close=")" separator=",">
+					#{num}
+				</foreach>
+			</if>
+		</where>
+	</select>
+</mapper>

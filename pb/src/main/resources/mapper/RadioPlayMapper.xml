@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.pb.mapper.RadioPlayDao">
+    <resultMap id="BaseResultMap" type="com.exc.street.light.resource.entity.pb.RadioPlay">
+        <id column="id" property="id"/>
+        <id column="execution_mode" property="executionMode"/>
+        <id column="execution_time" property="executionTime"/>
+        <id column="execution_end_time" property="executionEndTime"/>
+        <id column="start_date" property="startDate"/>
+        <id column="end_date" property="endDate"/>
+        <id column="week_value" property="weekValue"/>
+        <id column="play_status" property="playStatus"/>
+        <id column="number" property="number"/>
+        <id column="device_id" property="deviceId"/>
+        <id column="program_id" property="programId"/>
+        <id column="session_id" property="sessionId"/>
+        <id column="create_time" property="createTime"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        id, execution_mode, execution_time, execution_end_time, start_date, end_date, week_value, play_status, number, device_id, program_id, session_id, create_time
+    </sql>
+    <select id="query" resultMap="BaseResultMap">
+        SELECT DISTINCT
+        play.id, play.execution_mode, play.execution_time, play.execution_end_time, play.start_date, play.end_date
+        , play.week_value, play.play_status, play.number, play.device_id, play.program_id, play.session_id,
+        play.create_time
+        FROM
+        radio_play play
+        LEFT JOIN radio_program program ON program.id = play.program_id
+        left join `user` usr on program.creator = usr.id
+        <where>
+            <if test="qo.name != null and qo.name != ''">
+                AND program.name like CONCAT('%', #{qo.name}, '%')
+            </if>
+            <if test="qo.status != null">
+                AND play.play_status = #{qo.status}
+            </if>
+            <if test="qo.areaId != null">
+                AND usr.area_id = #{qo.areaId}
+            </if>
+        </where>
+        ORDER BY play.id desc
+    </select>
+
+    <resultMap id="PageResultMap" type="com.exc.street.light.resource.vo.pb.PbRespRadioPlayPageVO">
+        <id column="id" property="id"/>
+        <id column="execution_mode" property="executionMode"/>
+        <id column="execution_time" property="executionTime"/>
+        <id column="execution_end_time" property="executionEndTime"/>
+        <id column="start_date" property="startDate"/>
+        <id column="end_date" property="endDate"/>
+        <id column="week_value" property="weekValue"/>
+        <id column="play_status" property="playStatus"/>
+        <id column="program_id" property="programId"/>
+        <id column="program_name" property="programName"/>
+        <id column="create_time" property="createTime"/>
+        <id column="radio_device_id" property="radioDeviceId"/>
+        <id column="radio_device_name" property="radioDeviceName"/>
+        <id column="radio_device_vol" property="radioDeviceVol"/>
+        <id column="lamp_post_name" property="lampPostName"/>
+    </resultMap>
+
+    <select id="getPageList" resultMap="PageResultMap">
+        SELECT
+        rp.id,
+        rp.execution_mode,
+        rp.execution_time,
+        rp.execution_end_time,
+        rp.start_date,
+        rp.end_date,
+        rp.week_value,
+        rp.play_status,
+        rp.program_id,
+        rp.create_time,
+        rd.id radio_device_id,
+        rd.`name` radio_device_name,
+        rd.volume radio_device_vol,
+        slp.`name` lamp_post_name ,
+        rp2.`name` program_name
+        FROM
+        `radio_play` rp
+        left join radio_program rp2 on rp2.id = rp.program_id
+        RIGHT JOIN radio_play_device rpd ON rpd.play_id = rp.id
+        LEFT JOIN radio_device rd ON rd.id = rpd.device_id
+        LEFT JOIN sl_lamp_post slp ON slp.id = rd.lamp_post_id
+        left join `user` usr on rp2.creator = usr.id
+        <where>
+            rpd.device_id is not null
+            <if test="qo.name != null and qo.name != ''">
+                AND rp2.name like CONCAT('%', #{qo.name}, '%')
+            </if>
+            <if test="qo.deviceName != null and qo.deviceName != ''">
+                AND rd.name like CONCAT('%', #{qo.deviceName}, '%')
+            </if>
+            <if test="qo.status != null">
+                AND rp.play_status = #{qo.status}
+            </if>
+            <if test="qo.areaId != null">
+                AND usr.area_id = #{qo.areaId}
+            </if>
+        </where>
+        ORDER BY rp.id desc
+    </select>
+
+
+    <select id="getPlayIdListByLampPostId" resultType="java.lang.Integer">
+        SELECT
+        rpd.play_id playId
+        FROM
+        sl_lamp_post slp
+        LEFT JOIN location_group lg ON lg.id = slp.group_id
+        LEFT JOIN radio_play_device rpd ON rpd.group_id = lg.id
+        <where>
+            <if test="lampPostIds != null and lampPostIds.size() != 0">
+                and slp.id in
+                <foreach collection="lampPostIds" separator="," open="(" close=")" item="lampPostId">
+                    #{lampPostId}
+                </foreach>
+            </if>
+        </where>
+    </select>
+</mapper>

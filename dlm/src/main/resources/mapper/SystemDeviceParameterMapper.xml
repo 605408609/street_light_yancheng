@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.dlm.mapper.SystemDeviceParameterMapper">
+
+	<resultMap id="BaseResultMap" type="com.exc.street.light.resource.entity.sl.SystemDeviceParameter">
+		<id column="id" property="id" />
+		<id column="device_type_id" property="deviceTypeId" />
+		<id column="filed" property="filed" />
+		<id column="unit" property="unit" />
+		<id column="name" property="name" />
+		<id column="is_must" property="isMust" />
+		<id column="regexp" property="regexp" />
+		<id column="icon" property="icon" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, device_type_id, filed, unit, name, is_must, regexp, icon
+	</sql>
+	
+	<select id="selectFiledByType" resultType="com.exc.street.light.resource.dto.sl.SystemDeviceParameterFiledDTO">
+		select filed,id from system_device_parameter sdp where sdp.device_type_id = #{deviceType} order by id asc
+	</select>
+</mapper>

@@ -1,0 +1,37 @@
+logging:
+    # 指定需要使用的日志配置文件名称
+    config: classpath:logback-dev.xml  
+ctwing:
+    secret: up3ocEh2Nh
+    application: EDtPyTjW5pg
+    masterKey: 9d16e648680a4d3fa0903185a0d68db1
+    productId: "15002715"
+    sendMessage: http://ag-api.ctwing.cn/aep_device_command/command
+    createNode: http://ag-api.ctwing.cn/aep_device_management/device
+    deleteNode: http://ag-api.ctwing.cn/aep_device_management/device
+    getTime: https://ag-api.ctwing.cn/echo
+    #mqtt协议设备
+    mqtt-type:
+        #App Key
+        application: EDtPyTjW5pg
+        #App Secret
+        secret: up3ocEh2Nh
+        #产品id
+        productId: "10095537"
+        #Master-APIkey
+        masterKey: d63749aa23704ec298947a0a571fc4b6
+        #创建设备
+        createDevice:
+            api-version: "20181031202117"
+            http-url: http://ag-api.ctwing.cn/aep_device_management/device
+        #下发指令
+        sendMessage:
+            api-version: "20190712225145"
+            http-url: http://ag-api.ctwing.cn/aep_device_command/command
+        #删除设备
+        deleteDevice:
+            api-version: "20181031202131"
+            http-url: http://ag-api.ctwing.cn/aep_device_management/device
+        #获取时间
+        getTime:
+            https-url: https://ag-api.ctwing.cn/echo

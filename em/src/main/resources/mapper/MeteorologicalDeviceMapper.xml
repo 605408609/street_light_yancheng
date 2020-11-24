@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.em.mapper.MeteorologicalDeviceDao">
+
+	<resultMap id="BaseResultMap" type="com.exc.street.light.resource.entity.em.MeteorologicalDevice">
+		<id column="id" property="id" />
+		<id column="model" property="model" />
+		<id column="ip" property="ip" />
+		<id column="port" property="port" />
+		<id column="factory" property="factory" />
+		<id column="name" property="name" />
+		<id column="num" property="num" />
+		<id column="network_state" property="networkState" />
+		<id column="create_time" property="createTime" />
+		<id column="last_online_time" property="lastOnlineTime" />
+		<id column="lamp_post_id" property="lampPostId" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, model, ip, port, factory, name, num, network_state, create_time, last_online_time, lamp_post_id
+	</sql>
+
+	<select id="getPageList" resultType="com.exc.street.light.resource.vo.resp.EmRespDeviceAndLampPostVO">
+		SELECT
+		md.id, md.model, md.ip, md.`port`, md.factory, md.`name`, md.num, md.network_state networkState
+		, md.create_time createTime, md.last_online_time lastOnlineTime, md.lamp_post_id lampPostId
+		, sl.`name` lampPostName, sl.num lampPostNum, sl.longitude longitude, sl.latitude latitude
+		FROM
+			meteorological_device md
+			LEFT JOIN sl_lamp_post sl ON sl.id = md.lamp_post_id
+			LEFT JOIN location_site ls ON ls.id = sl.site_id
+			LEFT JOIN location_street lst ON lst.id = ls.street_id
+			LEFT JOIN location_area la ON la.id = lst.area_id
+		<where>
+			<if test="qo.name != null and qo.name != ''">
+				and md.`name` like concat('%',#{qo.name},'%')
+			</if>
+			<if test="qo.num != null and qo.num != ''">
+				and md.num = #{qo.num}
+			</if>
+			<if test="qo.networkState != null">
+				and md.network_state = #{qo.networkState}
+			</if>
+			<if test="qo.areaId != null">
+				and la.id = #{qo.areaId}
+			</if>
+		</where>
+		order by md.id desc
+	</select>
+
+	<select id="getList" resultType="com.exc.street.light.resource.entity.em.MeteorologicalDevice">
+		SELECT
+			md.id, md.model, md.ip, md.PORT, md.factory, md.NAME, md.num, md.network_state networkState, md.create_time createTime, md.last_online_time lastOnlineTime, md.lamp_post_id lampPostId
+		FROM
+			meteorological_device md
+			LEFT JOIN sl_lamp_post sl ON sl.id = md.lamp_post_id
+			LEFT JOIN location_site ls ON ls.id = sl.site_id
+			LEFT JOIN location_street lst ON lst.id = ls.street_id
+			LEFT JOIN location_area la ON la.id = lst.area_id
+		<where>
+			<if test="areaId != null">
+				and la.id = #{areaId}
+			</if>
+			<if test="name != null and name != ''">
+				and md.`name` like concat('%',#{name},'%')
+			</if>
+			<if test="num != null and num != ''">
+				and num = #{num}
+			</if>
+			<if test="networkState != null">
+				and md.network_state = #{networkState}
+			</if>
+			<if test="lampPostIdList != null and lampPostIdList.size()>0">
+				and md.lamp_post_id in
+				<foreach collection="lampPostIdList" item="lampPostId" close=")" open="(" separator="," >
+					#{lampPostId}
+				</foreach>
+			</if>
+		</where>
+		order by md.id desc
+	</select>
+
+	<select id="getEmAndLampPostList" resultType="com.exc.street.light.resource.vo.resp.EmRespDeviceAndLampPostVO">
+		SELECT
+		md.id, md.model, md.ip, md.`port`, md.factory, md.`name`, md.num, md.network_state networkState
+		, md.create_time createTime, md.last_online_time lastOnlineTime, md.lamp_post_id lampPostId
+		, sl.`name` lampPostName, sl.num lampPostNum, sl.longitude longitude, sl.latitude latitude
+		FROM
+		meteorological_device md
+		LEFT JOIN sl_lamp_post sl ON sl.id = md.lamp_post_id
+		LEFT JOIN location_site ls ON ls.id = sl.site_id
+		LEFT JOIN location_street lst ON lst.id = ls.street_id
+		LEFT JOIN location_area la ON la.id = lst.area_id
+		<where>
+			<if test="name != null and name != ''">
+				and md.`name` like concat('%',#{name},'%')
+			</if>
+			<if test="num != null and num != ''">
+				and md.num = #{num}
+			</if>
+			<if test="networkState != null">
+				and md.network_state = #{networkState}
+			</if>
+			<if test="areaId != null">
+				and la.id = #{areaId}
+			</if>
+			<if test="lampPostIdList != null and lampPostIdList.size()>0">
+				and md.lamp_post_id in
+				<foreach collection="lampPostIdList" item="lampPostId" close=")" open="(" separator="," >
+					#{lampPostId}
+				</foreach>
+			</if>
+		</where>
+		order by md.id desc
+	</select>
+</mapper>

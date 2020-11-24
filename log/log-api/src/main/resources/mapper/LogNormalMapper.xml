@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.log_api.mapper.LogNormalMapper">
+
+	<resultMap id="BaseResultMap" type="com.exc.street.light.resource.entity.log.LogNormal">
+		<id column="id" property="id" />
+		<id column="modul" property="modul" />
+		<id column="log_type" property="logType" />
+		<id column="description" property="description" />
+		<id column="requ_param" property="requParam" />
+		<id column="resp_param" property="respParam" />
+		<id column="user_id" property="userId" />
+		<id column="user_name" property="userName" />
+		<id column="method" property="method" />
+		<id column="uri" property="uri" />
+		<id column="requ_ip" property="requIp" />
+		<id column="create_time" property="createTime" />
+		<id column="update_time" property="updateTime" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, modul, log_type, description, requ_param, resp_param, user_id, user_name, method, uri, requ_ip, create_time, update_time
+	</sql>
+
+	<select id="selectOn" resultMap="BaseResultMap">
+		select * from log_normal
+	</select>
+
+	<select id="findPage" resultType="com.exc.street.light.resource.vo.resp.LogRespDataVO"
+			parameterType="com.exc.street.light.resource.qo.LogDataQueryObject">
+		SELECT ln.id id, ln.modul modul, ln.log_type logType, ln.description description, ln.requ_param requParam,
+		       ln.resp_param respParam, ln.user_id userId, ln.user_name userName, ln.method method,
+		       ln.uri uri, ln.requ_ip requIp, ln.create_time createTime, ln.update_time updateTime
+		FROM log_normal ln
+		<where>
+			<if test="logDataQueryObject.modul != null and logDataQueryObject.modul != ''">
+				ln.modul like CONCAT('%',#{logDataQueryObject.modul},'%')
+			</if>
+
+			<if test="logDataQueryObject.logType != null and logDataQueryObject.logType != ''">
+				AND ln.log_type like CONCAT('%',#{logDataQueryObject.logType},'%')
+			</if>
+
+			<if test="logDataQueryObject.userName != null and logDataQueryObject.userName != ''">
+				AND ln.user_name like CONCAT('%',#{logDataQueryObject.userName},'%')
+			</if>
+
+			<if test="logDataQueryObject.method != null and logDataQueryObject.method != ''">
+				AND ln.method = #{logDataQueryObject.method}
+			</if>
+
+			<if test="logDataQueryObject.uri != null and logDataQueryObject.uri != ''">
+				AND ln.uri like CONCAT('%',#{logDataQueryObject.uri},'%')
+			</if>
+
+			<if test="logDataQueryObject.requIp != null and logDataQueryObject.requIp != ''">
+				AND ln.requ_ip like CONCAT('%',#{logDataQueryObject.requIp},'%')
+			</if>
+
+			<if test="logDataQueryObject.beginTime != null and logDataQueryObject.beginTime != '' ">
+				AND DATE_FORMAT(ln.create_time,"%Y-%m-%d") &gt;= #{logDataQueryObject.beginTime}
+			</if>
+
+			<if test="logDataQueryObject.endTime != null and logDataQueryObject.endTime != '' ">
+				AND DATE_FORMAT(ln.create_time,"%Y-%m-%d") &lt;= #{logDataQueryObject.endTime}
+			</if>
+		</where>
+		ORDER BY ln.create_time DESC
+	</select>
+	
+</mapper>

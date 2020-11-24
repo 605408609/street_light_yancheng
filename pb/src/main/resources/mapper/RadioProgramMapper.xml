@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.pb.mapper.RadioProgramDao">
+
+	<resultMap id="BaseResultMap" type="com.exc.street.light.resource.entity.pb.RadioProgram">
+		<id column="id" property="id" />
+		<id column="name" property="name" />
+		<id column="description" property="description" />
+		<id column="duration" property="duration" />
+		<id column="capacity" property="capacity" />
+		<id column="creator" property="creator" />
+		<id column="verify_status" property="verifyStatus" />
+		<id column="update_time" property="updateTime" />
+		<id column="create_time" property="createTime" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, name, description, duration, capacity, creator, update_time, create_time,verify_status
+	</sql>
+
+	<select id="getPageList" resultType="com.exc.street.light.resource.entity.pb.RadioProgram">
+		SELECT
+		rp.id, rp.`name`, rp.description, rp.duration, rp.capacity, rp.creator, rp.verify_status verifyStatus,rp.update_time updateTime
+		, rp.create_time createTime, usr.`name` creatorName
+		FROM
+			radio_program rp
+			LEFT JOIN `user` usr ON rp.creator = usr.id
+		<where>
+			<if test="queryObject.name != null and queryObject.name != ''">
+				AND rp.name like concat('%',#{queryObject.name},'%')
+			</if>
+			<if test="queryObject.areaId != null">
+				AND usr.area_id = #{queryObject.areaId}
+			</if>
+			<if test="queryObject.verifyStatus != null">
+				AND rp.verify_status = #{queryObject.verifyStatus}
+			</if>
+		</where>
+		ORDER BY rp.id DESC
+	</select>
+</mapper>

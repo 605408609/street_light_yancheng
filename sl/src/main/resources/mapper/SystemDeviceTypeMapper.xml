@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.sl.mapper.SystemDeviceTypeMapper">
+
+    <resultMap id="BaseResultMap" type="com.exc.street.light.resource.entity.sl.SystemDeviceType">
+        <id column="id" property="id"/>
+        <id column="name" property="name"/>
+        <id column="edition" property="edition"/>
+        <id column="protocol" property="protocol"/>
+        <id column="socket" property="socket"/>
+        <id column="factory_id" property="factoryId"/>
+        <id column="description" property="description"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+		id, name, edition, protocol, socket, factory_id, description
+	</sql>
+    <select id="selectStrategyIdListByDeviceTypeIdList" resultType="java.lang.Integer">
+		SELECT lsdt.strategy_id FROM system_device_type sdt
+        LEFT JOIN lamp_strategy_device_type lsdt ON lsdt.device_type_id = sdt.id
+        LEFT JOIN lamp_strategy ls ON ls.id = lsdt.strategy_id
+        WHERE ls.is_delete = 0
+        AND sdt.id IN
+          <foreach collection="deviceTypeIdList" separator="," item="item" index="index" open="(" close=")">
+              #{item}
+          </foreach>
+        GROUP BY lsdt.strategy_id
+        HAVING count(sdt.id) = #{size}
+	</select>
+
+</mapper>

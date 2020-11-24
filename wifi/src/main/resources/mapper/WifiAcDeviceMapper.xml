@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.wifi.mapper.WifiAcDeviceDao">
+
+	<resultMap id="BaseResultMap" type="com.exc.street.light.resource.entity.wifi.WifiAcDevice">
+		<id column="id" property="id" />
+		<id column="name" property="name" />
+		<id column="num" property="num" />
+		<id column="model" property="model" />
+		<id column="ip" property="ip" />
+		<id column="mac" property="mac" />
+		<id column="factory" property="factory" />
+		<id column="conn_ap_count" property="connApCount" />
+		<id column="network_state" property="networkState" />
+		<id column="area_id" property="areaId" />
+		<id column="create_time" property="createTime" />
+		<id column="last_online_time" property="lastOnlineTime" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, name, num, model, ip, mac, factory, conn_ap_count, online_status, area_id, create_time, last_online_time
+	</sql>
+    <select id="getPageList" resultType="com.exc.street.light.resource.vo.resp.WifiRespAcDeviceVO">
+		select wad.id, wad.name, wad.num, wad.conn_ap_count, wad.network_state, wad.create_time, la.name as areaName
+		from wifi_ac_device wad
+		left join location_area la on la.id = wad.area_id
+		<where>
+			<if test="queryObject.name != null and queryObject.name != '' ">
+				AND wad.name LIKE concat('%',#{queryObject.name},'%')
+			</if>
+			<if test="queryObject.networkState != null">
+				AND wad.network_state = #{queryObject.networkState}
+			</if>
+			<if test="queryObject.areaId != null">
+				AND la.id = #{queryObject.areaId}
+			</if>
+		</where>
+		order by wad.id desc
+	</select>
+    <select id="selectAll" resultType="com.exc.street.light.resource.entity.wifi.WifiAcDevice">
+		select distinct id, `name`, ip from wifi_ac_device
+	</select>
+
+</mapper>

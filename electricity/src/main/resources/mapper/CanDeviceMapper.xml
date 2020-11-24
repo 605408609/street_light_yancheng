@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.electricity.mapper.CanDeviceMapper">
+    <resultMap id="BaseResultMap" type="com.exc.street.light.resource.entity.electricity.CanDevice">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="can_index" jdbcType="INTEGER" property="canIndex"/>
+        <result column="can_id" jdbcType="VARCHAR" property="canId"/>
+        <result column="module_type" jdbcType="VARCHAR" property="moduleType"/>
+        <result column="wait_time" jdbcType="INTEGER" property="waitTime"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="batch_number" jdbcType="VARCHAR" property="batchNumber"/>
+        <result column="address" jdbcType="VARCHAR" property="address"/>
+        <result column="mid" jdbcType="INTEGER" property="mid"/>
+        <result column="nid" jdbcType="INTEGER" property="nid"/>
+    </resultMap>
+    <delete id="deleteByNid">
+        DELETE FROM can_device WHERE nid = #{nid}
+    </delete>
+    <select id="getByNid" resultMap="BaseResultMap">
+        SELECT id,can_id,mid,address,name FROM can_device WHERE nid = #{nid}
+    </select>
+    <select id="getByNidAndIndex" resultMap="BaseResultMap">
+        SELECT id,can_index, module_type, name, address, mid, nid, batch_number
+        FROM can_device
+        WHERE nid = #{nid} AND can_index = #{canIndex}
+    </select>
+    <select id="getByNidAndBatchNumber" resultMap="BaseResultMap">
+        SELECT id,can_index, module_type, name, address, mid, nid, batch_number
+        FROM can_device
+        WHERE nid = #{nid} AND batch_number = #{batchNumber}
+    </select>
+    <select id="getAddressByNid" resultMap="BaseResultMap">
+         SELECT id,address FROM can_device
+         WHERE nid = #{nid} AND mid = 1
+    </select>
+    <select id="countByAddress" resultType="java.lang.Integer">
+        SELECT COUNT(*) FROM can_device WHERE address = #{address}
+    </select>
+    <select id="countByAddressAndId" resultType="java.lang.Integer">
+        SELECT COUNT(*) FROM can_device WHERE address = #{address} AND id != #{id}
+    </select>
+</mapper>

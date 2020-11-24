@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.pb.mapper.RadioDeviceDao">
+    <resultMap id="BaseResultMap" type="com.exc.street.light.resource.entity.pb.RadioDevice">
+        <id column="id" property="id"/>
+        <id column="model" property="model"/>
+        <id column="ip" property="ip"/>
+        <id column="mac" property="mac"/>
+        <id column="volume" property="volume"/>
+        <id column="factory" property="factory"/>
+        <id column="name" property="name"/>
+        <id column="num" property="num"/>
+        <id column="network_state" property="networkState"/>
+        <id column="create_time" property="createTime"/>
+        <id column="last_online_time" property="lastOnlineTime"/>
+        <id column="lamp_post_id" property="lampPostId"/>
+        <id column="term_id" property="termId"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        id,
+        model,
+        ip,
+        mac,
+        volume,
+        factory,
+        name,
+        num,
+        network_state,
+        create_time,
+        last_online_time,
+        lamp_post_id
+    </sql>
+
+    <update id="updateStatusByTermId">
+        update radio_device
+        set network_state = #{networkState}
+        where term_id = #{termId}
+    </update>
+
+    <update id="updateStatusById">
+        update radio_device
+        set network_state = #{networkState}
+        <where>
+            <if test="idList != null and idList.size() > 0">
+                AND id in
+                <foreach collection="idList" item="id" separator="," open="(" close=")">
+                    #{id}
+                </foreach>
+            </if>
+        </where>
+    </update>
+
+    <select id="getPageList" resultType="com.exc.street.light.resource.vo.resp.PbRespDeviceAndLampPostVO">
+        SELECT rd.id
+             , rd.model
+             , rd.ip
+             , rd.mac
+             , rd.volume
+             , rd.factory
+             , rd.`name`
+             , rd.num
+             , rd.network_state
+             , rd.create_time
+             , rd.last_online_time
+             , rd.lamp_post_id
+             , rd.network_state    networkState
+             , rd.create_time      createTime
+             , rd.last_online_time lastOnlineTime
+             , rd.lamp_post_id     lampPostId
+             , rd.term_id          termId
+             , sl.longitude        longitude
+             , sl.latitude         latitude
+             , sl.`name`           lampPostName
+             , sl.num              lampPostNum
+        FROM radio_device rd
+                     LEFT JOIN sl_lamp_post sl ON sl.id = rd.lamp_post_id
+                     LEFT JOIN location_site ls ON ls.id = sl.site_id
+                     LEFT JOIN location_street lst ON lst.id = ls.street_id
+                     LEFT JOIN location_area la ON la.id = lst.area_id
+        <where>
+            <if test="queryObject.name != null and queryObject.name != ''">
+                AND rd.`name` LIKE concat('%', #{queryObject.name}, '%')
+            </if>
+            <if test="queryObject.num != null and queryObject.num != ''">
+                AND rd.num LIKE concat('%', #{queryObject.num}, '%')
+            </if>
+            <if test="queryObject.networkState != null">
+                AND rd.network_state = #{queryObject.networkState}
+            </if>
+            <if test="queryObject.areaId != null">
+                AND la.id = #{queryObject.areaId}
+            </if>
+            <if test="queryObject.lampPostIdList != null and queryObject.lampPostIdList.size() > 0">
+                AND rd.lamp_post_id in
+                <foreach collection="queryObject.lampPostIdList" separator="," open="(" close=")" item="lampPostId">
+                    #{lampPostId}
+                </foreach>
+            </if>
+        </where>
+        ORDER BY rd.id desc
+    </select>
+
+
+    <select id="getList" resultType="com.exc.street.light.resource.vo.resp.PbRespDeviceAndLampPostVO">
+        SELECT rd.id
+             , rd.model
+             , rd.ip
+             , rd.mac
+             , rd.volume
+             , rd.factory
+             , rd.`name`
+             , rd.num
+             , rd.network_state
+             , rd.create_time
+             , rd.last_online_time
+             , rd.lamp_post_id
+             , rd.network_state    networkState
+             , rd.create_time      createTime
+             , rd.last_online_time lastOnlineTime
+             , rd.lamp_post_id     lampPostId
+             , rd.term_id          termId
+             , sl.longitude        longitude
+             , sl.latitude         latitude
+             , sl.`name`           lampPostName
+             , sl.num              lampPostNum
+        FROM radio_device rd
+                     LEFT JOIN sl_lamp_post sl ON sl.id = rd.lamp_post_id
+                     LEFT JOIN location_site ls ON ls.id = sl.site_id
+                     LEFT JOIN location_street lst ON lst.id = ls.street_id
+                     LEFT JOIN location_area la ON la.id = lst.area_id
+        <where>
+            <if test="qo.areaId != null">
+                AND la.id = #{qo.areaId}
+            </if>
+            <if test="qo.lampPostIdList != null and qo.lampPostIdList.size() > 0">
+                AND rd.lamp_post_id in
+                <foreach collection="qo.lampPostIdList" separator="," open="(" close=")" item="lampPostId">
+                    #{lampPostId}
+                </foreach>
+            </if>
+            <if test="qo.networkState != null">
+                AND rd.network_state = #{qo.networkState}
+            </if>
+            <if test="qo.name != null and qo.name != ''">
+                AND rd.`name` LIKE concat('%', #{qo.name}, '%')
+            </if>
+            <if test="qo.num != null and qo.num != ''">
+                AND rd.num LIKE concat('%', #{qo.num}, '%')
+            </if>
+        </where>
+        ORDER BY rd.id desc
+    </select>
+
+    <select id="getIdsByGroupIds" resultType="java.lang.Integer">
+        select rd.id
+        from radio_device rd
+                     left join sl_lamp_post slp on slp.id = rd.lamp_post_id
+                     left join location_group lg on lg.id = slp.group_id
+        <where>
+            <if test="groupIdList != null and groupIdList.size() != 0">
+                and lg.id in
+                <foreach collection="groupIdList" item="groupId" close=")" open="(" separator=",">
+                    #{groupId}
+                </foreach>
+            </if>
+        </where>
+    </select>
+
+    <select id="getLampPostInfoByAreaId" resultType="com.exc.street.light.resource.vo.resp.PbRespLampPostVO">
+        SELECT sl.id     as                                                          lampPostId
+             , sl.`name` as                                                          lampPostName
+             , (select 1 from radio_device rd where rd.lamp_post_id = sl.id limit 1) isBindRadioDevice
+        FROM sl_lamp_post sl
+                     LEFT JOIN location_site ls ON ls.id = sl.site_id
+                     LEFT JOIN location_street lst ON lst.id = ls.street_id
+                     LEFT JOIN location_area la ON la.id = lst.area_id
+        <where>
+            <if test="areaId != null">
+                and la.id = #{areaId}
+            </if>
+        </where>
+    </select>
+</mapper>

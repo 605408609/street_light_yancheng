@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.sl.mapper.LampDeviceDao">
+
+    <resultMap id="BaseResultMap" type="com.exc.street.light.resource.entity.sl.LampDevice">
+        <id column="id" property="id"/>
+        <result column="model" property="model"/>
+        <result column="factory" property="factory"/>
+        <result column="num" property="num"/>
+        <result column="network_state" property="networkState"/>
+        <result column="create_time" property="createTime"/>
+        <result column="last_online_time" property="lastOnlineTime"/>
+        <result column="lamp_post_id" property="lampPostId"/>
+    </resultMap>
+    <resultMap id="DetailBaseResultMap" type="com.exc.street.light.resource.vo.resp.SlRespLampDeviceVO">
+        <id column="id" property="id"/>
+        <result column="model" property="model"/>
+        <result column="factory" property="factory"/>
+        <result column="name" property="name"/>
+        <result column="num" property="num"/>
+        <result column="network_state" property="networkState"/>
+        <result column="bright_state" property="brightState"/>
+        <result column="brightness" property="brightness"/>
+        <result column="create_time" property="createTime"/>
+        <result column="last_online_time" property="lastOnlineTime"/>
+        <result column="lamp_post_id" property="lampPostId"/>
+        <result column="lamp_post_name" property="lampPostName"/>
+        <result column="lamp_position" property="lampPosition"/>
+        <result column="lamp_position_id" property="lampPositionId"/>
+        <result column="loop_type_id" property="loopTypeId"/>
+        <result column="loop_type" property="loopType"/>
+        <result column="voltage" property="voltage"/>
+        <result column="electric_current" property="electricCurrent"/>
+        <result column="power" property="power"/>
+        <result column="electric_energy" property="electricEnergy"/>
+        <result column="module_temperature" property="moduleTemperature"/>
+        <result column="lamp_time" property="lampTime"/>
+        <result column="lamp_a_time" property="lampATime"/>
+    </resultMap>
+    <resultMap id="SingleLampParamResultMap" type="com.exc.street.light.resource.vo.sl.SingleLampParamRespVO">
+        <id column="id" property="id"/>
+        <result column="model" property="model"/>
+        <result column="factory" property="factory"/>
+        <result column="name" property="name"/>
+        <result column="num" property="num"/>
+        <result column="network_state" property="networkState"/>
+        <result column="bright_state" property="brightState"/>
+        <result column="brightness" property="brightness"/>
+        <result column="create_time" property="createTime"/>
+        <result column="last_online_time" property="lastOnlineTime"/>
+        <result column="lamp_post_id" property="lampPostId"/>
+        <result column="lamp_post_name" property="lampPostName"/>
+        <result column="lamp_position" property="lampPosition"/>
+        <result column="lamp_position_id" property="lampPositionId"/>
+        <result column="loop_type_id" property="loopTypeId"/>
+        <result column="loop_type" property="loopType"/>
+        <result column="factory_serial_num" property="factorySerialNum"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        id, model, ip, mac, factory, name, num, network_state, bright_state, preset_bright_state, brightness, preset_brightness, create_time, last_online_time, lamp_post_id
+    </sql>
+    <select id="detail" parameterType="java.lang.Integer" resultMap="DetailBaseResultMap">
+        SELECT sl.id,sl.name,sl.bright_state,sl.brightness,sl.lamp_position_id,sl.loop_type_id,ld.num,ld.network_state,ld.model,ld.create_time,ld.last_online_time,ld.factory,ld.lamp_post_id,
+        slp.`name` lamp_post_name,lp.`position` lamp_position,llt.`type` loop_type,
+        sl.voltage,sl.electric_current,sl.power,sl.electric_energy,sl.module_temperature,sl.lamp_time,sl.lamp_a_time
+        FROM single_lamp_param sl
+        LEFT JOIN lamp_device ld
+        ON sl.device_id = ld.id
+        LEFT JOIN sl_lamp_post slp
+        ON ld.lamp_post_id = slp.id
+        LEFT JOIN lamp_position lp
+        ON sl.lamp_position_id = lp.id
+        LEFT JOIN lamp_loop_type llt
+        ON sl.loop_type_id = llt.id
+        WHERE sl.id = #{id}
+	</select>
+
+    <select id="getSingleLampParamList" parameterType="java.lang.Integer" resultMap="SingleLampParamResultMap">
+        SELECT sl.id,sl.name,sl.bright_state,sl.brightness,sl.lamp_position_id,sl.loop_type_id,sl.factory_serial_num,ld.num,ld.network_state,ld.model,ld.create_time,ld.last_online_time,ld.factory,ld.lamp_post_id,
+        slp.`name` lamp_post_name,lp.`position` lamp_position,llt.`type` loop_type
+        FROM single_lamp_param sl
+        LEFT JOIN lamp_device ld
+        ON sl.device_id = ld.id
+        LEFT JOIN sl_lamp_post slp
+        ON ld.lamp_post_id = slp.id
+        LEFT JOIN lamp_position lp
+        ON sl.lamp_position_id = lp.id
+        LEFT JOIN lamp_loop_type llt
+        ON sl.loop_type_id = llt.id
+        <where>
+            <if test="lampPostIdList != null and lampPostIdList.size()>0">
+                AND ld.lamp_post_id IN
+                <foreach collection="lampPostIdList" close=")" item="lpId" open="(" separator=",">
+                    ${lpId}
+                </foreach>
+            </if>
+        </where>
+    </select>
+
+    <select id="areaLampPostIdList" parameterType="java.lang.Integer" resultType="java.lang.Integer">
+        SELECT lp.id FROM sl_lamp_post lp
+        JOIN location_site ls on lp.site_id = ls.id
+        JOIN location_street lst on ls.street_id = lst.id
+        JOIN location_area la on lst.area_id = la.id
+        <where>
+            <if test="areaId != null">
+                la.id = #{areaId}
+            </if>
+        </where>
+    </select>
+</mapper>

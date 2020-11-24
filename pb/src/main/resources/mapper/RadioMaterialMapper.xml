@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.pb.mapper.RadioMaterialDao">
+
+	<resultMap id="BaseResultMap" type="com.exc.street.light.resource.entity.pb.RadioMaterial">
+		<id column="id" property="id" />
+		<id column="name" property="name" />
+		<id column="size" property="size" />
+		<id column="duration" property="duration" />
+		<id column="file_name" property="fileName" />
+		<id column="path" property="path" />
+		<id column="file_id" property="fileId" />
+		<id column="creator" property="creator" />
+		<id column="create_time" property="createTime" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, name, size, duration, file_name, path, file_id, creator, create_time
+	</sql>
+
+	<select id="getNameByUserId" parameterType="java.lang.Integer" resultType="java.lang.String">
+		select `name` from `user` u where u.id = #{id}
+	</select>
+
+	<select id="getPageList" resultType="com.exc.street.light.resource.entity.pb.RadioMaterial">
+		SELECT
+		rm.id, rm.`name`, rm.size, rm.duration, rm.file_name fileName, rm.path, rm.file_id fileId, rm.creator
+		, rm.create_time createTime, usr.`name` creatorName
+		FROM
+			radio_material rm
+			LEFT JOIN `user` usr ON rm.creator = usr.id
+		<where>
+			<if test="queryObject.name != null and queryObject.name != ''">
+				AND rm.name like concat('%',#{queryObject.name},'%')
+			</if>
+			<if test="queryObject.areaId != null">
+				AND usr.area_id = #{queryObject.areaId}
+			</if>
+		</where>
+		ORDER BY rm.id DESC
+	</select>
+</mapper>

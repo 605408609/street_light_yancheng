@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.sl.mapper.ControlLoopDeviceMapper">
+
+	<resultMap id="BaseResultMap" type="com.exc.street.light.resource.entity.dlm.ControlLoopDevice">
+		<id column="id" property="id" />
+		<id column="device_id" property="deviceId" />
+		<id column="control_id" property="controlId" />
+		<id column="loop_id" property="loopId" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, device_id, control_id, loop_id
+	</sql>
+
+	<resultMap id="SlReqInstallLampZkzlResultMap" type="com.exc.street.light.resource.vo.req.SlReqInstallLampZkzlVO">
+		<id column="deviceId" property="deviceId"/>
+		<result column="concentratorId" property="concentratorId"/>
+		<result column="groupNo" property="groupNo"/>
+	</resultMap>
+
+	<select id="getByDeviceId" resultMap="SlReqInstallLampZkzlResultMap">
+		SELECT cld.device_id ,cl.num groupNo,lc.num concentratorId FROM control_loop_device cld
+		LEFT JOIN control_loop cl ON cld.loop_id = cl.id
+		LEFT JOIN location_control lc ON cl.control_id = lc.id
+		<where>
+			<if test="deviceIdList != null">
+				AND cld.device_id IN
+				<foreach collection="deviceIdList" item="num" open="(" close=")" separator=",">
+					#{num}
+				</foreach>
+			</if>
+		</where>
+	</select>
+
+	<select id="selectControlLoopByNum" resultType="com.exc.street.light.resource.entity.dlm.ControlLoop">
+		SELECT * FROM control_loop WHERE control_id = #{concentratorId} AND num = #{num}
+	</select>
+
+	<select id="getAllLampNoList" resultType="java.lang.Integer">
+		SELECT sd.reserve_one FROM control_loop_device cld
+		LEFT JOIN location_control lc ON cld.control_id = lc.id
+		LEFT JOIN system_device sd ON cld.device_id = sd.id
+		WHERE lc.num = #{concentratorId} AND lc.type_id = 3
+	</select>
+
+</mapper>

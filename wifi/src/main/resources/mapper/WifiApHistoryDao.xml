@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.wifi.mapper.WifiApHistoryDao">
+
+	<resultMap id="BaseResultMap" type="com.exc.street.light.resource.entity.wifi.WifiApHistory">
+		<id column="id" property="id" />
+		<id column="count" property="count" />
+		<id column="population" property="population" />
+		<id column="current_population" property="currentPopulation" />
+		<id column="day_conn" property="dayConn" />
+		<id column="avg_flow" property="avgFlow" />
+		<id column="probability" property="probability" />
+		<id column="online_time" property="onlineTime" />
+		<id column="up_flow" property="upFlow" />
+		<id column="down_flow" property="downFlow" />
+		<id column="netflow" property="netflow" />
+		<id column="device_id" property="deviceId" />
+		<id column="create_time" property="createTime" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, count, population, day_conn, avg_flow, probability, online_time, up_flow, down_flow, netflow, device_id, create_time
+	</sql>
+
+	<select id="selectWifiApBySiteIdList" resultMap="BaseResultMap">
+		select wa.id, wa.count, wa.population, wa.netflow, wa.day_conn, wa.up_flow, wa.down_flow, wa.current_population, wa.device_id
+		from wifi_ap_history wa
+		left join wifi_ap_device wad on wad.id = wa.device_id
+		left join sl_lamp_post slp on slp.id = wad.lamp_post_id
+		left join location_site ls on ls.id = slp.site_id
+		WHERE DATE_FORMAT(wa.create_time,"%Y-%m-%d %H")= #{queryDate}
+		<if test="siteIdList != null">
+			and ls.id in
+			<foreach collection="siteIdList" separator="," item="item" index="index" open="(" close=")">
+				#{item}
+			</foreach>
+		</if>
+		<if test="apDeviceId != null">
+			and wad.id = #{apDeviceId}
+		</if>
+	</select>
+	
+</mapper>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.ua.mapper.UserDao">
+
+    <resultMap id="BaseResultMap" type="com.exc.street.light.resource.entity.ua.User">
+        <id column="id" property="id"/>
+        <id column="account_name" property="accountName"/>
+        <id column="name" property="name"/>
+        <id column="password" property="password"/>
+        <id column="gender" property="gender"/>
+        <id column="phone" property="phone"/>
+        <id column="email" property="email"/>
+        <id column="status" property="status"/>
+        <id column="founder_id" property="founderId"/>
+        <id column="create_time" property="createTime"/>
+        <id column="update_time" property="updateTime"/>
+        <id column="type" property="type"/>
+        <id column="area_id" property="areaId"/>
+        <id column="validity_period" property="validityPeriod"/>
+        <id column="online" property="online"/>
+        <id column="online_time" property="onlineTime"/>
+        <id column="period_type" property="periodType"/>
+        <id column="fail_count" property="failCount"/>
+        <id column="frozen_time" property="frozenTime"/>
+        <id column="forbidden" property="forbidden"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+		id, account_name, name, gender, phone, email, status,founder_id, create_time, update_time, type, area_id, validity_period, online, online_time, period_type, fail_count, frozen_time, forbidden
+	</sql>
+
+    <select id="findByPhoneAndPassword" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM user WHERE phone = #{phone} AND password = #{password} AND status != 2
+    </select>
+
+    <update id="updateStatus">
+		UPDATE user SET status = 2, update_time = now() WHERE id = #{id}
+	</update>
+
+    <select id="getPageList" resultType="com.exc.street.light.resource.vo.UaUserVO">
+        select
+        u.id, u.account_name, u.name, u.gender, u.phone, u.email, u.status, u.founder_id,
+        u.create_time, u.update_time, u.type, u.area_id, u.validity_period, u.online,
+        u.online_time, u.period_type, u.fail_count, u.frozen_time, u.forbidden, r.name as roleName, u1.name as founderName
+        from user u
+        left join user u1 on u.founder_id = u1.id
+        left join user_role ur on u.id = ur.user_id
+        left join role r on r.id = ur.role_id
+        where (u.status = 1 and u.id != 1
+        <if test="founderId != null">
+            AND u.founder_id = #{founderId} or u.id = #{founderId}
+        </if>
+        )
+        <if test="name != null and name != '' ">
+            AND u.`name` LIKE concat('%',#{name},'%')
+        </if>
+        <if test="phone != null and phone != '' ">
+            AND u.phone LIKE concat('%',#{phone},'%')
+        </if>
+        <if test="roleId != null">
+            AND r.id = #{roleId}
+        </if>
+        order by u.id desc
+    </select>
+    <select id="selectNameByUserIds" resultType="com.exc.street.light.resource.entity.ua.User">
+        select id, `name`, area_id from user
+        WHERE id IN
+        <foreach collection="list" separator="," item="item" index="index" open="(" close=")">
+            #{item}
+        </foreach>
+    </select>
+    <select id="selectAreaByAreaIdList" resultType="com.exc.street.light.resource.vo.resp.UaRespLocationAreaVO">
+        select distinct la.id as id ,la.name as name from user u
+        left join location_area la on la.id = u.area_id
+        where la.id in
+        <foreach collection="areaIdList" separator="," item="item" index="index" open="(" close=")">
+            #{item}
+        </foreach>
+        order by la.id desc
+    </select>
+    <select id="selectAreaById" resultType="com.exc.street.light.resource.vo.resp.UaRespLocationAreaVO">
+        select distinct la.id as id ,la.name as name from user u
+        left join location_area la on la.id = u.area_id
+        where la.id = #{areaId}
+    </select>
+
+    <update id="updateBatchUserAreaId">
+        UPDATE user
+        set area_id = null
+        WHERE id IN
+        <foreach collection="list" separator="," item="item" index="index" open="(" close=")">
+            #{item}
+        </foreach>
+    </update>
+
+    <select id="getUserId" resultType="java.lang.Integer">
+        select u.founder_id from user u where u.id = #{id}
+    </select>
+    <select id="selectRoleId" resultType="com.exc.street.light.resource.entity.ua.User">
+        select
+        u.id, u.account_name, u.name, u.gender, u.phone, u.email, u.status, u.founder_id,
+        u.create_time, u.update_time, u.type, u.area_id, u.validity_period, u.online,
+        u.online_time, u.period_type, u.fail_count, u.frozen_time, u.forbidden
+        from user u
+        left join user_role ur on ur.user_id = u.id
+        left join role r on r.id = ur.role_id
+        where u.status = 1 and r.id = #{roleId}
+    </select>
+</mapper>

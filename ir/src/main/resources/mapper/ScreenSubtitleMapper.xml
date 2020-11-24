@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.ir.mapper.ScreenSubtitleMapper">
+
+	<resultMap id="BaseResultMap" type="com.exc.street.light.resource.entity.ir.ScreenSubtitle">
+		<id column="id" property="id" />
+		<id column="num" property="num" />
+		<id column="html" property="html" />
+		<id column="interval" property="interval" />
+		<id column="step" property="step" />
+		<id column="direction" property="direction" />
+		<id column="align" property="align" />
+		<id column="device_id" property="deviceId" />
+		<id column="end_time" property="endTime" />
+		<id column="create_time" property="createTime" />
+		<id column="creator" property="creator" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, num, html, interval, step, direction, align, device_id, end_time, create_time, creator
+	</sql>
+	
+</mapper>

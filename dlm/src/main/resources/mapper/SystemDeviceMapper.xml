@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.dlm.mapper.SystemDeviceMapper">
+
+	<resultMap id="BaseResultMap" type="com.exc.street.light.resource.entity.sl.SystemDevice">
+		<id column="id" property="id" />
+		<id column="name" property="name" />
+		<id column="device_type_id" property="deviceTypeId" />
+		<id column="num" property="num" />
+		<id column="location" property="location" />
+		<id column="is_online" property="isOnline" />
+		<id column="creator" property="creator" />
+		<id column="create_time" property="createTime" />
+		<id column="last_online_time" property="lastOnlineTime" />
+		<id column="description" property="description" />
+		<id column="lamp_post_id" property="lampPostId" />
+		<id column="ip" property="ip" />
+		<id column="port" property="port" />
+		<id column="mac" property="mac" />
+		<id column="strategy_id" property="strategyId" />
+		<id column="is_delete" property="isDelete" />
+		<id column="device_state" property="deviceState" />
+		<id column="reserve_one" property="reserveOne" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, name, device_type_id, num, location, is_online, creator, create_time, last_online_time, description, lamp_post_id, ip, port, mac, strategy_id, is_delete, device_state, reserve_one
+	</sql>
+    <select id="selectListByAreaId" resultMap="BaseResultMap">
+		SELECT sd.*
+		FROM system_device sd
+		LEFT JOIN sl_lamp_post slp ON sd.lamp_post_id = slp.id
+		LEFT JOIN location_site lst ON slp.site_id = lst.id
+		LEFT JOIN location_street lsr ON lst.street_id = lsr.id
+		<where>
+			<if test="areaId != null">
+				AND lsr.area_id = #{areaId}
+			</if>
+		</where>
+	</select>
+	<select id="selectPosition" resultType="java.lang.String">
+		SELECT lp.position
+		FROM system_device sd
+		LEFT JOIN system_device_parameter sdp ON sd.device_type_id = sdp.device_type_id AND sdp.filed = "lamp_position_id"
+		LEFT JOIN lamp_device_parameter ldp ON ldp.parameter_id = sdp.id
+		LEFT JOIN lamp_position lp ON lp.id = ldp.parameter_value
+		<where>
+			<if test="deviceId != null">
+				AND sd.id = #{deviceId}
+			</if>
+		</where>
+		LIMIT 1
+	</select>
+</mapper>

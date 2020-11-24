@@ -1,0 +1,88 @@
+09:52:28.212 INFO  c.e.s.light.dlm.LocationControlTest[line:55] - Starting LocationControlTest on DESKTOP-78VVBBB with PID 18060 (started by EXC in D:\Work\IDEA-workspace\street_light\dlm)
+09:52:28.465 INFO  c.e.s.light.dlm.LocationControlTest[line:655] - The following profiles are active: dev
+09:52:31.577 INFO  o.s.d.r.c.RepositoryConfigurationDelegate[line:249] - Multiple Spring Data modules found, entering strict repository configuration mode!
+09:52:31.592 INFO  o.s.d.r.c.RepositoryConfigurationDelegate[line:127] - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+09:52:31.754 INFO  o.s.d.r.c.RepositoryConfigurationDelegate[line:187] - Finished Spring Data repository scanning in 134ms. Found 0 Redis repository interfaces.
+09:52:35.197 INFO  o.s.b.w.e.tomcat.TomcatWebServer[line:92] - Tomcat initialized with port(s): 0 (http)
+09:52:35.219 INFO  o.a.coyote.http11.Http11NioProtocol[line:173] - Initializing ProtocolHandler ["http-nio-auto-1"]
+09:52:35.221 INFO  o.a.catalina.core.StandardService[line:173] - Starting service [Tomcat]
+09:52:35.222 INFO  o.a.catalina.core.StandardEngine[line:173] - Starting Servlet engine: [Apache Tomcat/9.0.33]
+09:52:35.465 INFO  o.a.c.c.C.[Tomcat].[localhost].[/][line:173] - Initializing Spring embedded WebApplicationContext
+09:52:35.467 INFO  o.s.web.context.ContextLoader[line:284] - Root WebApplicationContext: initialization completed in 6851 ms
+09:52:39.156 INFO  c.alibaba.druid.pool.DruidDataSource[line:1003] - {dataSource-1} inited
+09:52:44.697 INFO  o.s.b.a.e.web.EndpointLinksResolver[line:58] - Exposing 2 endpoint(s) beneath base path '/actuator'
+09:52:45.451 INFO  o.s.s.c.ThreadPoolTaskExecutor[line:181] - Initializing ExecutorService 'applicationTaskExecutor'
+09:52:46.460 INFO  org.quartz.impl.StdSchedulerFactory[line:1208] - Using default implementation for ThreadExecutor
+09:52:46.483 INFO  o.quartz.core.SchedulerSignalerImpl[line:61] - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+09:52:46.484 INFO  org.quartz.core.QuartzScheduler[line:229] - Quartz Scheduler v.2.3.0 created.
+09:52:46.490 INFO  org.quartz.simpl.RAMJobStore[line:155] - RAMJobStore initialized.
+09:52:46.492 INFO  org.quartz.core.QuartzScheduler[line:294] - Scheduler meta-data: Quartz Scheduler (v2.3.0) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+09:52:46.493 INFO  org.quartz.impl.StdSchedulerFactory[line:1362] - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+09:52:46.493 INFO  org.quartz.impl.StdSchedulerFactory[line:1366] - Quartz scheduler version: 2.3.0
+09:52:46.496 INFO  org.quartz.core.QuartzScheduler[line:2287] - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@e460ca1
+09:52:47.847 INFO  o.s.s.quartz.SchedulerFactoryBean[line:727] - Starting Quartz Scheduler now
+09:52:47.848 INFO  org.quartz.core.QuartzScheduler[line:547] - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+09:52:47.886 INFO  o.a.coyote.http11.Http11NioProtocol[line:173] - Starting ProtocolHandler ["http-nio-auto-1"]
+09:52:47.928 INFO  o.s.b.w.e.tomcat.TomcatWebServer[line:204] - Tomcat started on port(s): 52684 (http) with context path ''
+09:52:47.940 INFO  c.e.s.light.dlm.LocationControlTest[line:61] - Started LocationControlTest in 20.556 seconds (JVM running for 22.127)
+09:52:49.185 INFO  c.e.s.l.d.netty.MessageRecvExecutor[line:105] - Netty EXC Server start success port:60066
+
+09:52:51.376 INFO  org.quartz.core.QuartzScheduler[line:585] - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+09:52:51.378 INFO  o.s.s.quartz.SchedulerFactoryBean[line:845] - Shutting down Quartz Scheduler
+09:52:51.380 INFO  org.quartz.core.QuartzScheduler[line:666] - Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+09:52:51.381 INFO  org.quartz.core.QuartzScheduler[line:585] - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+09:52:51.383 INFO  org.quartz.core.QuartzScheduler[line:740] - Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+09:52:51.387 INFO  o.s.s.c.ThreadPoolTaskExecutor[line:218] - Shutting down ExecutorService 'applicationTaskExecutor'
+09:52:51.418 INFO  c.alibaba.druid.pool.DruidDataSource[line:1948] - {dataSource-1} closing ...
+09:52:51.430 INFO  c.alibaba.druid.pool.DruidDataSource[line:2020] - {dataSource-1} closed
+09:56:04.817 INFO  c.e.s.light.dlm.LocationControlTest[line:55] - Starting LocationControlTest on DESKTOP-78VVBBB with PID 20580 (started by EXC in D:\Work\IDEA-workspace\street_light\dlm)
+09:56:04.822 INFO  c.e.s.light.dlm.LocationControlTest[line:655] - The following profiles are active: dev
+09:56:07.252 INFO  o.s.d.r.c.RepositoryConfigurationDelegate[line:249] - Multiple Spring Data modules found, entering strict repository configuration mode!
+09:56:07.255 INFO  o.s.d.r.c.RepositoryConfigurationDelegate[line:127] - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+09:56:07.369 INFO  o.s.d.r.c.RepositoryConfigurationDelegate[line:187] - Finished Spring Data repository scanning in 97ms. Found 0 Redis repository interfaces.
+09:56:10.309 INFO  o.s.b.w.e.tomcat.TomcatWebServer[line:92] - Tomcat initialized with port(s): 0 (http)
+09:56:10.324 INFO  o.a.coyote.http11.Http11NioProtocol[line:173] - Initializing ProtocolHandler ["http-nio-auto-1"]
+09:56:10.324 INFO  o.a.catalina.core.StandardService[line:173] - Starting service [Tomcat]
+09:56:10.325 INFO  o.a.catalina.core.StandardEngine[line:173] - Starting Servlet engine: [Apache Tomcat/9.0.33]
+09:56:10.502 INFO  o.a.c.c.C.[Tomcat].[localhost].[/][line:173] - Initializing Spring embedded WebApplicationContext
+09:56:10.502 INFO  o.s.web.context.ContextLoader[line:284] - Root WebApplicationContext: initialization completed in 5634 ms
+09:56:17.548 INFO  c.alibaba.druid.pool.DruidDataSource[line:1003] - {dataSource-1} inited
+09:56:26.112 INFO  o.s.b.a.e.web.EndpointLinksResolver[line:58] - Exposing 2 endpoint(s) beneath base path '/actuator'
+09:56:26.909 INFO  o.s.s.c.ThreadPoolTaskExecutor[line:181] - Initializing ExecutorService 'applicationTaskExecutor'
+09:56:28.219 INFO  org.quartz.impl.StdSchedulerFactory[line:1208] - Using default implementation for ThreadExecutor
+09:56:28.265 INFO  o.quartz.core.SchedulerSignalerImpl[line:61] - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+09:56:28.266 INFO  org.quartz.core.QuartzScheduler[line:229] - Quartz Scheduler v.2.3.0 created.
+09:56:28.268 INFO  org.quartz.simpl.RAMJobStore[line:155] - RAMJobStore initialized.
+09:56:28.271 INFO  org.quartz.core.QuartzScheduler[line:294] - Scheduler meta-data: Quartz Scheduler (v2.3.0) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+09:56:28.273 INFO  org.quartz.impl.StdSchedulerFactory[line:1362] - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+09:56:28.282 INFO  org.quartz.impl.StdSchedulerFactory[line:1366] - Quartz scheduler version: 2.3.0
+09:56:28.282 INFO  org.quartz.core.QuartzScheduler[line:2287] - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@5b74bb75
+09:56:29.998 INFO  o.s.s.quartz.SchedulerFactoryBean[line:727] - Starting Quartz Scheduler now
+09:56:29.999 INFO  org.quartz.core.QuartzScheduler[line:547] - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+09:56:30.026 INFO  o.a.coyote.http11.Http11NioProtocol[line:173] - Starting ProtocolHandler ["http-nio-auto-1"]
+09:56:30.061 INFO  o.s.b.w.e.tomcat.TomcatWebServer[line:204] - Tomcat started on port(s): 53136 (http) with context path ''
+09:56:30.074 INFO  c.e.s.light.dlm.LocationControlTest[line:61] - Started LocationControlTest in 25.949 seconds (JVM running for 27.835)
+09:56:31.122 INFO  c.e.s.l.d.netty.MessageRecvExecutor[line:105] - Netty EXC Server start success port:60066
+
+09:56:33.431 INFO  org.quartz.core.QuartzScheduler[line:585] - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+09:56:33.435 INFO  o.s.s.quartz.SchedulerFactoryBean[line:845] - Shutting down Quartz Scheduler
+09:56:33.438 INFO  org.quartz.core.QuartzScheduler[line:666] - Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+09:56:33.438 INFO  org.quartz.core.QuartzScheduler[line:585] - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+09:56:33.440 INFO  org.quartz.core.QuartzScheduler[line:740] - Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+09:56:33.445 INFO  o.s.s.c.ThreadPoolTaskExecutor[line:218] - Shutting down ExecutorService 'applicationTaskExecutor'
+09:56:33.474 INFO  c.alibaba.druid.pool.DruidDataSource[line:1948] - {dataSource-1} closing ...
+09:56:33.486 INFO  c.alibaba.druid.pool.DruidDataSource[line:2020] - {dataSource-1} closed

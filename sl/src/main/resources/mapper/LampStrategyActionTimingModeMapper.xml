@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.sl.mapper.LampStrategyActionTimingModeMapper">
+
+	<resultMap id="BaseResultMap" type="com.exc.street.light.resource.entity.sl.LampStrategyActionTimingMode">
+		<id column="id" property="id" />
+		<id column="timing_mode_id" property="timingModeId" />
+		<id column="strategy_action_id" property="strategyActionId" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, timing_mode_id, strategy_action_id
+	</sql>
+	
+</mapper>

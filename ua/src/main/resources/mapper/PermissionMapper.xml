@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.ua.mapper.PermissionDao">
+
+    <resultMap id="BaseResultMap" type="com.exc.street.light.resource.entity.ua.Permission">
+        <id column="id" property="id"/>
+        <id column="code" property="code"/>
+        <id column="name" property="name"/>
+        <id column="uri" property="uri"/>
+        <id column="sort" property="sort"/>
+        <id column="parent_id" property="parentId"/>
+        <id column="type" property="type"/>
+        <id column="orders" property="orders"/>
+        <id column="is_show" property="isShow"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+		id, code, name, uri, sort, parent_id, `type`
+	</sql>
+    <select id="selectByRoleId" resultMap="BaseResultMap">
+        SELECT p.id, p.code, p.name, p.uri, p.sort, p.parent_id, p.type, p.orders, p.is_show FROM permission p
+          LEFT JOIN role_permission rp on rp.permission_id = p.id
+          WHERE rp.role_id = #{roleId} order by p.orders asc
+    </select>
+    <select id="selectByIdList" resultMap="BaseResultMap">
+        SELECT p.id, p.code, p.name, p.uri, p.sort, p.parent_id, p.type FROM permission p
+        WHERE p.id IN
+        <foreach collection="list" separator="," item="item" index="index" open="(" close=")">
+            #{item}
+        </foreach>
+    </select>
+
+</mapper>

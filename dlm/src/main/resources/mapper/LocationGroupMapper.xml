@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.dlm.mapper.LocationGroupMapper">
+
+    <resultMap id="BaseResultMap" type="com.exc.street.light.resource.entity.dlm.LocationGroup">
+        <id column="id" property="id"/>
+        <id column="name" property="name"/>
+        <id column="description" property="description"/>
+        <id column="create_time" property="createTime"/>
+        <id column="creator" property="creator"/>
+        <id column="type_id" property="typeId"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+		id, name, description, create_time, creator, type_id
+	</sql>
+    <select id="query" resultType="com.exc.street.light.resource.vo.resp.DlmRespGroupVO">
+        SELECT lg.id groupId, lg.`name` groupName,lg.creator creator, u.name creatorName, lg.description description, lg.create_time createTime, lg.type_id typeId
+        FROM location_group lg
+        LEFT JOIN `user` u ON lg.creator = u.id
+        <where>
+            <if test="dlmGroupQuery.groupName != null and dlmGroupQuery.groupName != ''">
+                AND lg.`name` like CONCAT('%', #{dlmGroupQuery.groupName}, '%')
+            </if>
+            <if test="dlmGroupQuery.startTime != null and dlmGroupQuery.startTime != ''">
+                AND lg.create_time &gt;= #{dlmGroupQuery.startTime}
+            </if>
+            <if test="dlmGroupQuery.endTime != null and dlmGroupQuery.endTime != ''">
+                AND lg.create_time &lt;= #{dlmGroupQuery.endTime}
+            </if>
+            <if test="dlmGroupQuery.typeId != null">
+                AND lg.type_id = #{dlmGroupQuery.typeId}
+            </if>
+        </where>
+        ORDER BY lg.id DESC
+    </select>
+
+</mapper>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.ed.mapper.EdManholeCoverDeviceMapper">
+
+	<resultMap id="BaseResultMap" type="com.exc.street.light.resource.entity.ed.EdManholeCoverDevice">
+		<id column="id" property="id" />
+		<id column="name" property="name" />
+		<id column="num" property="num" />
+		<id column="longitude" property="longitude" />
+		<id column="latitude" property="latitude" />
+		<id column="limit_upper" property="limitUpper" />
+		<id column="real_data" property="realData" />
+		<id column="location_site_id" property="locationSiteId" />
+		<id column="status" property="status" />
+		<id column="device_version" property="deviceVersion" />
+		<id column="upload_cycle" property="uploadCycle" />
+		<id column="creator" property="creator" />
+		<id column="create_time" property="createTime" />
+	</resultMap>
+
+	<resultMap id="EdRespManholeCoverDeviceResultMap" type="com.exc.street.light.resource.vo.resp.EdRespManholeCoverDeviceVO">
+		<id column="id" property="id" />
+		<result column="name" property="name" />
+		<result column="num" property="num" />
+		<result column="longitude" property="longitude" />
+		<result column="latitude" property="latitude" />
+		<result column="limit_upper" property="limitUpper" />
+		<result column="real_data" property="realData" />
+		<result column="locationSiteId" property="locationSiteId" />
+		<result column="locationSiteName" property="locationSiteName" />
+		<result column="locationStreetId" property="locationStreetId" />
+		<result column="locationStreetName" property="locationStreetName" />
+		<result column="locationAreaId" property="locationAreaId" />
+		<result column="locationAreaName" property="locationAreaName" />
+		<result column="status" property="status" />
+		<result column="device_version" property="deviceVersion" />
+		<result column="upload_cycle" property="uploadCycle" />
+		<result column="creator" property="creator" />
+		<result column="create_time" property="createTime" />
+	</resultMap>
+
+	<sql id="Base_Column_List">
+		id, name, num, longitude, latitude, limit_upper, real_data, location_site_id, status, device_version, upload_cycle, creator, create_time
+	</sql>
+
+	<select id="getPage" resultMap="EdRespManholeCoverDeviceResultMap">
+		SELECT emcd.*,ls.id locationSiteId,ls.`name` locationSiteName,lst.id locationStreetId,lst.`name` locationStreetName,la.id locationAreaId,la.`name` locationAreaName FROM ed_manhole_cover_device emcd
+		LEFT JOIN location_site ls ON ls.id = emcd.location_site_id
+		LEFT JOIN location_street lst ON lst.id = ls.street_id
+		LEFT JOIN location_area la ON la.id = lst.area_id
+		<where>
+			<if test="edReqManholeCoverDevicePageVO.name != null and edReqManholeCoverDevicePageVO.name != ''">
+				AND emcd.`name` like CONCAT('%', #{edReqManholeCoverDevicePageVO.name}, '%')
+			</if>
+			<if test="edReqManholeCoverDevicePageVO.status != null">
+				AND emcd.status = #{edReqManholeCoverDevicePageVO.status}
+			</if>
+			<if test="edReqManholeCoverDevicePageVO.locationAreaId != null">
+				AND la.id = #{edReqManholeCoverDevicePageVO.locationAreaId}
+			</if>
+		</where>
+		ORDER BY emcd.create_time DESC
+	</select>
+
+	<select id="selectEdManholeCoverDeviceAlarm" resultType="com.exc.street.light.resource.vo.resp.EdRespAlarmVO">
+		SELECT emcd.id deviceId,emcd.name,emcd.num,emcd.real_data,emcd.status,ls.id location_site_id,ls.name location_site_name,lst.id location_street_id,lst.name location_street_name FROM ed_manhole_cover_device emcd
+		LEFT JOIN location_site ls ON emcd.location_site_id = ls.id
+		LEFT JOIN location_street lst ON ls.street_id = lst.id
+		WHERE emcd.num = #{num}
+	</select>
+</mapper>

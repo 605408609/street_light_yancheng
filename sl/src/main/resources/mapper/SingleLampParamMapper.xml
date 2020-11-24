@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.sl.mapper.SingleLampParamDao">
+	<resultMap id="DetailBaseResultMap" type="com.exc.street.light.resource.vo.sl.SingleLampParamRespVO">
+		<id column="id" property="id"/>
+		<result column="name" property="name"/>
+		<result column="loop_num" property="loopNum"/>
+		<result column="bright_state" property="brightState"/>
+		<result column="brightness" property="brightness"/>
+		<result column="module_temperature" property="moduleTemperature"/>
+		<result column="voltage" property="voltage"/>
+		<result column="electric_current" property="electricCurrent"/>
+		<result column="power" property="power"/>
+		<result column="electric_energy" property="electricEnergy"/>
+		<result column="power_time" property="powerTime"/>
+		<result column="module_a_time" property="moduleATime"/>
+		<result column="lamp_a_time" property="lampATime"/>
+		<result column="lamp_time" property="lampTime"/>
+		<result column="alarm" property="alarm"/>
+		<result column="voltage_alarm" property="voltageAlarm"/>
+		<result column="electric_current_alarm" property="electricCurrentAlarm"/>
+		<result column="temperature_alarm" property="temperatureAlarm"/>
+		<result column="factory_serial_num" property="factorySerialNum"/>
+		<result column="create_time" property="createTime"/>
+		<result column="device_id" property="deviceId"/>
+		<result column="device_num" property="num"/>
+		<result column="network_state" property="networkState"/>
+		<result column="model" property="model"/>
+		<result column="factory" property="factory"/>
+		<result column="lamp_post_id" property="lampPostId"/>
+		<result column="send_id" property="sendId"/>
+	</resultMap>
+	<resultMap id="SlRespLampDeviceResultMap" type="com.exc.street.light.resource.vo.resp.SlRespLampDeviceVO">
+		<id column="singleId" property="id"/>
+		<result column="singleModel" property="model"/>
+		<result column="factory" property="factory"/>
+		<result column="singleName" property="name"/>
+		<result column="singleNum" property="num"/>
+		<result column="networkState" property="networkState"/>
+		<result column="brightState" property="brightState"/>
+		<result column="brightness" property="brightness"/>
+		<result column="createTime" property="createTime"/>
+		<result column="lastOnlineTime" property="lastOnlineTime"/>
+		<result column="lampPostId" property="lampPostId"/>
+		<result column="lampPostName" property="lampPostName"/>
+		<result column="lampPosition" property="lampPosition"/>
+		<result column="lampPositionId" property="lampPositionId"/>
+		<result column="loopTypeId" property="loopTypeId"/>
+		<result column="loopType" property="loopType"/>
+		<association property="slLampPost" javaType="com.exc.street.light.resource.entity.dlm.SlLampPost">
+			<id column="id" property="id"/>
+			<result column="name" property="name"/>
+			<result column="num" property="num"/>
+			<result column="model" property="model"/>
+			<result column="longitude" property="longitude"/>
+			<result column="latitude" property="latitude"/>
+			<result column="manufacturer" property="manufacturer"/>
+			<result column="location" property="location"/>
+			<result column="group_id" property="groupId"/>
+			<result column="site_id" property="siteId"/>
+			<result column="create_time" property="createTime"/>
+		</association>
+	</resultMap>
+	<select id="getList" parameterType="java.lang.String" resultMap="DetailBaseResultMap">
+		SELECT sl.*,ld.network_state,ld.model,ld.factory,ld.lamp_post_id,ld.send_id FROM single_lamp_param sl
+		LEFT JOIN lamp_device ld
+		ON sl.device_id = ld.id
+		<where>
+			<if test="deviceName != null">
+				sl.name = #{deviceName}
+			</if>
+		</where>
+	</select>
+
+	<select id="getSingleLampOne" resultType="com.exc.street.light.resource.entity.sl.SingleLampParam">
+		SELECT * FROM single_lamp_param slp
+		LEFT JOIN lamp_device ld
+		ON slp.device_id = ld.id
+		WHERE slp.device_num = #{deviceNum} AND slp.loop_num = #{loopNum}
+		<if test="topicNum != null and topicNum == 0">
+			AND ld.model = 'nb' AND ld.factory = 'EXC1'
+		</if>
+		<if test="topicNum != null and topicNum == 1">
+			AND ld.model = 'cat1' AND ld.factory = 'EXC1'
+		</if>
+		<if test="topicNum != null and topicNum == 2">
+			AND ld.model = 'lora_old' AND ld.factory = 'EXC1'
+		</if>
+		<if test="topicNum != null and topicNum == 3">
+			AND ld.model = 'nb' AND ld.factory = 'EXC2'
+		</if>
+		<if test="topicNum != null and topicNum == 4">
+			AND ld.model = 'lora_new' AND ld.factory = 'EXC1'
+		</if>
+		<if test="topicNum != null and topicNum == 5">
+			AND ld.model = 'dxnb' AND ld.factory = 'EXC1'
+		</if>
+	</select>
+
+	<select id="getSingleLampOneNewLora" resultType="com.exc.street.light.resource.entity.sl.SingleLampParam">
+		SELECT * FROM single_lamp_param slp
+		LEFT JOIN lamp_device ld
+		ON slp.device_id = ld.id
+		WHERE ld.send_id = #{sendId} AND slp.loop_num = #{loopNum}
+		AND ld.model = 'lora_new' AND ld.factory = 'EXC1'
+	</select>
+
+	<select id="listByAreaId" resultType="com.exc.street.light.resource.entity.sl.SingleLampParam">
+		SELECT snlp.* FROM single_lamp_param snlp
+		LEFT JOIN lamp_device ld ON snlp.device_id = ld.id
+		LEFT JOIN sl_lamp_post slp ON slp.id = ld.lamp_post_id
+		LEFT JOIN location_site lsite ON lsite.id = slp.site_id
+		LEFT JOIN location_street ls ON ls.id = lsite.street_id
+		<where>
+			<if test="areaId != null">
+				AND ls.area_id = #{areaId}
+			</if>
+		</where>
+	</select>
+	<select id="listByLampGroupIdAndSingleIdList" resultType="com.exc.street.light.resource.vo.resp.SlRespLampGroupSingleParamVO">
+		SELECT snlp.*,lp.position lampPosition FROM single_lamp_param snlp
+		LEFT JOIN lamp_group_single lgs ON snlp.id = lgs.single_id
+		LEFT JOIN lamp_position lp ON lp.id = snlp.lamp_position_id
+		<where>
+			<if test="lampGroup != null">
+				AND lgs.lamp_group_id = #{lampGroup}
+			</if>
+			<if test="list != null and list.size() > 0">
+				AND snlp.id IN
+				<foreach collection="list" item="num" open="(" close=")" separator=",">
+					#{num}
+				</foreach>
+			</if>
+		</where>
+	</select>
+	<select id="query" resultMap="SlRespLampDeviceResultMap">
+		SELECT slp.id singleId, slp.`name` singleName, ld.`num` singleNum, ld.model singleModel, ld.factory factory, ld.network_state networkState,
+		slp.bright_state brightState, slp.brightness brightness, ld.create_time createTime, ld.last_online_time lastOnlineTime,
+		slpt.id lampPostId, slpt.`name` lampPostName, lpo.position lampPosition, lpo.id lampPositionId, llt.id loopTypeId,
+		llt.type loopType, slpt.*
+		FROM single_lamp_param slp
+		LEFT JOIN lamp_device ld ON slp.device_id = ld.id
+		LEFT JOIN sl_lamp_post slpt ON ld.lamp_post_id = slpt.id
+		LEFT JOIN location_site lsite ON slpt.site_id = lsite.id
+		LEFT JOIN location_street lstreet ON lsite.street_id = lstreet.id
+		LEFT JOIN location_area la ON lstreet.area_id = la.id
+		LEFT JOIN location_group lg ON slpt.group_id = lg.id
+		LEFT JOIN lamp_group_single lgs ON slp.id = lgs.single_id
+		LEFT JOIN lamp_group lpg ON lgs.lamp_group_id = lpg.id
+		LEFT JOIN lamp_position lpo ON slp.lamp_position_id = lpo.id
+		LEFT JOIN lamp_loop_type llt ON slp.loop_type_id = llt.id
+		<where>
+			<if test="slLampDeviceQuery.siteIdList != null and slLampDeviceQuery.siteIdList.size() > 0">
+				AND lsite.id IN
+				<foreach collection="slLampDeviceQuery.siteIdList" item="num" open="(" close=")" separator=",">
+					#{num}
+				</foreach>
+			</if>
+			<if test="slLampDeviceQuery.lampPostIdList != null and slLampDeviceQuery.lampPostIdList.size() > 0">
+				AND slpt.id IN
+				<foreach collection="slLampDeviceQuery.lampPostIdList" item="num" open="(" close=")" separator=",">
+					#{num}
+				</foreach>
+			</if>
+			<if test="slLampDeviceQuery.groupIdList != null and slLampDeviceQuery.groupIdList.size() > 0">
+				AND lg.id IN
+				<foreach collection="slLampDeviceQuery.groupIdList" item="num" open="(" close=")" separator=",">
+					#{num}
+				</foreach>
+			</if>
+			<if test="slLampDeviceQuery.lampGroupIdList != null and slLampDeviceQuery.lampGroupIdList.size() > 0">
+				AND lpg.id IN
+				<foreach collection="slLampDeviceQuery.lampGroupIdList" item="num" open="(" close=")" separator=",">
+					#{num}
+				</foreach>
+			</if>
+			<if test="slLampDeviceQuery.singleIdList != null and slLampDeviceQuery.singleIdList.size() > 0">
+				AND slp.id IN
+				<foreach collection="slLampDeviceQuery.singleIdList" item="num" open="(" close=")" separator=",">
+					#{num}
+				</foreach>
+			</if>
+			<if test="slLampDeviceQuery.areaId != null">
+				AND la.id = #{slLampDeviceQuery.areaId}
+			</if>
+			<if test="slLampDeviceQuery.name != null and slLampDeviceQuery.name != ''">
+				AND slp.`name` like CONCAT('%', #{slLampDeviceQuery.name}, '%')
+			</if>
+			<if test="slLampDeviceQuery.networkState != null">
+				AND ld.network_state = #{slLampDeviceQuery.networkState}
+			</if>
+		</where>
+		GROUP BY slp.id
+		ORDER BY slp.id DESC
+	</select>
+
+	<select id="getlastTimeByDeviceId" resultType="com.exc.street.light.resource.entity.sl.SingleLampParam">
+		SELECT * FROM single_lamp_param slp WHERE slp.device_id = #{deviceId} ORDER BY slp.create_time DESC LIMIT 1
+	</select>
+
+</mapper>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.dlm.mapper.LocationControlTypeLoopMapper">
+
+	<resultMap id="BaseResultMap" type="com.exc.street.light.resource.entity.dlm.LocationControlTypeLoop">
+		<id column="id" property="id" />
+		<id column="loop_id" property="loopId" />
+		<id column="location_control_type_id" property="locationControlTypeId" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, loop_id, location_control_type_id
+	</sql>
+	
+</mapper>

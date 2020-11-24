@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.electricity.mapper.CanSiteSceneMapper">
+  <resultMap id="BaseResultMap" type="com.exc.street.light.resource.entity.electricity.CanSiteScene">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="state" jdbcType="INTEGER" property="state" />
+    <result column="site_id" jdbcType="INTEGER" property="siteId" />
+    <result column="strategy_inter_id" jdbcType="INTEGER" property="strategyInterId" />
+  </resultMap>
+</mapper>

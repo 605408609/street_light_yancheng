@@ -1,0 +1,202 @@
+14:36:29.323 WARN  s.d.s.w.r.p.ParameterDataTypeReader[line:86] - Trying to infer dataType java.lang.Integer[]
+14:39:22.282 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.0.126,port:9999
+14:39:25.294 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.0.126,port:9999
+15:14:25.970 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.0.1,port:8652
+15:14:28.983 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.0.1,port:8652
+15:14:37.037 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.0.93,port:10000
+15:14:40.051 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.0.93,port:10000
+15:15:25.284 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.0.1,port:8652
+15:15:28.297 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.0.1,port:8652
+15:15:38.261 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.0.1,port:8652
+15:15:41.274 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.0.1,port:8652
+15:15:55.041 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.0.93,port:10000
+15:15:58.049 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.0.93,port:10000
+15:16:01.117 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.0.1,port:8652
+15:16:04.133 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.0.1,port:8652
+15:16:07.166 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.0.1,port:8652
+15:16:10.174 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.0.1,port:8652
+15:16:13.205 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.0.1,port:8652
+15:16:16.211 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.0.1,port:8652
+15:16:19.260 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.0.1,port:8652
+15:16:22.271 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.0.1,port:8652
+15:16:25.316 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.0.1,port:8652
+15:16:28.319 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.0.1,port:8652
+15:16:31.352 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.0.1,port:8652
+15:16:34.357 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.0.1,port:8652
+15:16:37.395 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.0.1,port:8652
+15:16:40.406 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.0.1,port:8652
+15:16:43.462 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.0.1,port:8652
+15:16:46.473 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.0.1,port:8652
+15:18:57.779 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.172,port:9999
+15:18:57.789 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 31 70 C4 45 00 03 42 01 FF A6 39 0D 
+15:18:57.791 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 31 70 C4 45 00 00 00 08 A3 0D 
+15:18:59.244 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.172,port:9999
+15:18:59.246 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 31 70 C4 45 00 03 42 02 FF A6 C9 0D 
+15:18:59.248 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 31 70 C4 45 00 00 00 08 A3 0D 
+15:19:00.458 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.172,port:9999
+15:19:00.460 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 31 70 C4 45 00 03 42 02 00 E6 89 0D 
+15:19:00.463 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 31 70 C4 45 00 00 00 08 A3 0D 
+15:19:02.090 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.172,port:9999
+15:19:02.092 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 31 70 C4 45 00 03 42 02 FF A6 C9 0D 
+15:19:02.094 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 31 70 C4 45 00 00 00 08 A3 0D 
+15:21:35.198 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.0.126,port:9999
+15:21:38.209 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.0.126,port:9999
+15:21:43.515 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.0.126,port:9999
+15:21:46.521 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.0.126,port:9999
+11:10:58.969 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+11:10:58.976 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 45 00 03 42 05 FF 77 02 0D 
+11:10:59.005 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 45 00 00 00 CF B9 0D 
+11:15:49.926 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+11:15:49.928 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 45 00 03 42 06 FF 77 F2 0D 
+11:15:49.951 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 45 00 00 00 CF B9 0D 
+11:15:51.840 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+11:15:51.842 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 45 00 03 42 07 FF 76 62 0D 
+11:15:51.870 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 45 00 00 00 CF B9 0D 
+11:15:54.710 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+11:15:54.711 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 45 00 03 42 06 00 37 B2 0D 
+11:15:54.732 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 45 00 00 00 CF B9 0D 
+11:16:24.885 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+11:16:24.886 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 45 00 03 42 04 FF 76 92 0D 
+11:16:24.914 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 45 00 00 00 CF B9 0D 
+11:16:26.653 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+11:16:26.655 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 45 00 03 42 04 00 36 D2 0D 
+11:16:26.682 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 45 00 00 00 CF B9 0D 
+11:16:47.769 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+11:16:47.771 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 45 00 03 42 05 00 37 42 0D 
+11:16:47.798 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 45 00 00 00 CF B9 0D 
+11:16:55.337 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+11:16:55.339 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 45 00 03 42 08 FF 73 92 0D 
+11:16:55.365 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 45 00 00 00 CF B9 0D 
+11:17:00.268 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+11:17:00.269 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 45 00 03 42 06 FF 77 F2 0D 
+11:17:00.289 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 45 00 00 00 CF B9 0D 
+11:17:06.990 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+11:17:06.992 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 45 00 03 42 06 00 37 B2 0D 
+11:17:07.010 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 45 00 00 00 CF B9 0D 
+11:17:37.499 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+11:17:37.501 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 45 00 03 42 02 FF 75 32 0D 
+11:17:37.527 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 45 00 00 00 CF B9 0D 
+11:17:37.595 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+11:17:37.596 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 45 00 03 42 03 FF 74 A2 0D 
+11:17:37.616 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 45 00 00 00 CF B9 0D 
+11:17:37.676 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+11:17:37.677 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 45 00 03 42 04 FF 76 92 0D 
+11:17:37.698 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 45 00 00 00 CF B9 0D 
+11:18:05.211 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+11:18:05.212 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 45 00 03 42 05 FF 77 02 0D 
+11:18:05.238 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 45 00 00 00 CF B9 0D 
+11:18:06.722 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+11:18:06.724 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 45 00 03 42 06 FF 77 F2 0D 
+11:18:06.748 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 45 00 00 00 CF B9 0D 
+11:18:10.443 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+11:18:10.445 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 45 00 03 42 02 00 35 72 0D 
+11:18:10.472 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 45 00 00 00 CF B9 0D 
+11:18:10.529 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+11:18:10.530 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 45 00 03 42 03 00 34 E2 0D 
+11:18:10.550 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 45 00 00 00 CF B9 0D 
+11:18:10.604 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+11:18:10.605 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 45 00 03 42 04 00 36 D2 0D 
+11:18:10.624 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 45 00 00 00 CF B9 0D 
+11:18:10.701 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+11:18:10.705 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 45 00 03 42 05 00 37 42 0D 
+11:18:10.729 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 45 00 00 00 CF B9 0D 
+11:18:10.776 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+11:18:10.778 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 45 00 03 42 06 00 37 B2 0D 
+11:18:10.800 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 45 00 00 00 CF B9 0D 
+11:18:10.850 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+11:18:10.851 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 45 00 03 42 07 00 36 22 0D 
+11:18:10.865 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 45 00 00 00 CF B9 0D 
+11:18:10.919 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+11:18:10.921 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 45 00 03 42 08 00 33 D2 0D 
+11:18:10.939 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 45 00 00 00 CF B9 0D 
+11:18:25.104 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+11:18:25.105 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 45 00 03 42 02 FF 75 32 0D 
+11:18:25.128 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 45 00 00 00 CF B9 0D 
+11:18:28.942 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+11:18:28.944 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 45 00 03 42 02 00 35 72 0D 
+11:18:28.963 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 45 00 00 00 CF B9 0D 
+11:45:34.390 WARN  s.d.s.w.r.p.ParameterDataTypeReader[line:86] - Trying to infer dataType java.lang.Integer[]
+11:47:21.085 WARN  s.d.s.w.r.p.ParameterDataTypeReader[line:86] - Trying to infer dataType java.lang.Integer[]
+12:25:28.248 WARN  s.d.s.w.r.p.ParameterDataTypeReader[line:86] - Trying to infer dataType java.lang.Integer[]
+12:26:21.826 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+12:26:21.828 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 45 00 03 42 02 FF 75 32 0D 
+12:26:21.829 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 45 00 00 00 CF B9 0D 
+12:26:22.753 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+12:26:22.754 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 45 00 03 42 03 FF 74 A2 0D 
+12:26:22.756 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 45 00 00 00 CF B9 0D 
+12:26:23.615 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+12:26:23.618 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 45 00 03 42 04 FF 76 92 0D 
+12:26:23.620 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 45 00 00 00 CF B9 0D 
+12:26:25.465 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+12:26:25.467 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 45 00 03 42 01 FF 75 C2 0D 
+12:26:25.469 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 45 00 00 00 CF B9 0D 
+12:26:45.214 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+12:26:45.215 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 45 00 03 42 02 00 35 72 0D 
+12:26:45.218 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 45 00 00 00 CF B9 0D 
+12:26:45.277 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+12:26:45.278 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 45 00 03 42 03 00 34 E2 0D 
+12:26:45.285 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 45 00 00 00 CF B9 0D 
+12:26:45.347 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+12:26:45.349 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 45 00 03 42 04 00 36 D2 0D 
+12:26:45.352 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 45 00 00 00 CF B9 0D 
+12:37:38.753 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+12:37:38.754 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 45 00 03 42 04 FF 76 92 0D 
+12:37:38.756 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 45 00 00 00 CF B9 0D 
+12:37:40.016 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+12:37:40.018 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 45 00 03 42 04 00 36 D2 0D 
+12:37:40.019 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 45 00 00 00 CF B9 0D 
+13:44:08.287 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+13:44:08.289 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 45 00 03 42 01 00 35 82 0D 
+13:44:08.292 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 45 00 00 00 CF B9 0D 
+13:44:15.563 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+13:44:15.565 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 45 00 03 42 01 FF 75 C2 0D 
+13:44:15.567 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 45 00 00 00 CF B9 0D 
+13:46:00.502 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+13:46:00.504 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 45 00 03 42 01 00 35 82 0D 
+13:46:00.505 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 45 00 00 00 CF B9 0D 
+13:47:00.100 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+13:47:00.101 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 45 00 03 42 01 FF 75 C2 0D 
+13:47:00.104 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 45 00 00 00 CF B9 0D 
+13:48:38.874 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+13:48:38.878 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 45 00 03 42 01 00 35 82 0D 
+13:48:38.881 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 45 00 00 00 CF B9 0D 
+13:49:52.506 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+13:49:52.509 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 45 00 03 42 01 FF 75 C2 0D 
+13:49:52.512 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 45 00 00 00 CF B9 0D 
+13:49:55.118 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+13:49:55.119 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 45 00 03 42 01 00 35 82 0D 
+13:49:55.122 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 45 00 00 00 CF B9 0D 
+13:52:59.023 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+13:52:59.025 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 45 00 03 42 01 FF 75 C2 0D 
+13:52:59.028 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 45 00 00 00 CF B9 0D 
+13:53:03.285 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+13:53:03.286 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 45 00 03 42 01 00 35 82 0D 
+13:53:03.289 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 45 00 00 00 CF B9 0D 
+13:53:58.524 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+13:53:58.526 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 45 00 03 42 01 FF 75 C2 0D 
+13:53:58.528 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 45 00 00 00 CF B9 0D 
+13:54:03.549 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+13:54:03.550 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 45 00 03 42 01 00 35 82 0D 
+13:54:03.552 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 45 00 00 00 CF B9 0D 
+13:54:22.433 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+13:54:22.434 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 45 00 03 42 01 FF 75 C2 0D 
+13:54:22.436 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 45 00 00 00 CF B9 0D 
+13:54:52.166 WARN  c.e.s.l.e.util.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+13:54:52.167 WARN  c.e.s.l.e.util.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 73 45 00 03 42 01 00 35 82 0D 
+13:54:52.170 WARN  c.e.s.l.e.util.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 73 45 00 00 00 CF B9 0D 
+16:24:27.513 WARN  s.d.s.w.r.p.ParameterDataTypeReader[line:86] - Trying to infer dataType java.lang.Integer[]
+21:00:00.037 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.177,port:9999
+21:00:00.043 WARN  c.e.s.light.dlm.utils.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 93 AF 0D 
+21:00:00.047 WARN  c.e.s.light.dlm.utils.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 5C 43 12 B3 33 43 12 B3 33 00 00 00 00 00 00 00 16 00 00 00 00 43 68 6F 42 00 00 00 00 00 00 00 00 3F 02 4D D3 00 00 00 00 00 00 00 00 3D AF D2 21 BD A3 D7 0A 3D F0 4F F5 3F 3B 4C 5E 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 CF 5D 0D 
+21:00:00.051 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.1.1.1,port:80086
+21:00:00.052 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+22:00:00.043 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.177,port:9999
+22:00:00.046 WARN  c.e.s.light.dlm.utils.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 93 AF 0D 
+22:00:00.052 WARN  c.e.s.light.dlm.utils.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 5C 43 12 CC CD 43 12 CC CD 00 00 00 00 00 00 00 0B 00 00 00 00 43 6A 60 2D 00 00 00 00 00 00 00 00 3F 03 95 81 00 00 00 00 00 00 00 00 3D B0 4F F5 BD AB 31 3C 3D F5 BD 52 3F 37 AC 82 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 84 1B 0D 
+22:00:00.054 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.1.1.1,port:80086
+22:00:00.055 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999
+23:00:00.062 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.177,port:9999
+23:00:00.065 WARN  c.e.s.light.dlm.utils.SocketClient[line:49] - 发送未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 93 AF 0D 
+23:00:00.068 WARN  c.e.s.light.dlm.utils.SocketClient[line:59] - 接收未加密数据:EF EF 00 14 97 32 70 72 2A 00 00 5C 43 12 E6 66 43 12 E6 66 00 00 00 00 00 00 00 31 00 00 00 00 43 6C A9 93 00 00 00 00 00 00 00 00 3F 06 24 DD 00 00 00 00 00 00 00 00 3D B1 E8 E6 BD B3 FF AD 3D FD 12 46 3F 33 F7 F0 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 00 00 00 00 00 00 00 00 00 00 00 00 3F 80 00 00 58 D6 0D 
+23:00:00.070 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.1.1.1,port:80086
+23:00:00.071 WARN  c.e.s.light.dlm.utils.SocketClient[line:37] - 发送请求:192.168.112.25,port:9999

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.wifi.mapper.WifiApDeviceDao">
+
+    <resultMap id="BaseResultMap" type="com.exc.street.light.resource.entity.wifi.WifiApDevice">
+        <id column="id" property="id"/>
+        <id column="model" property="model"/>
+        <id column="ip" property="ip"/>
+        <id column="mac" property="mac"/>
+        <id column="factory" property="factory"/>
+        <id column="name" property="name"/>
+        <id column="num" property="num"/>
+        <id column="network_state" property="networkState"/>
+        <id column="create_time" property="createTime"/>
+        <id column="last_online_time" property="lastOnlineTime"/>
+        <id column="lamp_post_id" property="lampPostId"/>
+        <id column="ac_device_ip" property="acDeviceIp"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+		id, model, ip, mac, factory, name, num, network_state, create_time, last_online_time, lamp_post_id, ac_device_ip
+	</sql>
+    <select id="getPageList" resultType="com.exc.street.light.resource.vo.resp.WifiRespApDeviceVO">
+        select wad.id, wad.model, wad.ip, wad.mac, wad.name, wad.num, wad.network_state, wad.create_time,
+        wad.last_online_time, wad.lamp_post_id,
+        sl.name as lampPostName, wa.current_population as population
+        from wifi_ap_device wad
+        left join wifi_ap wa on wa.device_id = wad.id
+        left join sl_lamp_post sl on sl.id = wad.lamp_post_id
+        left join location_site ls on ls.id = sl.site_id
+        left join location_street lst on lst.id = ls.street_id
+        left join location_area la on la.id = lst.area_id
+        <where>
+            <if test="queryObject.name != null and queryObject.name != '' ">
+                AND wad.`name` LIKE concat('%',#{queryObject.name},'%')
+            </if>
+            <if test="queryObject.networkState != null">
+                AND wad.network_state = #{queryObject.networkState}
+            </if>
+            <if test="queryObject.areaId != null">
+                AND la.id = #{queryObject.areaId}
+            </if>
+        </where>
+        order by wad.id desc
+    </select>
+    <select id="getByApp" resultType="com.exc.street.light.resource.vo.resp.WifiRespSimpleApVO">
+        select wad.name, wad.num, wad.network_state, wad.lamp_post_id, sl.name as lampPostName, sl.location,
+        ls.id as siteId, ls.name as siteName, lst.id as streetId, lst.name as streetName,
+        la.id as areaId, la.name as areaName
+        from wifi_ap_device wad
+        left join sl_lamp_post sl on sl.id = wad.lamp_post_id
+        left join location_site ls on ls.id =  sl.site_id
+        left join location_street lst on lst.id = ls.street_id
+        left join location_area la on la.id = lst.area_id
+        where wad.id = #{id}
+    </select>
+
+</mapper>

@@ -1,0 +1,1 @@
+15:50:20.358 WARN  o.apache.kafka.clients.NetworkClient[line:1051] - [Producer clientId=producer-1] Error while fetching metadata with correlation id 1 : {topicGroupId=LEADER_NOT_AVAILABLE}

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.ir.mapper.ScreenProgramMapper">
+
+	<resultMap id="BaseResultMap" type="com.exc.street.light.resource.entity.ir.ScreenProgram">
+		<id column="id" property="id" />
+		<id column="name" property="name" />
+		<id column="description" property="description" />
+		<id column="total_size" property="totalSize" />
+		<id column="creator" property="creator" />
+		<id column="update_time" property="updateTime" />
+		<id column="create_time" property="createTime" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, name, description, total_size, creator, update_time, create_time
+	</sql>
+    <select id="getIrProgramVO" parameterType="java.lang.Integer" resultType="com.exc.street.light.resource.vo.IrProgramVO">
+	   SELECT * FROM screen_program WHERE id = #{programId}
+	</select>
+    <select id="query" resultType="com.exc.street.light.resource.entity.ir.ScreenProgram">
+		SELECT sp.id FROM screen_program sp
+		LEFT JOIN `user` u ON sp.creator = u.id
+		<where>
+			<if test="irProgramQuery.programName != null and irProgramQuery.programName != ''">
+				AND sp.`name` LIKE CONCAT('%', #{irProgramQuery.programName}, '%')
+			</if>
+			<if test="irProgramQuery.areaId != null">
+				AND u.area_id = #{irProgramQuery.areaId}
+			</if>
+		</where>
+		ORDER BY sp.create_time DESC
+	</select>
+
+
+	<select id="getScreenProgram" resultMap="BaseResultMap">
+      select * from  screen_program
+	</select>
+</mapper>

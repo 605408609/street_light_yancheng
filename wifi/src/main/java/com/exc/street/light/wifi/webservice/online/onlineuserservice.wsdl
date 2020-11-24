@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions name="onlineUserService" targetNamespace="http://endpoint.webservice.smp.ruijie.com/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://endpoint.webservice.smp.ruijie.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+<xs:schema elementFormDefault="unqualified" targetNamespace="http://endpoint.webservice.smp.ruijie.com/" version="1.0" xmlns:tns="http://endpoint.webservice.smp.ruijie.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="queryOnlineUsers" type="tns:queryOnlineUsers" />
+   <xs:element name="queryOnlineUsersResponse" type="tns:queryOnlineUsersResponse" />
+   <xs:complexType name="queryOnlineUsers">
+      <xs:sequence>
+         <xs:element minOccurs="0" name="arg0" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="queryOnlineUsersResponse">
+      <xs:sequence>
+         <xs:element minOccurs="0" name="return" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema>  </wsdl:types>
+  <wsdl:message name="queryOnlineUsersResponse">
+    <wsdl:part element="tns:queryOnlineUsersResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="queryOnlineUsers">
+    <wsdl:part element="tns:queryOnlineUsers" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="OnlineUserService">
+    <wsdl:operation name="queryOnlineUsers">
+      <wsdl:input message="tns:queryOnlineUsers" name="queryOnlineUsers">
+    </wsdl:input>
+      <wsdl:output message="tns:queryOnlineUsersResponse" name="queryOnlineUsersResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="onlineUserServiceSoapBinding" type="tns:OnlineUserService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="queryOnlineUsers">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="queryOnlineUsers">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="queryOnlineUsersResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="onlineUserService">
+    <wsdl:port binding="tns:onlineUserServiceSoapBinding" name="OnlineUserServiceImplPort">
+      <soap:address location="http://192.168.111.84:9090/smp/ws/onlineuserservice" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

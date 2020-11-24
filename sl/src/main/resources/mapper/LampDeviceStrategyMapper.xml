@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.sl.mapper.LampDeviceStrategyDao">
+
+	<resultMap id="BaseResultMap" type="com.exc.street.light.resource.entity.sl.LampDeviceStrategy">
+		<id column="id" property="id" />
+		<id column="device_id" property="deviceId" />
+		<id column="strategy_id" property="strategyId" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, device_id, strategy_id
+	</sql>
+	
+</mapper>

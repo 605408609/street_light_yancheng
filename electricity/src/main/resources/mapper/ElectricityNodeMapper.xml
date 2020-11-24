@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.electricity.mapper.ElectricityNodeMapper">
+    <resultMap id="BaseResultMap" type="com.exc.street.light.resource.entity.electricity.ElectricityNode">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="install_addr" jdbcType="VARCHAR" property="installAddr"/>
+        <result column="mac" jdbcType="VARCHAR" property="mac"/>
+        <result column="ip" jdbcType="VARCHAR" property="ip"/>
+        <result column="port" jdbcType="INTEGER" property="port"/>
+        <result column="construction_units" jdbcType="VARCHAR" property="constructionUnits"/>
+        <result column="num" jdbcType="VARCHAR" property="num"/>
+        <result column="province" jdbcType="VARCHAR" property="province"/>
+        <result column="city" jdbcType="VARCHAR" property="city"/>
+        <result column="district" jdbcType="VARCHAR" property="district"/>
+        <result column="addr" jdbcType="VARCHAR" property="addr"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="version" jdbcType="VARCHAR" property="version"/>
+        <result column="building_id" jdbcType="INTEGER" property="buildingId"/>
+        <result column="is_open" jdbcType="INTEGER" property="isOpen"/>
+        <result column="open_direction" jdbcType="INTEGER" property="openDirection"/>
+        <result column="is_offline" jdbcType="INTEGER" property="isOffline"/>
+        <result column="router_offline_time" jdbcType="TIMESTAMP" property="routerOfflineTime"/>
+        <result column="router_is_offline" jdbcType="INTEGER" property="routerIsOffline"/>
+        <result column="network_type" jdbcType="INTEGER" property="networkType"/>
+        <result column="offline_time" jdbcType="TIMESTAMP" property="offlineTime"/>
+        <result column="longitude" jdbcType="DOUBLE" property="longitude"/>
+        <result column="latitude" jdbcType="DOUBLE" property="latitude"/>
+    </resultMap>
+
+    <update id="updateNodeOnlineState" parameterType="com.exc.street.light.resource.dto.electricity.Online">
+        update electricity_node
+        set is_offline=#{isOnline},
+            offline_time=#{lostTime}
+        where num = #{nodeName}
+    </update>
+
+    <select id="query" resultMap="BaseResultMap">
+        SELECT n.id,
+               n.num,
+               n.mac,
+               n.name,
+               n.building_id,
+               n.is_offline,
+               n.offline_time,
+               n.start_time,
+               n.is_open,
+               n.ip,
+               n.network_type,
+               n.version,
+               n.router_is_offline,
+               n.router_offline_time,
+               n.creator,
+               n.create_time
+        FROM electricity_node n
+        <!--todo-->
+        <!--LEFT JOIN building b ON b.id = n.building_id
+        LEFT JOIN building_site bs ON bs.building_id = b.id-->
+        <where>
+            <if test="num != null and num != ''">
+                AND n.num like CONCAT('%', #{num}, '%')
+            </if>
+            <if test="offline != null">
+                AND n.is_offline = #{offline}
+            </if>
+            <if test="networkType != null">
+                AND n.network_type = #{networkType}
+            </if>
+            <if test="name != null and name != ''">
+                AND n.name LIKE CONCAT('%', #{name}, '%')
+            </if>
+            <!--todo-->
+            <!--<if test="buildingName != null and buildingName != ''">
+                AND b.name LIKE CONCAT('%', #{buildingName}, '%')
+            </if>
+            <if test="partitionId != null">
+                AND b.partition_id = #{partitionId}
+            </if>
+            <if test="siteId != null">
+                AND bs.site_id = #{siteId}
+            </if>-->
+            <if test="isOpen != null">
+                and n.is_open = #{isOpen}
+            </if>
+        </where>
+        GROUP BY n.id
+        ORDER BY n.name
+    </select>
+
+    <select id="selectByNum" resultMap="BaseResultMap">
+        SELECT id, num
+        FROM electricity_node
+        WHERE num = #{num}
+    </select>
+
+    <select id="getNodeCount" resultType="java.lang.Integer">
+        SELECT COUNT(*)
+        FROM electricity_node n
+        <!--LEFT JOIN building b ON b.id = n.building_id-->
+        <where>
+            <!--todo-->
+            <!--<if test="partitionId!=null">
+                AND b.partition_id = #{partitionId}
+            </if>-->
+        </where>
+    </select>
+
+    <select id="countOnLineNum" resultType="java.lang.Integer">
+        SELECT COUNT(*)
+        FROM electricity_node n
+        <!--LEFT JOIN building b ON b.id = n.building_id-->
+        WHERE is_offline = 0
+        <!--todo-->
+        <!--<if test="partitionId!=null">
+            AND b.partition_id = #{partitionId}
+        </if>-->
+    </select>
+
+    <select id="listAll" resultMap="BaseResultMap">
+        SELECT n.id, n.name
+        FROM electricity_node n
+        <!--LEFT JOIN building b ON b.id = n.building_id-->
+        <where>
+            <!--todo-->
+            <!--<if test="partitionId!=null">
+                AND b.partition_id = #{partitionId}
+            </if>-->
+        </where>
+    </select>
+    <select id="selectByPid" resultMap="BaseResultMap">
+        SELECT n.id, n.name
+        FROM electricity_node n
+        <!--LEFT JOIN building b ON b.id = n.building_id-->
+        <where>
+            <!--todo-->
+            <!--WHERE b.partition_id = #{partitionId}-->
+            <if test="name != null and name != ''">
+                AND n.name LIKE CONCAT('%', #{name}, '%')
+            </if>
+        </where>
+    </select>
+    <select id="selectBySiteId" resultMap="BaseResultMap">
+        SELECT n.id, n.name
+        FROM electricity_node n
+        <!--LEFT JOIN building_site bs ON bs.building_id = n.building_id-->
+        <where>
+            <!--todo-->
+            <!--WHERE bs.site_id = #{siteId}-->
+            <if test="name != null and name != ''">
+                AND n.name LIKE CONCAT('%', #{name}, '%')
+            </if>
+        </where>
+    </select>
+
+    <select id="selectByBuildingId" resultMap="BaseResultMap">
+        SELECT id
+        FROM electricity_node
+        <!--todo-->
+        <!--WHERE building_id = #{buildingId}-->
+    </select>
+    <update id="updateLongitudeAndLatitudeByNum"
+            parameterType="com.exc.street.light.resource.dto.electricity.LongitudeAndLatitude">
+        update electricity_node
+        set longitude=#{longitude},
+            latitude=#{latitude}
+        where id = #{nid}
+    </update>
+
+    <resultMap id="PageListResult" type="com.exc.street.light.resource.vo.electricity.ElectricityNodeListVO">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="ip" jdbcType="VARCHAR" property="ip"/>
+        <result column="num" jdbcType="VARCHAR" property="num"/>
+        <result column="mac" property="mac"/>
+        <result column="port" property="port"/>
+        <result column="model" property="model"/>
+        <result column="last_online_time" property="lastOnlineTime"/>
+        <result column="addr" jdbcType="VARCHAR" property="addr"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="version" jdbcType="VARCHAR" property="version"/>
+        <result column="is_open" jdbcType="INTEGER" property="isOpen"/>
+        <result column="is_offline" jdbcType="INTEGER" property="isOffline"/>
+        <result column="is_online" jdbcType="INTEGER" property="isOnline"/>
+        <result column="router_offline_time" jdbcType="TIMESTAMP" property="routerOfflineTime"/>
+        <result column="router_is_offline" jdbcType="INTEGER" property="routerIsOffline"/>
+        <result column="network_type" jdbcType="INTEGER" property="networkType"/>
+        <result column="offline_time" jdbcType="TIMESTAMP" property="offlineTime"/>
+        <result column="creator" jdbcType="INTEGER" property="creator"/>
+        <result column="creator_name" property="creatorName"/>
+        <result column="create_time" property="createTime"/>
+        <result column="area_id" property="areaId"/>
+        <result column="area_name" property="areaName"/>
+        <result column="lamp_post_id" property="lampPostId"/>
+        <result column="lamp_post_name" property="lampPostName"/>
+        <result column="slp_latitude" property="latitude"/>
+        <result column="slp_longitude" property="longitude"/>
+    </resultMap>
+
+    <select id="getPageList" resultMap="PageListResult">
+        SELECT n.id
+             , n.num
+             , n.mac
+             , n.addr
+             , n.name
+             , n.model
+             , n.last_online_time
+             , n.building_id
+             , n.is_offline
+             , n.offline_time
+             , n.start_time
+             , n.is_open
+             , n.ip
+             , n.network_type
+             , n.version
+             , n.router_is_offline
+             , n.router_offline_time
+             , n.creator
+             , n.create_time
+             , n.port
+             , usr.`name`                                                         creator_name
+             , la.id                                                              area_id
+             , la.`name`                                                          area_name
+             , CASE WHEN n.is_offline = 1 THEN 0 WHEN n.is_offline = 0 THEN 1 END is_online
+             , slp.id                                                             lamp_post_id
+             , slp.`name`                                                         lamp_post_name
+             , slp.longitude                                                      slp_longitude
+             , slp.latitude                                                       slp_latitude
+        FROM electricity_node n
+                     left join `user` usr on usr.id = n.creator
+                     left join sl_lamp_post slp on slp.id = n.lamp_post_id
+                     left join location_site ls on ls.id = slp.site_id
+                     left join location_street lstreet on lstreet.id = ls.street_id
+                     left join location_area la on la.id = lstreet.area_id
+        <where>
+            <if test="qo.num != null and qo.num != ''">
+                AND n.num like CONCAT('%', #{qo.num}, '%')
+            </if>
+            <if test="qo.offline != null">
+                AND n.is_offline = #{qo.offline}
+            </if>
+            <if test="qo.networkType != null">
+                AND n.network_type = #{qo.networkType}
+            </if>
+            <if test="qo.name != null and qo.name != ''">
+                AND n.name LIKE CONCAT('%', #{qo.name}, '%')
+            </if>
+            <if test="qo.isOpen != null">
+                and n.is_open = #{qo.isOpen}
+            </if>
+            <if test="qo.areaId != null">
+                and la.id = #{qo.areaId}
+            </if>
+            <if test="qo.lampPostId != null">
+                and slp.id = #{qo.lampPostId}
+            </if>
+            <if test="qo.lampPostIdList != null and qo.lampPostIdList.size() != 0">
+                and slp.id in
+                <foreach collection="qo.lampPostIdList" separator="," open="(" close=")" item="lpId">
+                    #{lpId}
+                </foreach>
+            </if>
+        </where>
+        GROUP BY n.id
+        ORDER BY n.name asc
+    </select>
+
+    <select id="getAreaInfoByNid" resultType="com.exc.street.light.resource.dto.electricity.AreaDTO">
+        SELECT la.id     areaId,
+               la.`name` areaName
+        FROM electricity_node en
+                     LEFT JOIN `user` usr ON usr.id = en.creator
+                     LEFT JOIN location_area la ON la.id = usr.area_id
+        WHERE en.id = #{nid}
+    </select>
+
+    <select id="getLampPostNameByNid" resultType="java.lang.String">
+        select slp.`name`
+        from sl_lamp_post slp
+                     left join electricity_node en on en.lamp_post_id = slp.id
+        where en.id = #{nid}
+    </select>
+
+    <select id="getLampPostInfoByAreaId" resultType="com.exc.street.light.resource.vo.resp.electricity.RespLampPostVO">
+        SELECT sl.id     AS                                                                        lampPostId,
+               sl.`name` AS                                                                        lampPostName,
+               (SELECT 1 FROM electricity_node gateway WHERE gateway.lamp_post_id = sl.id LIMIT 1) isBindGateway
+        FROM sl_lamp_post sl
+                     LEFT JOIN location_site ls ON ls.id = sl.site_id
+                     LEFT JOIN location_street lst ON lst.id = ls.street_id
+                     LEFT JOIN location_area la ON la.id = lst.area_id
+        <where>
+            <if test="areaId != null">
+                and la.id = #{areaId}
+            </if>
+        </where>
+    </select>
+
+    <select id="getRespPullDownList" resultType="com.exc.street.light.resource.vo.electricity.RespElectricityNodeVO">
+        SELECT en.id,
+               en.`name`
+        FROM electricity_node en
+             LEFT JOIN sl_lamp_post sl ON sl.id = en.lamp_post_id
+             LEFT JOIN location_site ls ON ls.id = sl.site_id
+             LEFT JOIN location_street lst ON lst.id = ls.street_id
+             LEFT JOIN location_area la ON la.id = lst.area_id
+        <where>
+            <if test="areaId != null">
+                and la.id = #{areaId}
+            </if>
+        </where>
+        ORDER BY en.`name` asc
+    </select>
+</mapper>

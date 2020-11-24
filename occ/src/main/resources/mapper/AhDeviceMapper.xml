@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.occ.mapper.AhDeviceDao">
+
+	<resultMap id="BaseResultMap" type="com.exc.street.light.resource.entity.occ.AhDevice">
+		<id column="id" property="id" />
+		<id column="model" property="model" />
+		<id column="ip" property="ip" />
+		<id column="port" property="port" />
+		<id column="factory" property="factory" />
+		<id column="name" property="name" />
+		<id column="num" property="num" />
+		<id column="network_state" property="networkState" />
+		<id column="create_time" property="createTime" />
+		<id column="last_online_time" property="lastOnlineTime" />
+		<id column="lamp_post_id" property="lampPostId" />
+		<id column="registration_success" property="registrationSuccess" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, model, ip, port, factory, name, num, network_state, create_time, last_online_time, lamp_post_id, registration_success
+	</sql>
+	
+	<select id="selectPage" resultType="com.exc.street.light.resource.vo.OccAhDeviceVO">
+		SELECT ad.id, ad.model, ad.ip, ad.`port`, ad.factory, ad.`name`, ad.num
+		,ad.network_state, ad.create_time, ad.last_online_time, ad.lamp_post_id
+		,slp.`name`  AS lampPostName
+		FROM ah_device AS ad 
+		LEFT JOIN sl_lamp_post slp ON slp.id = ad.lamp_post_id
+		left join location_site ls on ls.id = slp.site_id
+        left join location_street lst on lst.id = ls.street_id
+        left join location_area la on la.id = lst.area_id
+		WHERE 1 = 1
+		<if test="queryObject.name != null and queryObject.name != '' "> 
+			AND ad.`name` LIKE concat('%',#{queryObject.name,jdbcType=VARCHAR},'%') 
+		</if>
+		<if test="queryObject.networkState != null"> 
+			AND ad.network_state = #{queryObject.networkState} 
+		</if>
+		<if test="queryObject.areaId != null">
+                AND la.id = #{queryObject.areaId}
+        </if>
+		ORDER BY ad.create_time DESC
+	</select>
+	
+	<select id="selectById" parameterType="java.lang.Long" resultType="com.exc.street.light.resource.vo.OccAhDeviceVO">		
+		SELECT d.id, d.model, d.ip, d.port, d.factory, d.name, d.num, d.network_state, d.create_time, d.last_online_time, d.lamp_post_id
+		,sl_lamp_post.`name` AS lampPostName
+		FROM ah_device AS d 
+		LEFT JOIN sl_lamp_post ON sl_lamp_post.id = d.lamp_post_id
+		WHERE d.id  = #{id,jdbcType=BIGINT}
+	</select>
+	
+	<select id="selectInfoByWorkbench" parameterType="java.lang.Long" resultType="com.exc.street.light.resource.vo.OccAhDeviceVO">		
+		SELECT
+			slp.id AS lamp_id,
+			slp.location,
+			ahd.NAME AS deviceName,
+			ahd.num AS num,
+			slp.`name` AS lampPostName,
+			location_area.`name` AS areaName,
+			location_street.`name` AS streetName,
+			location_site.`name` AS siteName 
+		FROM
+			ah_device AS ahd
+			INNER JOIN sl_lamp_post AS slp ON ahd.lamp_post_id = slp.id
+			INNER JOIN location_site ON slp.site_id = location_site.id
+			INNER JOIN location_street ON location_site.street_id = location_street.id
+			INNER JOIN location_area ON location_street.area_id = location_area.id 
+		WHERE
+			slp.id = #{id,jdbcType=BIGINT}
+	</select>
+	
+</mapper>

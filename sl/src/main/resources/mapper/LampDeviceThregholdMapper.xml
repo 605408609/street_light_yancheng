@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.sl.mapper.LampDeviceThregholdMapper">
+
+	<resultMap id="BaseResultMap" type="com.exc.street.light.resource.entity.sl.LampDeviceThreghold">
+		<id column="id" property="id" />
+		<id column="device_id" property="deviceId" />
+		<id column="threshold_value" property="thresholdValue" />
+		<id column="threshold_id" property="thresholdId" />
+	</resultMap>
+	<resultMap id="SingleLampParamResultMap" type="com.exc.street.light.resource.vo.resp.SlRespThresholdDetailVo">
+		<id column="device_id" property="id" />
+		<id column="device_type_id" property="deviceTypeId" />
+		<id column="filed" property="filed" />
+		<id column="unit" property="unit" />
+		<id column="name" property="name" />
+		<id column="is_must" property="isMust" />
+		<id column="regexp" property="regexp" />
+		<id column="icon" property="icon" />
+		<id column="threshold_value" property="thresholdValue" />
+		<id column="threshold_id" property="thresholdId" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, device_id, threshold_value, threshold_id
+	</sql>
+	<select id="detail" parameterType="java.lang.Integer" resultMap="SingleLampParamResultMap">
+		SELECT ldt.device_id,ldt.threshold_value,ldt.threshold_id,sdt.device_type_id,sdt.filed,sdt.unit,sdt.name,sdt.is_must,sdt.regexp,sdt.icon
+		FROM lamp_device_threghold ldt
+		JOIN system_device_threshold sdt
+		ON ldt.threshold_id = sdt.id
+		WHERE ldt.device_id = #{deviceId}
+	</select>
+</mapper>

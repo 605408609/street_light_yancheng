@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.dlm.mapper.LoopSceneActionTimingModeMapper">
+
+	<resultMap id="BaseResultMap" type="com.exc.street.light.resource.entity.dlm.LoopSceneActionTimingMode">
+		<id column="id" property="id" />
+		<id column="timing_mode_id" property="timingModeId" />
+		<id column="scene_action_id" property="sceneActionId" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, timing_mode_id, scene_action_id
+	</sql>
+	
+</mapper>

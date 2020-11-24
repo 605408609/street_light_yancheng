@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.woa.mapper.OrderInfoMapper">
+
+	<resultMap id="BaseResultMap" type="com.exc.street.light.resource.entity.woa.OrderInfo">
+		<id column="id" property="id" />
+		<id column="name" property="name" />
+		<id column="addr" property="addr" />
+		<id column="description" property="description" />
+		<id column="status_id" property="statusId" />
+		<id column="finish_time" property="finishTime" />
+		<id column="processor" property="processor" />
+		<id column="alarm_type_id" property="alarmTypeId" />
+		<id column="creator" property="creator" />
+		<id column="update_time" property="updateTime" />
+		<id column="create_time" property="createTime" />
+		<id column="overtime" property="overtime"/>
+		<id column="processor_role" property="processorRole"/>
+		<id column="new_status" property="newStatus"/>
+		<id column="start_handle_time" property="startHandleTime"/>
+		<id column="approval" property="approval"/>
+		<id column="lamp_post_id" property="lampPostId"/>
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, name, addr, description, status_id, finish_time, processor, alarm_type_id, creator, update_time, create_time, overtime, processor_role, new_status, start_handle_time,approval,lamp_post_id
+	</sql>
+    <update id="updateOvertime">
+		UPDATE order_info SET overtime = 1 WHERE finish_time &lt; now()
+	</update>
+    <select id="listHandle" parameterType="com.exc.street.light.resource.qo.WoaOrderQuery"
+			resultType="com.exc.street.light.resource.vo.resp.WoaRespOrderListVO">
+		SELECT oi.id orderId,oi.`name` orderName,oi.alarm_type_id alarmTypeId,oi.processor processorId,u2.`name` processorName,
+		oi.create_time createTime,oi.creator creatorId,oi.status_id statusId,os.`name` statusName,oi.approval,oi.overtime overtime,
+		CASE oi.alarm_type_id WHEN 0 THEN "多种类型" ELSE amt.`name` END alarmTypeName,
+		CASE oi.creator WHEN 0 THEN "系统自动生成" ELSE u1.`name` END creatorName, oi.lamp_post_id lampPostId, slp.name lampPostName,
+		CONCAT("lampPost", oi.lamp_post_id) partId
+		FROM order_info oi
+		LEFT JOIN alarm_type amt ON oi.alarm_type_id = amt.id
+		LEFT JOIN `user` u1 ON oi.creator = u1.id
+		LEFT JOIN `user` u2 ON oi.processor = u2.id
+		LEFT JOIN `user` u3 ON oi.approval = u3.id
+		LEFT JOIN order_status os ON oi.status_id = os.id
+		LEFT JOIN sl_lamp_post slp ON oi.lamp_post_id = slp.id
+		<where>
+			<if test="woaOrderQuery.orderName !=null and woaOrderQuery.orderName != ''">
+				AND oi.`name` like CONCAT('%', #{woaOrderQuery.orderName}, '%')
+			</if>
+			<if test="woaOrderQuery.alarmTypeId !=null">
+				AND oi.alarm_type_id = #{woaOrderQuery.alarmTypeId}
+			</if>
+			<if test="woaOrderQuery.approval !=null or woaOrderQuery.creator!=null or woaOrderQuery.processor!=null">
+				and (
+				<trim prefixOverrides="or">
+					<if test="woaOrderQuery.approval !=null">
+						or oi.approval = #{woaOrderQuery.approval}
+					</if>
+					<if test="woaOrderQuery.creator !=null">
+						or oi.creator = #{woaOrderQuery.creator}
+					</if>
+					<if test="woaOrderQuery.processor !=null">
+						or oi.processor = #{woaOrderQuery.processor}
+					</if>
+				</trim>
+				)
+			</if>
+			<if test="woaOrderQuery.overtime != null">
+				<if test="woaOrderQuery.orderStatus != null or woaOrderQuery.overtime == 1">
+					AND oi.overtime = #{woaOrderQuery.overtime}
+				</if>
+			</if>
+			<if test="woaOrderQuery.orderStatus!=null">
+				AND oi.status_id = #{woaOrderQuery.orderStatus}
+			</if>
+			<if test="woaOrderQuery.choose ==1">
+				AND oi.status_id IN (1,2,3,4,5,6,7)
+			</if>
+			<if test="woaOrderQuery.choose ==2">
+				AND oi.status_id IN (3,4,5,6)
+			</if>
+			<if test="woaOrderQuery.choose ==3">
+				AND oi.status_id IN (1,2,5)
+			</if>
+			<if test="woaOrderQuery.choose ==4">
+				AND oi.status_id IN (2,3,4)
+			</if>
+		</where>
+		ORDER BY oi.create_time DESC
+	</select>
+	<select id="getWoaRespOrderVO" parameterType="java.lang.Integer"
+			resultType="com.exc.street.light.resource.vo.resp.WoaRespOrderVO">
+		SELECT oi.id orderId, oi.`name` orderName, oi.alarm_type_id alarmTypeId, oi.create_time createTime,
+		CASE oi.alarm_type_id WHEN 0 THEN "多种类型" ELSE amt.`name` END alarmTypeName, oi.addr orderAddr,
+		oi.creator creatorId, CASE oi.creator WHEN 0 THEN "系统自动生成" ELSE u1.`name` END creatorName,
+		oi.status_id statusId, os.`name` statusName, oi.processor processorId, u2.`name` processorName,
+		oi.description description, oi.finish_time finishTime, oi.processor_role processorRoleId,oi.overtime overtime,
+		CASE oi.processor_role WHEN 0 THEN "系统自动生成" ELSE r.`name` END processorRoleName, oi.update_time updateTime,
+		oi.start_handle_time startHandleTime, oi.lamp_post_id lampPostId, slp.name lampPostName,CONCAT("lampPost", oi.lamp_post_id) partId
+		FROM order_info oi
+		LEFT JOIN alarm_type amt ON oi.alarm_type_id = amt.id
+		LEFT JOIN `user` u1 ON oi.creator = u1.id
+		LEFT JOIN `user` u2 ON oi.processor = u2.id
+		LEFT JOIN `role` r ON oi.processor_role = r.id
+		LEFT JOIN order_status os ON oi.status_id = os.id
+		LEFT JOIN sl_lamp_post slp ON oi.lamp_post_id = slp.id
+		<where>
+			<if test="id !=null">
+				AND oi.id = #{id}
+			</if>
+		</where>
+	</select>
+
+	<select id="selectNum" parameterType="com.exc.street.light.resource.qo.WoaOrderQuery" resultType="com.exc.street.light.resource.entity.woa.OrderInfo">
+		SELECT oi.create_time FROM order_info oi
+		<where>
+			<if test="woaOrderQuery.creator !=null">
+				OR oi.creator = #{woaOrderQuery.creator}
+			</if>
+			<if test="woaOrderQuery.processor !=null">
+				OR oi.processor = #{woaOrderQuery.processor}
+			</if>
+			<if test="woaOrderQuery.approval !=null">
+				OR oi.approval = #{woaOrderQuery.approval}
+			</if>
+		</where>
+	</select>
+
+</mapper>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.sl.mapper.LampGroupSingleMapper">
+
+	<resultMap id="BaseResultMap" type="com.exc.street.light.resource.entity.sl.LampGroupSingle">
+		<id column="id" property="id" />
+		<id column="single_id" property="singleId" />
+		<id column="lamp_group_id" property="lampGroupId" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, single_id, lamp_group_id
+	</sql>
+	
+</mapper>

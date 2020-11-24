@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.ir.mapper.ScreenPlayDeviceMapper">
+
+	<resultMap id="BaseResultMap" type="com.exc.street.light.resource.entity.ir.ScreenPlayDevice">
+		<id column="id" property="id" />
+		<id column="device_id" property="deviceId" />
+		<id column="screen_play_id" property="screenPlayId" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, device_id, screen_play_id
+	</sql>
+	
+</mapper>

@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions name="radiusLogWebService" targetNamespace="http://audit.webservice.smp.ruijie.com/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://audit.webservice.smp.ruijie.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+<xs:schema elementFormDefault="unqualified" targetNamespace="http://audit.webservice.smp.ruijie.com/" version="1.0" xmlns:tns="http://audit.webservice.smp.ruijie.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="queryRadiusLogs" type="tns:queryRadiusLogs" />
+   <xs:element name="queryRadiusLogsResponse" type="tns:queryRadiusLogsResponse" />
+   <xs:complexType name="queryRadiusLogs">
+      <xs:sequence>
+         <xs:element minOccurs="0" name="arg0" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="queryRadiusLogsResponse">
+      <xs:sequence>
+         <xs:element minOccurs="0" name="return" type="xs:string" />
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema>  </wsdl:types>
+  <wsdl:message name="queryRadiusLogsResponse">
+    <wsdl:part element="tns:queryRadiusLogsResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="queryRadiusLogs">
+    <wsdl:part element="tns:queryRadiusLogs" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="RadiusLogWebService">
+    <wsdl:operation name="queryRadiusLogs">
+      <wsdl:input message="tns:queryRadiusLogs" name="queryRadiusLogs">
+    </wsdl:input>
+      <wsdl:output message="tns:queryRadiusLogsResponse" name="queryRadiusLogsResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="radiusLogWebServiceSoapBinding" type="tns:RadiusLogWebService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="queryRadiusLogs">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="queryRadiusLogs">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="queryRadiusLogsResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="radiusLogWebService">
+    <wsdl:port binding="tns:radiusLogWebServiceSoapBinding" name="RadiusLogWebServiceImplPort">
+      <soap:address location="http://192.168.111.84:9090/smp/ws/radiuslog" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

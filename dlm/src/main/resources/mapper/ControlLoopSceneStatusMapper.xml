@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.dlm.mapper.ControlLoopSceneStatusMapper">
+    <resultMap id="BaseResultMap" type="com.exc.street.light.resource.entity.dlm.ControlLoopSceneStatus">
+        <id column="id" property="id"/>
+        <id column="location_control_id" property="locationControlId"/>
+        <id column="loop_id" property="loopId"/>
+        <id column="add_open_status" property="addOpenStatus"/>
+        <id column="add_close_status" property="addCloseStatus"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        id,
+        location_control_id,
+        loop_id,
+        add_open_status,
+        add_close_status
+    </sql>
+
+    <resultMap id="sceneStatusResultMap" type="com.exc.street.light.resource.dto.dlm.ControlLoopSceneStatusDTO">
+        <id property="id" column="id"/>
+        <result property="addCloseStatus" column="add_close_status"/>
+        <result property="addOpenStatus" column="add_open_status"/>
+        <result property="ip" column="ip"/>
+        <result property="port" column="port"/>
+        <result property="num" column="num"/>
+    </resultMap>
+
+    <select id="findSceneStatusList" resultMap="sceneStatusResultMap">
+        SELECT clst.id,
+               clst.add_close_status,
+               clst.add_open_status,
+               lc.ip,
+               lc.`port`,
+               cl.num
+        FROM control_loop_scene_status clst
+                     LEFT JOIN location_control lc ON lc.id = clst.location_control_id
+                     LEFT JOIN control_loop cl ON cl.id = clst.loop_id
+        WHERE (clst.add_close_status = 0 OR clst.add_open_status = 0)
+          AND lc.mac = #{mac}
+    </select>
+</mapper>

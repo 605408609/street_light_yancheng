@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.dlm.mapper.LocationControlMapper">
+    <resultMap id="BaseResultMap" type="com.exc.street.light.resource.entity.dlm.LocationControl">
+        <id column="id" property="id"/>
+        <id column="name" property="name"/>
+        <id column="num" property="num"/>
+        <id column="location" property="location"/>
+        <id column="type_id" property="typeId"/>
+        <id column="is_online" property="isOnline"/>
+        <id column="creator" property="creator"/>
+        <id column="create_time" property="createTime"/>
+        <id column="last_online_time" property="lastOnlineTime"/>
+        <id column="description" property="description"/>
+        <id column="cabinet_id" property="cabinetId"/>
+        <id column="ip" property="ip"/>
+        <id column="port" property="port"/>
+        <id column="mac" property="mac"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        
+                
+                        id, name, num, location, type_id, is_online, creator, create_time, last_online_time, description, cabinet_id, ip, port, mac
+        
+
+    </sql>
+    <select id="selectLocationControlByControlId"
+            resultType="com.exc.street.light.resource.vo.resp.DlmRespLocationControlVO">
+        
+                
+                        select lc.id, lc.name, lc.num, lc.location, lc.type_id, lc.is_online, lc.last_online_time, lc.ip, lc.port, lc.mac,
+                        lc.cabinet_id, lct.type as typeName, ldc.name as cabinetName
+                        from location_control lc
+                        left join location_control_type lct on lct.id = lc.type_id
+                        left join location_distribute_cabinet ldc on ldc.id = lc.cabinet_id
+                        where lc.id = #{controlId}
+        
+
+    </select>
+    <select id="selectLocationControlWithPageByControlQuery"
+            resultType="com.exc.street.light.resource.vo.resp.DlmRespLocationControlVO">
+        select lc.id, lc.name, lc.num, lc.location, lc.type_id, lc.is_online, lc.last_online_time, lc.create_time,
+        lc.cabinet_id, lct.type as typeName, ldc.name as cabinetName, ldc.area_id as areaId, la.name as areaName
+        from location_control lc
+        left join location_control_type lct on lct.id = lc.type_id
+        left join location_distribute_cabinet ldc on ldc.id = lc.cabinet_id
+        left join location_area la on la.id = ldc.area_id
+        <where>
+            <if test="controlQuery.name != null and controlQuery.name != ''">
+                AND lc.name LIKE concat('%',#{controlQuery.name},'%')
+            </if>
+            <if test="controlQuery.isOnline != null">
+                AND lc.is_online = #{controlQuery.isOnline}
+            </if>
+            <if test="controlQuery.areaId != null">
+                and ldc.area_id = #{controlQuery.areaId}
+            </if>
+            <if test="controlQuery.controlTypeIdList != null and controlQuery.controlTypeIdList.size() > 0">
+                and lc.type_id in
+                <foreach collection="controlQuery.controlTypeIdList" item="item" open="(" close=")" separator=",">
+                    #{item}
+                </foreach>
+            </if>
+        </where>
+        order by lc.id desc
+    </select>
+    <select id="selectLocationControlWithOption"
+            resultType="com.exc.street.light.resource.entity.dlm.LocationControl">
+        
+                
+                        select lc.id ,lc.name, lc.cabinet_id, ldc.area_id from location_control lc
+                        left join location_distribute_cabinet ldc on ldc.id = lc.cabinet_id
+                        where ldc.area_id = #{areaId}
+        
+
+    </select>
+    <select id="selectControlListByArea" resultType="com.exc.street.light.resource.entity.dlm.LocationControl">
+        select lc.id ,lc.name, lc.cabinet_id, lc.creator, lc.type_id from location_control lc
+        left join location_distribute_cabinet ldc on ldc.id = lc.cabinet_id
+        where ldc.area_id = #{areaId} and lc.cabinet_id is not null
+        and lc.type_id in
+        <foreach collection="typeIdList" item="item" open="(" close=")" separator=",">
+            #{item}
+        </foreach>
+    </select>
+    <select id="selectLocationControlListByControlQuery"
+            resultType="com.exc.street.light.resource.vo.resp.DlmRespLocationControlVO">
+        select lc.id, lc.name, lc.num, lc.location, lc.type_id, lc.is_online, lc.last_online_time, lc.create_time,
+        lc.cabinet_id, lct.type as typeName, ldc.name as cabinetName, ldc.area_id as areaId, la.name as areaName
+        from location_control lc
+        left join location_control_type lct on lct.id = lc.type_id
+        left join location_distribute_cabinet ldc on ldc.id = lc.cabinet_id
+        left join location_area la on la.id = ldc.area_id
+        <where>
+            <if test="controlQuery.name != null and controlQuery.name != ''">
+                AND (lc.name LIKE concat('%',#{controlQuery.name},'%') or lc.num LIKE
+                concat('%',#{controlQuery.name},'%'))
+            </if>
+            <if test="controlQuery.areaId != null">
+                and ldc.area_id = #{controlQuery.areaId}
+            </if>
+            <if test="controlQuery.controlTypeIdList != null and controlQuery.controlTypeIdList.size() > 0">
+                and lc.type_id in
+                <foreach collection="controlQuery.controlTypeIdList" item="item" open="(" close=")" separator=",">
+                    #{item}
+                </foreach>
+            </if>
+        </where>
+        order by lc.id desc
+    </select>
+    <select id="selectMixLocationControlByControlId"
+            resultType="com.exc.street.light.resource.vo.resp.DlmRespLocationControlMixVO">
+        
+                
+                        select lc.id, lc.`name`, lc.num, cl.id as loopId, cl.`name` as loopName, cl.num as loopNum,
+                        cl.sn as loopSn, cl.orders as loopOrders, sd.id as deviceId, sd.strategy_id as strategyId
+                        from location_control lc
+                        left join control_loop cl on cl.control_id = lc.id
+                        left join control_loop_device cld on cld.loop_id = cl.id
+                        left join system_device sd on sd.id = cld.device_id
+                        where lc.type_id = 2 and sd.strategy_id is not null and lc.id = #{controlId}
+        
+
+    </select>
+    <select id="selectListLocationControlOfExcWithOptionQuery"
+            resultType="com.exc.street.light.resource.entity.dlm.LocationControl">
+        select lc.id, lc.name, lc.type_id from location_control lc
+        left join location_distribute_cabinet ldc on ldc.id = lc.cabinet_id
+        left join location_area la on la.id = ldc.area_id
+        where lc.type_id = #{typeId}
+        <if test="areaId != null">
+            and ldc.area_id = #{areaId}
+        </if>
+        order by lc.id desc
+    </select>
+</mapper>

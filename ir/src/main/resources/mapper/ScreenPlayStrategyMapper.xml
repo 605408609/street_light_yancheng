@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.ir.mapper.ScreenPlayStrategyMapper">
+
+	<resultMap id="BaseResultMap" type="com.exc.street.light.resource.entity.ir.ScreenPlayStrategy">
+		<id column="id" property="id" />
+		<id column="execution_mode" property="executionMode" />
+		<id column="execution_end_time" property="executionEndTime" />
+		<id column="execution_start_time" property="executionStartTime" />
+		<id column="start_date" property="startDate" />
+		<id column="end_date" property="endDate" />
+		<id column="week_value" property="weekValue" />
+		<id column="screen_play_id" property="screenPlayId" />
+		<id column="update_time" property="updateTime" />
+		<id column="create_time" property="createTime" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, execution_mode, execution_end_time, execution_start_time, start_date, end_date, week_value, screen_play_id, update_time, create_time
+	</sql>
+	
+</mapper>

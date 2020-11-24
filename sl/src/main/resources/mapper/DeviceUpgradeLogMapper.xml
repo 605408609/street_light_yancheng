@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.sl.mapper.DeviceUpgradeLogMapper">
+
+	<resultMap id="BaseResultMap" type="com.exc.street.light.resource.entity.sl.DeviceUpgradeLog">
+		<id column="id" property="id" />
+		<id column="create_time" property="createTime" />
+		<id column="creator" property="creator" />
+		<id column="file_name" property="fileName" />
+		<id column="preserve_name" property="preserveName" />
+		<id column="edition_new" property="editionNew" />
+	</resultMap>
+	<resultMap id="pulldownResultMap" type="com.exc.street.light.resource.vo.resp.SlRespDeviceUpgradeLogVO">
+		<id column="id" property="id" />
+		<result column="create_time" property="createTime" />
+		<result column="creator" property="creator" />
+		<result column="file_name" property="fileName" />
+		<result column="edition_new" property="editionNew" />
+		<result column="preserve_name" property="preserveName" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, create_time, creator, file_name, preserve_name
+	</sql>
+	<select id="pulldown" resultMap="pulldownResultMap">
+		SELECT dul.id,dul.preserve_name,dul.file_name,dul.creator,dul.create_time,dul.edition_new,duls.device_id,duls.is_success,duls.edition_old FROM device_upgrade_log dul
+		RIGHT JOIN device_upgrade_log_status duls
+		ON dul.id = duls.log_id
+		<where>
+			<if test="isSuccess!=null">
+				AND duls.is_success = #{isSuccess}
+			</if>
+		</where>
+		ORDER BY dul.create_time DESC
+	</select>
+	
+</mapper>

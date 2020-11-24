@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.sl.mapper.LampEnergyMonthMapper">
+
+	<resultMap id="BaseResultMap" type="com.exc.street.light.resource.entity.sl.LampEnergyMonth">
+		<id column="id" property="id" />
+		<id column="energy" property="energy" />
+		<id column="device_id" property="deviceId" />
+		<id column="create_time" property="createTime" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, energy, device_id, create_time
+	</sql>
+    <select id="monthly" parameterType="java.lang.String" resultType="com.exc.street.light.resource.vo.resp.SlRespEnergyMonthlyVO">
+		SELECT * FROM (
+		SELECT SUM(energy) energy,DATE_FORMAT(create_time,'%Y-%m') yearMonth
+		FROM lamp_energy_month WHERE DATE_FORMAT(create_time,'%Y-%m') &lt;= #{currentDateString}
+	  	<if test="deviceIdList != null and deviceIdList.size() > 0">
+			AND device_id IN
+			<foreach collection="deviceIdList" separator="," open="(" item="deviceId" close=")">
+				#{deviceId}
+			</foreach>
+		</if>
+		GROUP BY DATE_FORMAT(create_time,'%Y-%m') ORDER BY create_time DESC LIMIT 6
+		) a
+		ORDER BY a.yearMonth;
+	</select>
+
+	<select id="selectByEnergy" parameterType="java.lang.String" resultType="com.exc.street.light.resource.entity.sl.LampEnergyMonth">
+		SELECT id,energy,device_id,create_time
+		FROM lamp_energy_month
+		<where>
+			AND DATE_FORMAT(create_time,'%Y') = #{yearTime}
+			<if test="deviceIdList != null and deviceIdList.size() > 0">
+				AND device_id IN
+				<foreach collection="deviceIdList" separator="," open="(" item="deviceId" close=")">
+					#{deviceId}
+				</foreach>
+			</if>
+		</where>
+	</select>
+	<select id="selectOneByTime" resultType="com.exc.street.light.resource.entity.sl.LampEnergyMonth">
+		SELECT id,energy,device_id,create_time
+		FROM lamp_energy_month WHERE DATE_FORMAT(create_time,'%Y-%m') = #{monthTime} AND device_id = #{deviceId};
+	</select>
+
+</mapper>

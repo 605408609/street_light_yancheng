@@ -1,0 +1,13 @@
+# 井盖mqtt服务配置
+mqtt:
+  username: admin
+  password: password
+  host: tcp://iot.starwsn.com:1883
+  topic[0]: /EXC/TL1/N110E/update
+  topic[1]: /EXC/TL1/C110E/update
+  qos[0]: 1
+  qos[1]: 1
+  clientId: excc-mqtt-test-1357913
+  timeout: 10
+  keepAlive: 20
+  apikey: 5c2840d1e25a4168866d9ee944ff8758

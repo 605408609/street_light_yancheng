@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.sl.mapper.LampHtMessageMapper">
+
+	<resultMap id="BaseResultMap" type="com.exc.street.light.resource.entity.sl.LampHtMessage">
+		<id column="id" property="id" />
+		<id column="location_control_id" property="locationControlId" />
+		<id column="order_cmd_type" property="orderCmdType" />
+		<id column="order_cmd" property="orderCmd" />
+		<id column="order_result" property="orderResult" />
+		<id column="order_time" property="orderTime" />
+		<id column="return_cmd_type" property="returnCmdType" />
+		<id column="return_cmd" property="returnCmd" />
+		<id column="return_result" property="returnResult" />
+		<id column="return_time" property="returnTime" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, location_control_id, order_cmd_type, order_cmd, order_result, order_time, return_cmd_type, return_cmd, return_result, return_time
+	</sql>
+	
+</mapper>

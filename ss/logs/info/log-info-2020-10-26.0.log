@@ -1,0 +1,39 @@
+16:59:37.979 INFO  c.e.s.l.s.m.CamerasPreviewUrlsManagerTest[line:55] - Starting CamerasPreviewUrlsManagerTest on DESKTOP-78VVBBB with PID 7072 (started by EXC in D:\Work\IDEA-workspace\street_light\ss)
+16:59:38.026 INFO  c.e.s.l.s.m.CamerasPreviewUrlsManagerTest[line:655] - The following profiles are active: dev
+16:59:46.868 INFO  c.alibaba.druid.pool.DruidDataSource[line:1003] - {dataSource-1} inited
+16:59:53.849 INFO  o.s.b.a.e.web.EndpointLinksResolver[line:58] - Exposing 2 endpoint(s) beneath base path '/actuator'
+16:59:54.881 INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping[line:69] - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+16:59:56.050 INFO  o.s.s.c.ThreadPoolTaskExecutor[line:181] - Initializing ExecutorService 'applicationTaskExecutor'
+16:59:57.651 INFO  org.quartz.impl.StdSchedulerFactory[line:1208] - Using default implementation for ThreadExecutor
+16:59:57.753 INFO  o.quartz.core.SchedulerSignalerImpl[line:61] - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+16:59:57.767 INFO  org.quartz.core.QuartzScheduler[line:229] - Quartz Scheduler v.2.3.0 created.
+16:59:57.784 INFO  org.quartz.simpl.RAMJobStore[line:155] - RAMJobStore initialized.
+16:59:57.787 INFO  org.quartz.core.QuartzScheduler[line:294] - Scheduler meta-data: Quartz Scheduler (v2.3.0) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+16:59:57.799 INFO  org.quartz.impl.StdSchedulerFactory[line:1362] - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+16:59:57.800 INFO  org.quartz.impl.StdSchedulerFactory[line:1366] - Quartz scheduler version: 2.3.0
+16:59:57.803 INFO  org.quartz.core.QuartzScheduler[line:2287] - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@5be7b749
+16:59:57.863 INFO  o.s.s.c.ThreadPoolTaskScheduler[line:181] - Initializing ExecutorService 'taskScheduler'
+16:59:58.103 INFO  s.d.s.w.p.DocumentationPluginsBootstrapper[line:147] - Context refreshed
+16:59:58.997 INFO  s.d.s.w.p.DocumentationPluginsBootstrapper[line:150] - Found 1 custom documentation plugin(s)
+16:59:59.174 INFO  s.d.s.w.s.ApiListingReferenceScanner[line:41] - Scanning for api listing references
+16:59:59.811 INFO  s.d.s.w.r.o.CachingOperationNameGenerator[line:40] - Generating unique operation named: getPagesUsingGET_1
+16:59:59.894 INFO  o.s.s.quartz.SchedulerFactoryBean[line:727] - Starting Quartz Scheduler now
+16:59:59.895 INFO  org.quartz.core.QuartzScheduler[line:547] - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+16:59:59.925 INFO  c.e.s.l.s.m.CamerasPreviewUrlsManagerTest[line:61] - Started CamerasPreviewUrlsManagerTest in 23.304 seconds (JVM running for 26.099)
+17:00:01.676 INFO  c.h.artemis.sdk.ArtemisHttpUtil[line:826] - the Artemis Request is Success,statusCode:200 SuccessMsg:{"code":"0","msg":"success","data":{"url":"http://192.168.10.100:83/openUrl/E1levCg/live.m3u8"}}
+17:00:02.160 INFO  org.quartz.core.QuartzScheduler[line:585] - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+17:00:02.162 INFO  o.s.s.c.ThreadPoolTaskScheduler[line:218] - Shutting down ExecutorService 'taskScheduler'
+17:00:02.171 INFO  o.s.s.quartz.SchedulerFactoryBean[line:845] - Shutting down Quartz Scheduler
+17:00:02.180 INFO  org.quartz.core.QuartzScheduler[line:666] - Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+17:00:02.182 INFO  org.quartz.core.QuartzScheduler[line:585] - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+17:00:02.183 INFO  org.quartz.core.QuartzScheduler[line:740] - Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+17:00:02.191 INFO  o.s.s.c.ThreadPoolTaskExecutor[line:218] - Shutting down ExecutorService 'applicationTaskExecutor'
+17:00:02.233 INFO  c.alibaba.druid.pool.DruidDataSource[line:1948] - {dataSource-1} closing ...
+17:00:02.246 INFO  c.alibaba.druid.pool.DruidDataSource[line:2020] - {dataSource-1} closed

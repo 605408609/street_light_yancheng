@@ -1,0 +1,66 @@
+spring:
+  # 配置数据源
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.111.89:3306/street_light?useUnicode=true&characterEncoding=UTF-8&generateSimpleParameterMetadata=true&serverTimezone=Asia/Shanghai
+    username: root
+    password: Exc_led1
+    type: com.alibaba.druid.pool.DruidDataSource
+# # 配置视频监控服务的端口
+server:
+  port: 60023
+  #全局配置接口地址前缀
+  servlet:
+    context-path: /api/ss
+# mybatis-plus相关配置
+mybatis-plus:
+  # xml扫描，多个目录用逗号或者分号分隔（告诉 Mapper 所对应的 XML 文件位置）
+  mapper-locations: classpath:mapper/*.xml
+  # 以下配置均有默认值,可以不设置
+  global-config:
+    #去掉控制台打印版本号
+    banner: false
+    db-config:
+      #主键类型 AUTO:"数据库ID自增" INPUT:"用户输入ID",ID_WORKER:"全局唯一ID (数字类型唯一ID)", UUID:"全局唯一ID UUID";
+      id-type: auto
+      #字段策略 IGNORED:"忽略判断"  NOT_NULL:"非 NULL 判断")  NOT_EMPTY:"非空判断"
+      field-strategy: NOT_EMPTY
+  configuration:
+    # 是否开启自动驼峰命名规则映射:从数据库列名到Java属性驼峰命名的类似映射
+    map-underscore-to-camel-case: true
+    # 如果查询结果中包含空值的列，则 MyBatis 在映射的时候，不会映射这个字段
+    call-setters-on-nulls: true
+    # 这个配置会将执行的sql打印出来，在开发或测试的时候可以用
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+hikvision-artemis-config:
+  # V1.2版本：配置为使用http，例如： httpType: http://
+  # V1.3版本：配置为使用https，例如：httpType: https://
+  httpType: https://
+  # 海康威视综合安防管理平台中心管理服务器的ip地址，根据版本配置不同端口
+  # V1.2版本：配置为80端口，例如： "192.168.10.100:80"
+  # V1.3版本：配置为443端口，例如："192.168.10.100:443"
+  host: "192.168.10.100:443"
+  # 获取api网关的访问
+  # 第一步,登录运行管理中心, http://192.168.10.100:8001/center/ ,账号sysadmin,密码根据不同项目而不同
+  # 第二步,状态监控 -> 运行管理中心 -> API网关 -> API管理 ,进入api网关管理中心
+  # 第三步,合作方管理 -> 合作方管理列表 -> 对内合作方 - > 合作方Key
+  # 第四步,把"合作方Key"和"合作方Secret"写入如下两个参数中
+  # 合作方Key
+  appKey: "23657951"
+  appSecret: "znX27EifjLpFJpZA5Zsf"
+
+#认证中心
+security:
+  authe:
+    url: http://192.168.0.252:60029/api/ua/authe
+  authc:
+    url: http://192.168.0.252:60029/api/ua/authc
+
+#不需要认证
+exclude:
+  authe:
+    url: /api/test,/error
+  #不需要鉴权
+  authc:
+    url: /api/test,/error

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.dlm.mapper.LocationControlTypeMapper">
+
+	<resultMap id="BaseResultMap" type="com.exc.street.light.resource.entity.dlm.LocationControlType">
+		<id column="id" property="id" />
+		<id column="type" property="type" />
+		<id column="factory_id" property="factoryId" />
+		<id column="edition" property="edition" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, type, factory_id, edition
+	</sql>
+	
+</mapper>

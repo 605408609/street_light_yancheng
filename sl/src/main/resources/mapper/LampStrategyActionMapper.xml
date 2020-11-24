@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.sl.mapper.LampStrategyActionMapper">
+
+	<resultMap id="BaseResultMap" type="com.exc.street.light.resource.entity.sl.LampStrategyAction">
+		<id column="id" property="id" />
+		<id column="is_open" property="isOpen" />
+		<id column="brightness" property="brightness" />
+		<id column="execution_time" property="executionTime" />
+		<id column="start_date" property="startDate" />
+		<id column="end_date" property="endDate" />
+		<id column="week_value" property="weekValue" />
+		<id column="strategy_id" property="strategyId" />
+		<id column="cron" property="cron" />
+		<id column="light_mode_id" property="lightModeId" />
+		<id column="deviation" property="deviation" />
+		<id column="device_type_id" property="deviceTypeId" />
+		<id column="create_time" property="createTime" />
+		<id column="update_time" property="updateTime" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, is_open, brightness, execution_time, start_date, end_date, week_value, strategy_id, cron, light_mode_id, deviation, device_type_id, create_time, update_time
+	</sql>
+	
+</mapper>

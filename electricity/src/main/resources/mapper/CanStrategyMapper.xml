@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.electricity.mapper.CanStrategyMapper">
+    <resultMap id="BaseResultMap" type="com.exc.street.light.resource.entity.electricity.CanStrategy">
+        <id column="id" property="id"/>
+        <id column="name" property="name"/>
+        <id column="description" property="description"/>
+        <id column="creator" property="creator"/>
+        <id column="create_time" property="createTime"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        id,
+        name,
+        description,
+        creator,
+        create_time
+    </sql>
+
+    <select id="getPageList" resultType="com.exc.street.light.resource.vo.electricity.RespCanStrategyVO">
+        SELECT cs.id,
+               cs.`name`,
+               `user`.`name` creatorName,
+               cs.create_time
+        FROM can_strategy cs
+                     LEFT JOIN `user` ON `user`.id = cs.creator
+                     LEFT JOIN location_area la ON la.id = `user`.area_id
+        <where>
+            cs.del_flag = 0
+            <if test="qo.name != null and qo.name != ''">
+                and cs.name like concat('%', #{qo.name}, '%')
+            </if>
+            <if test="qo.areaId != null">
+                and la.id = #{qo.areaId}
+            </if>
+        </where>
+        order by cs.id desc
+    </select>
+</mapper>

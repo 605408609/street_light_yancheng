@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exc.street.light.woa.mapper.AlarmMapper">
+
+    <resultMap id="BaseResultMap" type="com.exc.street.light.resource.entity.woa.Alarm">
+        <id column="id" property="id"/>
+        <id column="content" property="content"/>
+        <id column="addr" property="addr"/>
+        <id column="status" property="status"/>
+        <id column="create_time" property="createTime"/>
+        <id column="dispose_time" property="disposeTime"/>
+        <id column="type_id" property="typeId"/>
+        <id column="lamp_post_id" property="lampPostId"/>
+        <id column="order_id" property="orderId"/>
+        <id column="have_read" property="haveRead"/>
+        <id column="device_id" property="deviceId"/>
+        <id column="device_name" property="deviceName"/>
+        <id column="device_type_id" property="deviceTypeId"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+		id, content, addr, status, create_time, dispose_time, type_id, lamp_post_id, order_id,have_read
+	</sql>
+    <update id="updateOpenOrder">
+        UPDATE alarm SET order_id = #{id},status = #{status} WHERE id IN
+        <foreach collection="list" item="num" open="(" close=")" separator=",">
+            #{num}
+        </foreach>
+    </update>
+    <select id="query" parameterType="com.exc.street.light.resource.qo.WoaAlarmQuery"
+            resultType="com.exc.street.light.resource.vo.resp.WoaRespAlarmVO">
+        SELECT a.id, a.content, a.addr, a.status, a.create_time createTime, a.dispose_time disposeTime, a.device_name deviceName
+        , a.type_id typeId, amt.name typeName, a.lamp_post_id lampPostId, slp.`name` lampPostName,
+        CASE oi.status_id WHEN 6 THEN oi.update_time ELSE null END disposeCompleteTime,
+        now() currentTime, now() durationTime
+        FROM alarm a
+        LEFT JOIN alarm_type amt ON a.type_id = amt.id
+        LEFT JOIN sl_lamp_post slp ON a.lamp_post_id = slp.id
+        LEFT JOIN order_info oi ON a.order_id = oi.id
+        LEFT JOIN location_site ls ON ls.id = slp.site_id
+        LEFT JOIN location_street lst ON lst.id = ls.street_id
+        LEFT JOIN location_area la ON la.id = lst.area_id
+        <where>
+            <if test="woaAlarmQuery.lampPostName != null and woaAlarmQuery.lampPostName != ''">
+                AND slp.`name` like CONCAT('%', #{woaAlarmQuery.lampPostName}, '%')
+            </if>
+            <if test="woaAlarmQuery.alarmTypeId != null">
+                AND a.type_id = #{woaAlarmQuery.alarmTypeId}
+            </if>
+            <if test="woaAlarmQuery.alarmStatus != null">
+                <if test="woaAlarmQuery.alarmStatus != 4">
+                    AND a.status = #{woaAlarmQuery.alarmStatus}
+                </if>
+                <if test="woaAlarmQuery.alarmStatus == 4">
+                    AND (a.status = 1 OR a.status = 2)
+                </if>
+            </if>
+            <if test="woaAlarmQuery.alarmStatus == null">
+                AND (a.status = 1 OR a.status = 2)
+            </if>
+            <if test="woaAlarmQuery.areaId != null">
+                AND la.id = #{woaAlarmQuery.areaId}
+            </if>
+        </where>
+        ORDER BY a.create_time DESC
+    </select>
+    
+    <select id="queryNews"  parameterType="com.exc.street.light.resource.qo.WoaAlarmQuery"
+    resultType="com.exc.street.light.resource.vo.resp.WoaRespAlarmVO">
+		SELECT
+			alarm.id,
+			have_read AS haveRead,
+			alarm.content,
+			create_time AS createTime,
+			"故障告警" AS serviceName,
+			1 AS serviceId,
+			"无" AS deviceName,
+			"无" AS lampPostName 
+		FROM
+			alarm UNION
+		SELECT
+			play.id,
+			play.have_read AS haveRead,
+			play.content,
+			play.create_time AS createTime,
+			"一键求助" AS serviceName,
+			2 AS serviceId,
+			device.`name` AS deviceName,
+			lampPost.`name` AS lampPostName 
+		FROM
+			ah_play AS play
+			INNER JOIN ah_device AS device ON play.device_num = device.num
+			INNER JOIN sl_lamp_post AS lampPost ON play.lamp_id = lampPost.id 
+		ORDER BY
+			createTime DESC
+    </select>
+    
+    <select id="areaAnalysePage" parameterType="com.exc.street.light.resource.qo.QueryObject"
+            resultType="java.lang.Integer">
+        SELECT id FROM location_area
+        ORDER BY create_time DESC
+    </select>
+    <select id="areaAnalyse" resultType="com.exc.street.light.resource.vo.WoaAlarmAreaAnalyseVO">
+        SELECT la.id areaId, la.`name` areaName, lst.id streetId, lst.`name` streetName, ls.id siteId,
+        ls.`name` siteName, slp.id lampPostId, u.id userId, u.`name` userName, a.id alarmId,
+        a.`status` alarmStatus, a.create_time alarmCreateTime
+        FROM location_area la
+        LEFT JOIN location_street lst ON la.id = lst.area_id
+        LEFT JOIN location_site ls ON lst.id = ls.street_id
+        LEFT JOIN sl_lamp_post slp ON ls.id = slp.site_id
+        LEFT JOIN alarm_order_set_lamp_post aoslp ON slp.id = aoslp.lamp_post_id
+        LEFT JOIN alarm_order_set aos ON aoslp.set_id = aos.id
+        LEFT JOIN `user` u ON aos.processor = u.id
+        LEFT JOIN alarm a ON slp.id = a.lamp_post_id
+        ORDER BY a.create_time DESC
+    </select>
+    <select id="typeAnalyse" parameterType="com.exc.street.light.resource.vo.req.WoaReqAlarmTypeAnalyseVO"
+            resultType="com.exc.street.light.resource.vo.resp.WoaRespAlarmTypeAnalyseVO">
+        SELECT amt.id alarmTypeId, amt.`name` alarmTypeName, a.create_time latelyAlarmTime
+        FROM alarm a LEFT JOIN alarm_type amt ON amt.id = a.type_id
+        <where>
+            <if test="alarmTypeAnalyseVO.startTime != null and alarmTypeAnalyseVO.startTime != ''">
+                AND create_time &gt;= #{alarmTypeAnalyseVO.startTime}
+            </if>
+            <if test="alarmTypeAnalyseVO.endTime != null and alarmTypeAnalyseVO.endTime != ''">
+                AND create_time &lt;= #{alarmTypeAnalyseVO.endTime}
+            </if>
+        </where>
+        ORDER BY a.create_time DESC
+    </select>
+    <select id="getWoaRespOrderAlarmVO" parameterType="java.lang.Integer"
+            resultType="com.exc.street.light.resource.vo.resp.WoaRespOrderAlarmVO">
+        SELECT a.id alarmId, a.lamp_post_id lampPostId, slp.`name` lampPostName, a.type_id alarmTypeId,
+        amt.`name` alarmTypeName, a.create_time createTime, a.addr alarmAddr
+        FROM alarm a
+        LEFT JOIN sl_lamp_post slp ON a.lamp_post_id = slp.id
+        LEFT JOIN alarm_type amt ON a.type_id = amt.id
+        <where>
+            <if test="id != null">
+                AND a.order_id = #{id}
+            </if>
+        </where>
+    </select>
+
+    <select id="areaLampPostIdList" parameterType="java.lang.Integer" resultType="java.lang.Integer">
+        SELECT lp.id FROM sl_lamp_post lp
+        JOIN location_site ls on lp.site_id = ls.id
+        JOIN location_street lst on ls.street_id = lst.id
+        JOIN location_area la on lst.area_id = la.id
+        WHERE la.id = #{areaId}
+    </select>
+</mapper>
